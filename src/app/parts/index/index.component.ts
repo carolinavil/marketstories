@@ -312,6 +312,7 @@ const options = {
 
 
   ngAfterViewInit(): void {
+    console.log('tesste')
 
     document.addEventListener('DOMContentLoaded', function () {
       var elems = document.querySelectorAll('.carrossel-testes');
