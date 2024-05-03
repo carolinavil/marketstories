@@ -2,6 +2,6 @@
 
 export const environment = {
     production: true,
-    url: 'https://zentechonboardingback.azurewebsites.net'
+    url:'https://api.marketstories.com.br'
   };
   
