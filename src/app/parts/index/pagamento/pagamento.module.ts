@@ -22,6 +22,7 @@ import { DialogModule } from 'primeng/dialog';
  import { CalendarModule } from 'primeng/calendar';
 import { NgxMaskApplierService } from 'ngx-mask/lib/ngx-mask-applier.service';
 import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
+import { RouterModule } from '@angular/router';
 PagamentoRoutingModule
 @NgModule({
   declarations: [
@@ -54,8 +55,13 @@ PagamentoRoutingModule
     CalendarModule,
     NgxMaskDirective, 
     NgxMaskPipe,
-    FileUploadModule
-    
+    FileUploadModule,
+    RouterModule.forChild([
+      { path: '', component: PagamentoComponent },
+      { path: 'final', component: FinalComponent } // Rota para o componente Final
+    ])
+ 
+
    
 
   ],

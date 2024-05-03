@@ -15,7 +15,7 @@ import { CountUpModule } from 'ngx-countup';
 import { PagamentoComponent } from './pagamento/pagamento.component';
 import { PagamentoModule } from './pagamento/pagamento.module';
 import { HttpClientModule } from '@angular/common/http';
-
+import { RouterModule } from '@angular/router';
 register()
 
 
@@ -34,6 +34,9 @@ register()
     MatListModule,
     FontAwesomeModule,
     CountUpModule,
+    RouterModule.forChild([
+      { path: '', component: IndexComponent }
+    ])
 
   
   ],
