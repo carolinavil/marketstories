@@ -1,10 +1,1 @@
-RewriteEngine On
-RewriteBase /
-
-# Se o arquivo ou diretório solicitado existir, não faça nada
-RewriteCond %{REQUEST_FILENAME} -f [OR]
-RewriteCond %{REQUEST_FILENAME} -d
-RewriteRule ^ - [L]
-
-# Para todas as outras solicitações, redirecione para o index.html do seu aplicativo Angular
-RewriteRule ^ index.html [L]
+FallbackResource /index.html
