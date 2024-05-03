@@ -1,0 +1,6 @@
+RewriteEngine On
+RewriteBase /
+
+# Redirecionar todas as solicitações para o index.html, exceto arquivos estáticos
+RewriteCond %{REQUEST_URI} !(\.css|\.js|\.png|\.jpg|\.gif|robots\.txt)$ [NC]
+RewriteRule ^ index.html [L]
