@@ -1,0 +1,581 @@
+img.titulo-logo {
+    width: 10%;
+}
+
+.span-topicos-quem-somos {
+    background-color: #5fbcff1f;
+    box-shadow: 0px 3px 5px 0px #b0dcfd;
+}
+
+.titulo-caixa {
+    display: flex;
+    align-items: center;
+}
+
+img.item-slide-quem-somos {
+    width: 50%;
+}
+
+
+.swiper-quem-somos swiper-slide {
+    display: flex;
+    justify-content: center;
+}
+
+
+swiper-slide.swiper-slide-active {
+    padding-bottom: 3em;
+}
+
+.missao {
+    display: flex;
+}
+
+.topicos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+img.missao-logo.item-missao {
+    /* margin-left: 8em; */
+    position: absolute;
+    right: -10em;
+    overflow: hidden;
+    width: 20%;
+    bottom: 1em;
+}
+
+.conteinerx {
+    margin: 0 auto;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.texto-missao {
+    width: 60%;
+    margin-top: 2em
+}
+
+
+
+.conteudo-quem-somos {
+    margin: 2em auto;
+    overflow: hidden;
+    margin: 0 auto;
+    width: 85%;
+    overflow: hidden;
+
+}
+
+.lista-caixa-quem-somos {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+
+.btn-missao {
+    margin-top: 1em;
+}
+
+
+.item-missao {
+    margin: 2em 0;
+}
+
+p.texto-valor {
+    font-size: 15px;
+}
+
+h1.titulo-valor {
+    font-size: 45px;
+}
+
+h1.subtitulo-valor {
+    font-size: 38px;
+}
+
+
+
+
+.titulo-quem-somos {
+    text-align: center;
+    margin: 0.5em 0 0.5em 0;
+}
+
+.conteudo-quem-somos {
+    padding-bottom: 6em;
+}
+
+h1.titulo-quem-somos {
+    color: #00000075;
+    margin-top: 2em;
+    font-weight: 300;
+    margin-top: 2em;
+}
+
+
+
+.titulo-missao {
+    font-size: 35px;
+
+}
+
+.titulo {
+    font-size: 60px;
+}
+
+ul.lista-topicos-quem-somos {
+    display: flex;
+    padding: 3em 0em 5em 0em;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+
+.odd-apelativo {
+    box-shadow: -1px 2px 4px #2e86c6;
+    background: linear-gradient(231deg, #0f68a9, #3890d0);
+    color: white;
+}
+
+
+/* span.caixa-item-apelativo:nth-child(odd) {
+    background-color: red!important;
+    color: white!important;
+} */
+
+
+@media screen and (min-width: 250px) {
+
+    .quem-somos-desktop {
+        display: none;
+    }
+
+    li.lista-topicos-quem-somos-li {
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+        margin: 2em 0;
+    }
+
+    li.numeros-item {
+        margin: 1em 3em;
+        flex-flow: column;
+        display: flex;
+        justify-content: center;
+        width: 32em;
+        align-items: center;
+    }
+
+
+    .span-topicos-quem-somos {
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        border-radius: 50%;
+        margin: 2em;
+        width: 8em;
+        height: 8em;
+        justify-content: center;
+        flex-flow: column;
+        /* background: rebeccapurple; */
+    }
+
+    ul.lista-topicos-quem-somos {
+        flex-flow: column;
+    }
+
+    p.texto-topico {
+        width: 60%;
+        text-align: center;
+        margin-top: 2em;
+    }
+
+    ul.numeros-lista-quem-somos {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        flex-flow: column !important;
+
+    }
+
+    h1.subtitulo-numeros {
+        font-size: 19px;
+        margin-top: 0.5em;
+        width: 50%;
+    }
+
+    li.numeros-item {
+        margin: 2em 3em !important;
+        flex-flow: column;
+        display: flex;
+        justify-content: center;
+        width: 32em;
+        align-items: center;
+    }
+
+    h1.titulo-quem-somos {
+        font-size: 18px;
+    }
+
+
+    .titulo-quem-somos-mobile {
+        display: flex;
+    }
+
+    .titulo-quem-somos-mobile {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .titulo2-quem-somos {
+        text-align: center;
+    }
+}
+
+@media screen and (min-width: 1040px) {
+    .mobile-quem-somos {
+        display: none;
+    }
+
+    .quem-somos-desktop {
+        display: block;
+    }
+
+    h1.titulo-quem-somos {
+        font-size: 29px;
+
+    }
+
+    h1.subtitulo-numeros {
+        font-size: 26px;
+        margin-top: 0.5em;
+        width: 100%;
+    }
+
+
+    ul.numeros-lista-quem-somos {
+        display: flex;
+        flex-flow: row !important;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+
+
+
+    }
+
+    .item-slide-quem-somos:hover {
+        width: 104%;
+        -webkit-filter: drop-shadow(1px 10px 5px rgba(0, 0, 0, 0.411));
+
+    }
+
+    img.item-slide-quem-somos {
+        width: 100%;
+        transition: 0.5s ease, background-color 0.3s ease;
+        /* Adiciona a transição */
+        /* filter: drop-shadow(0px 0px 100px rgb(224, 0, 0)); */
+
+
+    }
+
+    p.texto-topico {
+        font-size: 13px;
+    }
+
+    li.lista-topicos-quem-somos-li {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+    }
+
+    .span-topicos-quem-somos {
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        border-radius: 50%;
+        margin: 2em;
+        width: 8em;
+        height: 8em;
+        justify-content: center;
+        flex-flow: column;
+        /* background: rebeccapurple; */
+    }
+
+
+    p.texto-topico {
+        text-align: center;
+        margin: 1em;
+        max-width: 24em;
+        /* padding-top: 1em; */
+    }
+
+    .img-topicos-quem-somos {
+        max-width: 171px;
+    }
+
+    ul.lista-topicos-quem-somos {
+        flex-flow: row;
+    }
+
+    li.numeros-item {
+        margin: 0 3em;
+        flex-flow: column;
+        display: flex;
+        justify-content: center;
+        width: 32em;
+        align-items: center;
+    }
+
+
+}
+
+
+
+
+
+
+.topicos-quem-somos {
+    display: flex;
+    justify-content: center;
+}
+
+span.caixa-item-apelativo {
+    box-shadow: 1px 2px 6px #1e77b83b;
+    margin-top: 1em;
+    width: 28em;
+    height: 12em;
+    padding: 1em;
+    display: flex;
+    flex-flow: column;
+    align-items: start;
+    justify-content: center;
+    text-align: start;
+    border-radius: 8px;
+    margin: 0.5em;
+}
+
+.txt-beneficio-apelativo {
+    font-weight: 600;
+    font-size: 13px;
+    padding-bottom: 1em;
+    text-align: center;
+}
+
+.titulo-beneficio-apelativo {
+    font-weight: 700;
+    padding: 0.3em 0;
+    padding-left: 0.5em;
+    font-size: 17px;
+}
+
+h5.titulo-beneficio-apelativo {
+    text-align: center;
+}
+
+img.img-beneficios-apelativo {
+    width: 16%;
+    display: none;
+}
+
+
+.h3-flex {
+    font-size: 23px;
+    font-weight: 500;
+    border-bottom: 1px solid black;
+    /* margin-bottom: 1em;
+}
+
+
+span.caixa-item-apelativo-flex {
+    /* background: red; */
+    border: 1px solid black;
+    padding: 2em;
+    border-radius: 1em;
+    width: 30em;
+    height: 11em;
+}
+
+
+.caixa-img-apelativo {
+    position: absolute;
+    top: 36px;
+    width: 84%;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+
+.caixa-txt-apelativo {
+    padding-top: 2em;
+}
+
+
+
+
+
+
+
+/* 
+ul.numeros-lista-quem-somos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.numeros-item {
+    width: 15%;
+    margin: 0em 2em;
+}
+
+
+.subtitulo-numeros {
+    font-size: 22px;
+    margin: 0.2em 0;
+    font-weight: 500;
+}
+
+.titulo-numeros {
+    font-weight: 600;
+    color: #653d91;;
+} */
+
+
+
+
+/* @media screen and (min-width: 1200px){
+
+  
+    .texto-topico {
+        margin: 0;
+        width: 200px;
+        text-align: center;
+    }
+    
+    .img-topicos-quem-somos {
+        max-width:150px;
+       
+    }
+
+
+
+    .span-topicos-quem-somos {
+        margin: 3em;
+       
+    }
+
+ 
+
+    
+} */
+
+
+ul.numeros-lista-quem-somos {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+
+}
+
+
+li.numeros-item {
+    text-align: center;
+}
+
+h1.titulo-numeros {
+    font-size: 58px;
+    color: #683d91;
+    font-weight: 600;
+}
+
+/* 
+
+li.numeros-item {
+    margin: 0 3em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+
+.numeros-cont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+}
+
+
+li.numeros-item {
+    margin: 0 3em;
+    flex-flow: column;
+    display: flex;
+    justify-content: center;
+    width: 32em;
+    align-items: center;
+}
+
+
+.titulo-caixa.titulo-caixa-quem-somos {
+    justify-content: center;
+}
+
+@media screen and (min-width: 1600px) {
+    .img-topicos-quem-somos {
+        max-width: none;
+
+    }
+
+    p.texto-topico {
+        font-size: 16px;
+
+    }
+
+    .lista-topicos-quem-somos-li {
+        margin: 0 1em;
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+    }
+
+
+    .span-topicos-quem-somos {
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        border-radius: 50%;
+        margin: 3em;
+        width: 10em;
+        height: 10em;
+        justify-content: center;
+        flex-flow: column;
+        /* background: rebeccapurple; */
+    }
+
+
+
+}
+
+
+
+.enfase-texto-topico {
+    background-image: linear-gradient(to right, #653d91, #2687b4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 600;
+}

@@ -1,0 +1,270 @@
+.mat-drawer {
+  display: flex;
+  justify-content: start;
+}
+
+.header {
+  margin: 0;
+  position: fixed;
+  width: 100%;
+  z-index: 99;
+  top: 0;
+}
+
+.mobile {
+  display: block;
+}
+
+.menu-mobile[_ngcontent-ng-c1439721779] {
+  display: block;
+  height: 100%;
+  top: 0;
+  left: 0;
+  min-width: 100vw;
+
+}
+
+mat-drawer.mat-drawer {
+  min-width: 60%;
+  background-color:  white;
+  border: none;
+  /* box-shadow: 4px -1px 5px #00000014; */
+  color: white;
+}
+
+.menu-desktop {
+  display: none;
+}
+
+
+
+button.btn-associar-header {
+  border: none;
+  padding: 0.8em 2em;
+  border-radius: 36px;
+  background: #4bb9ec;
+  color: white;
+  font-weight: 400;
+}
+
+.caixa-menu-mobile {
+  position: fixed;
+  z-index: 99;
+  bottom: 0;
+  right: 0;
+  box-shadow: -4px 1px 10px #00000014;
+  width: 100%;
+  text-align: end;
+  background-color: #130a34;
+  padding: 1.5em 0;
+  border-radius: 5px 5px 0 0;
+}
+
+
+.mat-drawer-container {
+  height: 100%;
+  position: fixed;
+  z-index: 95;
+  color: var(--mat-sidenav-content-text-color);
+  /* background-color: var(--mat-sidenav-content-background-color); */
+  box-sizing: border-box;
+  -webkit-overflow-scrolling: touch;
+  display: block;
+  left: 0;
+  top: 0;
+  /* min-width: 100%; */
+  overflow: hidden;
+  background-color: transparent;
+}
+
+mat-toolbar.mat-elevation-z {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0;
+}
+
+mat-list-item li {
+  padding: 0.5em 0;
+}
+
+.item-link-mobile {
+  text-decoration: none;
+}
+
+.link-header {
+  color: black;
+  font-weight: 500;
+  font-size: 17px;
+}
+
+.active-menu {
+  background: #0f68a9;
+  box-shadow: -6px -8px 10px 10px #00000026;
+
+}
+
+.active-link {
+  color: white;
+
+
+}
+.btn-menu-mobile{
+  border: none;
+  background-color: transparent;
+  color: white;
+}
+
+.btn-menu-mobile fa-icon{
+font-size: 20px;
+
+}
+
+/* button.btn-associar-header {
+  margin-right: 12em;
+} */
+
+.link-item-header{
+  color: #464646;
+  transition: background-color 0.7s ease;
+  font-size: 26px;
+  margin: 0 0.5em;
+}
+
+.link-active{
+  color: white;
+}
+
+@media screen and (min-width: 1040px) {
+  .menu-desktop {
+    display: block;
+    transition: background-color 0.7s ease;
+
+  }
+
+  .mobile {
+    display: none;
+  }
+
+  .conteudo-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 20px;
+    padding: 1.3em;
+    margin: 0 2em;
+
+  }
+
+  ul.lista-links-header {
+    display: flex;
+    list-style: none;
+    /* padding: 0em 1em; */
+    padding-left: 0;
+    align-items: center;
+  }
+
+  li.item-link-header {
+    padding: 0em 1em;
+  }
+
+  button.btn-associar-header {
+    /* background: linear-gradient(63deg, #0070AD, #683D91); */
+    background: linear-gradient(63deg, #683d91, #845ca9);
+    border: none;
+    border-radius: 40px;
+    padding: 0.5em 2em;
+    color: white;
+    font-size: 17px;
+  }
+
+  /* .item-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  } */
+
+  /* .item-header.canto {
+    width: 200px;
+  } */
+
+
+  .link-header {
+    text-decoration: none;
+  }
+
+  /* ul .item-link-header .link-header::before {
+    content: '';
+    width: 0px;
+    height: 5px;
+    background-color: red;
+    position: absolute;
+    top:100%;
+    left: 0;
+    transition: .5s; 
+}
+
+ul .item-link-header:hover .link-header::before {
+  content: '';
+  width: 100px;
+  height: 5px;
+  background-color: red;
+  position: absolute;
+  top:100%;
+  left: 0;
+  transition: .5s;
+} */
+
+  .lista-links-header .item-link-header {
+    position: relative;
+  }
+
+  .lista-links-header .item-link-header::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 0;
+    height: 2px;
+    background-color: #1466a8;
+    transition: width 0.6s;
+  }
+
+
+  .lista-links-header .item-link-header:hover::after {
+    width: 100%;
+  }
+
+
+  .lista-redes-header{
+    display: flex;
+  }
+
+  /* .item-header-img {
+    width: 20%;
+  
+} */
+
+.logo-header{
+  width: 17%;
+  opacity: 100%;
+  transition:  0.5s ease, opacity 0.3s ease; /* Adiciona a transição */
+}
+
+.logo-header-active{
+  opacity: 0%;
+}
+
+
+.logo-header-pb{
+  width: 17%;
+  opacity: 0%;
+  position: absolute;
+  transition:  0.5s ease, opacity 0.3s ease; /* Adiciona a transição */
+}
+
+.logo-header-pb-active{
+  opacity: 100%;
+}
+}

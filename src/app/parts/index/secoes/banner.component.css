@@ -1,0 +1,317 @@
+
+
+
+
+
+.imagem-logo-banner {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+h1.titulo-banner {
+    text-align: center;
+    font-size: 36px;
+    margin-top: 0em;
+    background-image: linear-gradient( to top, #8a8a8a, #131313, #8a8a8a);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+
+.gradiente {
+    background-image: linear-gradient(45deg, #634093, #8661bb, #096cac, #634093, #096cac);
+    font-size: 35px;
+    background-size: 700% 700%; /* Ajuste o tamanho do gradiente para cobrir uma área maior */
+    animation: degrade 20s linear infinite alternate;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+@keyframes degrade {
+    0% {
+        background-position: 0% 0%; /* Ajuste da posição inicial do gradiente */
+    }
+    100% {
+        background-position: 400% 400%; /* Ajuste da posição final do gradiente */
+    }
+}
+h2.texto-banner {
+    font-size: 16px;
+    /* margin-top: 5em; */
+}
+
+.texto-banner{
+    color: #3c3c3c;
+    font-weight: 500;
+}
+.img-banner {
+    width: 80%;
+}
+.container-swiper-banner{
+    margin-top: 40px;
+    /* display: inline; */
+}
+.container-swiper-banner swiper-slide:nth-child(odd) {
+    /* margin-top: 20px; */
+    /* background: red; */
+}
+
+.logo-banner {
+    width: 55%;
+}
+/* .container-banner{
+    margin-top: 20px!important;
+} */
+
+
+a.carousel-banner  {
+    opacity: 100%!important
+}
+/* .carousel{
+    max-width: 1393px;
+} */
+.carrossel{
+    display: flex;
+    justify-content: center;
+}
+
+.active[_ngcontent-ng-c1487875891] {
+    background: transparent!important;
+    box-shadow: none!important
+}
+
+.carrossel-banner .carousel-banner  {
+    min-width: 600px!important;
+
+}
+
+.titulo-banner, .gradiente h2{
+    font-weight: 500;
+}
+
+/* 
+.carousel {
+    margin-top: 4em;
+    min-height: 59em!important;
+    display: flex;
+    justify-content: center;
+} */
+
+a.carousel-banner {
+    height: 100% !important;
+}
+
+img.img-banner {
+    transition:  0.5s ease, background-color 0.3s ease; /* Adiciona a transição */
+}
+
+
+img.img-banner:hover{
+    width: 102%;
+    -webkit-filter: drop-shadow(1px 10px 5px rgba(0, 0, 0, 0.411));
+ 
+}
+
+.img-banner {
+    padding-top: 40em; /* Padding inicial */
+    transition: padding-top 2s; /* Transição de 2 segundos */
+}
+
+.carousel .carousel-item .img-banner {
+    width: 95%!important;
+}
+
+.img-banner.shrink {
+    padding-top: 1em; /* Padding final */
+}
+
+
+
+/* carrossel */
+
+@media screen and (min-width: 250px){
+
+
+    .logo-banner {
+        width: 90%; /* Largura inicial */
+        transition: width 2s; /* Transição de 2 segundos */
+    }
+    
+    .logo-banner.shrink {
+        width: 30%; /* Largura final */
+    }
+
+    .teste4 {
+  background-color: red;
+    }
+    
+ 
+
+    .imagem-logo-banner {
+        width: 100%;
+        display: flex;
+        margin-top: 5em;
+        justify-content: center;
+        align-items: center;
+    }
+    .banner{
+        /* background-color: red; */
+        /* overflow: hidden; */
+    }
+    .carrossel-banner .carousel-banner {
+    
+        /* max-width: 500px!important; */
+   
+    }
+
+    .carrossel-banner .carousel-banner {
+        min-width: 34px!important;
+    }
+
+
+ .img-banner{
+        padding-top: 0;
+
+ 
+    }
+    .carrossel-banner {
+        min-height: 40em !important;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@media screen and (min-width: 1000px){
+    .carrossel-banner .carousel-banner {
+        min-width: 300px!important;
+        /* max-width: 500px!important; */
+   
+    }
+
+    
+.carrossel-banner {
+    /* margin-top: 4em; */
+    min-height: 38em !important;
+    display: flex;
+    justify-content: center;
+}
+}
+
+
+@media screen and (min-width: 1200px){
+    .carrossel-banner .carousel-banner {
+        /* background-color: green; */
+        min-width: 350px!important;
+    }
+
+    .carrossel-banner{
+        /* margin-top: 4em; */
+        min-height: 44em !important;
+    display: flex;
+}
+
+}
+
+@media screen and (min-width: 1400px){
+    .carrossel-banner .carousel-banner {
+        /* background-color: green; */
+        min-width: 400px!important;
+    }
+
+    .carrossel-banner{
+        /* margin-top: 4em; */
+        min-height: 50em !important;
+    display: flex;
+}
+
+}
+
+@media screen and (min-width: 1600px){
+    .carrossel-banner .carousel-banner {
+        /* background-color: green; */
+        min-width: 500px!important;
+    }
+
+    .carrossel-banner{
+        /* margin-top: 4em; */
+        min-height: 60em !important;
+    display: flex;
+}
+
+}
+
+
+
+/* resto */
+
+@media screen and (min-width: 300px) {
+
+}
+
+
+@media screen and (min-width: 1040px) {
+
+
+
+    img.img-banner {
+        padding-top: 1em;
+    }
+    .logo-banner {
+        width: 20%;
+    }
+
+    h1.titulo-banner {
+        font-size: 60px;
+    }
+
+    .texto-banner {
+        font-size: 20px !important;
+        text-align: center;
+        width: 60%;
+
+    }
+
+    .container-banner{
+        margin-top: 40px!important
+    }
+
+    /* .img-banner-odd{
+        margin-top: 20px;
+    } */
+
+    .logo-banner {
+        width: 35%; /* Largura inicial */
+        transition: width 2s; /* Transição de 2 segundos */
+    }
+    
+    .logo-banner.shrink {
+        width: 20%; /* Largura final */
+    }
+
+    .teste4 {
+  background-color: red;
+    }
+    
+ 
+
+    .imagem-logo-banner {
+        width: 100%;
+        display: flex;
+        margin-top: 5em;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+}
+
+.titulo-banner2 {
+    overflow-wrap: break-word; /* Define que o texto deve ser quebrado para ajustar na largura disponível */
+    word-wrap: break-word; /* Fallback para navegadores mais antigos */
+    width: 100%; /* Define a largura máxima igual à largura do contêiner pai */
+    max-width: 100%; /* Define a largura máxima igual à largura do contêiner pai */
+}

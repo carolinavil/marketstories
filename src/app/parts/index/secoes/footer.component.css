@@ -1,0 +1,155 @@
+.footer {
+  margin-top: 5em;
+    background: #0D0611;
+}
+.conteudo-footer {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    padding: 4em 1em;
+    width: 90%;
+
+}
+
+img.img-logo-footer {
+    width: 40%;
+}
+
+.logo-footer {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+ul.lista-links-footer,
+ul.lista-redes-footer {
+    list-style: none;
+    padding-left: 0;
+}
+
+
+ul.lista-redes-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+li.item-rede-footer {
+    /* height: 20%; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+img.img-rede {
+    width: 80%;
+}
+
+a.link-footer {
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+}
+
+li.item-link-footer {
+    padding: 0.5em 0;
+}
+
+.link-top{
+   
+}
+
+.link-top a {
+    color: white;
+    text-decoration: none;
+    font-size: 40px;
+  
+  }
+  
+  
+  .link-on {
+    /* padding: 20px; */
+    background-color: #25D366;
+    /* min-width: 20px; */
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+    position: fixed;
+    bottom: 10px;
+    right: 20px;
+    /* padding: 20px; */
+    transition: all 0.2s;
+    width: 65px;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    border-radius: 50%;
+    box-shadow: 1px 1px 6px #0000004f;
+  }
+  
+  .link-on:hover {
+    background-color: red;
+    background-color: var(--azul-claro);
+    transform: scale(1.1);
+    background-color: #1985ce;
+  }
+
+
+@media screen and (min-width: 1040px) {
+
+    .conteudo-footer {
+        display: flex;
+        flex-flow: row;
+        justify-content: space-between;
+        padding: 4em 5em;
+        align-items: flex-end;
+    }
+
+
+    ul.lista-links-footer {
+        display: flex;
+        /* padding: 1em; */
+    }
+
+
+
+    /* .conteudo-footer:nth-child(odd) {
+        align-items: flex-end;
+    } */
+
+
+    .links-footer, .redes-footer{
+        align-self: center;
+    }    
+
+    .logo-footer {
+        display: flex;
+        flex-flow: column;
+        justify-content: start;
+        align-items: start;
+        text-align: start;
+        width: 30%;
+        color: white;
+    }
+
+    li.item-link-footer{
+        padding: 0.5em 1em;
+    }
+}
+
+.form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5em;
+}
+
+.form > button{
+    color: red!important;
+}

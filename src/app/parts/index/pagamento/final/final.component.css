@@ -1,0 +1,52 @@
+
+/* @import '~primeng/resources/themes/saga-blue/theme.css';
+@import '~primeng/resources/primeng.min.css'; */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+* {
+    font-family: "Montserrat", sans-serif!important;
+    padding: 0;
+    margin: 0;
+}
+button.nav-link{
+    border: 0;
+    border-radius: 0;
+    background: beige;
+    color: black;
+}
+
+.header-steper{
+    padding-bottom: 4em;
+}
+
+button.nav-link.py-3.fw-bold.active {
+    background: #04839c;
+ 
+}
+
+button.nav-link.py-3.fw-bold{
+    background: #0dcaf018;
+}
+
+.caixa-final {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.txts-final {
+    width: 51%;
+}
+
+h1.titulo-final {
+    font-weight: 500;
+}
+
+p.txt-final {
+    margin: 1.5em 0 1em;
+    font-size: 23px;
+}
+
+.img-final{
+    width: 65%;
+}

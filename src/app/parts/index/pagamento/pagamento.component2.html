@@ -1,0 +1,291 @@
+<section class="caixa-forms">
+
+    <form #form="ngForm" class="needs-validation formulario " (ngSubmit)="send(form)">
+        <div class="caixa-logo">
+            <div class="texto-caixa-logo">
+                <h1 class="titulo-banner">Para manter-se no topo, é preciso rapidez </h1>
+                <img src="../../../../assets/img/Logo P&B MarketStories 2.png" alt="">
+            </div>
+            <img src="../../../../assets/img/astronauta (3).png" alt="" class="imagem-astronauta">
+        </div>
+        <div class="caixa-formulario">
+            <!-- <h1 >Be</h1> -->
+            <!-- <div class="img-formulario">
+                <img src="../../../../assets/img/Logo Colorido MarketStories (1).png" alt="" class="logo-formulario">
+            </div>
+             -->
+        <app-stepper [linearModeSelected]="false" #appStepper>
+            <cdk-step [label]="'Cadastro'" #step1>
+                <div class="pessoal">
+                    <i class="fa-solid fa-user"></i>
+                    <div class="row form-group">
+                        <h5 class="titulo-formulario">
+                            Dados pessoais
+                            <fa-icon [icon]="['fas','user']"></fa-icon>
+                        </h5>
+                    </div>
+                   
+                    <div class="row d-flex align-item-center">
+                        <div class="form-group col s12">
+                            <label class="form-label">Nome</label>
+                            <input type="text" class="form-control " [(ngModel)]="clienteModel.name" type="text"
+                                class="form-control" name="name" id="name" name="name" #name="ngModel">
+                                <div *ngIf="name.touched && name.errors">
+                                    <p class="text-danger" *ngIf="name.errors['required']">Este campo é obrigatório.</p>
+                                </div>
+                            </div>
+                    </div>
+                    <div class="row">
+
+                    </div>
+                    <div class="row">
+                        <div class="form-group col s8">
+                            <label class="form-label">E-mail</label>
+                            <input type="text" class="form-control" [(ngModel)]="clienteModel.email" type="email"
+                                class="form-control" email="email" id="email" name="email" #email="ngModel"
+                                placeholder="example@hotmail.com">
+                                <div *ngIf="email.touched && email.errors">
+                                    <p class="text-danger" *ngIf="email.errors['required']">Este campo é obrigatório.</p>
+                                    <p class="text-danger" *ngIf="email.errors['email']">E-mail inválido</p>
+                                </div>
+                            </div>
+                        <div class="form-group col s4">
+                            <label class="form-label">CPF/CNPJ</label>
+                            <input [(ngModel)]="clienteModel.registry_code" type="text" class="form-control"
+                                registry_code="registry_code" id="registry_code" name="registry_code"
+                                #registry_code="ngModel"    [mask]="getMask(clienteModel.registry_code)">
+                                <div *ngIf="registry_code.touched && registry_code.errors">
+                                    <p class="text-danger" *ngIf="registry_code.errors['required']">Este campo é obrigatório.</p>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="endereco">
+                    <div class="row form-group">
+                        <h5 class="titulo-formulario">
+                            Endereço
+                            <fa-icon [icon]="['fas','location-dot']"></fa-icon>
+                        </h5>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col s4">
+                            <label class="form-label">CEP</label>
+                            <input type="text" class="form-control " name="documento" id="documento"
+                                #documento="ngModel" [(ngModel)]="cep" required #buscaCEP (blur)="blur($event)"
+                                [(ngModel)]="cep" required f mask="00000-000" placeholder="00000-000">
+                                <div *ngIf="cep.touched && cep.errors">
+                                    <p class="text-danger" *ngIf="cep.errors['required']">Este campo é obrigatório.</p>
+                                </div>
+                        </div>
+                        <div class="form-group col s4">
+                            <label class="form-label">Endereco</label>
+                            <input type="text" #documento="ngModel" [(ngModel)]="enderecoFormat"
+                                class="form-control" name="endereco" id="endereco" ngModel required type="text">
+                                <div *ngIf="endereco.touched && endereco.errors">
+                                    <p class="text-danger" *ngIf="endereco.errors['required']">Este campo é obrigatório.</p>
+                                </div>
+                        </div>
+                        <div class="form-group col s4">
+                            <label class="form-label">Número</label>
+                            <input type="text" #documento="ngModel" [(ngModel)]="numero" class="form-control"
+                                name="numero" id="numero" ngModel required type="text">
+                                
+                        </div>
+                    </div>
+                    <!-- <div class="row">
+                 
+                    <div class="form-group col s4">
+                        <label class="form-label">Bairro</label>
+                        <input type="text" #documento="ngModel" [(ngModel)]="bairro"
+                            class="form-control" name="bairro" id="bairro" ngModel required type="text">
+                    </div>
+            
+
+                    <div class="form-group col s4">
+                        <label class="form-label">Estado</label>
+                        <input type="text" #documento="ngModel" [(ngModel)]="uf"
+                            class="form-control" name="uf" id="uf" ngModel required type="text">
+                    </div>
+                </div> -->
+                </div>
+
+                <div class="telefone">
+                    <div class="row form-group">
+                        <h5 class="titulo-formulario">
+                            Contato
+                            <fa-icon [icon]="['fas','phone']"></fa-icon>
+                        </h5>
+                    </div>
+                    <div class="row caixa-telefone">
+
+                        <div class="form-group col s6">
+                            <div class="caixa-btn-telefone">
+                                <label class="form-label">Telefone</label>
+                                <button pButton type="button" label="" class="btn-telefone"
+                                    (click)="adicionarInput()"><label for="">Adicionar Telefone<fa-icon [icon]="['fas','plus']" class="icone-seta-plus"></fa-icon></label></button>
+                            </div>
+
+                            <div *ngFor="let input of inputs; let i = index" class="caixa-input-telefone">
+                                <!-- placeholder="Telefone {{i + 1}}" -->
+                                <input type="text" name="phone{{i}}" id="phone{{i}}" class="form-control"
+                                    placeholder="example@hotmail.com" [(ngModel)]="inputs[i].number"
+                                    (blur)="atribuirValor(inputs[i].number)"  required mask="(00) 00000-0000" placeholder="(00) 00000-0000">
+                                <button pButton type="button" class="btn-excluir-telefone" 
+                                    (click)="removerInput(i)"><fa-icon [icon]="['fas','trash']" class="icone-lixo"></fa-icon></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="d-flex justify-content-between flex-row mb-5 mt-4" id="inicio"> -->
+                 <div class="d-flex justify-content-between flex-row mb-5 mt-4 btns-caixa">
+                    <button class="me-0 ms-auto prox-btn btn-stepper" type="submit" cdkStepperPrevious>
+                        <span>Voltar</span>
+                        <fa-icon [icon]="['fas','chevron-left']" class="icone-seta"></fa-icon>
+                    </button>
+
+                    <button class="me-0 ms-auto prox-btn btn-stepper" type="submit" cdkStepperNext>
+                        <span>Avançar</span>
+                        <fa-icon [icon]="['fas','chevron-right']" class="icone-seta"></fa-icon>
+                    </button>
+                </div>
+            </cdk-step>
+
+            <cdk-step [label]="'Produto'" #step1>
+                <div class="pessoal">
+
+                    <div class="row">
+                        <div class="pagamento-caixa">
+                            <div class="form-group col s12">
+                                <label for="">Método de pagamento </label>
+                                <p-dropdown [options]="pay" optionLabel="name" optionValue="code"
+                                    [(ngModel)]="perfilModel.payment_method_code" type="text"
+                                    class="form-control drop" metodo="metodo" id="metodo" name="metodo"
+                                    #metodo="ngModel" placeholder="Selecione um método"></p-dropdown>
+                                    <div *ngIf="metodo.touched && metodo.errors">
+                                        <p class="text-danger" *ngIf="metodo.errors['required']">Este campo é obrigatório.</p>
+                                    </div>
+                            </div>
+                            <!-- <div *ngIf="mostrarBotao()"> -->
+                            <div *ngIf="mostrarBotao()">
+                                <div class="row" >
+                                    <div class="form-group col s8">
+                                        <label class="form-label">Nome</label>
+                                        <input type="text" class="form-control "
+                                            [(ngModel)]="perfilModel.holder_name" class="form-control" name="email"
+                                            id="email" #holder_name="ngModel">
+                                            <div *ngIf="holder_name.touched && holder_name.errors">
+                                                <p class="text-danger" *ngIf="holder_name.errors['required']">Este campo é obrigatório.</p>
+                                            </div>
+                                        </div>
+                                    <div class="form-group col s4">
+                                        
+                                        <label class="form-label">Número do cartão</label>
+                                        <input type="text" class="form-control "
+                                            [(ngModel)]="perfilModel.card_number" type="text" class="form-control"
+                                            name="card_number" id="card_number" #card_number="ngModel" mask="0000 0000 0000 0000" placeholder="0000 0000 0000 0000">
+                                            <div *ngIf="card_number.touched && card_number.errors">
+                                                <p class="text-danger" *ngIf="card_number.errors['required']">Este campo é obrigatório.</p>
+                                            </div>
+                                        </div>
+                                  
+                                </div>
+                                <div class="row">
+                                    <div class="form-group col s4">
+                                        <label class="form-label">Validade do cartão</label>
+                                        <input type="text" class="form-control "
+                                            [(ngModel)]="perfilModel.card_expiration" type="text"
+                                            class="form-control" name="card_expiration" id="card_expiration"
+                                            #card_expiration="ngModel" mask="00/00" placeholder="00/00">
+                                            <div *ngIf="card_expiration.touched && card_expiration.errors">
+                                                <p class="text-danger" *ngIf="card_expiration.errors['required']">Este campo é obrigatório.</p>
+                                            </div>
+                                    </div>
+                                    <div class="form-group col s4">
+                                        <label class="form-label">Código de seguranca (CVV) </label>
+                                        <input type="text" class="form-control " [(ngModel)]="perfilModel.card_cvv"
+                                            class="form-control" name="card_cvv" id="card_cvv" #card_cvv="ngModel" mask="000" placeholder="000">
+                                            <div *ngIf="card_cvv.touched && card_cvv.errors">
+                                                <p class="text-danger" *ngIf="card_cvv.errors['required']">Este campo é obrigatório.</p>
+                                            </div>
+                                        </div>
+                                    <div class="form-group col s4">
+                                        <label class="form-label">Bandeira </label>
+                                        <p-dropdown [options]="bandeiras" 
+                                        [(ngModel)]="perfilModel.payment_company_code" type="text"
+                                        class="form-control drop" metodo="metodo" id="metodo" name="metodo"
+                                        #metodo="ngModel" placeholder="Selecione um método"></p-dropdown>
+                                        <div *ngIf="metodo.touched && metodo.errors">
+                                            <p class="text-danger" *ngIf="metodo.errors['required']">Este campo é obrigatório.</p>
+                                        </div>
+
+<!-- 
+                                        <input type="text" class="form-control "
+                                            [(ngModel)]="perfilModel.payment_company_code" class="form-control"
+                                            name="payment_company_code" id="payment_company_code"
+                                            #payment_company_code="ngModel"> -->
+                                    </div>
+                                </div>
+                                <!-- 
+                    <div class="caixa-txt">
+                        <label for="">Nome</label>
+                        <input [(ngModel)]="cartaoModel.holder_name" type="text" class="form-control" email="email"
+                            id="email" name="email" #email="ngModel" value="5555 5555 5555 5557">
+                    </div>
+                    <div class="caixa-txt">
+                        <label for="">Validade</label>
+                        <input [(ngModel)]="cartaoModel.card_expiration" type="card_expiration" class="form-control"
+                            card_expiration="card_expiration" id="card_expiration" name="card_expiration"
+                            #card_expiration="ngModel" value="5555 5555 5555 5557">
+                    </div>
+                    <div class="caixa-txt">
+                        <label for="">Codido de seguranca</label>
+                        <input [(ngModel)]="cartaoModel.card_cvv" type="card_cvv" class="form-control"
+                            card_cvv="card_cvv" id="card_cvv" name="card_cvv" #card_cvv="ngModel"
+                            value="5555 5555 5555 5557">
+                    </div>
+                    <div class="caixa-txt">
+                        <label for="">Bandeira</label>
+                        <input [(ngModel)]="cartaoModel.payment_company_code" type="payment_company_code"
+                            class="form-control" payment_company_code="payment_company_code"
+                            id="payment_company_code" name="payment_company_code" #payment_company_code="ngModel"
+                            value="5555 5555 5555 5557">
+                    </div> -->
+                            </div>
+
+
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="form-group col s12">
+
+                            <label for="">Plano</label>
+                            <p-dropdown [options]="plans" optionLabel="name" optionValue="id"
+                                [(ngModel)]="assinaturaModel.plan_id" type="metodo" class="form-control"
+                                metodo="metodo" id="metodo" name="metodo" #metodo="ngModel"
+                                placeholder="Selecione um plano"></p-dropdown>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="d-flex justify-content-between flex-row mb-5 mt-4 btns-caixa">
+                    <button class="me-0 ms-auto prox-btn btn-stepper" type="submit" cdkStepperPrevious>
+                        <span>Voltar</span>
+                        <fa-icon [icon]="['fas','chevron-left']" class="icone-seta"></fa-icon>
+                    </button>
+
+                    <button class="me-0 ms-auto prox-btn btn-stepper" type="submit" cdkStepperNext>
+                        <span>Avançar</span>
+                        <fa-icon [icon]="['fas','chevron-right']" class="icone-seta"></fa-icon>
+                    </button>
+                </div>
+            </cdk-step>
+        </app-stepper>
+    </div>
+    </form>
+
+
+</section>

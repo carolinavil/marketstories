@@ -1,0 +1,222 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url(secoes/header.component.css);
+@import url(secoes/banner.component.css);
+@import url(secoes/quem-somos.component.css);
+@import url(secoes/beneficios.component.css);
+@import url(secoes/precos.component.css);
+@import url(secoes/conteudos.component.css);
+@import url(secoes/testemunhas.component.css);
+@import url(secoes/footer.component.css);
+@import url(secoes/leads.component.css);
+@import url(secoes/card-precos.component.css);
+@import url(secoes/time.component.css);
+/* @import '~@fortawesome/fontawesome-free/scss/fontawesome';
+@import '~@fortawesome/fontawesome-free/scss/solid'; */
+
+* {
+    font-family: "Montserrat", sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+.conteiner {
+    width: 85%;
+    margin: 2em auto;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    /* margin-top: 80px; */
+
+
+}
+
+.btn-apelativo {
+    text-align: center;
+    padding: 4em 0;
+}
+
+.teste20{
+    background-color: red;
+}
+
+.conteiner-footer {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    margin-top: 80px;
+    width: 100%;
+
+
+}
+
+.teste6{
+height: 40vh;
+}
+
+.fade{
+    color: red;
+}
+
+:root {
+    --teste: #007bff;
+    /* Defina suas variáveis personalizadas aqui */
+    --secondary-color: #6c757d;
+}
+
+.btn-associar {
+    background: #4BB9EC;
+    color: white;
+    border: none;
+    border-radius: 40px;
+    padding: 0.8em 4em;
+    font-size: 15px;
+    transition: 0.9s;
+    cursor: pointer;
+}
+
+.btn-associar:hover {
+    background:#1e6281
+  ;
+
+}
+.titulo,
+.titulo-h2 {
+    background-image: linear-gradient(to top, #5f5f5f, #131313);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.texto {
+    color: #131313;
+    margin-top: 0.5em;
+}
+
+
+.teste4{
+    font-size: 40px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+    background-attachment: red;
+    margin: 0;
+}
+.aurora{
+    overflow: hidden;
+    position: absolute;
+    width: 60vw;
+    height: 60vw;
+    background-color: yellow;
+    border-radius: 37% 29% 27% 27% / 28% 25% 41% 37%;
+    filter: blur(purple);
+    mix-blend-mode: overlay;
+}
+
+@keyframes aurora {
+    0%{
+        border-radius: 37% 29% 27% 27% / 28% 25% 41% 37%;
+    }
+    25%{
+        border-radius: 47% 29% 39% 49% / 61% 19% 66% 26%;
+    }
+    50%{
+        border-radius: 57% 23% 47% 72% / 63% 17% 66% 33%;
+    }
+    75%{
+        border-radius: 28% 49% 29% 100% / 93% 20% 64% 25%;
+    }
+    100%{
+        border-radius: 37% 29% 27% 27% / 28% 25% 41% 37%;
+    }
+}
+.titulo{
+    margin-bottom: 1em;
+    margin: 1em 0 1.5em 0;
+}
+
+/* .mat-drawer-container{
+    display: none;
+    background-color: red;
+} */
+
+.slick-image img{
+    max-width: 100%;
+    transition: all 0.4s ease-in-out;
+}
+
+.slick-slide{
+    transform: scale(0.8);
+    transition: all 0.4s ease-in-out;
+    padding: 4px 0;
+}
+
+.slick-slide{
+    transform: scale(1.1);
+}
+
+
+@media screen and (min-width: 250px) {
+.titulo{
+    font-size: 35px;
+   text-align: center;
+}
+
+ .titulo-logo
+{
+    margin: 0 !important;
+ 
+}
+
+img.titulo-logo {
+    width: 19%;
+}
+
+.conteiner {
+    width: 90%;
+    margin: 1em auto;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    /* margin-top: 80px; */
+
+
+}
+}
+@media screen and (min-width: 900px) {
+
+    
+.conteiner {
+    width: 85%;
+    
+
+
+}
+    img.titulo-logo {
+        width: 10%;
+    }
+    .btn-associar {
+        background: #4BB9EC;
+        color: white;
+        border: none;
+        border-radius: 40px;
+        padding: 0.5em 4em;
+        font-size: 20px;
+    }
+
+    .titulo-h2 {
+        margin: 2em 0;
+        font-size: 32px;
+        text-align: center;
+    }
+
+    .titulo {
+        margin: 1em 0 0.5em 0;
+        font-size: 45px;
+        font-weight: 600;
+    }
+}
+
+button{
+    cursor: pointer;
+}

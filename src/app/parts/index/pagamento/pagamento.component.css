@@ -1,0 +1,628 @@
+/* @import 'primeng/resources/themes/saga-blue/theme.css'; */
+/* @import 'primeng/resources/primeng.min.css'; */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+/* @import "~primeng/resources/themes/saga-blue/theme.css"; */
+/*@import "~primeng/resources/primeng.min.css"; */
+
+
+* {
+    font-family: "Montserrat", sans-serif !important;
+    padding: 0;
+    margin: 0;
+}
+
+
+section.caixa-forms {
+    display: flex;
+    justify-content: space-between;
+}
+
+.pagamento {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bg {
+    width: 30%;
+    background: linear-gradient(to bottom right, #693c91, #176aaa);
+    text-align: center;
+    padding: 3em;
+    color: white;
+
+}
+
+.formulario-pagamento {
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 12em;
+
+}
+
+.caixa-form {
+    width: 80%;
+
+}
+
+.caixa-form {
+    /*     
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center; */
+}
+
+.formulario-pagamento,
+.bg {
+    height: 100vh;
+}
+
+
+.bg {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-evenly;
+}
+
+
+p.assinatura-flex {
+    display: flex;
+    justify-content: space-around;
+}
+
+.titulo-bg {
+    font-size: 30px;
+    font-weight: 600;
+    font-size: 40px;
+}
+
+.img-bg {
+    width: 80%;
+}
+
+
+span.valor {
+    font-weight: 600;
+}
+
+
+p.assinatura-flex {
+    font-size: 20px;
+    margin-bottom: 1em;
+    padding-bottom: 1em;
+    border-bottom: 1px solid #ffffff87;
+}
+
+span.opcao {
+    font-weight: 300;
+}
+
+
+.caixa-bg-bottom {
+    padding-top: 1em;
+    color: #ffffffc4;
+}
+
+.form-control, .drop{
+    border-radius: 8px !important;
+    border: 1px solid #00000017 !important;
+    margin: 1em 0 !important;
+    height: 2.5rem !important;
+}
+
+.prox-btn {
+    padding: 0.8em 4em;
+    border: none;
+    border-radius: 2em;
+    background: #3E6AAD;
+    color: white;
+    font-weight: 700;
+    margin-top: 2em;
+}
+
+.txt-form {
+    font-size: 15px;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.5);
+    padding: 2em 2em 0 2em;
+}
+
+.titulo-caixa-form {
+    color: #643f93;
+    font-weight: 600;
+    text-align: center;
+    font-size: 60px;
+}
+
+.header-caixa-form {
+    padding: 0 4em;
+}
+
+.img-bg-pagamento {
+    position: absolute;
+    left: 0;
+    bottom: 66px;
+    width: 33%;
+}
+
+/* .caixa-logo {
+    position: absolute;
+    width: 28%;
+    display: flex;
+    margin: 0 auto;
+    display: flex;
+    top: 50px;
+    justify-content: center;
+} */
+
+.logo-pagamento {
+    width: 100%;
+    /* Define a largura da imagem como 100% da div */
+    height: auto;
+    /* Permite que a altura se ajuste automaticamente à largura */
+    display: block;
+    /* Remove espaços em branco abaixo da imagem */
+}
+
+img.img-caixa-astronauta {
+    position: absolute;
+    bottom: 0;
+}
+
+.form-pagamento {
+    position: absolute;
+    width: 68%;
+    height: 100vh;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.formulario {
+    width: 100%;
+    /* margin: 0 12em; */
+}
+
+li.nav-item.ng-star-inserted {
+    width: 170px;
+    display: flex;
+    justify-content: center;
+}
+
+
+::ng-deep ul.nav.nav-pills.nav-justified.header-steper {
+    display: flex;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+}
+
+::ng-deep button.nav-link.py-3.fw-bold {
+    margin: 0 1em;
+}
+
+
+::ng-deep button.nav-link {
+    background: none !important;
+    color: rgb(39, 39, 39) !important;
+    font-weight: 500 !important;
+    cursor: pointer !important;
+}
+
+
+::ng-deep button.nav-link.active {
+    background: none !important;
+    color: #137fcb !important;
+    font-weight: 500 !important;
+    cursor: hover !important;
+}
+
+.d-flex.justify-content-between.flex-row.mb-5.mt-4 {
+    display: flex;
+    justify-content: space-between;
+}
+
+div#inicio {
+    justify-content: end;
+}
+
+/* 
+.caixa-form{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+} */
+
+.caixa-form {
+    /* background: red; */
+    max-height: 100vh;
+    min-height: 100vh;
+}
+
+label {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #717171;
+}
+
+.caixa-arquivo {
+    display: flex;
+    flex-flow: column;
+}
+
+
+.caixa-logo2 {
+    position: absolute;
+    height: 100%;
+    width: 32%;
+    background: linear-gradient(317deg, #DA6627, #643C8E, #120031, #120031);
+}
+
+h1.titulo-mk {
+    font-weight: 700;
+    font-size: 44px;
+    background: linear-gradient(5deg, #1a3c71, #355595);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+}
+
+
+
+h1.titulo-caixa-logo2 {
+    font-size: 33px;
+    text-align: center;
+    margin: 0 1em;
+    padding-top: 1em;
+    font-weight: 600;
+    color: white;
+}
+
+.txt-form {
+    text-align: center;
+    width: 60%;
+}
+
+.caixa-txt {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 2em;
+    flex-flow: column;
+}
+
+img.img-exemplo-insta {
+    padding: 1em 0 2em 0;
+    width: 39%;
+}
+
+.form-group {
+    margin: 0.5em 0 !important;
+}
+
+@media screen and (min-width: 900px) {
+
+
+
+    img.img-caixa-astronauta {
+        position: absolute;
+        /* left: 0; */
+        bottom: 0;
+        right: -24px;
+        width: 100%;
+
+    }
+
+}
+
+@media screen and (min-width: 1300px) {
+    img.img-caixa-logo2 {
+        width: 100%;
+        position: absolute;
+        top: 303px;
+        right: -66px;
+    }
+
+
+    img.img-caixa-astronauta {
+        position: absolute;
+        /* left: 0; */
+        bottom: 0;
+        right: -24px;
+        width: 90%;
+
+    }
+
+}
+
+@media screen and (min-width: 1700px) {
+    img.img-caixa-logo2 {
+        width: 100%;
+        position: absolute;
+        top: 215px;
+        right: -66px;
+    }
+
+
+    img.img-caixa-astronauta {
+        position: absolute;
+        /* left: 0; */
+        bottom: 0;
+        right: -24px;
+        width: 81%;
+
+
+    }
+
+}
+
+.row.ng-star-inserted {
+    margin: 2em 0
+}
+
+/* 
+img.img-caixa-astronauta{
+    position: absolute;
+
+    bottom: 0;
+    right: -24px;
+    width: 108%;
+} */
+
+.caixa-astronauta {
+    width: 32%;
+    background: linear-gradient(317deg, #DA6627, #643C8E, #120031, #120031);
+    height: 100% !important;
+    position: absolute;
+}
+
+.caixa-astronauta {
+    width: 32%;
+}
+
+
+.titulo-caixa {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+}
+
+.espacametno {
+    padding-top: 40em;
+    width: 50%;
+
+}
+
+
+
+.caixa-btn-telefone {
+    display: flex;
+    align-items: center;
+}
+
+.btn-telefone {
+    padding: 0.5em;
+ margin-left: 1em;
+    background: #057ec3;
+    border: none;
+    border-radius: 40px;
+    transition: 0.9s;
+    cursor: pointer;
+}
+
+.btn-telefone label{
+font-weight: 600;
+    color: white;
+    font-size: 15px;
+}
+
+.btn-stepper {
+    /* padding: 0.5em; */
+    margin-left: 1em;
+    background: #4BB9EC;
+    color: white;
+    border: none;
+    border-radius: 0.5em;
+    font-size: 15px;
+    transition: 0.9s;
+    cursor: pointer;
+}
+
+::ng-deep div#drops {
+    width: 100% !important;
+}
+
+
+.caixa-formulario {
+    width: 70%;
+    /* margin: 0 7em; */
+    position: absolute;
+    max-height: 100%;
+    right: 0;
+    overflow-y: auto;
+    padding-bottom: 4em;
+    scrollbar-width: thin;
+    scrollbar-color: #888888 #f0f0f0;
+}
+
+
+.caixa-formulario::-webkit-scrollbar {
+    width: 8px; /* Largura da barra de rolagem */
+}
+
+.caixa-formulario::-webkit-scrollbar-track {
+    background: #f0f0f0; /* Cor de fundo da barra de rolagem */
+}
+
+.caixa-formulario::-webkit-scrollbar-thumb {
+    background-color: #888888; /* Cor da barra de rolagem */
+    border-radius: 4px; /* Borda arredondada */
+}
+h5.titulo-formulario {
+    margin-left: 0.4em;
+    width: 100%;
+    border-bottom: 1px solid #adadad4d;
+    padding-bottom: 0.7em;
+    color: #adadad;
+    font-size: 19px;
+    font-weight: 600;
+    color: #056997;
+    margin-bottom: 2em;
+    /* margin: 1em; */
+}
+
+.caixa-input-telefone.ng-star-inserted {
+    display: flex;
+    align-items: center;
+}
+
+button.p-element.btn-excluir-telefone.p-button.p-component {
+    width: 20%;
+    margin-left: 1em;
+    background: transparent;
+    border: none;
+}
+
+
+.caixa-logo {
+    height: 100%;
+    position: absolute;
+    left: 0;
+    /* width: 30%; */
+    background: linear-gradient(317deg, #DA6627, #643C8E, #120031, #120031);
+    width: 30%;
+}
+
+.caixa-formulario {
+    position: absolute;
+    right: 0;
+}
+
+.imagem-astronauta {
+    position: absolute;
+    object-fit: cover;
+    display: inline-block;
+    right: -38px !important;
+    bottom: 0;
+}
+/* 
+.imagem-astronauta {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+} */
+
+
+
+h1.titulo-banner {
+    text-align: center;
+    color: white;
+    font-size: 38px;
+    font-weight: 600;
+    /* padding-top: 1em; */
+}
+
+.texto-caixa-logo {
+    text-align: center;
+    padding-top: 3em;
+}
+
+label.form-label {
+    font-weight: 600;
+    color: #0000007d;
+}
+
+.icone-lixo{
+    color:#056997 ;
+    font-size: 20px;
+}
+
+.logo-formulario{
+    text-align: center;
+    width: 35%;
+}
+
+.img-formulario {
+    text-align: center;
+    padding-top: 3em;
+}
+
+
+/* astronauta */
+
+
+@media screen and (min-width: 1200px){
+
+
+    .imagem-astronauta {
+        position: absolute;
+        object-fit: cover;
+        display: inline-block;
+        right: -38px !important;
+        bottom: 0;
+        width: 115%;
+    }
+}
+
+
+@media screen and (min-width: 1300px){
+
+
+    .imagem-astronauta {
+        position: absolute;
+        object-fit: cover;
+        display: inline-block;
+        right: -38px !important;
+        bottom: 0;
+        width: 99%;
+    }
+}
+
+@media screen and (min-width: 1600px){
+
+
+    .imagem-astronauta {
+        position: absolute;
+        object-fit: cover;
+        display: inline-block;
+        right: -38px !important;
+        bottom: 0;
+        width: 90%;
+    }
+}
+
+fa-icon.ng-fa-icon.icone-seta {
+    padding-left: 1em;
+    margin-left: 1em;
+    background: white;
+    padding: 0.1em 0.4em;
+    color: #4bb9ec;
+    border-radius: 31px;
+    flex-flow: column;
+    text-align: center;
+}
+
+.btns-caixa{
+    padding-top: 2em;
+}
+
+.icone-seta-plus{
+    margin-left: 0.5em;
+}
+
+.row.caixa-telefone {
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.text-danger{
+    color: red;
+}

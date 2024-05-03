@@ -1,0 +1,136 @@
+ul.lista-beneficios {
+    padding-left: 0;
+    list-style: none;
+    width: 100%;
+}
+
+img.imagem-beneficios {
+    width: 70%;
+    /* box-shadow: 0px 1px 10px #00000030; */
+    border-radius: 17px;
+    transition: 0.5s ease, background-color 0.3s ease;
+}
+
+li.item-beneficios {
+    display: flex;
+    justify-content: center;
+
+}
+
+li.item-beneficios {
+    margin: 500em -2em;
+}
+
+.beneficios {
+    padding: 1em 0;
+}
+
+.titulo-beneficios {
+    font-size: 30px;
+}
+@media screen and (min-width: 250px){
+    .swiper-apelativo {
+        margin: 5em 0;
+    }
+
+}
+
+@media screen and (min-width: 1040px) {
+
+    .swiper-apelativo {
+        margin:  0;
+    }
+    li.item-beneficios {
+        height: 185px;
+        /* min-width: 338px; */
+    }
+
+    p.txt-beneficio {
+        font-size: 14px;
+        font-weight: 600;
+      }
+
+    .lista-beneficios {
+        display: flex;
+    }
+
+    section.beneficios {
+        /* margin-top: 20em; */
+    }
+
+    .lista-beneficios .item-beneficios {
+        text-align: center;
+        font-weight: 500;
+    }
+
+    .lista-beneficios .item-beneficios:nth-child(odd) {
+
+        /* background: linear-gradient(99deg, #120032, #210960); */
+        /* color: white; */
+        /* Other custom styles */
+    }
+
+    .lista-beneficios .item-beneficios:nth-child(even) {
+
+        /* background: white */
+            /* Other custom styles */
+    }
+
+    li.item-beneficios {
+        padding: 16px;
+        border-radius: 20px;
+        margin: 3em 1em;
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+        min-width: 13%;
+    }
+
+    ul.lista-beneficios {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    ul.lista-beneficios {
+        margin-top: 4em;
+    }
+
+    p.txt-beneficio {
+        font-weight: 600;
+        /* margin: 2em 0; */
+    }
+
+    h1.titulo-beneficios {
+        margin-top: 1em;
+    }
+
+    .img-beneficios {
+        width: 80%;
+    }
+}
+
+@media screen and (min-width: 1900px) {
+    p.txt-beneficio {
+        font-size: 16px;
+        font-weight: 600;
+    }
+
+    .cont {
+   
+        /* padding: 1.5em 0; */
+    }
+
+
+
+    li.item-beneficios {
+        height: 240px!important;
+    }
+
+}
+
+li.item-beneficios {
+    height: 185px;
+    /* min-width: 338px; */
+}

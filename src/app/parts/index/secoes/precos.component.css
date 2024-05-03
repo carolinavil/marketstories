@@ -1,0 +1,186 @@
+.precos-container {
+    width: 100% !important;
+    background-color: red;
+}
+
+h1.titulo-precos {
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 2em;
+}
+
+
+.caixa-imagem-precos {
+    display: flex;
+    justify-content: center;
+
+}
+
+.imagem-precos {
+    width: 70%;
+}
+
+
+.precos-container {
+    background: linear-gradient(99deg, #120031, #120031, #152f41);
+    width: 100% !important;
+    color: white;
+    padding: 2em 0;
+}
+
+.conteudo-precos {
+    display: flex;
+    flex-flow: column-reverse;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.escrito-precos {
+    text-align: start;
+    margin-bottom: 3em;
+    margin: 1em 1.5em 5em 1.5em
+}
+
+p.escrito-texto-precos {
+    margin: 1em 0;
+}
+
+h1.escrito-titulo-precos {
+    display: none;
+
+}
+
+.escrito-titulo-precos-mobile {
+    font-size: 38px;
+}
+
+
+h3.escrito-titulo-precos {
+    margin-bottom: 0;
+    margin-top: 1em;
+
+}
+
+.escrito-preco {
+    margin-top: 1em;
+}
+
+h3.escrito-subtitulo-precos-gratis {
+    font-size: 29px;
+}
+
+h2.escrito-subtitulo-precos {
+    margin-top: 0.1em;
+    color: #4bb9ec;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+span#reais {
+    font-size: 20px;
+}
+
+span#preco {
+    font-weight: 600;
+}
+@media screen and (min-width: 1040px) {
+    h2.escrito-subtitulo-precos {
+        font-size: 30px;
+    }
+
+    .escrito-preco {
+        margin-top: 3em;
+    }
+    h1.escrito-titulo-precos {
+        display: block;
+    }
+
+    .precos-container {
+        padding: 2em 0em 0em 0;
+    }
+
+    h1.titulo-precos {
+        font-size: 30px;
+        margin-bottom: 0;
+    }
+
+    .escrito-titulo-precos-mobile {
+        display: none;
+    }
+
+    .caixa-imagem-precos,
+    .escrito-precos {
+        width: 50%;
+    }
+
+    .imagem-precos {
+        width: 70%;
+    }
+
+
+    .conteudo-precos {
+        flex-flow: row;
+        margin: 2em 4em;
+    }
+
+    .escrito-precos {
+        margin-bottom: 3em;
+        display: flex;
+        justify-content: start;
+        align-items: start;
+        flex-flow: column;
+    }
+
+    p.escrito-texto-precos {
+        font-size: 18px;
+        margin: 1em 0 2em 0;
+    }
+
+    h3.escrito-titulo-precos {
+        /* font-size: 30px; */
+        margin-bottom: 0;
+        font-weight: 500;
+        font-size: 34px;
+        margin-top: 0;
+
+    }
+
+    span.preco-desktop {
+        font-weight: 700;
+
+    }
+
+    span#preco {
+        font-size: 50px;
+    }
+
+
+    h3.escrito-subtitulo-precos-gratis {
+        font-size: 33px;
+    }
+
+    #reais {
+        vertical-align: top;
+        font-weight: 300;
+        font-size: 15px;
+    }
+
+    h2.escrito-subtitulo-precos {
+        font-size: 30px;
+        color: #4BB9EC;
+        font-weight: 600;
+
+    }
+
+    .escrito-subtitulo-precos,
+    p.escrito-texto-precos,
+    h1.escrito-titulo-precos {
+        width: 80%;
+        text-align: start;
+    }
+
+
+
+}

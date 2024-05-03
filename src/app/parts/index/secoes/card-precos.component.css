@@ -1,0 +1,85 @@
+.caixa-card {
+    background: #0D0611;
+    padding: 2em 0;
+    border-radius: 20px;
+
+}
+
+h1.titulo-card-precos {
+    color: white;
+    font-size: 25px;
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+.texto-card-precos {
+    color: white;
+    font-size: 17px;
+    margin: 0.5em 0 1em 0;
+    display: none;
+
+
+}
+
+
+.card-precos-container {
+    width: 95% !important;
+}
+
+.conteudo-card {
+    display: flex;
+    margin: 0 1em;
+    flex-flow: column;
+}
+
+
+@media screen and (min-width: 1040px) {
+    /* .caixa-card {
+        background: #0D0611;
+        padding: 2em 0;
+        border-radius: 20px;
+    }
+     */
+
+     section.card-precos.aos-init.aos-animate {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 6em;
+    }
+
+    .caixa-card {
+        padding: 2em 5em;
+    }
+
+
+    .conteudo-card {
+        width: 64%;
+    }
+
+    .conteudo-card {
+        display: block;
+        margin: 0 1em;
+    }
+
+    h1.titulo-card-precos {
+        color: white;
+        font-size: 30px;
+        text-align:start;
+        margin-bottom: 1em;
+    }
+
+
+
+    .texto-card-precos {
+        display: block;
+
+
+    }
+
+    
+.card-precos-container {
+    width: 85% !important;
+}
+
+}
