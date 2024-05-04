@@ -4,10 +4,18 @@ import { PagamentoComponent } from './pagamento.component';
 import { FinalComponent } from './final/final.component';
 
 const routes: Routes = [
-  { path: '', component: PagamentoComponent },
-  { path: 'final', component: FinalComponent },
-];
+  { 
+    path: '', 
+    component: PagamentoComponent,
+   
+  },
 
+  { 
+    path: 'final', 
+    component: FinalComponent,
+   
+  }
+];
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]

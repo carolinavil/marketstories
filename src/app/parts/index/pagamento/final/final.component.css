@@ -50,3 +50,8 @@ p.txt-final {
 .img-final{
     width: 65%;
 }
+
+.caixa-final {
+    background: linear-gradient(317deg, #DA6627, #643C8E, #120031, #120031);
+    color: white;
+}

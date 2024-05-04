@@ -438,31 +438,7 @@ font-weight: 600;
 }
 
 
-.caixa-formulario {
-    width: 70%;
-    /* margin: 0 7em; */
-    position: absolute;
-    max-height: 100%;
-    right: 0;
-    overflow-y: auto;
-    padding-bottom: 4em;
-    scrollbar-width: thin;
-    scrollbar-color: #888888 #f0f0f0;
-}
 
-
-.caixa-formulario::-webkit-scrollbar {
-    width: 8px; /* Largura da barra de rolagem */
-}
-
-.caixa-formulario::-webkit-scrollbar-track {
-    background: #f0f0f0; /* Cor de fundo da barra de rolagem */
-}
-
-.caixa-formulario::-webkit-scrollbar-thumb {
-    background-color: #888888; /* Cor da barra de rolagem */
-    border-radius: 4px; /* Borda arredondada */
-}
 h5.titulo-formulario {
     margin-left: 0.4em;
     width: 100%;
@@ -498,10 +474,10 @@ button.p-element.btn-excluir-telefone.p-button.p-component {
     width: 30%;
 }
 
-.caixa-formulario {
+/* .caixa-formulario {
     position: absolute;
     right: 0;
-}
+} */
 
 .imagem-astronauta {
     position: absolute;
@@ -570,10 +546,66 @@ label.form-label {
         bottom: 0;
         width: 115%;
     }
+
+    .form-label{
+        font-size: 15px;
+    }
+}
+
+@media screen and (min-width: 200px){
+    .caixa-logo {
+        display: none;
+    }
+    .caixa-formulario{
+        width: 100%;
+        position: relative;
+    
+    }
+
+    .btn-avancar {
+        justify-content: flex-end!important;
+    }
+
+    .prox-btn{
+        padding: 0.8em 1em;}
+
 }
 
 
-@media screen and (min-width: 1300px){
+@media screen and (min-width: 1100px){
+
+    .caixa-formulario {
+        position: absolute;
+        max-height: 100%;
+        right: 0;
+        overflow-y: auto;
+        padding-bottom: 4em;
+        scrollbar-width: thin;
+        scrollbar-color: #888888 #f0f0f0;
+    }
+    
+    
+    .caixa-formulario::-webkit-scrollbar {
+        width: 8px; /* Largura da barra de rolagem */
+    }
+    
+    .caixa-formulario::-webkit-scrollbar-track {
+        background: #f0f0f0; /* Cor de fundo da barra de rolagem */
+    }
+    
+    .caixa-formulario::-webkit-scrollbar-thumb {
+        background-color: #888888; /* Cor da barra de rolagem */
+        border-radius: 4px; /* Borda arredondada */
+    }
+
+    .caixa-logo {
+        display: block;
+    }
+    .caixa-formulario {
+        width: 70%;
+
+    }
+    
 
 
     .imagem-astronauta {
@@ -582,13 +614,20 @@ label.form-label {
         display: inline-block;
         right: -38px !important;
         bottom: 0;
-        width: 99%;
+        width: 79%;
     }
+    .logo-caixa{
+        width: 29%;
 }
-
+h1.titulo-banner {
+    font-size: 32px;
+}
+}
 @media screen and (min-width: 1600px){
 
-
+    h1.titulo-banner {
+        font-size: 40px;
+    }
     .imagem-astronauta {
         position: absolute;
         object-fit: cover;

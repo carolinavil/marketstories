@@ -27,8 +27,9 @@ PagamentoRoutingModule
 @NgModule({
   declarations: [
     PagamentoComponent,
+    FinalComponent,
     StepperComponent,
-    FinalComponent
+  
   ],
   imports: [
     CommonModule,
@@ -56,10 +57,7 @@ PagamentoRoutingModule
     NgxMaskDirective, 
     NgxMaskPipe,
     FileUploadModule,
-    RouterModule.forChild([
-      { path: '', component: PagamentoComponent },
-      { path: 'final', component: FinalComponent } // Rota para o componente Final
-    ])
+
  
 
    

@@ -34,9 +34,7 @@ register()
     MatListModule,
     FontAwesomeModule,
     CountUpModule,
-    RouterModule.forChild([
-      { path: '', component: IndexComponent }
-    ])
+   
 
   
   ],

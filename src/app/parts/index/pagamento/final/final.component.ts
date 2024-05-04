@@ -12,4 +12,8 @@ export class FinalComponent  {
 
   objeto: PagamentoModel = new PagamentoModel;
 
+    ngOnInit(){
+      console.log('carregou')
+    }
+
 }

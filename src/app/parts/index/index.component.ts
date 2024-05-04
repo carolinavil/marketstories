@@ -98,6 +98,10 @@ export class IndexComponent implements OnDestroy {
     library.addIcons(faBars, faXmark, faHouse, faInstagram, faLinkedin, faTwitter, faYoutube, faFacebook, faTiktok, faWhatsapp, faStar)
   }
 
+
+  teste44(){
+    this.router.navigate(['/pagamento'])
+  }
   initIntersectionObserver() {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {

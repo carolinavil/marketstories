@@ -1,11 +1,14 @@
 <section class="caixa-forms">
-
-    <form #form="ngForm" class="needs-validation formulario " (ngSubmit)="send(form)">
+    <form #form="ngForm" class="needs-validation formulario " (submit)="send(form)">
+    <!-- <form #form="ngForm" class="needs-validation formulario " > -->
         <div class="caixa-logo">
             <div class="texto-caixa-logo">
-                <!-- <button (click)="teste123($event)">test</button> -->
+              
+
+            
+
                 <h1 class="titulo-banner">Para manter-se no topo, é preciso rapidez </h1>
-                <img src="../../../../assets/img/Logo P&B MarketStories 2.png" alt="">
+                <img src="../../../../assets/img/Logo P&B MarketStories 2.png" alt="" class="logo-caixa">
             </div>
             <img src="../../../../assets/img/astronauta (3).png" alt="" class="imagem-astronauta">
         </div>
@@ -27,7 +30,7 @@
                     </div>
                    
                     <div class="row d-flex align-item-center">
-                        <div class="form-group col s12">
+                        <div class="form-group col s12 m12 ">
                             <label class="form-label">Nome <span class="text-danger">*</span> </label>
                             <input type="text" class="form-control " [(ngModel)]="clienteModel.name" type="text"
                                 class="form-control" name="name" id="name" name="name" #name="ngModel" required="" autocomplete="off">
@@ -40,7 +43,7 @@
 
                     </div>
                     <div class="row">
-                        <div class="form-group col s8">
+                        <div class="form-group col s12 m8">
                             <label class="form-label">E-mail <span class="text-danger">*</span> </label>
                             <input required type="text" class="form-control" [(ngModel)]="clienteModel.email" type="email"
                                 class="form-control" email="email" id="email" name="email" #email="ngModel"
@@ -50,7 +53,7 @@
                                     <p class="text-danger" *ngIf="email.errors['email']">E-mail inválido</p>
                                 </div>
                             </div>
-                        <div class="form-group col s4">
+                        <div class="form-group col s12 m4">
                             <label class="form-label">CPF/CNPJ <span class="text-danger">*</span> </label>
                             <input required [(ngModel)]="clienteModel.registry_code" type="text" class="form-control"
                                 registry_code="registry_code" id="registry_code" name="registry_code"
@@ -70,7 +73,7 @@
                         </h5>
                     </div>
                     <div class="row">
-                        <div class="form-group col s4">
+                        <div class="form-group col s12 m4">
                             <label class="form-label">CEP <span class="text-danger">*</span> </label>
                             <input required type="text" class="form-control " name="documento" id="documento"
                                 #documento="ngModel" [(ngModel)]="cep" required #buscaCEP (blur)="blur($event)"
@@ -79,7 +82,7 @@
                                     <p class="text-danger" *ngIf="documento.errors['required']">Este campo é obrigatório.</p>
                                 </div>
                         </div>
-                        <div class="form-group col s4">
+                        <div class="form-group col s12 m4">
                             <label class="form-label">Endereco <span class="text-danger">*</span> </label>
                             <input required type="text" #endereco="ngModel" [(ngModel)]="enderecoFormat"
                                 class="form-control" name="endereco" id="endereco" ngModel required type="text">
@@ -87,7 +90,7 @@
                                     <p class="text-danger" *ngIf="endereco.errors['required']">Este campo é obrigatório.</p>
                                 </div>
                         </div>
-                        <div class="form-group col s4">
+                        <div class="form-group col s12 m4">
                             <label class="form-label">Número </label>
                             <input required type="text" #documento="ngModel" [(ngModel)]="numero" class="form-control"
                                 name="numero" id="numero" ngModel required type="text">
@@ -120,7 +123,7 @@
                     </div>
                     <div class="row caixa-telefone">
 
-                        <div class="form-group col s6">
+                        <div class="form-group col  s12 m6">
                             <div class="caixa-btn-telefone">
                                 <label class="form-label">Telefone </label>
                                 <button pButton type="button" label="" class="btn-telefone"
@@ -139,7 +142,7 @@
                     </div>
                 </div>
                 <!-- <div class="d-flex justify-content-between flex-row mb-5 mt-4" id="inicio"> -->
-                 <div class="d-flex justify-content-between flex-row mb-5 mt-4 btns-caixa">
+                 <div class="d-flex justify-content-between flex-row mb-5 mt-4 btns-caixa btn-avancar">
                     <!-- <button class="me-0 ms-auto prox-btn btn-stepper" type="submit" cdkStepperPrevious>
                         <span>Voltar</span>
                         <fa-icon [icon]="['fas','chevron-left']" class="icone-seta"></fa-icon>
@@ -163,7 +166,7 @@
                     <div class="row">
                         <div class="pagamento-caixa">
                             <div class="form-group col s12 dropDown">
-                                <label for="">Método de pagamento <span class="text-danger">*</span>  </label>
+                                <label class="form-label" for="">Método de pagamento <span class="text-danger">*</span>  </label>
                                 <p-dropdown [options]="pay" optionLabel="name" optionValue="code"
                                     [(ngModel)]="perfilModel.payment_method_code" type="paymemnt_method_code"
                                     class="form-control drop" paymemnt_method_code="paymemnt_method_code" id="paymemnt_method_code" name="paymemnt_method_code"
@@ -176,7 +179,7 @@
                             <!-- <div *ngIf="mostrarBotao()"> -->
                             <div *ngIf="mostrarBotao()">
                                 <div class="row" >
-                                    <div class="form-group col s8">
+                                    <div class="form-group col s12 m8">
                                         <label class="form-label">Nome <span class="text-danger">*</span> </label>
                                         <input type="text" class="form-control "
                                             [(ngModel)]="perfilModel.holder_name" class="form-control" name="email"
@@ -185,7 +188,7 @@
                                                 <p class="text-danger" *ngIf="nomeCartao.errors['required']">Este campo é obrigatório.</p>
                                             </div>
                                     </div>
-                                    <div class="form-group col s4">
+                                    <div class="form-group col s12 m4">
                                         
                                         <label class="form-label">Número do cartão <span class="text-danger">*</span> </label>
                                         <input type="text" class="form-control "
@@ -198,7 +201,7 @@
                                   
                                 </div>
                                 <div class="row">
-                                    <div class="form-group col s4">
+                                    <div class="form-group col s12 m4">
                                         <label class="form-label">Validade do cartão <span class="text-danger">*</span> </label>
                                         <input type="text" class="form-control "
                                             [(ngModel)]="perfilModel.card_expiration" type="text"
@@ -208,15 +211,15 @@
                                                 <p class="text-danger" *ngIf="card_expiration.errors['required']">Este campo é obrigatório.</p>
                                             </div>
                                     </div>
-                                    <div class="form-group col s4">
-                                        <label class="form-label">Código de seguranca (CVV) <span class="text-danger">*</span> </label>
+                                    <div class="form-group col s12 m4 ">
+                                        <label class="form-label">CVV <span class="text-danger">*</span> </label>
                                         <input type="text" class="form-control " [(ngModel)]="perfilModel.card_cvv"
                                             class="form-control" name="card_cvv" id="card_cvv" #card_cvv="ngModel" mask="000" placeholder="000">
                                             <div *ngIf="card_cvv.touched && card_cvv.errors">
                                                 <p class="text-danger" *ngIf="card_cvv.errors['required']">Este campo é obrigatório.</p>
                                             </div>
                                     </div>
-                                    <div class="form-group col s4">
+                                    <div class="form-group col s12 m4">
                                         <label class="form-label">Bandeira <span class="text-danger">*</span>  </label>
                                         <p-dropdown [options]="bandeiras" 
                                         [(ngModel)]="perfilModel.payment_company_code" type="text"
@@ -267,7 +270,7 @@
                     <div class="row">
                      
                             <div class="form-group col s12 dropDown">
-                                <label for="">Plano <span class="text-danger">*</span> </label>
+                                <label class="form-label" for="">Plano <span class="text-danger">*</span> </label>
                                 <p-dropdown [options]="plans" optionLabel="name" optionValue="id"
                                     [(ngModel)]="assinaturaModel.plan_id" 
                                     class="form-control drop" plan_id="plan_id" id="plan_id" name="plan_id"
@@ -289,9 +292,11 @@
                     </button>
 
                     <button class="me-0 ms-auto prox-btn btn-stepper" type="submit" cdkStepperNext > 
-                        <span>Avançar</span>
+                        <span>Criar</span>
                         <fa-icon [icon]="['fas','chevron-right']" class="icone-seta"></fa-icon>
                     </button>
+
+               
                 </div>
             </cdk-step>
         </app-stepper>
@@ -302,3 +307,4 @@
 
 
 </section>
+<router-outlet></router-outlet>

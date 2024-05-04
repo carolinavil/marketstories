@@ -11,6 +11,7 @@ import { TelefoneModel } from '../../../models/pagamento.module';
 import { FaturaModel } from '../../../models/pagamento.module';
 import { ProdutoModel } from '../../../models/pagamento.module';
 import { format, addDays } from 'date-fns';
+import { Router ,ActivatedRoute} from '@angular/router';
 interface Car {
   label: string;
   value: string;
@@ -101,6 +102,8 @@ export class PagamentoComponent {
   constructor(private vindiService: VindiService,
     private cepService: CepService,
     private library: FaIconLibrary,
+    private router: Router,
+    private activatedRoute: ActivatedRoute
   ) {
 
 
@@ -469,6 +472,7 @@ export class PagamentoComponent {
         // }))
 
         console.log('id', id, assinaturaPostada, this.faturaModel, produtoModel, this.cartaoModel, this.clienteModel)
+        this.router.navigate(['final'], { relativeTo: this.activatedRoute });
       })
     });
   }
@@ -484,9 +488,10 @@ export class PagamentoComponent {
 
   ]
 
-  teste123(e: Event){
-    console.log('teste foir')
-  }
+
+
+  
+  
 
 
 
