@@ -3,6 +3,7 @@
     <form #form="ngForm" class="needs-validation formulario " (ngSubmit)="send(form)">
         <div class="caixa-logo">
             <div class="texto-caixa-logo">
+                <!-- <button (click)="teste123($event)">test</button> -->
                 <h1 class="titulo-banner">Para manter-se no topo, é preciso rapidez </h1>
                 <img src="../../../../assets/img/Logo P&B MarketStories 2.png" alt="">
             </div>
@@ -287,7 +288,7 @@
                         <fa-icon [icon]="['fas','chevron-left']" class="icone-seta"></fa-icon>
                     </button>
 
-                    <button class="me-0 ms-auto prox-btn btn-stepper" type="submit" cdkStepperNext routerLink="final" [disabled]="form.invalid"> 
+                    <button class="me-0 ms-auto prox-btn btn-stepper" type="submit" cdkStepperNext > 
                         <span>Avançar</span>
                         <fa-icon [icon]="['fas','chevron-right']" class="icone-seta"></fa-icon>
                     </button>
@@ -296,6 +297,8 @@
         </app-stepper>
     </div>
     </form>
+
+ 
 
 
 </section>

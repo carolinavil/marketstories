@@ -309,6 +309,7 @@ export class PagamentoComponent {
 
 
   send(form: NgForm) {
+    console.log('TESTE')
     console.log('telefones', this.telefones, this.endereco, this.objeto, this.clienteModel);
     this.clienteModel.phones = this.telefones;
     this.clienteModel.adress = this.endereco;
@@ -483,6 +484,9 @@ export class PagamentoComponent {
 
   ]
 
+  teste123(e: Event){
+    console.log('teste foir')
+  }
 
 
 
