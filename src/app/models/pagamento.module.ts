@@ -38,7 +38,7 @@ export class ClienteModel {
   email: string = '';
   documento: string = '';
   registry_code: string = '';
-  adress: any 
+  address: any 
   phones: TelefoneModel[] = [];
   
 
@@ -170,7 +170,9 @@ export class AdressModel {
   country: string = 'BR';
   city: string = '';
   logradouro: string = '';
-  complemento: string = ''
+  complemento: string = '';
+  zipcode: string = '';
+  additional_details: string = '';
 
 }
 

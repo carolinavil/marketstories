@@ -11,6 +11,7 @@ import { TelefoneModel } from '../../../models/pagamento.module';
 import { FaturaModel } from '../../../models/pagamento.module';
 import { ProdutoModel } from '../../../models/pagamento.module';
 import { format, addDays } from 'date-fns';
+import { Router ,ActivatedRoute} from '@angular/router';
 interface Car {
   label: string;
   value: string;
@@ -80,7 +81,7 @@ export class PagamentoComponent {
   dataFormatadaTestes = format(this.data, 'yyyy-MM-dd');
 
   inputs: Phone[] = [{ number: '' }];
-
+  valorNaoClicado: Phone[] = [{ number: '' }];
 
 
   visible: boolean = false;
@@ -101,6 +102,8 @@ export class PagamentoComponent {
   constructor(private vindiService: VindiService,
     private cepService: CepService,
     private library: FaIconLibrary,
+    private router: Router,
+    private activatedRoute: ActivatedRoute
   ) {
 
 
@@ -170,6 +173,7 @@ export class PagamentoComponent {
     library.addIcons(faChevronRight, faUser, faTrash, faLocationDot, faPhone, faChevronLeft, faPlus, faMoneyCheckDollar)
   }
 
+
   showDialog() {
     this.visible = true;
   }
@@ -204,14 +208,20 @@ export class PagamentoComponent {
         // Fornecendo valores padrão para outras propriedades
         number: '',
         country: 'BR',
-        city: '',
-        logradouro: data.logradouro,
-        complemento: ''
+        city: data.localidade,
+        zipcode: data.cep,
+        additional_details: '',
+        street: data.logradouro
       };
-      this.endereco = endereco
 
+
+    
+
+  
+      this.endereco = endereco
+      this.clienteModel.address = this.endereco;
       console.log('end', endereco)
-      console.log('this.objeto', this.objetoEndereco, data)
+      console.log('this.objeto', this.objetoEndereco, data, 'conteudo', this.clienteModel)
 
       console.log(this.bairro, this.localidade, this.uf, 'teste', this.objetoEndereco, this.clienteModel);
 
@@ -235,7 +245,7 @@ export class PagamentoComponent {
   //   return phoneNumber.startsWith('9') ? '(00) 00000-0000' : '(00) 0000-0000';
   // }
 
-  valorNaoClicado: Phone[] = [{ number: '' }];
+
 
 
   populaForm(dados: any, form: any) {
@@ -254,7 +264,6 @@ export class PagamentoComponent {
 
   @ViewChild('btn') btn: any;
   ngOnInit(): void {
-    // this.carregarOpcoesDePagamento();
     // this.getMetodos();
   }
 
@@ -295,45 +304,42 @@ export class PagamentoComponent {
     console.log('Telefone Models:', telefones);
     console.log('Cliente Model:', this.clienteModel);
 
-    console.log('Adress Models:', telefones);
+    console.log('Address Models:', telefones);
     console.log('Cliente Model:', this.clienteModel);
   }
 
-  atribuirValor(valor: string) {
-
-    const telefones: TelefoneModel[] = this.valorNaoClicado.map(input => {
+  atribuirValor() {
+    console.log(this.inputs);
+    const telefones: TelefoneModel[] = this.inputs.map(input => {
+      const numeroCompleto = `55${input.number}`;
       return {
-        phone_type: '',  // You may need to set the phoneType here
-        number: input.number
+        phone_type: 'mobile',  // You may need to set the phoneType here
+    
+        number: numeroCompleto
       };
     });
 
     this.telefones = telefones
     console.log('telefones', this.telefones)
+
+    console.log('Telefone Models:', telefones);
+    console.log('Cliente Model:', this.clienteModel);
+
+    console.log('Address Models:', telefones);
+    console.log('Cliente Model:', this.clienteModel);
   }
+
+
   removerInput(index: number) {
     this.inputs.splice(index, 1);
   }
 
 
-
-  carregarOpcoesDePagamento() {
-    console.log(this.pay, 'testeteste')
-    this.vindiService.getMetodos().subscribe(
-      (response: any) => {
-        // Supondo que a resposta da sua API seja um array de objetos com propriedades 'name' e 'code'
-        this.pay = response.filter((opcao: any) => opcao.code !== 'cash');
-        console.log(this.pay, 'testeteste')
-      },
-      (error: any) => {
-        console.error('Erro ao obter opções de pagamento:', error);
-      }
-    );}
-
   send(form: NgForm) {
+    console.log('TESTE')
     console.log('telefones', this.telefones, this.endereco, this.objeto, this.clienteModel);
     this.clienteModel.phones = this.telefones;
-    this.clienteModel.adress = this.endereco;
+    this.clienteModel.address = this.endereco;
 
     // Posta o cliente
     lastValueFrom(this.vindiService.postCliente(this.clienteModel)).then((clientePostado) => {
@@ -347,7 +353,7 @@ export class PagamentoComponent {
       console.log('cpf,',this.perfilModel.registry_code, clientePostado, clientePostado.customer.registry_code)
       // Todo o código que depende de idCliente deve estar dentro deste bloco then
       console.log('objeto final cliente', this.idCliente, clientePostado);
-      console.log('objeto final', this.clienteModel, this.clienteModel.adress, this.assinaturaModel);
+      console.log('objeto final', this.clienteModel, this.clienteModel.address, this.assinaturaModel);
       console.log('objeto assinatura final', this.assinaturaModel, this.perfilModel);
 
       if (this.perfilModel.card_expiration.length === 4) {
@@ -409,7 +415,7 @@ export class PagamentoComponent {
 
         this.assinaturaModel.product_items.push(teste);
 
-        console.log('objeto finallllll', this.assinaturaModel);
+        console.log('objeto finallllll', this.assinaturaModel, clientePostado);
 
       }
 
@@ -490,6 +496,7 @@ export class PagamentoComponent {
         // }))
 
         console.log('id', id, assinaturaPostada, this.faturaModel, produtoModel, this.cartaoModel, this.clienteModel)
+        this.router.navigate(['final'], { relativeTo: this.activatedRoute });
       })
     });
   }
@@ -505,6 +512,10 @@ export class PagamentoComponent {
 
   ]
 
+
+
+  
+  
 
 
 
