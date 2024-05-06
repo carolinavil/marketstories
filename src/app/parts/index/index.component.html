@@ -30,9 +30,16 @@
                     <li class="item-link-header"><a class="link-header" href="#quem-somos">O que é</a></li>
                     <li class="item-link-header"><a class="link-header" href="#precos">Features</a></li>
                     <li class="item-link-header"><a class="link-header" href="#testemunhas">Assessores</a></li>
-                    <button class="btn-associar-header"  routerLink="pagamento">Be MktStories</button>
+                    <!-- <button class="btn-associar-header"  routerLink="pagamento">Be MktStories</button> -->
 
-                    <!-- <button class="btn-associar-header" >Be MktStories</button> -->
+                    <!-- <a href="https://form.typeform.com/to/Ar82twrP" class="link-item-header"><fa-icon
+                        [icon]="['fab','instagram']"></fa-icon></a> -->
+
+
+                    <!-- <button class="btn-associar-header"><a href="https://form.typeform.com/to/Ar82twrP"></a></button> -->
+
+                    <button class="btn-associar-header"> <a href="https://form.typeform.com/to/Ar82twrP">Be
+                            MktStories</a></button>
                 </ul>
 
             </div>
@@ -67,15 +74,27 @@
                 <mat-nav-list>
                     <img src="../../../assets/img/Icones MarketStories 2.png" alt="" class="logo-banner">
                 </mat-nav-list>
-                <mat-nav-list>
-                    <mat-list-item>
+
+                <mat-nav-list class="caixa-provisorio">
+<ul>
+    <li> <a class="link-header" href="#quem-somos" (click)="fecharMenu()">O que é</a></li>
+
+    <li> <a class="link-header" href="#precos" (click)="fecharMenu()">Features</a></li>
+
+    <li> <a class="link-header" href="#testemunhas" (click)="fecharMenu()">Assessores</a></li>
+</ul>
+                   
+                    
+                    
+                   <mat-list-item>
+                        
                         <li><a href="" class="item-link-mobile">Quem somos</a></li>
                         <li><a href="" class="item-link-mobile">Benefícios</a></li>
                     </mat-list-item>
                     <mat-list-item>
                         <li><a href="" class="item-link-mobile">Quem somos</a></li>
                         <li><a href="" class="item-link-mobile">Benefícios</a></li>
-                    </mat-list-item>
+                    </mat-list-item> 
                 </mat-nav-list>
             </mat-drawer>
             <mat-drawer-content>
@@ -90,20 +109,21 @@
   </div> -->
 
 
-<!-- <div class="caixa-menu-mobile mobile">
+<div class="caixa-menu-mobile mobile">
     <mat-toolbar color="primary" class="mat-elevation-z">
-        <button class="btn-menu-mobile"><fa-icon [icon]="['fas','house']"></fa-icon></button>
-        <button class="btn-associar-header">Associar-se</button>
-        <button (click)="teste()" (click)="verifica()" (click)="drawer.toggle()" mat-icon-button position="end"
+        <!-- <button class="btn-menu-mobile"><fa-icon [icon]="['fas','house']"></fa-icon></button> -->
+        <button class="btn-associar-header"><a href="https://form.typeform.com/to/Ar82twrP">Be
+            MktStories</a></button>
+        <!-- <button (click)="teste()" (click)="verifica()" (click)="drawer.toggle()" mat-icon-button position="end"
             class="btn-menu-mobile">
             <fa-icon [icon]="['fas',getIconName()]"></fa-icon>
-        </button>
+        </button> -->
     </mat-toolbar>
-</div> -->
+</div>
 
- <div class="imagem-logo-banner">
+<div class="imagem-logo-banner">
     <img src="../../../assets/img/image.png" alt="" class="logo-banner">
-</div> 
+</div>
 
 
 <section class="banner" id="inicio">
@@ -123,8 +143,8 @@
         <div class="carousel carrossel-banner" data-num-visible="4">
             <a class="carousel-item no-opacity carousel-banner " href="#one!"> <img
                     src="../../../assets/img/agendaSemanaP.png" alt="" class="img-banner"></a>
-                    <a class="carousel-item no-opacity carousel-banner " href="#one!"> <img
-                        src="../../../assets/img/metalicasP.png" alt="" class="img-banner"></a>
+            <a class="carousel-item no-opacity carousel-banner " href="#one!"> <img
+                    src="../../../assets/img/metalicasP.png" alt="" class="img-banner"></a>
             <a class="carousel-item no-opacity carousel-banner " href="#one!"> <img
                     src="../../../assets/img/mundoAgoraP.png" alt="" class="img-banner"></a>
 
@@ -132,8 +152,8 @@
                     alt="" class="img-banner"></a>
             <a class="carousel-item no-opacity carousel-banner " href="#two!"> <img
                     src="../../../assets/img/urgenteP.png" alt="" class="img-banner img-banner-odd"></a>
-                    <a class="carousel-item no-opacity carousel-banner " href="#two!"> <img
-                        src="../../../assets/img/CommoditiesPetroleoP.png" alt="" class="img-banner img-banner-odd"></a>
+            <a class="carousel-item no-opacity carousel-banner " href="#two!"> <img
+                    src="../../../assets/img/CommoditiesPetroleoP.png" alt="" class="img-banner img-banner-odd"></a>
             <a class="carousel-item no-opacity carousel-banner " href="#one!"> <img
                     src="../../../assets/img/bitCoinP.png" alt="" class="img-banner"></a>
             <a class="carousel-item no-opacity carousel-banner " href="#one!"> <img
@@ -253,31 +273,36 @@
 
 
             <div class="btn-apelativo">
-                <button class="btn-associar ">Quero receber!</button>
+                <button class="btn-associar "> <a href="https://form.typeform.com/to/Ar82twrP">Quero
+                        receber!</a></button>
             </div>
 
             <!-- <h1 class="titulo-quem-somos">O que o <span><img src="../../../assets/img/MarketStories_Simbolo_Preferencial 1.png" alt="" class="titulo-quem-somos-logo"></span> te  entrega  <span class="enfase-texto-topico">todos os dias</span></h1> -->
             <div class="titulo-caixa titulo-caixa-quem-somos">
-<div class="mobile-quem-somos">
-    <div class="titulo-quem-somos-mobile">
-        <h1 class="titulo  titulo-logo">O que o</h1>
-        <img src="../../../assets/img/MarketStories_Simbolo_Preferencial 1.png" alt="" class="titulo-logo">   
-  
-      
-    </div>
+                <div class="mobile-quem-somos">
+                    <div class="titulo-quem-somos-mobile">
+                        <h1 class="titulo  titulo-logo">O que o</h1>
+                        <img src="../../../assets/img/MarketStories_Simbolo_Preferencial 1.png" alt=""
+                            class="titulo-logo">
 
-    <div class="titulo2-quem-somos ">
-        <h1 class="titulo titulo-logo">te entrega <span class="enfase-texto-topico ">todos os dias</span> </h1>
-    </div>
 
-</div>
-       
-           
-                    <h1 class="titulo quem-somos-desktop">O que o</h1>
-                    <img src="../../../assets/img/MarketStories_Simbolo_Preferencial 1.png" alt="" class="titulo-logo quem-somos-desktop">
-         
-             
-                <h1 class="titulo quem-somos-desktop">te entrega <span class="enfase-texto-topico ">todos os dias</span> </h1>
+                    </div>
+
+                    <div class="titulo2-quem-somos ">
+                        <h1 class="titulo titulo-logo">te entrega <span class="enfase-texto-topico ">todos os
+                                dias</span> </h1>
+                    </div>
+
+                </div>
+
+
+                <h1 class="titulo quem-somos-desktop">O que o</h1>
+                <img src="../../../assets/img/MarketStories_Simbolo_Preferencial 1.png" alt=""
+                    class="titulo-logo quem-somos-desktop">
+
+
+                <h1 class="titulo quem-somos-desktop">te entrega <span class="enfase-texto-topico ">todos os dias</span>
+                </h1>
             </div>
         </div>
 
@@ -356,16 +381,17 @@
         <h1 class="titulo-quem-somos"> Para seu cliente, a velocidade do que acontece é muito importante.</h1>
 
         <div class="caixa-quem-somos titulo-quem-somos">
-           
+
             <div class="titulo-caixa titulo-caixa-quem-somos">
 
                 <h1 class="titulo quem-somos-desktop">Sabe por que você deveria ser um </h1>
-                <img src="../../../assets/img/MarketStories_Simbolo_Preferencial 1.png" alt="" class="titulo-logo quem-somos-desktop">
-     
-         
-            <h1 class="titulo quem-somos-desktop">? </h1>
+                <img src="../../../assets/img/MarketStories_Simbolo_Preferencial 1.png" alt=""
+                    class="titulo-logo quem-somos-desktop">
 
-       
+
+                <h1 class="titulo quem-somos-desktop">? </h1>
+
+
             </div>
         </div>
 
@@ -424,7 +450,7 @@
     </div>
     <div class="swiper-apelativo">
 
-        <swiper-container  [slidesPerView]="mobileBeneficiosCard" [spaceBetween]="spaceQuemSomos"
+        <swiper-container [slidesPerView]="mobileBeneficiosCard" [spaceBetween]="spaceQuemSomos"
             class="swiper-quem-somos">
 
 
@@ -607,7 +633,8 @@
                         serviço premium e
                         receba em média 250 stories detalhados sobre o mercado financeiro todo mês, por apenas R$
                         199,90 reais.</p>
-                    <button class="btn-associar">Iniciar período grátis!</button>
+                    <button class="btn-associar"><a href="https://form.typeform.com/to/Ar82twrP">Iniciar período
+                            grátis!</a></button>
                 </div>
             </div>
         </div>
@@ -617,7 +644,7 @@
     <div class="conteiner">
         <ul class="lista-conteudos">
             <li class="item-conteudos">
-           
+
                 <div class="carousel carrossel-conteudo" data-num-visible="4">
                     <a class="carousel-item no-opacity carousel-conteudo " href="#one!"> <img
                             src="../../../assets/img/agendaSemanaP.png" alt="" class="img-banner"></a>
@@ -632,7 +659,7 @@
                 <div class="caixa-conteudos">
                     <h2 class="titulo-conteudos teste"> As informações mais relevantes do dia e da semana em layouts que
                         cobrem eventos do mercado financeiro e assuntos em alta em âmbito nacional e internacional.</h2>
-                    <button class="btn-associar">Ver mais</button>
+                    <button class="btn-associar"><a href="https://form.typeform.com/to/Ar82twrP">Ver mais</a></button>
                 </div>
 
             </li>
@@ -656,7 +683,7 @@
                     <h2 class="titulo-conteudos ">Dados relevantes da Bolsa brasileira e das Bolsas americanas,
                         cobrindo as ações com maiores altas, baixas e desempenhos dos índices, além das variações nas
                         principais commodities agrícolas.</h2>
-                    <button class="btn-associar">Ver mais</button>
+                    <button class="btn-associar"><a href="https://form.typeform.com/to/Ar82twrP">Ver mais</a></button>
                 </div>
             </li>
             <li class="item-conteudos">
@@ -669,9 +696,11 @@
                     <a class="carousel-item   no-opacity carousel-conteudo " href="#one!"> <img
                             src="../../../assets/img/metalicasP.png" alt="" class="img-banner"></a>
                     <a class="carousel-item   no-opacity carousel-conteudo " href="#two!"> <img
-                            src="../../../assets/img/CommoditiesFerroP.png" alt="" class="img-banner img-banner-odd"></a>
-                            <a class="carousel-item   no-opacity carousel-conteudo " href="#two!"> <img
-                                src="../../../assets/img/CommoditiesPetroleoP.png" alt="" class="img-banner img-banner-odd"></a>
+                            src="../../../assets/img/CommoditiesFerroP.png" alt=""
+                            class="img-banner img-banner-odd"></a>
+                    <a class="carousel-item   no-opacity carousel-conteudo " href="#two!"> <img
+                            src="../../../assets/img/CommoditiesPetroleoP.png" alt=""
+                            class="img-banner img-banner-odd"></a>
 
                 </div>
                 <div class="caixa-conteudos">
@@ -680,7 +709,7 @@
                         performance de fundos de investimento, além do desempenho e o sentimento do mercado em relação
                         às principais commodities minerais.
                     </h2>
-                    <button class="btn-associar">Ver mais</button>
+                    <button class="btn-associar"><a href="https://form.typeform.com/to/Ar82twrP">Ver mais</a></button>
                 </div>
             <li class="item-conteudos">
                 <div class="carousel carrossel-conteudo" data-num-visible="4">
@@ -695,15 +724,15 @@
                         principais criptomoedas da atualidade,
                         contendo a variação em diferentes períodos de tempo e as máximas e mínimas registradas em 24h.
                     </h2>
-                    <button class="btn-associar">Ver mais</button>
+                    <button class="btn-associar"><a href="https://form.typeform.com/to/Ar82twrP">Ver mais</a></button>
                 </div>
             </li>
             <li class="item-conteudos">
                 <div class="carousel carrossel-conteudo" data-num-visible="4">
                     <a class="carousel-item no-opacity no-opacity-cont carousel-conteudo " href="#one!"> <img
-                        src="../../../assets/img/superQuartaP.png"  alt="" class="img-banner"></a>
+                            src="../../../assets/img/superQuartaP.png" alt="" class="img-banner"></a>
                     <a class="carousel-item no-opacity carousel-conteudo no-opacity-cont " href="#one!"> <img
-                        src="../../../assets/img/selicP.png" alt="" class="img-banner"></a>
+                            src="../../../assets/img/selicP.png" alt="" class="img-banner"></a>
 
                 </div>
                 <div class="caixa-conteudos">
@@ -711,13 +740,13 @@
                         no
                         Brasil e
                         nos Estados Unidos referentes à taxa de juros após as reuniões do COPOM e do FED.</h2>
-                    <button class="btn-associar">Ver mais</button>
-                </div> 
+                    <button class="btn-associar"><a href="https://form.typeform.com/to/Ar82twrP">Ver mais</a></button>
+                </div>
             </li>
         </ul>
     </div>
-    <div class="btn-apelativo">
-        <button class="btn-associar ">Começar!</button>
+    <div class="btn-apelativo desktop-btn">
+        <button class="btn-associar "><a href="https://form.typeform.com/to/Ar82twrP">Começar!</a></button>
     </div>
 </section>
 
@@ -740,8 +769,8 @@
                         src="../../../assets/img/2a.png" alt="" class="img-conteudo"></a>
                 <a class="carousel-item no-opacity carousel-conteudo carousel-conteudo-feed" href="#one!"> <img
                         src="../../../assets/img/3vm.png" alt="" class="img-conteudo"></a>
-                        <a class="carousel-item no-opacity carousel-conteudo carousel-conteudo-feed" href="#one!"> <img
-                            src="../../../assets/img/feed-relatorio.png" alt="" class="img-conteudo"></a>
+                <a class="carousel-item no-opacity carousel-conteudo carousel-conteudo-feed" href="#one!"> <img
+                        src="../../../assets/img/feed-relatorio.png" alt="" class="img-conteudo"></a>
 
             </div>
             <div class=" escrito-feeds">
@@ -761,13 +790,13 @@
 </section>
 
 <section class="assessores">
-    
-       
+
+
 
     <div class="conteiner">
         <h1 class="titulo">Quem usa o MarketStories, recomenda</h1>
- 
-      
+
+
         <!-- <div class="caixa-assessores">
             <div class="conteudo-assessores">
                
@@ -818,48 +847,52 @@
 
         </div> -->
 
-        
+
     </div>
-    
-    <swiper-container [navigation]="true" [slidesPerView]="1"
-    [spaceBetween]="spaceQuemSomos" class="swiper-quem-somos swiper-assessores">
-    <swiper-slide>
-        <div class="caixa-assessor">
-            <img src="../../../assets/img/ferron.jpg" alt="" class="img-assessor">
-            <div class="caixa-fala-assesor">
-              <p class="txt-assessor">"Busquei por alguns anos alguma ferramenta que pudesse entregar,
-                  qualidade de
-                  conteúdo e velocidade na informação. Agora tenho desfruto das duas coisas com o Market
-                  Stories,
-                  tem sido uma experiência tremenda com um feedback muito importante de clientes e amigos que
-                  tem
-                  se
-                  apoiado em algumas informações diárias para sua tomada de decisão."</p>
-              <p class="assessor">Rodrigo Ferron.</p>
-              <p class="cargo-asssessor">
-                  Assessor de investimentos - Monte Bravo
-              </p>
+
+    <swiper-container [navigation]="true" [slidesPerView]="1" [spaceBetween]="spaceQuemSomos"
+        class="swiper-quem-somos swiper-assessores">
+        <swiper-slide>
+            <div class="caixa-assessor">
+                <img src="../../../assets/img/ferron.jpg" alt="" class="img-assessor">
+                <div class="caixa-fala-assesor">
+                    <p class="txt-assessor">"Busquei por alguns anos alguma ferramenta que pudesse entregar,
+                        qualidade de
+                        conteúdo e velocidade na informação. Agora tenho desfruto das duas coisas com o Market
+                        Stories,
+                        tem sido uma experiência tremenda com um feedback muito importante de clientes e amigos que
+                        tem
+                        se
+                        apoiado em algumas informações diárias para sua tomada de decisão."</p>
+                    <p class="assessor">Rodrigo Ferron.</p>
+                    <p class="cargo-asssessor">
+                        Assessor de investimentos - Monte Bravo
+                    </p>
+                </div>
+
             </div>
-              
+        </swiper-slide>
+        <swiper-slide>
+            <div class="caixa-assessor">
+                <img src="../../../assets/img/silvia.jpg" alt="" class="img-assessor">
+                <div class="caixa-fala-assesor">
+                    <p class="txt-assessor">"Hoje em dia, o digital é extremamente importante e fundamental para muitas
+                        profissões, e para nós, no mercado financeiro, não poderia ser diferente.
+                        Confesso que tinha problemas em encontrar uma empresa de marketing com informações atualizadas e
+                        de grande qualidade a respeito do mercado financeiro. Com o MarketStories, eu encontrei tudo
+                        isso e tenho obtido muitos feedbacks de clientes sobre o meu conteúdo, e tudo que gera mais
+                        informação gera engajamento e, consequentemente, gera retorno."</p>
+                    <p class="assessor">Silvia Cristina.</p>
+                    <p class="cargo-asssessor">
+                        Assessora de Investimentos - Fictor Agro
+                    </p>
+                </div>
             </div>
-    </swiper-slide>
-    <swiper-slide>
-        <div class="caixa-assessor">
-            <img src="../../../assets/img/silvia.jpg" alt="" class="img-assessor">
-            <div class="caixa-fala-assesor">
-              <p class="txt-assessor">"Hoje em dia, o digital é extremamente importante e fundamental para muitas profissões, e para nós, no mercado financeiro, não poderia ser diferente.
-                Confesso que tinha problemas em encontrar uma empresa de marketing com informações atualizadas e de grande qualidade a respeito do mercado financeiro. Com o MarketStories, eu encontrei tudo isso e tenho obtido muitos feedbacks de clientes sobre o meu conteúdo, e tudo que gera mais informação gera engajamento e, consequentemente, gera retorno."</p>
-              <p class="assessor">Silvia Cristina.</p>
-              <p class="cargo-asssessor">
-                Assessora de Investimentos - Fictor Agro
-              </p>
-            </div>
-            </div>
-    </swiper-slide>
-</swiper-container>
+        </swiper-slide>
+    </swiper-container>
 
 
-<!-- <div class="conteiner">
+    <!-- <div class="conteiner">
     <div class="avaliacao-assessores">
         <div class="total-avaliacao"><img src="../../../assets/img/Group 356.png" alt=""></div>
         <div class="caixa-avaliacao-assessores">
@@ -882,8 +915,8 @@
     </div>
 </div> -->
 
-  
-    
+
+
 
 </section>
 
@@ -923,7 +956,7 @@
             </div>
 
             <div class="redes-footer">
-                <ul class="lista-redes-header">
+                <ul class="lista-redes-footer">
                     <li class="item-rede-footer">
                         <a href="https://www.instagram.com/marketstories.pro/" class="link-item-header"><fa-icon
                                 [icon]="['fab','instagram']"></fa-icon></a>

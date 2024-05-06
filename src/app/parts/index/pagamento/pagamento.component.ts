@@ -11,7 +11,6 @@ import { TelefoneModel } from '../../../models/pagamento.module';
 import { FaturaModel } from '../../../models/pagamento.module';
 import { ProdutoModel } from '../../../models/pagamento.module';
 import { format, addDays } from 'date-fns';
-import { Router ,ActivatedRoute} from '@angular/router';
 interface Car {
   label: string;
   value: string;
@@ -102,8 +101,6 @@ export class PagamentoComponent {
   constructor(private vindiService: VindiService,
     private cepService: CepService,
     private library: FaIconLibrary,
-    private router: Router,
-    private activatedRoute: ActivatedRoute
   ) {
 
 
@@ -119,12 +116,15 @@ export class PagamentoComponent {
 
 
 
+    
     lastValueFrom(this.vindiService.getMetodos()).then(res => {
       // Acessando diretamente o array payment_methods
       const paymentMethods = res.payment_methods;
-      this.pay = paymentMethods
-      console.log('payment methods:', paymentMethods);
+      // Filtrando paymentMethods com base no código 'cash'
+      this.pay = paymentMethods.filter((opcao: any) => opcao.code !== 'cash');
+      console.log('Opções de pagamento após o filtro:', this.pay);
     });
+
 
     lastValueFrom(this.vindiService.getClientes()).then(res => {
       // Acessando diretamente o array payment_methods
@@ -250,6 +250,7 @@ export class PagamentoComponent {
 
   @ViewChild('btn') btn: any;
   ngOnInit(): void {
+    // this.carregarOpcoesDePagamento();
     // this.getMetodos();
   }
 
@@ -311,8 +312,21 @@ export class PagamentoComponent {
   }
 
 
+
+  carregarOpcoesDePagamento() {
+    console.log(this.pay, 'testeteste')
+    this.vindiService.getMetodos().subscribe(
+      (response: any) => {
+        // Supondo que a resposta da sua API seja um array de objetos com propriedades 'name' e 'code'
+        this.pay = response.filter((opcao: any) => opcao.code !== 'cash');
+        console.log(this.pay, 'testeteste')
+      },
+      (error: any) => {
+        console.error('Erro ao obter opções de pagamento:', error);
+      }
+    );}
+
   send(form: NgForm) {
-    console.log('TESTE')
     console.log('telefones', this.telefones, this.endereco, this.objeto, this.clienteModel);
     this.clienteModel.phones = this.telefones;
     this.clienteModel.adress = this.endereco;
@@ -472,7 +486,6 @@ export class PagamentoComponent {
         // }))
 
         console.log('id', id, assinaturaPostada, this.faturaModel, produtoModel, this.cartaoModel, this.clienteModel)
-        this.router.navigate(['final'], { relativeTo: this.activatedRoute });
       })
     });
   }
@@ -488,10 +501,6 @@ export class PagamentoComponent {
 
   ]
 
-
-
-  
-  
 
 
 

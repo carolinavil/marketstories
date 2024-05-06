@@ -20,6 +20,20 @@
     margin: 0;
 }
 
+
+.caixa-provisorio{
+    padding: 4em 1em!important;
+}
+
+/* mat-nav-list.mat-mdc-nav-list.mat-mdc-list-base.mdc-list.ng-tns-c197257872-0 {
+    padding: 4em 1em;
+} */
+.btn-associar-header a{
+    color: white!important;
+}
+.btn-associar a{
+    color: white!important;
+}
 .conteiner {
     width: 85%;
     margin: 2em auto;
@@ -157,6 +171,9 @@ height: 40vh;
 
 
 @media screen and (min-width: 250px) {
+    .desktop-btn{
+        display: none;
+    }
 .titulo{
     font-size: 35px;
    text-align: center;
@@ -185,7 +202,9 @@ img.titulo-logo {
 }
 @media screen and (min-width: 900px) {
 
-    
+    .desktop-btn{
+        display: block;
+    }
 .conteiner {
     width: 85%;
     
