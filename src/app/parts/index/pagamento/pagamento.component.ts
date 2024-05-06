@@ -149,10 +149,14 @@ export class PagamentoComponent {
 
 
     lastValueFrom(this.vindiService.getPlanos()).then(res => {
+
+
       // Acessando diretamente o array payment_methods
       const planos = res.plans;
-      this.plans = planos
-      console.log('planos:', planos);
+
+      this.plans = planos.filter((opcao: any) => opcao.status !== 'inactive');
+      console.log('Opções de pagamento após o filtro:', this.plans);
+
     });
 
 
