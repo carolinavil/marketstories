@@ -16,6 +16,7 @@ import { PagamentoComponent } from './pagamento/pagamento.component';
 import { PagamentoModule } from './pagamento/pagamento.module';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
+
 register()
 
 
@@ -34,6 +35,8 @@ register()
     MatListModule,
     FontAwesomeModule,
     CountUpModule,
+  
+
    
 
   

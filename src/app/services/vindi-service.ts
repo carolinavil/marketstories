@@ -2,7 +2,7 @@
 
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { AssinaturaModel, ClienteModel, FaturaModel, MetodosModel, PagamentoModel, CartaoModel } from '../models/pagamento.module';
+import { AssinaturaModel, ClienteModel, FaturaModel, MetodosModel, PagamentoModel, CartaoModel, UsersMkModel } from '../models/pagamento.module';
 import { BehaviorSubject, of, tap } from 'rxjs';
 import { environment } from '../../environments/environment';
 import { Observable } from 'rxjs';
@@ -100,6 +100,12 @@ getPlanos(): Observable<any> {
   } }));
 }
 
+
+
+
+postUsuarios(request: UsersMkModel): Observable<any> {
+  return this.http.post<any>(`${this.baseUrl}/Usuarios`, request);
+}
 
 
 

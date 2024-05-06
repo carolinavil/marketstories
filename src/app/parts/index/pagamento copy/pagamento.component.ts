@@ -27,7 +27,7 @@ interface Phone {
   templateUrl: './pagamento.component.html',
   styleUrl: './pagamento.component.css'
 })
-export class PagamentoComponent {
+export class Pagamento2Component {
   // objeto: PagamentoModel = new PagamentoModel;
   nome!: string;
   numero!: string;

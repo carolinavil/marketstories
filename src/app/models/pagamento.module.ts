@@ -60,45 +60,25 @@ export class CartaoModel {
 }
 
 
-// export class AssinaturaModel {
-//   plan_id: string = '';
-//   customer_id: number =0;
-//   payment_method_code: string = '';
-//   products_items: ProdutosModel[] = [];
-  
+export class UsersMkModel {
+  email: string = '';
+  senha: string = '';
+  foto__instagram: string = '';
+  usuario_instagram: string = '';
+  crypto: boolean = false;
+  payment_company_code: string = '';
+
+}
+
+
+export class LoginModel {
+  email: string = '';
+  senha: string = '';
+
+}
 
 
 
-
-// }
-
-
-
-// {
-//   "plan_id": 429065,
-//   "customer_id":  82238045,
-//   "payment_method_code": "credit_card",
-//   "product_items": [
-//     { "product_id": 1470400 }
-//   ]
-// }
-
-
-
-
-
-
-
-
-
-// {
-//   "plan_id": 429065,
-//   "customer_id":  82238045,
-//   "payment_method_code": "credit_card",
- 
-//      "product_id": 1470400
- 
-// }
 
 export class AssinaturaModel {
   plan_id: number =0;
