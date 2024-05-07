@@ -35,6 +35,11 @@ export class PagamentoComponent {
   exp_month!: string;
   exp_year!: string;
   date!: Date;
+  usuarios: any
+  usuariosModel = new UsersMkModel();
+  arquivoSelecionado: File | null = null;
+  primeiraSenha: string = '';
+
 
   cepInfo: any;
   cepInvalido: boolean = false;
@@ -119,12 +124,19 @@ objetoUsuarios = new UsersMkModel ()
 
 
 
+    lastValueFrom(this.vindiService.getUsuarios()).then(res => {
+      // Acessando diretamente o array payment_methods
+      const usuarios = res.usuarios;
+      // Filtrando paymentMethods com base no código 'cash'
+
+      console.log('usuarios', res);
+    });
     
     lastValueFrom(this.vindiService.getMetodos()).then(res => {
       // Acessando diretamente o array payment_methods
       const paymentMethods = res.payment_methods;
       // Filtrando paymentMethods com base no código 'cash'
-      this.pay = paymentMethods.filter((opcao: any) => opcao.code !== 'cash');
+      this.pay = paymentMethods.filter((opcao: any) => opcao.code == 'credit_card');
       console.log('Opções de pagamento após o filtro:', this.pay);
     });
 
@@ -498,12 +510,57 @@ objetoUsuarios = new UsersMkModel ()
         console.log('id', id, assinaturaPostada, this.faturaModel, produtoModel, this.cartaoModel, this.clienteModel)
         this.router.navigate(['final'], { relativeTo: this.activatedRoute });
       })
+
+      this.usuariosModel.crypto = true
+      this.usuariosModel.email = this.clienteModel.email
+      this.usuariosModel.nome = this.clienteModel.name
+      
+      console.log('444',this.usuariosModel, this.clienteModel, clientePostado)
+ 
+   
+      lastValueFrom(this.vindiService.postUsuarios(this.usuariosModel)).then((res) => {
+        
+        console.log('oooo',res)
+      })
     });
+
+ 
   }
 
+  onFileSelected(event: any): void {
+    const arquivoSelecionado: File = event.target.files[0];
+    if (arquivoSelecionado) {
+     
+      this.previewImagem(arquivoSelecionado);
+      console.log('Arquivo selecionado:', arquivoSelecionado);
+    } else {
+      console.log('Nenhum arquivo selecionado.');
+    }
 
 
 
+  }
+
+  previewImagem(arquivo: File): void {
+    const reader = new FileReader();
+    reader.readAsDataURL(arquivo);
+    reader.onload = () => {
+      const imagemBase64 = reader.result as string;
+   
+      this.usuariosModel.foto_instagram = imagemBase64;
+    };
+  }
+  verdade = false
+  teste(){
+    console.log(this.verdade)
+    if( this.primeiraSenha !== this.usuariosModel.senha){
+      this.verdade =true
+    }
+    else{
+      this.verdade =false
+    }
+
+  }
 
 
   sexoList = [

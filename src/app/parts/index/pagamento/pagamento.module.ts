@@ -23,12 +23,15 @@ import { DialogModule } from 'primeng/dialog';
 import { NgxMaskApplierService } from 'ngx-mask/lib/ngx-mask-applier.service';
 import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
 import { RouterModule } from '@angular/router';
+import { UsuarioComponent } from './usuario/usuario.component';
+
 PagamentoRoutingModule
 @NgModule({
   declarations: [
     PagamentoComponent,
     FinalComponent,
     StepperComponent,
+    UsuarioComponent
   
   ],
   imports: [
@@ -44,8 +47,9 @@ PagamentoRoutingModule
     FontAwesomeModule,
     DropdownModule,
     CalendarModule,
+    
 
-
+    FileUploadModule ,
 
     CommonModule,
 

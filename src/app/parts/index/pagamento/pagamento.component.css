@@ -304,6 +304,7 @@ img.img-exemplo-insta {
     margin: 0.5em 0 !important;
 }
 
+
 @media screen and (min-width: 900px) {
 
 
@@ -481,7 +482,6 @@ button.p-element.btn-excluir-telefone.p-button.p-component {
 } */
 
 .imagem-astronauta {
-    position: absolute;
     object-fit: cover;
     display: inline-block;
     /* right: -38px !important; */
@@ -615,7 +615,9 @@ label.form-label {
         display: inline-block;
         /* right: -38px !important; */
         bottom: 0;
-        width: 79%;
+        width: 60%;
+        right: 50px;
+        left: 50px;
     }
     .logo-caixa{
         width: 29%;
@@ -624,7 +626,7 @@ h1.titulo-banner {
     font-size: 32px;
 }
 }
-@media screen and (min-width: 1600px){
+@media screen and (min-width: 1500px){
 
     h1.titulo-banner {
         font-size: 40px;
@@ -635,7 +637,9 @@ h1.titulo-banner {
         display: inline-block;
         /* right: -38px !important; */
         bottom: 0;
-        width: 90%;
+        width: 65%;
+        right: 50px;
+        left: 50px;
     }
 }
 
@@ -667,7 +671,3 @@ fa-icon.ng-fa-icon.icone-seta {
     color: red;
 }
 
-
-/* .form-control{
-    padding-left: 1em!important;
-} */

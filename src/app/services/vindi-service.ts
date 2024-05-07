@@ -2,7 +2,7 @@
 
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { AssinaturaModel, ClienteModel, FaturaModel, MetodosModel, PagamentoModel, CartaoModel, UsersMkModel } from '../models/pagamento.module';
+import { AssinaturaModel, ClienteModel, FaturaModel, MetodosModel, PagamentoModel, CartaoModel, LoginModel,UsersMkModel } from '../models/pagamento.module';
 import { BehaviorSubject, of, tap } from 'rxjs';
 import { environment } from '../../environments/environment';
 import { Observable } from 'rxjs';
@@ -65,6 +65,11 @@ postCartao(request: CartaoModel): Observable<any> {
   return this.http.post<any>(`${this.baseUrl}/Payment`, request);
 }
 
+
+account(request: LoginModel): Observable<any> {
+  return this.http.post<any>(`${this.baseUrl}/Login/validar-login`, request);
+}
+
 postAssinatura(request: AssinaturaModel): Observable<any> {
   return this.http.post<any>(`${this.baseUrl}/Subscriptions`, request);
 }
@@ -106,6 +111,16 @@ getPlanos(): Observable<any> {
 postUsuarios(request: UsersMkModel): Observable<any> {
   return this.http.post<any>(`${this.baseUrl}/Usuarios`, request);
 }
+
+getUsuarios(): Observable<any> {
+  return this.http.get<any>(`${this.baseUrl}/Usuarios`).pipe(tap({
+    next: list => {
+      this.list.next(list);
+      return of(list);
+  } }));
+}
+
+
 
 
 

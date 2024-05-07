@@ -3,14 +3,10 @@
     <!-- <form #form="ngForm" class="needs-validation formulario " > -->
         <div class="caixa-logo">
             <div class="texto-caixa-logo">
-              
-
-            
-
                 <h1 class="titulo-banner">Para manter-se no topo, é preciso rapidez </h1>
                 <img src="../../../../assets/img/Logo P&B MarketStories 2.png" alt="" class="logo-caixa">
             </div>
-            <img src="../../../../assets/img/astronauta (3).png" alt="" class="imagem-astronauta">
+            <img src="../../../../assets/img/astronauta2 (2).png" alt="" class="imagem-astronauta">
         </div>
         <div class="caixa-formulario">
             <!-- <h1 >Be</h1> -->
@@ -69,39 +65,7 @@
                         </div>
                     </div>
 
-                    <div class="row">
-                        <div class="form-group col s12 m4">
-                            <label class="form-label">Usuário <span class="text-danger">*</span> </label>
-                            <input required type="text" class="form-control" [(ngModel)]="clienteModel.email" type="email"
-                                class="form-control" email="email" id="email" name="email" #email="ngModel"
-                                placeholder="example@hotmail.com" required style="padding-left: 10px; border: 1px solid #ccc;">
-                            <div *ngIf="email.touched && email.errors">
-                                <p class="text-danger" *ngIf="email.errors['required']">Este campo é obrigatório.</p>
-                                <p class="text-danger" *ngIf="email.errors['email']">E-mail inválido</p>
-                            </div>
-                        </div>
-                        <div class="form-group col s12 m4">
-                            <label class="form-label">Insira uma senha <span class="text-danger">*</span> </label>
-                            <input required type="text" class="form-control" [(ngModel)]="clienteModel.email" type="email"
-                                class="form-control" email="email" id="email" name="email" #email="ngModel"
-                                placeholder="example@hotmail.com" required style="padding-left: 10px; border: 1px solid #ccc;">
-                            <div *ngIf="email.touched && email.errors">
-                                <p class="text-danger" *ngIf="email.errors['required']">Este campo é obrigatório.</p>
-                                <p class="text-danger" *ngIf="email.errors['email']">E-mail inválido</p>
-                            </div>
-                        </div>
-
-                        <div class="form-group col s12 m4">
-                            <label class="form-label">Confirmar <span class="text-danger">*</span> </label>
-                            <input required type="text" class="form-control" [(ngModel)]="clienteModel.email" type="email"
-                                class="form-control" email="email" id="email" name="email" #email="ngModel"
-                                placeholder="example@hotmail.com" required style="padding-left: 10px; border: 1px solid #ccc;">
-                            <div *ngIf="email.touched && email.errors">
-                                <p class="text-danger" *ngIf="email.errors['required']">Este campo é obrigatório.</p>
-                                <p class="text-danger" *ngIf="email.errors['email']">E-mail inválido</p>
-                            </div>
-                        </div>
-                    </div>
+              
                 </div>
 
                 <div class="endereco">
@@ -203,48 +167,44 @@
                             <fa-icon [icon]="['fas','money-check-dollar']"></fa-icon>
                         </h5>
                     </div>
-                    <div class="form-group col s12 m12 ">
-                        <label class="form-label">User <span class="text-danger">*</span> </label>
-                        <input type="text" class="form-control " [(ngModel)]="clienteModel.name" type="text"
-                            class="form-control" name="name" id="name" name="name" #name="ngModel" required="" autocomplete="off" style="padding-left: 10px; border: 1px solid #ccc;">
-                            <div *ngIf="name.touched && name.errors">
-                                <p class="text-danger" *ngIf="name.errors['required']">Este campo é obrigatório.</p>
-                            </div>
-                        </div>
+                
                         <div class="form-group col s12 m12 ">
-                            <label class="form-label">foto <span class="text-danger">*</span> </label>
-                            <input type="text" class="form-control " [(ngModel)]="clienteModel.name" type="text"
-                                class="form-control" name="name" id="name" name="name" #name="ngModel" required="" autocomplete="off" style="padding-left: 10px; border: 1px solid #ccc;">
-                                <div *ngIf="name.touched && name.errors">
-                                    <p class="text-danger" *ngIf="name.errors['required']">Este campo é obrigatório.</p>
+                            <label class="form-label">Informe seu usuário do Instagram <span class="text-danger">*</span> </label>
+                            <input type="text" class="form-control " [(ngModel)]="usuariosModel.usuario_instagram" type="text"
+                                class="form-control" name="usuario_instagram" id="usuario_instagram" usuario_instagram="usuario_instagram" #usuario_instagram="ngModel" required="" autocomplete="off" style="padding-left: 10px; border: 1px solid #ccc;"> 
+                                <div *ngIf="usuario_instagram.touched && usuario_instagram.errors">
+                                    <p class="text-danger" *ngIf="usuario_instagram.errors['required']">Este campo é obrigatório.</p>
                                 </div>
                             </div>
-                            <div class="form-group col s12 m12 ">
-                                <label class="form-label">cripto <span class="text-danger">*</span> </label>
-                                <p-selectButton 
-                                [options]="sexoList" 
-                                [(ngModel)]="this.objetoUsuarios.crypto" 
-                                optionLabel="label" 
-                                optionValue="value" 
-                                id="crypto"  #crypto="ngModel" required
-                                />
-                                        <!-- <p class="text-danger" *ngIf="crypto.errors['required']">Este campo é obrigatório.</p> -->
-                                    </div>
+                            <div class="form-group col s12 m12">
+                                <label class="form-label">Foto <span class="text-danger">*</span></label>
+
+
+                                <input type="file" (change)="onFileSelected($event)" accept="image/*" class="form-control" name="foto__instagram" id="foto_instagram" required>
+                                <!-- <div *ngIf="foto_instagram.touched && foto_instagram.errors">
+                                    <p class="text-danger" *ngIf="foto_instagram.errors['required']">Este campo é obrigatório.</p>
+                                </div> -->
+                            </div>
+                            
+                            <div class="form-group col s12 m12">
+                                <label class="form-label">Senha <span class="text-danger">*</span></label>
+                                <input type="password" class="form-control" [(ngModel)]="primeiraSenha" #senha="ngModel"
+                                    name="senha" id="senha" [required]="primeiraSenha !== ''" autocomplete="off"
+                                    style="padding-left: 10px; border: 1px solid #ccc;">
+                                <div *ngIf="senha.touched && senha.errors">
+                                    <p class="text-danger" *ngIf="senha.errors['required']">Este campo é obrigatório.</p>
                                 </div>
-                    <div class="row">
-                     
-                            <div class="form-group col s12 dropDown">
-                                <label class="form-label" for="">Plano <span class="text-danger">*</span> </label>
-                                <p-dropdown [options]="plans" optionLabel="name" optionValue="id"
-                                    [(ngModel)]="assinaturaModel.plan_id" 
-                                    class="form-control drop" plan_id="plan_id" id="plan_id" name="plan_id"
-                                    #plan_id="ngModel" placeholder="Selecione um método" id="drops" required  ></p-dropdown>
-                                    <div *ngIf="plan_id.touched && plan_id.errors">
-                                        <p class="text-danger" *ngIf="plan_id.errors['required']">Este campo é obrigatório.</p>
-                                    </div>
+                            </div>
+                            
+                            <div class="form-group col s12 m12">
+                                <label class="form-label">Confirmar Senha <span class="text-danger">*</span></label>
+                                <input type="password" class="form-control" [(ngModel)]="usuariosModel.senha"
+                                    name="confirmarSenha" id="confirmarSenha" required autocomplete="off"  (input)="teste()"
+                                    style="padding-left: 10px; border: 1px solid #ccc;">
+                                <div *ngIf="verdade">
+                                    <p class="text-danger">As senhas não coincidem.</p>
                                 </div>
-                 
-                    </div>
+                            </div>
 
 
           
@@ -262,6 +222,7 @@
 
                
                 </div>
+            </div>
             </cdk-step>
 
             <cdk-step [label]="'Produto'" #step1>

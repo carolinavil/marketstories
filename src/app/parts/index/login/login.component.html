@@ -1,11 +1,24 @@
-<p>login works!</p>
-<form action="
-">
-
-<div class="form-group">
-<label for="" class="form-label">Nome</label>
-<input type="text" class="form-control">
-
-</div>
+<form #form="ngForm" class="needs-validation formulario" (submit)="send(form)">
+    <div class="caixa-formulario">
+        <div class="row d-flex align-item-center">
+            <label class="form-label">Email <span class="text-danger">*</span> </label>
+            <input type="text" class="form-control" [(ngModel)]="loginModel.email" name="email" id="email"
+                email="email" #email="ngModel" required autocomplete="off"
+                style="padding-left: 10px; border: 1px solid #ccc;">
+            <div *ngIf="email.touched && email.errors">
+                <p class="text-danger" *ngIf="email.errors['required']">Este campo é obrigatório.</p>
+            </div>
+        </div>
+        <div class="form-group col s12 m12">
+            <label class="form-label">Confirmar Senha <span class="text-danger">*</span></label>
+            <input type="password" class="form-control" [(ngModel)]="loginModel.senha" name="confirmarSenha"
+                id="confirmarSenha" required autocomplete="off"
+                style="padding-left: 10px; border: 1px solid #ccc;">
+        </div>
+    </div>
+    <button type="submit" >Enviar</button>
 </form>
-<router-outlet></router-outlet>
+
+<div *ngIf="falhaLogin" class="alert alert-danger" role="alert">
+    Login recusado. Por favor, verifique suas credenciais e tente novamente.
+</div>

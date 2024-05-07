@@ -193,10 +193,10 @@ export class IndexComponent implements OnDestroy {
     clearInterval(this.contadorLayoutsInterval);
     clearInterval(this.contadorStoriesInterval);
     clearInterval(this.contadorAssessoresInterval);
-    const script = document.querySelector('script[src="//embed.typeform.com/next/embed.js""]');
-    if (script) {
-      script.remove();
-    }
+    // const script = document.querySelector('script[src="//embed.typeform.com/next/embed.js""]');
+    // if (script) {
+    //   script.remove();
+    // }
   }
 
   

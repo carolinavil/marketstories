@@ -61,21 +61,33 @@ export class CartaoModel {
 
 
 export class UsersMkModel {
+  nome: string = '';
   email: string = '';
   senha: string = '';
-  foto__instagram: string = '';
+  foto_instagram: string = '';
   usuario_instagram: string = '';
   crypto: boolean = false;
-  payment_company_code: string = '';
+
 
 }
-
 
 export class LoginModel {
+  nome: string = '';
   email: string = '';
   senha: string = '';
+  foto_instagram: string = '';
+  usuario_instagram: string = '';
+  crypto: boolean = false;
+
 
 }
+
+
+// export class LoginModel {
+//   email: string = '';
+//   senha: string = '';
+
+// }
 
 
 

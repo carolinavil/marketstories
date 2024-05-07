@@ -3,8 +3,7 @@ import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatMenuModule } from '@angular/material/menu';
-import { Pagamento2Component } from './pagamento.component';
-import { PagamentoRoutingModule } from './pagamento.routing';
+
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { CdkStepperModule } from '@angular/cdk/stepper';
@@ -18,53 +17,45 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { DropdownModule } from 'primeng/dropdown';
 import { DialogModule } from 'primeng/dialog';
 // import { NgxIuguModule } from "ngx-iugu";
- // Importe o módulo aqui
- import { CalendarModule } from 'primeng/calendar';
+// Importe o módulo aqui
+import { CalendarModule } from 'primeng/calendar';
 import { NgxMaskApplierService } from 'ngx-mask/lib/ngx-mask-applier.service';
 import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
 import { RouterModule } from '@angular/router';
-PagamentoRoutingModule
+import { PainelRoutingModule } from './painel.routing';
+import { PainelComponent } from './painel.component';
+
 @NgModule({
   declarations: [
-    Pagamento2Component,
- 
-  
+    PainelComponent
+
   ],
   imports: [
     CommonModule,
-    PagamentoRoutingModule,
+    PainelRoutingModule,
     FormsModule,
     HttpClientModule,
     CdkStepperModule,
     FileUploadModule,
     InputTextModule,
-    SelectButtonModule ,
+    SelectButtonModule,
     MessageModule,
     FontAwesomeModule,
     DropdownModule,
     CalendarModule,
-
-
-
     CommonModule,
-
     FontAwesomeModule,
     DropdownModule,
     FormsModule,
-
     CalendarModule,
-    NgxMaskDirective, 
+    NgxMaskDirective,
     NgxMaskPipe,
     FileUploadModule,
 
- 
-
-   
-
   ],
   providers: [
-      provideNgxMask()
+    provideNgxMask()
   ]
   // bootstrap: [AppComponent]
 })
-export class Pagamento2Module { }
+export class PainelModule { }
