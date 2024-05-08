@@ -145,6 +145,9 @@ objetoUsuarios = new UsersMkModel ()
       // Acessando diretamente o array payment_methods
       const customers = res.customers;
       this.cus = customers
+
+      // this.cus = res.customers.filter((opcao: any) => opcao.status !== 'archived');
+      // console.log('Opções de pagamento após o filtro:', this.cus);
       console.log('clientes:', this.cus);
     });
 
