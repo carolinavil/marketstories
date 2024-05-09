@@ -105,21 +105,38 @@ span.opcao {
     color: #ffffffc4;
 }
 
-.form-control, .drop{
-    border-radius: 8px !important;
+ .form-control, .drop{
+    border-radius: 20px !important;
     border: 1px solid #00000017 !important;
     margin: 1em 0 !important;
     height: 2.5rem !important;
-}
+} 
 
-.prox-btn {
-    padding: 0.8em 4em;
-    border: none;
-    border-radius: 2em;
+/* .form-control, .drop{
+    border-radius: 0px !important;
+    margin: 1em 0 !important;
+    height: 2.5rem !important;
+    border-bottom: 1px solid black !important;
+} */
+
+ /* .form-control, .drop{
+
+    border-radius: none!important
+ 
+}  */
+
+
+
+
+.form-label-explicacao{
+    font-weight: 400;
+}
+.prox-btn{
     background: #3E6AAD;
     color: white;
     font-weight: 700;
-    margin-top: 2em;
+    padding: 0.9em 1.2em;
+    border-radius: 60px;
 }
 
 .txt-form {
@@ -222,7 +239,7 @@ li.nav-item.ng-star-inserted {
 
 .d-flex.justify-content-between.flex-row.mb-5.mt-4 {
     display: flex;
-    justify-content: space-between;
+    justify-content: center
 }
 
 div#inicio {
@@ -424,11 +441,10 @@ font-weight: 600;
 
 .btn-stepper {
     /* padding: 0.5em; */
-    margin-left: 1em;
+    /* margin-left: 1em; */
     background: #4BB9EC;
     color: white;
     border: none;
-    border-radius: 0.5em;
     font-size: 15px;
     transition: 0.9s;
     cursor: pointer;
@@ -562,13 +578,13 @@ label.form-label {
         position: relative;
     
     }
-
+/* 
     .btn-avancar {
         justify-content: flex-end!important;
-    }
+    } */
 
-    .prox-btn{
-        padding: 0.8em 1em;}
+    /* .prox-btn{
+        padding: 0.8em 1em;} */
 
 }
 
@@ -579,6 +595,7 @@ label.form-label {
         position: absolute;
         max-height: 100%;
         right: 0;
+        padding-top: 5em;
         overflow-y: auto;
         padding-bottom: 4em;
         scrollbar-width: thin;
@@ -643,15 +660,14 @@ h1.titulo-banner {
     }
 }
 
-fa-icon.ng-fa-icon.icone-seta {
-    padding-left: 1em;
-    margin-left: 1em;
-    background: white;
-    padding: 0.1em 0.4em;
-    color: #4bb9ec;
-    border-radius: 31px;
+fa-icon.ng-fa-icon.icone-seta{
+    /* background: white; */
+    /* padding: 0.1em 0.4em; */
+    color: white;
+    /* border-radius: 31px; */
     flex-flow: column;
     text-align: center;
+    font-size: 25px;
 }
 
 .btns-caixa{
@@ -669,5 +685,17 @@ fa-icon.ng-fa-icon.icone-seta {
 
 .text-danger{
     color: red;
+}
+
+
+
+.form-control{
+    height: 2rem !important;
+}
+
+
+
+.telefone-explicacao{
+    margin: 1em 0 !important;
 }
 

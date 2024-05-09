@@ -25,6 +25,17 @@ button.nav-link.py-3.fw-bold.active {
 button.nav-link.py-3.fw-bold{
     background: #0dcaf018;
 }
+.caixa-linha{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.topico.active {
+    /* background: red; */
+    border-radius: 17px;
+    width: 1px;
+    padding: 0.5em;
+}
 
 
 @media screen and (min-width: 200px){
@@ -50,7 +61,7 @@ button.nav-link.py-3.fw-bold{
 
 @media screen and (min-width: 1800px){
     .caixa-stepper{
-        margin: 0px 17em;
+        margin: 0px 21em;
     }
     
     

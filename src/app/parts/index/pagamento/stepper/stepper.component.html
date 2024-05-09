@@ -2,11 +2,15 @@
     <ul class="nav nav-pills nav-justified header-steper">
         <li class="nav-item" *ngFor="let step of steps;let i =index">
             <div class="d-grid">
-                <button
-            
-                [class.active]="selectedIndex ===i"
-                 class="nav-link py-3 fw-bold">
+                <button [class.active]="selectedIndex ===i" class="nav-link py-3 fw-bold">
+                    <div class="caixa-linha">
+                        <div class="topico"></div>
+                    </div>
                     {{step.label}}
+                    <!-- {{iconClass}} -->
+
+
+
                 </button>
             </div>
         </li>

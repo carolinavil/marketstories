@@ -15,80 +15,139 @@
             </div>
              -->
         <app-stepper [linearModeSelected]="false" #appStepper>
-            <cdk-step [label]="'Cadastro'" #step1>
+            <cdk-step [label]="'Cadastro'"
+          
+            #step1>
+                
                 <div class="pessoal">
                     <i class="fa-solid fa-user"></i>
                     <div class="row form-group">
                         <h5 class="titulo-formulario">
                             Dados pessoais
-                            <fa-icon [icon]="['fas','user']"></fa-icon>
+                            <!-- <fa-icon [icon]="['fas','user']"></fa-icon> -->
                         </h5>
                     </div>
-                   
+                    <!-- <fa-icon [icon]="['fas','location-dot']"></fa-icon> -->
                     <div class="row d-flex align-item-center">
-                        <div class="form-group col s12 m12 ">
-                            <label class="form-label">Nome <span class="text-danger">*</span> </label>
-                            <input type="text" class="form-control " [(ngModel)]="clienteModel.name" type="text"
-                                class="form-control" name="name" id="name" name="name" #name="ngModel" required="" autocomplete="off" style="padding-left: 10px; border: 1px solid #ccc;"> 
-                                <div *ngIf="name.touched && name.errors">
-                                    <p class="text-danger" *ngIf="name.errors['required']">Este campo é obrigatório.</p>
-                                </div>
+                        <div class="form-group col s12 m12" [ngClass]="{'has-success': name.valid}">
+                            <label class="form-label">Qual seu nome? <span class="form-label-explicacao">Ele ficará visível nos layouts criados</span> <span class="text-danger">*</span> </label>
+                            <div class="input-group">
+                                <input  [(ngModel)]="clienteModel.name" class="form-control"
+                                    name="name" id="name" #name="ngModel" required autocomplete="off" style="padding-left: 15px">
+                                <span class="input-group-addon" [ngClass]="{'input-success': name.valid}">
+                                    <i class="fas fa-check" *ngIf="name.valid"></i>
+                                </span>
                             </div>
-                    </div>
-                    <div class="row">
-                       
-              
-
-                    <div class="row">
-                        <div class="form-group col s12 m8">
-                            <label class="form-label">E-mail <span class="text-danger">*</span> </label>
-                            <input required type="text" class="form-control" [(ngModel)]="clienteModel.email" type="email"
-                                class="form-control" email="email" id="email" name="email" #email="ngModel"
-                                placeholder="example@hotmail.com" required style="padding-left: 10px; border: 1px solid #ccc;">
-                            <div *ngIf="email.touched && email.errors">
-                                <p class="text-danger" *ngIf="email.errors['required']">Este campo é obrigatório.</p>
-                                <p class="text-danger" *ngIf="email.errors['email']">E-mail inválido</p>
+                            <div *ngIf="name.touched && name.errors">
+                                <p class="text-danger" *ngIf="name.errors['required']">Este campo é obrigatório.</p>
                             </div>
                         </div>
-
-
-
                         
+                    </div>
+                <div class="row">
+                    <div class="form-group col s12 m12">
+                        <label class="form-label">E-mail <span class="text-danger">*</span> </label>
+                        <input required type="text" class="form-control" [(ngModel)]="clienteModel.email" type="email"
+                            class="form-control" email="email" id="email" name="email" #email="ngModel"
+                            placeholder="example@hotmail.com" required style="padding-left: 10px ;">
+                        <div *ngIf="email.touched && email.errors">
+                            <p class="text-danger" *ngIf="email.errors['required']">Este campo é obrigatório.</p>
+                            <p class="text-danger" *ngIf="email.errors['email']">E-mail inválido</p>
+                        </div>
+                    </div>
+            </div>
+        <div class="row">
+           
+            <div class="form-group col s12 m12">
+                <label for="" class="form-label-explicacao">A senha será usada para acessar seu painel de assessor</label>
+            </div>
+            <div class="form-group col s12 m6">
+                <label class="form-label">Senha <span class="text-danger">*</span></label>
+                <input type="password" class="form-control" [(ngModel)]="primeiraSenha" #senha="ngModel"
+                    name="senha" id="senha" [required]="primeiraSenha !== ''" autocomplete="off"
+                    style="padding-left: 10px; ">
+                <div *ngIf="senha.touched && senha.errors">
+                    <p class="text-danger" *ngIf="senha.errors['required']">Este campo é obrigatório.</p>
+                </div>
+            </div>
+            
+            <div class="form-group col s12 m6">
+                <label class="form-label">Confirmar Senha <span class="text-danger">*</span></label>
+                <input type="password" class="form-control" [(ngModel)]="usuariosModel.senha"
+                    name="confirmarSenha" id="confirmarSenha" required autocomplete="off"  (input)="teste()"
+                    style="padding-left: 10px; ">
+                <div *ngIf="verdade">
+                    <p class="text-danger">As senhas não coincidem.</p>
+                </div>
+            </div>
+        </div>    
+        </div>
+                <div class="endereco">
+                    <!-- <div class="row form-group">
+                        <h5 class="titulo-formulario">
+                            Endereço
+                           
+                        </h5>
+                    </div> -->
+                    <div class="row">
+                        <div class="form-group col s12 m12 telefone-explicacao">
+                            <label for="" class="form-label-explicacao ">O seu número de WhatsApp será utilizado para o envio dos stories</label>
+                        </div>
+                         <!-- <div class="form-group col  s12 m6">
+                            <div class="caixa-btn-telefone">
+                                <label class="form-label">Telefone </label>
+                                <button pButton type="button" label="" class="btn-telefone"
+                                    (click)="adicionarInput()"><label for="">Adicionar Telefone<fa-icon [icon]="['fas','plus']" class="icone-seta-plus"></fa-icon></label></button>
+                            </div>
+
+                            <div *ngFor="let input of inputs; let i = index" class="caixa-input-telefone">
+                             
+                                <input required type="text" name="phone{{i}}" id="phone{{i}}" class="form-control"
+                                    placeholder="example@hotmail.com" [(ngModel)]="inputs[i].number"
+                                    (blur)="atribuirValor()"  required mask="(00) 00000-0000" placeholder="(00) 00000-0000" style="padding-left: 10px; ">
+                                <button pButton type="button" class="btn-excluir-telefone" 
+                                    (click)="removerInput(i)"><fa-icon [icon]="['fas','trash']" class="icone-lixo"></fa-icon></button>
+                            </div>
+                        </div> -->
+                        <!-- border: 1px solid #ccc; -->
                         <div class="form-group col s12 m4">
+                            <label class="form-label">Número de WhatsApp <span class="text-danger">*</span> </label>
+                            <div *ngFor="let input of inputs; let i = index" class="caixa-input-telefone">
+                             
+                            <input  type="text" name="phone{{i}}" id="phone{{i}}" class="form-control"
+                            placeholder="example@hotmail.com" [(ngModel)]="inputs[i].number"
+                            (blur)="atribuirValor()" mask="(00) 00000-0000" placeholder="(00) 00000-0000" style="padding-left: 10px; ">
+                            <!-- <div *ngIf="registry_code.touched && registry_code.errors">
+                                <p class="text-danger" *ngIf="registry_code.errors['required']">Este campo é obrigatório.</p>
+                            </div>    -->
+                        </div>
+                        
+                   </div>
+                       <div class="form-group col s12 m4">
                             <label class="form-label">CPF/CNPJ <span class="text-danger">*</span> </label>
                             <input required [(ngModel)]="clienteModel.registry_code" type="text" class="form-control"
                                 registry_code="registry_code" id="registry_code" name="registry_code"
-                                #registry_code="ngModel"    [mask]="getMask(clienteModel.registry_code)" style="padding-left: 10px; border: 1px solid #ccc;">
+                                #registry_code="ngModel"    [mask]="getMask(clienteModel.registry_code)" style="padding-left: 10px; ">
                                 <div *ngIf="registry_code.touched && registry_code.errors">
                                     <p class="text-danger" *ngIf="registry_code.errors['required']">Este campo é obrigatório.</p>
                                 </div>
                         </div>
-                    </div>
-
-              
-                </div>
-
-                <div class="endereco">
-                    <div class="row form-group">
-                        <h5 class="titulo-formulario">
-                            Endereço
-                            <fa-icon [icon]="['fas','location-dot']"></fa-icon>
-                        </h5>
-                    </div>
-                    <div class="row">
                         <div class="form-group col s12 m4">
                             <label class="form-label">CEP <span class="text-danger">*</span> </label>
                             <input required type="text" class="form-control " name="documento" id="documento"
                                 #documento="ngModel" [(ngModel)]="cep" required #buscaCEP (blur)="blur($event)"
-                                [(ngModel)]="cep" required f mask="00000-000" placeholder="00000-000" style="padding-left: 10px; border: 1px solid #ccc;">
+                                [(ngModel)]="cep" required f mask="00000-000" placeholder="00000-000" style="padding-left: 10px; ">
                                 <div *ngIf="documento.touched && documento.errors">
                                     <p class="text-danger" *ngIf="documento.errors['required']">Este campo é obrigatório.</p>
                                 </div>
                         </div>
-                        <div class="form-group col s12 m4">
-                            <label class="form-label">Endereco <span class="text-danger">*</span> </label>
+                     
+                    </div>
+                    <div class="row">
+                        <div class="form-group col s12 m8">
+                            <label class="form-label">Endereço <span class="text-danger">*</span> </label>
                             <input required type="text" #endereco="ngModel" [(ngModel)]="enderecoFormat"
-                                class="form-control" name="endereco" id="endereco" ngModel required type="text" style="padding-left: 10px; border: 1px solid #ccc;">
+                                class="form-control" name="endereco" id="endereco" ngModel required type="text" style="padding-left: 10px; ">
                                 <div *ngIf="endereco.touched && endereco.errors">
                                     <p class="text-danger" *ngIf="endereco.errors['required']">Este campo é obrigatório.</p>
                                 </div>
@@ -115,35 +174,20 @@
                             class="form-control" name="uf" id="uf" ngModel required type="text">
                     </div>
                 </div> -->
-                </div>
+             
 
-                <div class="telefone">
+                <!-- <div class="telefone">
                     <div class="row form-group">
                         <h5 class="titulo-formulario">
                             Contato
-                            <fa-icon [icon]="['fas','phone']"></fa-icon>
+                            
                         </h5>
                     </div>
                     <div class="row caixa-telefone">
 
-                        <div class="form-group col  s12 m6">
-                            <div class="caixa-btn-telefone">
-                                <label class="form-label">Telefone </label>
-                                <button pButton type="button" label="" class="btn-telefone"
-                                    (click)="adicionarInput()"><label for="">Adicionar Telefone<fa-icon [icon]="['fas','plus']" class="icone-seta-plus"></fa-icon></label></button>
-                            </div>
-
-                            <div *ngFor="let input of inputs; let i = index" class="caixa-input-telefone">
-                                <!-- placeholder="Telefone {{i + 1}}" -->
-                                <input required type="text" name="phone{{i}}" id="phone{{i}}" class="form-control"
-                                    placeholder="example@hotmail.com" [(ngModel)]="inputs[i].number"
-                                    (blur)="atribuirValor()"  required mask="(00) 00000-0000" placeholder="(00) 00000-0000" style="padding-left: 10px; border: 1px solid #ccc;">
-                                <button pButton type="button" class="btn-excluir-telefone" 
-                                    (click)="removerInput(i)"><fa-icon [icon]="['fas','trash']" class="icone-lixo"></fa-icon></button>
-                            </div>
-                        </div>
+                       
                     </div>
-                </div>
+                </div> -->
                 <!-- <div class="d-flex justify-content-between flex-row mb-5 mt-4" id="inicio"> -->
                  <div class="d-flex justify-content-between flex-row mb-5 mt-4 btns-caixa btn-avancar">
                     <!-- <button class="me-0 ms-auto prox-btn btn-stepper" type="submit" cdkStepperPrevious>
@@ -152,8 +196,7 @@
                     </button> -->
 
                     <button class="me-0 ms-auto prox-btn btn-stepper" type="submit" cdkStepperNext >
-                        <span>Avançar</span>
-                        <fa-icon [icon]="['fas','chevron-right']" class="icone-seta"></fa-icon>
+                        <fa-icon [icon]="['fas','arrow-right']" class="icone-seta"></fa-icon>
                     </button>
                 </div>
             </div>
@@ -171,7 +214,7 @@
                         <div class="form-group col s12 m12 ">
                             <label class="form-label">Informe seu usuário do Instagram <span class="text-danger">*</span> </label>
                             <input type="text" class="form-control " [(ngModel)]="usuariosModel.usuario_instagram" type="text"
-                                class="form-control" name="usuario_instagram" id="usuario_instagram" usuario_instagram="usuario_instagram" #usuario_instagram="ngModel" required="" autocomplete="off" style="padding-left: 10px; border: 1px solid #ccc;"> 
+                                class="form-control" name="usuario_instagram" id="usuario_instagram" usuario_instagram="usuario_instagram" #usuario_instagram="ngModel" required="" autocomplete="off" style="padding-left: 10px; "> 
                                 <div *ngIf="usuario_instagram.touched && usuario_instagram.errors">
                                     <p class="text-danger" *ngIf="usuario_instagram.errors['required']">Este campo é obrigatório.</p>
                                 </div>
@@ -190,7 +233,7 @@
                                 <label class="form-label">Senha <span class="text-danger">*</span></label>
                                 <input type="password" class="form-control" [(ngModel)]="primeiraSenha" #senha="ngModel"
                                     name="senha" id="senha" [required]="primeiraSenha !== ''" autocomplete="off"
-                                    style="padding-left: 10px; border: 1px solid #ccc;">
+                                    style="padding-left: 10px; ">
                                 <div *ngIf="senha.touched && senha.errors">
                                     <p class="text-danger" *ngIf="senha.errors['required']">Este campo é obrigatório.</p>
                                 </div>
@@ -200,7 +243,7 @@
                                 <label class="form-label">Confirmar Senha <span class="text-danger">*</span></label>
                                 <input type="password" class="form-control" [(ngModel)]="usuariosModel.senha"
                                     name="confirmarSenha" id="confirmarSenha" required autocomplete="off"  (input)="teste()"
-                                    style="padding-left: 10px; border: 1px solid #ccc;">
+                                    style="padding-left: 10px; ">
                                 <div *ngIf="verdade">
                                     <p class="text-danger">As senhas não coincidem.</p>
                                 </div>
@@ -253,7 +296,7 @@
                                         <label class="form-label">Nome <span class="text-danger">*</span> </label>
                                         <input type="text" class="form-control "
                                             [(ngModel)]="perfilModel.holder_name" class="form-control" name="email"
-                                            id="email" #nomeCartao="ngModel" style="padding-left: 10px; border: 1px solid #ccc;">
+                                            id="email" #nomeCartao="ngModel" style="padding-left: 10px; ">
                                             <div *ngIf="nomeCartao.touched && nomeCartao.errors">
                                                 <p class="text-danger" *ngIf="nomeCartao.errors['required']">Este campo é obrigatório.</p>
                                             </div>
@@ -263,7 +306,7 @@
                                         <label class="form-label">Número do cartão <span class="text-danger">*</span> </label>
                                         <input type="text" class="form-control "
                                             [(ngModel)]="perfilModel.card_number" type="text" class="form-control"
-                                            name="card_number" id="card_number" #card_number="ngModel" placeholder="0000 0000 0000 0000" style="padding-left: 10px; border: 1px solid #ccc;">
+                                            name="card_number" id="card_number" #card_number="ngModel" placeholder="0000 0000 0000 0000" style="padding-left: 10px; ">
                                             <div *ngIf="card_number.touched && card_number.errors">
                                                 <p class="text-danger" *ngIf="card_number.errors['required']">Este campo é obrigatório.</p>
                                             </div>
@@ -276,7 +319,7 @@
                                         <input type="text" class="form-control "
                                             [(ngModel)]="perfilModel.card_expiration" type="text"
                                             class="form-control" name="card_expiration" id="card_expiration"
-                                            #card_expiration="ngModel"  mask="00/00" placeholder="00/00" style="padding-left: 10px; border: 1px solid #ccc;">
+                                            #card_expiration="ngModel"  mask="00/00" placeholder="00/00" style="padding-left: 10px; ">
                                             <div *ngIf="card_expiration.touched && card_expiration.errors">
                                                 <p class="text-danger" *ngIf="card_expiration.errors['required']">Este campo é obrigatório.</p>
                                             </div>
@@ -285,7 +328,7 @@
                                         <label class="form-label">CVV <span class="text-danger">*</span> </label>
                                         <input type="text" class="form-control " [(ngModel)]="perfilModel.card_cvv"
                                             class="form-control" name="card_cvv" id="card_cvv" #card_cvv="ngModel" mask="000" placeholder="000">
-                                            <div *ngIf="card_cvv.touched && card_cvv.errors" style="padding-left: 10px; border: 1px solid #ccc;">
+                                            <div *ngIf="card_cvv.touched && card_cvv.errors" style="padding-left: 10px; ">
                                                 <p class="text-danger" *ngIf="card_cvv.errors['required']">Este campo é obrigatório.</p>
                                             </div>
                                     </div>

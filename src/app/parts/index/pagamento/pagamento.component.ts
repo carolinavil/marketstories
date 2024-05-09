@@ -4,7 +4,7 @@ import { NgForm } from '@angular/forms';
 import { AdressModel, AssinaturaModel, ClienteModel, MetodosModel, PagamentoModel, CartaoModel, PerfilPagamentoModel, ProdutosModel, UsersMkModel } from '../../../models/pagamento.module';
 import { MatStepper } from '@angular/material/stepper';
 import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
-import { faChevronLeft, faChevronRight, faLocationDot, faMoneyCheckDollar, faPhone, faPlus, faTrash, faUser } from '@fortawesome/free-solid-svg-icons';
+import { faArrowRight, faChevronLeft, faChevronRight, faLocationDot, faMoneyCheckDollar, faPhone, faPlus, faTrash, faUser } from '@fortawesome/free-solid-svg-icons';
 import { CepService } from '../../../services/cep.service';
 import { last, lastValueFrom } from 'rxjs';
 import { TelefoneModel } from '../../../models/pagamento.module';
@@ -185,7 +185,7 @@ objetoUsuarios = new UsersMkModel ()
         this.metodos = res;
         console.log('teste', this.metodos)
       });
-    library.addIcons(faChevronRight, faUser, faTrash, faLocationDot, faPhone, faChevronLeft, faPlus, faMoneyCheckDollar)
+    library.addIcons(faChevronRight, faUser, faTrash, faLocationDot, faPhone, faChevronLeft, faPlus, faMoneyCheckDollar, faArrowRight)
   }
 
 
