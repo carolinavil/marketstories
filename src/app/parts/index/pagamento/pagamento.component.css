@@ -105,12 +105,13 @@ span.opcao {
     color: #ffffffc4;
 }
 
- .form-control, .drop{
+.form-control,
+.drop {
     border-radius: 20px !important;
     border: 1px solid #00000017 !important;
     margin: 1em 0 !important;
     height: 2.5rem !important;
-} 
+}
 
 /* .form-control, .drop{
     border-radius: 0px !important;
@@ -119,7 +120,7 @@ span.opcao {
     border-bottom: 1px solid black !important;
 } */
 
- /* .form-control, .drop{
+/* .form-control, .drop{
 
     border-radius: none!important
  
@@ -128,10 +129,11 @@ span.opcao {
 
 
 
-.form-label-explicacao{
+.form-label-explicacao {
     font-weight: 400;
 }
-.prox-btn{
+
+.prox-btn {
     background: #3E6AAD;
     color: white;
     font-weight: 700;
@@ -425,7 +427,7 @@ img.img-caixa-astronauta{
 
 .btn-telefone {
     padding: 0.5em;
- margin-left: 1em;
+    margin-left: 1em;
     background: #057ec3;
     border: none;
     border-radius: 40px;
@@ -433,8 +435,8 @@ img.img-caixa-astronauta{
     cursor: pointer;
 }
 
-.btn-telefone label{
-font-weight: 600;
+.btn-telefone label {
+    font-weight: 600;
     color: white;
     font-size: 15px;
 }
@@ -442,7 +444,7 @@ font-weight: 600;
 .btn-stepper {
     /* padding: 0.5em; */
     /* margin-left: 1em; */
-    background: #4BB9EC;
+    background: #5fa0ce;
     color: white;
     border: none;
     font-size: 15px;
@@ -455,6 +457,7 @@ font-weight: 600;
     width: 100% !important;
     height: 2.5rem;
     align-items: center;
+    margin-top: 1em;
 }
 
 
@@ -470,7 +473,7 @@ h5.titulo-formulario {
     color: #056997;
     margin-bottom: 2em;
     /* margin: 1em; */
-   
+
 }
 
 .caixa-input-telefone.ng-star-inserted {
@@ -493,6 +496,7 @@ button.p-element.btn-excluir-telefone.p-button.p-component {
     /* width: 30%; */
     background: linear-gradient(317deg, #DA6627, #643C8E, #120031, #120031);
     width: 35%;
+    overflow: hidden;
 }
 
 /* .caixa-formulario {
@@ -504,8 +508,10 @@ button.p-element.btn-excluir-telefone.p-button.p-component {
     object-fit: cover;
     display: inline-block;
     /* right: -38px !important; */
-    bottom: 0;
+
+    animation: floatAstronaut 5s ease-in-out infinite alternate;
 }
+
 /* 
 .imagem-astronauta {
     position: absolute;
@@ -536,12 +542,12 @@ label.form-label {
     color: #0000007d;
 }
 
-.icone-lixo{
-    color:#056997 ;
+.icone-lixo {
+    color: #056997;
     font-size: 20px;
 }
 
-.logo-formulario{
+.logo-formulario {
     text-align: center;
     width: 35%;
 }
@@ -555,7 +561,7 @@ label.form-label {
 /* astronauta */
 
 
-@media screen and (min-width: 1200px){
+@media screen and (min-width: 1200px) {
 
 
     .imagem-astronauta {
@@ -567,21 +573,23 @@ label.form-label {
         width: 115%;
     }
 
-    .form-label{
+    .form-label {
         font-size: 15px;
     }
 }
 
-@media screen and (min-width: 200px){
+@media screen and (min-width: 200px) {
     .caixa-logo {
         display: none;
     }
-    .caixa-formulario{
+
+    .caixa-formulario {
         width: 100%;
         position: relative;
-    
+
     }
-/* 
+
+    /* 
     .btn-avancar {
         justify-content: flex-end!important;
     } */
@@ -592,7 +600,7 @@ label.form-label {
 }
 
 
-@media screen and (min-width: 1100px){
+@media screen and (min-width: 1100px) {
 
     .caixa-formulario {
         position: absolute;
@@ -604,66 +612,85 @@ label.form-label {
         scrollbar-width: thin;
         scrollbar-color: #888888 #f0f0f0;
     }
-    
-    
+
+
     .caixa-formulario::-webkit-scrollbar {
-        width: 8px; /* Largura da barra de rolagem */
+        width: 8px;
+        /* Largura da barra de rolagem */
     }
-    
+
     .caixa-formulario::-webkit-scrollbar-track {
-        background: #f0f0f0; /* Cor de fundo da barra de rolagem */
+        background: #f0f0f0;
+        /* Cor de fundo da barra de rolagem */
     }
-    
+
     .caixa-formulario::-webkit-scrollbar-thumb {
-        background-color: #888888; /* Cor da barra de rolagem */
-        border-radius: 4px; /* Borda arredondada */
+        background-color: #888888;
+        /* Cor da barra de rolagem */
+        border-radius: 4px;
+        /* Borda arredondada */
     }
 
     .caixa-logo {
         display: block;
     }
+
     .caixa-formulario {
         width: 70%;
 
     }
-    
 
 
-    .imagem-astronauta {
+
+    /* .imagem-astronauta {
         position: absolute;
         object-fit: cover;
         display: inline-block;
-        /* right: -38px !important; */
         bottom: 0;
         width: 60%;
         right: 50px;
         left: 50px;
-    }
-    .logo-caixa{
+    } */
+    .logo-caixa {
         width: 29%;
+    }
+
+    h1.titulo-banner {
+        font-size: 32px;
+    }
 }
-h1.titulo-banner {
-    font-size: 32px;
-}
-}
-@media screen and (min-width: 1500px){
+
+@media screen and (min-width: 1200px) {
 
     h1.titulo-banner {
         font-size: 40px;
     }
+
     .imagem-astronauta {
         position: absolute;
         object-fit: cover;
         display: inline-block;
         /* right: -38px !important; */
         bottom: 0;
-        width: 65%;
+        width: 90%;
         right: 50px;
         left: 50px;
     }
 }
 
-fa-icon.ng-fa-icon.icone-seta{
+
+@media screen and (min-width: 1500px) {
+
+    h1.titulo-banner {
+        font-size: 40px;
+    }
+
+    .imagem-astronauta {
+        width: 70%;
+    }
+}
+
+fa-icon.ng-fa-icon.icone-seta {
     /* background: white; */
     /* padding: 0.1em 0.4em; */
     color: white;
@@ -673,11 +700,11 @@ fa-icon.ng-fa-icon.icone-seta{
     font-size: 25px;
 }
 
-.btns-caixa{
+.btns-caixa {
     padding-top: 2em;
 }
 
-.icone-seta-plus{
+.icone-seta-plus {
     margin-left: 0.5em;
 }
 
@@ -686,42 +713,45 @@ fa-icon.ng-fa-icon.icone-seta{
     overflow-y: auto;
 }
 
-.text-danger{
+.text-danger {
     color: red;
 }
 
 
 
-.form-control{
+.form-control {
     height: 2rem !important;
 }
 
 
 
-.telefone-explicacao{
+.telefone-explicacao {
     margin: 1em 0 !important;
 }
 
 
 .custom-file-upload {
     cursor: pointer;
-    background-color: #007bff;
+    background-color: #4BB9EC;
     color: #fff;
-    padding: 10px 15px;
-    border-radius: 5px;
-    display: inline-block;
+    padding: 5px;
+    display: block;
     text-align: center;
+    height: 2.5rem;
+    align-items: center;
+    border-radius: 60px;
+    /* width: 30%; */
 }
 
 .custom-file-upload:hover {
-    background-color: #0056b3;
+    background-color: #247da6;
 }
 
 .img-escolhida-instagram {
     max-width: 100%;
     max-height: 300px;
     margin-top: 10px;
-    
+
 }
 
 
@@ -729,9 +759,8 @@ fa-icon.ng-fa-icon.icone-seta{
 
 img.imagem-escolhida-instagram.ng-star-inserted {
     padding-top: 3em;
-    max-height: 150px;
-    max-width: 300px;
-    
+    max-width: 200px;
+
 }
 
 .btns-arrow {
@@ -743,4 +772,47 @@ img.imagem-escolhida-instagram.ng-star-inserted {
 .caixa-imagem {
     display: flex !important;
     flex-flow: column !important;
+}
+
+.space {
+    background-color: #000;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.astronaut {
+    width: 200px;
+    /* Ajuste conforme necessário */
+    height: auto;
+
+}
+
+@keyframes floatAstronaut {
+    0% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(10px);
+    }
+}
+
+.caixa-aviso-pagamento{
+    padding: 2em 0;
+    text-align: center;
+}
+
+/* .form-control:valid{
+    border: 1px solid black!important;
+} */
+
+
+
+.endereco.ng-star-inserted {
+    margin-top: 3em;
+    border-top: 2px solid transparent; /* Define uma borda transparente inicialmente */
+    border-image: linear-gradient(to right,#5fa0ce71, #5fa0ce, #5fa0ce71); /* Aplica um gradiente à borda */
+    border-image-slice: 1; /* Define a largura do gradiente */
 }
