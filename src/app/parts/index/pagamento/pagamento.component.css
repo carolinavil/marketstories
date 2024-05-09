@@ -451,7 +451,10 @@ font-weight: 600;
 }
 
 ::ng-deep div#drops {
+    border-radius: 54px;
     width: 100% !important;
+    height: 2.5rem;
+    align-items: center;
 }
 
 
@@ -699,3 +702,45 @@ fa-icon.ng-fa-icon.icone-seta{
     margin: 1em 0 !important;
 }
 
+
+.custom-file-upload {
+    cursor: pointer;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    display: inline-block;
+    text-align: center;
+}
+
+.custom-file-upload:hover {
+    background-color: #0056b3;
+}
+
+.img-escolhida-instagram {
+    max-width: 100%;
+    max-height: 300px;
+    margin-top: 10px;
+    
+}
+
+
+
+
+img.imagem-escolhida-instagram.ng-star-inserted {
+    padding-top: 3em;
+    max-height: 150px;
+    max-width: 300px;
+    
+}
+
+.btns-arrow {
+    width: 20%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.caixa-imagem {
+    display: flex !important;
+    flex-flow: column !important;
+}

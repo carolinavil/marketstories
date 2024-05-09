@@ -19,14 +19,14 @@
           
             #step1>
                 
-                <div class="pessoal">
+                <div class="pessoal" style="padding-top:30px">
                     <i class="fa-solid fa-user"></i>
-                    <div class="row form-group">
+                    <!-- <div class="row form-group">
                         <h5 class="titulo-formulario">
                             Dados pessoais
-                            <!-- <fa-icon [icon]="['fas','user']"></fa-icon> -->
+                          
                         </h5>
-                    </div>
+                    </div> -->
                     <!-- <fa-icon [icon]="['fas','location-dot']"></fa-icon> -->
                     <div class="row d-flex align-item-center">
                         <div class="form-group col s12 m12" [ngClass]="{'has-success': name.valid}">
@@ -82,7 +82,7 @@
             </div>
         </div>    
         </div>
-                <div class="endereco">
+                <div class="endereco" style="padding-top:30px">
                     <!-- <div class="row form-group">
                         <h5 class="titulo-formulario">
                             Endereço
@@ -116,7 +116,7 @@
                              
                             <input  type="text" name="phone{{i}}" id="phone{{i}}" class="form-control"
                             placeholder="example@hotmail.com" [(ngModel)]="inputs[i].number"
-                            (blur)="atribuirValor()" mask="(00) 00000-0000" placeholder="(00) 00000-0000" style="padding-left: 10px; ">
+                            (blur)="atribuirValor()" mask="(00) 00000-0000" placeholder="(00) 00000-0000" style="padding-left: 10px; " required>
                             <!-- <div *ngIf="registry_code.touched && registry_code.errors">
                                 <p class="text-danger" *ngIf="registry_code.errors['required']">Este campo é obrigatório.</p>
                             </div>    -->
@@ -200,36 +200,56 @@
                     </button>
                 </div>
             </div>
-            </cdk-step>
+            
+
+
+
+
+            
+
+
+        </cdk-step>
 
             <cdk-step [label]="'Instagram'" #step1>
-                <div class="pessoal">
+                <div class="pessoal" style="padding-top:30px">
                     <div class="row form-group">
-                        <h5 class="titulo-formulario">
+                        <!-- <h5 class="titulo-formulario">
                             Dados para pagamento
                             <fa-icon [icon]="['fas','money-check-dollar']"></fa-icon>
-                        </h5>
+                        </h5> -->
                     </div>
                 
                         <div class="form-group col s12 m12 ">
-                            <label class="form-label">Informe seu usuário do Instagram <span class="text-danger">*</span> </label>
+                            <label class="form-label">Qual é o {{'@'}} do seu Instagram? <span class="form-label-explicacao ">Se não tiver um, como gostaria que fosse colocado?</span><span class="text-danger">*</span> </label>
                             <input type="text" class="form-control " [(ngModel)]="usuariosModel.usuario_instagram" type="text"
                                 class="form-control" name="usuario_instagram" id="usuario_instagram" usuario_instagram="usuario_instagram" #usuario_instagram="ngModel" required="" autocomplete="off" style="padding-left: 10px; "> 
                                 <div *ngIf="usuario_instagram.touched && usuario_instagram.errors">
                                     <p class="text-danger" *ngIf="usuario_instagram.errors['required']">Este campo é obrigatório.</p>
                                 </div>
                             </div>
-                            <div class="form-group col s12 m12">
+                            <!-- <div class="form-group col s12 m12">
                                 <label class="form-label">Foto <span class="text-danger">*</span></label>
 
 
                                 <input type="file" (change)="onFileSelected($event)" accept="image/*" class="form-control" name="foto__instagram" id="foto_instagram" required>
-                                <!-- <div *ngIf="foto_instagram.touched && foto_instagram.errors">
-                                    <p class="text-danger" *ngIf="foto_instagram.errors['required']">Este campo é obrigatório.</p>
-                                </div> -->
+                               
+                            </div> -->
+                            <div  class="form-group col s12 m12 caixa-imagem">
+                                <div class="form-group col s12 m12 telefone-explicacao">
+                                    <label for="" class="form-label">Por favor, envie uma foto sua para que ela seja colocada no seu layout<span class="text-danger">*</span></label>
+                                </div>
+                                <div>
+
+                                    <input type="file" id="fileInput" (change)="onFileSelected2($event)" style="display: none;">
+                                    <label for="fileInput" class="custom-file-upload">
+                                        Selecionar Imagem
+                                    </label>
+                                </div>
+
+                                <img *ngIf="selectedImage" [src]="selectedImage" alt="Imagem Selecionada" class="imagem-escolhida-instagram">
                             </div>
                             
-                            <div class="form-group col s12 m12">
+                            <!-- <div class="form-group col s12 m12">
                                 <label class="form-label">Senha <span class="text-danger">*</span></label>
                                 <input type="password" class="form-control" [(ngModel)]="primeiraSenha" #senha="ngModel"
                                     name="senha" id="senha" [required]="primeiraSenha !== ''" autocomplete="off"
@@ -247,21 +267,24 @@
                                 <div *ngIf="verdade">
                                     <p class="text-danger">As senhas não coincidem.</p>
                                 </div>
-                            </div>
+                            </div> -->
 
 
           
 
-                <div class="d-flex justify-content-between flex-row mb-5 mt-4 btns-caixa">
-                    <button class="me-0 ms-auto prox-btn btn-stepper" type="submit" cdkStepperPrevious>
-                        <span>Voltar</span>
-                        <fa-icon [icon]="['fas','chevron-left']" class="icone-seta"></fa-icon>
-                    </button>
-
-                    <button class="me-0 ms-auto prox-btn btn-stepper" type="submit" cdkStepperNext > 
-                        <span>Criar</span>
-                        <fa-icon [icon]="['fas','chevron-right']" class="icone-seta"></fa-icon>
-                    </button>
+                <div class="d-flex justify-content-between flex-row mb-5 mt-4  btns-caixa">
+                    <div class="btns-arrow">
+                        <button class="me-0 ms-auto prox-btn btn-stepper" type="submit" cdkStepperPrevious>
+                            <!-- <span>Voltar</span> -->
+                            <fa-icon [icon]="['fas','arrow-left']" class="icone-seta"></fa-icon>
+                        </button>
+    
+                        <button class="me-0 ms-auto prox-btn btn-stepper" type="submit" cdkStepperNext > 
+                            <!-- <span>Criar</span> -->
+                            <fa-icon [icon]="['fas','arrow-right']" class="icone-seta"></fa-icon>
+                        </button>
+                    </div>
+             
 
                
                 </div>
@@ -269,12 +292,12 @@
             </cdk-step>
 
             <cdk-step [label]="'Produto'" #step1>
-                <div class="pessoal">
+                <div class="pessoal" style="padding-top:30px">
                     <div class="row form-group">
-                        <h5 class="titulo-formulario">
+                        <!-- <h5 class="titulo-formulario">
                             Dados para pagamento
                             <fa-icon [icon]="['fas','money-check-dollar']"></fa-icon>
-                        </h5>
+                        </h5> -->
                     </div>
                     <div class="row">
                         <div class="pagamento-caixa">
@@ -397,17 +420,19 @@
 
 
                 </div>
-
-                <div class="d-flex justify-content-between flex-row mb-5 mt-4 btns-caixa">
-                    <button class="me-0 ms-auto prox-btn btn-stepper" type="submit" cdkStepperPrevious>
-                        <span>Voltar</span>
-                        <fa-icon [icon]="['fas','chevron-left']" class="icone-seta"></fa-icon>
-                    </button>
-
-                    <button class="me-0 ms-auto prox-btn btn-stepper" type="submit" cdkStepperNext > 
-                        <span>Criar</span>
-                        <fa-icon [icon]="['fas','chevron-right']" class="icone-seta"></fa-icon>
-                    </button>
+                <div class="d-flex justify-content-between flex-row mb-5 mt-4  btns-caixa">
+                    <div class="btns-arrow">
+                        <button class="me-0 ms-auto prox-btn btn-stepper" type="submit" cdkStepperPrevious>
+                            <!-- <span>Voltar</span> -->
+                            <fa-icon [icon]="['fas','arrow-left']" class="icone-seta"></fa-icon>
+                        </button>
+    
+                        <button class="me-0 ms-auto prox-btn btn-stepper" type="submit" cdkStepperNext > 
+                            <!-- <span>Criar</span> -->
+                            <fa-icon [icon]="['fas','check']" class="icone-seta"></fa-icon>
+                        </button>
+                    </div>
+             
 
                
                 </div>
