@@ -21,12 +21,12 @@
                 <img src="../../../../assets/img/Logo Colorido MarketStories (1).png" alt="" class="logo-formulario">
             </div>
              -->
-        <app-stepper [linearModeSelected]="false"  #appStepper>
+        <app-stepper [linearModeSelected]="false"  #appStepper >
             <!-- <app-stepper [linearModeSelected]="false" [teste]="'fa-brands fa-instagram'" #appStepper> -->
-            <cdk-step [label]="'Cadastro'"
-
+            <cdk-step [label]="'Checkout'"
+         
             #step1>
-                
+            
                 <div class="pessoal" style="padding-top:30px">
                     <i class="fa-solid fa-user"></i>
                     <!-- <div class="row form-group">
@@ -37,8 +37,8 @@
                     </div> -->
                     <!-- <fa-icon [icon]="['fas','location-dot']"></fa-icon> -->
                     <div class="row d-flex align-item-center">
-                        <div class="form-group col s12 m12" [ngClass]="{'has-success': name.valid}">
-                            <label class="form-label">Qual seu nome? <span class="form-label-explicacao">Ele ficará visível nos layouts criados</span> <span class="text-danger">*</span> </label>
+                        <div class="form-group col s12 m6" [ngClass]="{'has-success': name.valid}">
+                            <label class="form-label">Nome </label>
                             <div class="input-group">
                                 <input  [(ngModel)]="clienteModel.name" class="form-control"
                                     name="name" id="name" #name="ngModel" required autocomplete="off" style="padding-left: 15px">
@@ -50,24 +50,21 @@
                                 <p class="text-danger" *ngIf="name.errors['required']">Este campo é obrigatório.</p>
                             </div>
                         </div>
-                        
+                        <div class="form-group col s12 m6">
+                            <label class="form-label">E-mail <span class="text-danger">*</span> </label>
+                            <input required type="text" class="form-control" [(ngModel)]="clienteModel.email" type="email"
+                                class="form-control" email="email" id="email" name="email" #email="ngModel"
+                                placeholder="example@hotmail.com" required style="padding-left: 10px ;">
+                            <div *ngIf="email.touched && email.errors">
+                                <p class="text-danger" *ngIf="email.errors['required']">Este campo é obrigatório.</p>
+                                <p class="text-danger" *ngIf="email.errors['email']">E-mail inválido</p>
+                            </div>
+                        </div> 
                     </div>
-                <div class="row">
-                    <div class="form-group col s12 m12">
-                        <label class="form-label">E-mail <span class="text-danger">*</span> </label>
-                        <input required type="text" class="form-control" [(ngModel)]="clienteModel.email" type="email"
-                            class="form-control" email="email" id="email" name="email" #email="ngModel"
-                            placeholder="example@hotmail.com" required style="padding-left: 10px ;">
-                        <div *ngIf="email.touched && email.errors">
-                            <p class="text-danger" *ngIf="email.errors['required']">Este campo é obrigatório.</p>
-                            <p class="text-danger" *ngIf="email.errors['email']">E-mail inválido</p>
-                        </div>
-                    </div>
-            </div>
         <div class="row">
            
             <div class="form-group col s12 m12">
-                <label for="" class="form-label-explicacao">A senha será usada para acessar seu painel de assessor</label>
+                <label for="" class="form-label-explicacao">Você cadastrará uma senha para acesso ao painel de controle.</label>
             </div>
             <div class="form-group col s12 m6">
                 <label class="form-label">Senha <span class="text-danger">*</span></label>
@@ -204,7 +201,7 @@
                     </button> -->
 
                     <button class="me-0 ms-auto prox-btn btn-stepper" type="submit" cdkStepperNext >
-                        <fa-icon [icon]="['fas','arrow-right']" class="icone-seta"></fa-icon>
+                        <fa-icon [icon]="['fas','arrow-right']" class="icone-seta"  ></fa-icon>
                     </button>
                 </div>
             </div>
@@ -227,7 +224,19 @@
                         </h5> -->
                     </div>
 
-                          
+                    <div class="form-group col s12 m12" [ngClass]="{'has-success': name.valid}">
+                        <label class="form-label">Qual seu nome? <span class="form-label-explicacao">Ele ficará visível nos layouts criados</span> <span class="text-danger">*</span> </label>
+                        <div class="input-group">
+                            <input  [(ngModel)]="clienteModel.name" class="form-control"
+                                name="name" id="name" #name="ngModel" required autocomplete="off" style="padding-left: 15px">
+                            <span class="input-group-addon" [ngClass]="{'input-success': name.valid}">
+                                <i class="fas fa-check" *ngIf="name.valid"></i>
+                            </span>
+                        </div>
+                        <div *ngIf="name.touched && name.errors">
+                            <p class="text-danger" *ngIf="name.errors['required']">Este campo é obrigatório.</p>
+                        </div>
+                    </div>
       
                 
                         <div class="form-group col s12 m12 ">
@@ -302,7 +311,7 @@
             </div>
             </cdk-step>
 
-            <cdk-step [label]="'Produto'" #step1>
+            <cdk-step [label]="'Pagamento'" #step1>
                 <div class="pessoal" style="padding-top:30px">
                     <div class="row form-group">
                         <!-- <h5 class="titulo-formulario">
@@ -463,4 +472,6 @@
 
 
 </section>
+<!-- <div class="footer" [ngClass]="{'footer-expanded': isExpanded}">
+  </div> -->
 <router-outlet></router-outlet>

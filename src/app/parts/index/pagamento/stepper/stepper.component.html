@@ -4,15 +4,12 @@
             <div class="d-grid">
                 <button [class.active]="selectedIndex ===i" class="nav-link py-3 fw-bold">
                     <div class="caixa-linha">
-                        <div class="topico"> {{teste}}</div>
+                        <div class="topico"> <!-- Adi{{cione o ícone aqui -->
+                            <fa-icon [icon]="[tipos[step.label], icones[step.label]]" class="icone-lixo"></fa-icon>
+                            <!-- Se desejar adicionar um ícone diferente para o passo "Instagram", use um ícone diferente aqui -->
+                        </div>
                     </div>
-                   
                     {{step.label}}
-                 
-                    <!-- {{iconClass}} -->
-
-
-
                 </button>
             </div>
         </li>

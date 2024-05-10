@@ -4,7 +4,7 @@ import { NgForm } from '@angular/forms';
 import { AdressModel, AssinaturaModel, ClienteModel, MetodosModel, PagamentoModel, CartaoModel, PerfilPagamentoModel, ProdutosModel, UsersMkModel } from '../../../models/pagamento.module';
 import { MatStepper } from '@angular/material/stepper';
 import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
-import { faArrowLeft, faArrowRight, faCheck, faChevronLeft, faChevronRight, faLocationDot, faMoneyCheckDollar, faPhone, faPlus, faTrash, faUser } from '@fortawesome/free-solid-svg-icons';
+import { faArrowLeft, faArrowRight, faCheck, faChevronLeft, faChevronRight, faCreditCard, faLocationDot, faMoneyCheckDollar, faPhone, faPlus, faTrash, faUser } from '@fortawesome/free-solid-svg-icons';
 import { CepService } from '../../../services/cep.service';
 import { last, lastValueFrom } from 'rxjs';
 import { TelefoneModel } from '../../../models/pagamento.module';
@@ -12,6 +12,7 @@ import { FaturaModel } from '../../../models/pagamento.module';
 import { ProdutoModel } from '../../../models/pagamento.module';
 import { format, addDays } from 'date-fns';
 import { Router ,ActivatedRoute} from '@angular/router';
+import { faInstagram } from '@fortawesome/free-brands-svg-icons';
 
 interface Car {
   label: string;
@@ -41,7 +42,7 @@ export class PagamentoComponent {
   arquivoSelecionado: File | null = null;
   primeiraSenha: string = '';
 
-
+  teste123: string = 'fa-user'; 
   cepInfo: any;
   cepInvalido: boolean = false;
   idCliente: number = 0;
@@ -105,7 +106,11 @@ objetoUsuarios = new UsersMkModel ()
     // Adicione mais opções conforme necessário
   ];
 
+  isExpanded: boolean = false;
 
+  expandFooter() {
+    this.isExpanded = !this.isExpanded;
+  }
   selectedImage: string | ArrayBuffer | null = null;
 
   onFileSelected2(event: any) {
@@ -208,7 +213,7 @@ objetoUsuarios = new UsersMkModel ()
         this.metodos = res;
         console.log('teste', this.metodos)
       });
-    library.addIcons(faChevronRight, faUser, faTrash, faLocationDot, faPhone, faChevronLeft, faPlus, faMoneyCheckDollar, faArrowRight, faArrowLeft, faCheck)
+    library.addIcons(faChevronRight, faUser, faTrash, faLocationDot, faPhone, faChevronLeft, faPlus, faMoneyCheckDollar, faArrowRight, faArrowLeft, faCheck, faCreditCard, faInstagram)
   }
 
 

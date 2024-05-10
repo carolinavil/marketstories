@@ -9,10 +9,25 @@ import { Component, Input } from '@angular/core';
 })
 export class StepperComponent extends CdkStepper {
   @Input() linearModeSelected = true;
-  @Input() teste : any;
+  @Input() teste : any ='trash';
   @Input() iconClass= true;
   onClick(index:number){
     this.selectedIndex = index;
   }
+  icones:any = {
+    'Checkout': 'plus',
+    'Instagram': 'instagram',
+    'Pagamento': 'credit-card'
+  };
+
+tipos:any = {
+    'Checkout': 'fas',
+    'Instagram': 'fab',
+    'Pagamento': 'fas'
+  };
+
+  // box-shadow: 0px -1px 6px 5px #b172ff69;
+  
+  
 
 }
