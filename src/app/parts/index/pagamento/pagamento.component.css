@@ -495,7 +495,7 @@ button.p-element.btn-excluir-telefone.p-button.p-component {
     position: absolute;
     left: 0;
     /* width: 30%; */
-    background: linear-gradient(317deg, #DA6627, #643C8E, #120031, #120031);
+    /* background: linear-gradient(317deg, #DA6627, #643C8E, #120031, #120031); */
     width: 35%;
     overflow: hidden;
     /* box-shadow: -13px -3px 4px 4px #DA6627, 0 0 12px 0 #FF72A0, 0 0 7px 0 #BC72FF, 0 0 3px 0 #643C8E; */
@@ -848,3 +848,12 @@ img.imagem-escolhida-instagram.ng-star-inserted {
   .footer-expanded {
     width: 200%; /* Largura expandida */
   }
+
+  .teste123{
+    background: linear-gradient(to bottom right, #693c91, #176aaa)!important;
+    height: 100%;
+  }
+/* 
+  .imagem-ex-instagram img {
+    width: 44%;
+} */
