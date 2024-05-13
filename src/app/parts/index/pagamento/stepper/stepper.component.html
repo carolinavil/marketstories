@@ -1,20 +1,28 @@
-<div class="caixa-stepper">
-    <ul class="nav nav-pills nav-justified header-steper">
-        <li class="nav-item" *ngFor="let step of steps;let i =index">
-            <div class="d-grid">
-                <button [class.active]="selectedIndex ===i" class="nav-link py-3 fw-bold">
-                    <div class="caixa-linha">
-                        <div class="topico"> <!-- Adi{{cione o ícone aqui -->
-                            <fa-icon [icon]="[tipos[step.label], icones[step.label]]" class="icone-lixo"></fa-icon>
-                            <!-- Se desejar adicionar um ícone diferente para o passo "Instagram", use um ícone diferente aqui -->
-                        </div>
+<section class="app-stepper">
+    
+
+    <div class="caixa-stepper">
+   
+        <ul class="nav nav-pills nav-justified header-steper" >
+            <ng-container *ngFor="let step of steps; let i = index" >
+                <li class="nav-item" *ngIf="step.label !== 'teste'">
+                    <div class="d-grid">
+                        <button [class.active]="selectedIndex === i || (selectedIndex == 1 && i === 0)" class="nav-link py-3 fw-bold">
+                            <div class="caixa-linha">
+                                <div class="topico">
+                                    <fa-icon [icon]="[tipos[step.label], icones[step.label]]" class="icone-lixo"></fa-icon>
+                                </div>
+                            </div>
+                            {{ step.label }}
+                        </button>
                     </div>
-                    {{step.label}}
-                </button>
-            </div>
-        </li>
-    </ul>
-    <div *ngIf="selected">
-        <ng-container [ngTemplateOutlet]="selected.content"></ng-container>
+                </li>
+            </ng-container>
+        </ul>
+        
+        <div *ngIf="selected">
+            <ng-container [ngTemplateOutlet]="selected.content"></ng-container>
+        </div>
     </div>
-</div>
+
+</section>

@@ -24,7 +24,7 @@ import { NgxMaskApplierService } from 'ngx-mask/lib/ngx-mask-applier.service';
 import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
 import { RouterModule } from '@angular/router';
 import { UsuarioComponent } from './usuario/usuario.component';
-
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { NgxFileDropModule } from 'ngx-file-drop';
 
 PagamentoRoutingModule
@@ -72,6 +72,9 @@ PagamentoRoutingModule
   ],
   providers: [
       provideNgxMask()
+  ],
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA
   ]
   // bootstrap: [AppComponent]
 })

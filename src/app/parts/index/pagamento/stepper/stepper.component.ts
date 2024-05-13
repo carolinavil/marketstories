@@ -11,6 +11,7 @@ export class StepperComponent extends CdkStepper {
   @Input() linearModeSelected = true;
   @Input() teste : any ='trash';
   @Input() iconClass= true;
+  retorno: any
   onClick(index:number){
     this.selectedIndex = index;
   }
@@ -29,5 +30,13 @@ tipos:any = {
   // box-shadow: 0px -1px 6px 5px #b172ff69;
   
   
+//   isLastStep(index: number): boolean {
+//     if (this.selectedIndex = 1){
+//       this.selectedIndex = 
+//     }
+//     return index === 0
+// }
+
+
 
 }

@@ -10,100 +10,11 @@
     padding: 0;
     margin: 0;
 }
-
-
-section.caixa-forms {
-    display: flex;
-    justify-content: space-between;
-}
-
-.pagamento {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.bg {
-    width: 30%;
-    background: linear-gradient(to bottom right, #693c91, #176aaa);
-    text-align: center;
-    padding: 3em;
-    color: white;
-
-}
-
-.formulario-pagamento {
-    width: 70%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0 12em;
-
-}
-
-.caixa-form {
-    width: 80%;
-
-}
-
-.caixa-form {
-    /*     
-    display: flex;
-    flex-flow: column;
-    align-items: center;
-    justify-content: center; */
-}
-
-.formulario-pagamento,
-.bg {
+section.box {
+    background: linear-gradient(to bottom, #2165AB, #62A6EC, #62A6EC, #1F5EA0);
     height: 100vh;
 }
 
-
-.bg {
-    display: flex;
-    flex-flow: column;
-    justify-content: space-evenly;
-}
-
-
-p.assinatura-flex {
-    display: flex;
-    justify-content: space-around;
-}
-
-.titulo-bg {
-    font-size: 30px;
-    font-weight: 600;
-    font-size: 40px;
-}
-
-.img-bg {
-    width: 80%;
-}
-
-
-span.valor {
-    font-weight: 600;
-}
-
-
-p.assinatura-flex {
-    font-size: 20px;
-    margin-bottom: 1em;
-    padding-bottom: 1em;
-    border-bottom: 1px solid #ffffff87;
-}
-
-span.opcao {
-    font-weight: 300;
-}
-
-
-.caixa-bg-bottom {
-    padding-top: 1em;
-    color: #ffffffc4;
-}
 
 .form-control,
 .drop {
@@ -112,20 +23,6 @@ span.opcao {
     margin: 1em 0 !important;
     height: 2.5rem !important;
 }
-
-/* .form-control, .drop{
-    border-radius: 0px !important;
-    margin: 1em 0 !important;
-    height: 2.5rem !important;
-    border-bottom: 1px solid black !important;
-} */
-
-/* .form-control, .drop{
-
-    border-radius: none!important
- 
-}  */
-
 
 
 
@@ -141,54 +38,29 @@ span.opcao {
     border-radius: 60px;
 }
 
-.txt-form {
+/* .txt-form {
     font-size: 15px;
     text-align: center;
     color: rgba(0, 0, 0, 0.5);
     padding: 2em 2em 0 2em;
-}
+} */
 
-.titulo-caixa-form {
+/* .titulo-caixa-form {
     color: #643f93;
     font-weight: 600;
     text-align: center;
     font-size: 60px;
-}
+} */
 
-.header-caixa-form {
-    padding: 0 4em;
-}
 
-.img-bg-pagamento {
+
+/* .img-bg-pagamento {
     position: absolute;
     left: 0;
     bottom: 66px;
     width: 33%;
-}
-
-/* .caixa-logo {
-    position: absolute;
-    width: 28%;
-    display: flex;
-    margin: 0 auto;
-    display: flex;
-    top: 50px;
-    justify-content: center;
 } */
 
-.logo-pagamento {
-    width: 100%;
-    /* Define a largura da imagem como 100% da div */
-    height: auto;
-    /* Permite que a altura se ajuste automaticamente à largura */
-    display: block;
-    /* Remove espaços em branco abaixo da imagem */
-}
-
-img.img-caixa-astronauta {
-    position: absolute;
-    bottom: 0;
-}
 
 .form-pagamento {
     position: absolute;
@@ -202,7 +74,7 @@ img.img-caixa-astronauta {
 
 .formulario {
     width: 100%;
-    /* margin: 0 12em; */
+
 }
 
 li.nav-item.ng-star-inserted {
@@ -248,16 +120,8 @@ div#inicio {
     justify-content: end;
 }
 
-/* 
-.caixa-form{
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
-    align-items: center;
-} */
 
 .caixa-form {
-    /* background: red; */
     max-height: 100vh;
     min-height: 100vh;
 }
@@ -324,22 +188,143 @@ img.img-exemplo-insta {
 }
 
 
-@media screen and (min-width: 900px) {
+.item-slide-cadastro{
+    width: 100%;
+}
+
+.imagem-astronauta {
+    right: 0;
+    position: absolute;
+}
+
+.tes{
+    padding-top: 1em;
+}
+.titulo-cadastro {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 600;
+    /* padding: 8em 0; */
+    margin: 1em 0 !important;
+    color: #62a6ec;
+}
+
+p.img-selecionada {
+    font-weight: 500;
+    color: #4BB9EC;
+    font-size: 15px;
+    padding-top: 1em;
+}
+
+@media screen and (min-width: 1040px) {
+
+.titulo-banner{
+font-size: 40px;
+}
+
+.logo-caixa {
+    width: 70%;
+    padding-bottom: 2em;
+}
+
+.imagem-astronauta{
+    width: 85%;
+}
+
+.caixa-logo{
+    padding-left: 4em;
+    padding-top: 4em;
+}
+
+}
+
+
+@media screen and (min-width: 1300px) {
+
+    .titulo-banner{
+        font-size: 45px;
+        }
+        
+
+}
+
+
+
+
+@media screen and (min-width: 1300px) {
+
+    .titulo-banner{
+        font-size: 45px;
+        }
+        
+
+}
+
+
+@media screen and (min-width: 1500px) {
+
+    .titulo-banner{
+        font-size: 50px;
+        }
+        
+        .imagem-astronauta{
+            width: 75%;
+        }
+      
+                
+}
+
+@media screen and (min-width: 1700px) {
+
+    .titulo-banner{
+        font-size: 55px;
+        }
+        
+        .imagem-astronauta{
+            width: 70%;
+            bottom: 20px;
+        }
+      
+                
+}
+
+@media screen and (min-width: 1800px) {
+
+    .titulo-banner{
+        font-size: 55px;
+        }
+        
+        .imagem-astronauta{
+            width: 65%;
+          
+         
+        }
+      
+                
+}
+
+
+
+
+
+
+
+
+/* @media screen and (min-width: 900px) {
 
 
 
     img.img-caixa-astronauta {
         position: absolute;
-        /* left: 0; */
         bottom: 0;
         right: -24px;
         width: 100%;
 
     }
 
-}
+} */
 
-@media screen and (min-width: 1300px) {
+/* @media screen and (min-width: 1300px) {
     img.img-caixa-logo2 {
         width: 100%;
         position: absolute;
@@ -350,16 +335,16 @@ img.img-exemplo-insta {
 
     img.img-caixa-astronauta {
         position: absolute;
-        /* left: 0; */
+
         bottom: 0;
         right: -24px;
         width: 90%;
 
     }
 
-}
+} */
 
-@media screen and (min-width: 1700px) {
+/* @media screen and (min-width: 1700px) {
     img.img-caixa-logo2 {
         width: 100%;
         position: absolute;
@@ -370,28 +355,21 @@ img.img-exemplo-insta {
 
     img.img-caixa-astronauta {
         position: absolute;
-        /* left: 0; */
+      
         bottom: 0;
         right: -24px;
-        width: 81%;
+        width: 40%;
 
 
     }
 
-}
+} */
 
 .row.ng-star-inserted {
     margin: 2em 0
 }
 
-/* 
-img.img-caixa-astronauta{
-    position: absolute;
 
-    bottom: 0;
-    right: -24px;
-    width: 108%;
-} */
 
 .caixa-astronauta {
     width: 32%;
@@ -528,16 +506,16 @@ button.p-element.btn-excluir-telefone.p-button.p-component {
 
 
 h1.titulo-banner {
-    text-align: center;
+    text-align: start;
     color: white;
-    font-size: 38px;
+    /* font-size: 38px; */
     font-weight: 600;
     /* padding-top: 1em; */
 }
 
 .texto-caixa-logo {
-    text-align: center;
-    padding-top: 3em;
+    text-align: start;
+    /* padding-top: 3em; */
 }
 
 label.form-label {
@@ -563,25 +541,25 @@ label.form-label {
 
 /* astronauta */
 
-
+/* 
 @media screen and (min-width: 1200px) {
-
 
     .imagem-astronauta {
         position: absolute;
-        object-fit: cover;
-        display: inline-block;
-        /* right: -38px !important; */
+        object-fit: cover; 
+        display: inline-block; 
         bottom: 0;
-        width: 115%;
+        width: 77%;
+     
+        right: 0;
+        bottom: 10px;
     }
-
     .form-label {
         font-size: 15px;
     }
-}
+} */
 
-@media screen and (min-width: 200px) {
+/* @media screen and (min-width: 200px) {
     .caixa-logo {
         display: none;
     }
@@ -592,15 +570,9 @@ label.form-label {
 
     }
 
-    /* 
-    .btn-avancar {
-        justify-content: flex-end!important;
-    } */
 
-    /* .prox-btn{
-        padding: 0.8em 1em;} */
 
-}
+} */
 
 
 @media screen and (min-width: 1100px) {
@@ -609,7 +581,7 @@ label.form-label {
         position: absolute;
         max-height: 100%;
         right: 0;
-        padding-top: 5em;
+        /* padding-top: 5em; */
         overflow-y: auto;
         padding-bottom: 4em;
         scrollbar-width: thin;
@@ -619,29 +591,27 @@ label.form-label {
 
     .caixa-formulario::-webkit-scrollbar {
         width: 8px;
-        /* Largura da barra de rolagem */
+    
     }
 
     .caixa-formulario::-webkit-scrollbar-track {
         background: #f0f0f0;
-        /* Cor de fundo da barra de rolagem */
+        
     }
 
     .caixa-formulario::-webkit-scrollbar-thumb {
         background-color: #888888;
-        /* Cor da barra de rolagem */
+  
         border-radius: 4px;
-        /* Borda arredondada */
+     
     }
 
-    .caixa-logo {
-        display: block;
-    }
+
 
     .caixa-formulario {
         width: 70%;
 
-    }
+    } 
 
 
 
@@ -654,44 +624,61 @@ label.form-label {
         right: 50px;
         left: 50px;
     } */
-    .logo-caixa {
-        width: 29%;
-    }
-
-    h1.titulo-banner {
-        font-size: 32px;
-    }
+  
+  
 }
 
-@media screen and (min-width: 1200px) {
+/* @media screen and (min-width: 1200px) {
 
     h1.titulo-banner {
         font-size: 40px;
+        text-align: start;
     }
 
     .imagem-astronauta {
         position: absolute;
         object-fit: cover;
         display: inline-block;
-        /* right: -38px !important; */
-        bottom: 0;
+    
+        bottom: 40px;
         width: 90%;
-        right: 50px;
-        left: 50px;
+        right: -15px;
     }
-}
+
+    .caixa-logo{
+        width: 40%;
+        padding-left: 68px;
+        padding-top: 2em;
+     
+    }
+} */
 
 
-@media screen and (min-width: 1500px) {
+/* @media screen and (min-width: 1500px) {
 
     h1.titulo-banner {
-        font-size: 40px;
+        font-size: 55px;
+        padding-top: 0.5em;
+        width: 90%;
     }
 
     .imagem-astronauta {
-        width: 70%;
+        width: 60%;
     }
-}
+} */
+
+/* @media screen and (min-width: 1900px) {
+
+    h1.titulo-banner {
+        font-size: 55px;
+        padding-top: 0.5em;
+        width: 90%;
+    }
+
+    .imagem-astronauta {
+        width: 55%;
+    }
+} */
 
 fa-icon.ng-fa-icon.icone-seta {
     /* background: white; */
@@ -856,4 +843,81 @@ img.imagem-escolhida-instagram.ng-star-inserted {
 
   .imagem-ex-instagram img {
     width: 44%;
+}
+
+.box-cartao{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1em 0 ;
+}
+.cartao {
+    background: linear-gradient(to bottom, #cdcdcd, #c5c5c5, #c5c5c5, #a9a9a9);
+    height: 170px;
+    width: 320px;
+    border-radius: 14px;
+    box-shadow: 3px 1px 5px 2px #00000017;
+}
+
+.cartao-infos{
+    display: flex;
+}
+
+.cartao-infos, .cartao-numero-valor, .cartao-bandeira{
+    margin: 0 20px;
+}
+
+p.cartao-titulo {
+    font-size: 11px;
+}
+
+p.cartao-nome{
+    font-size: 13px;
+    font-weight: 500;
+
+}
+
+/* .cartao-infos{
+    padding: 0.2em 20px;
+} */
+
+.cartao-numero-valor{
+    font-size: 24px;
+    margin: 0.5em 20px;
+}
+
+.img-bandeira {
+    text-align: end;
+    width: 30%;
+}
+.cartao-bandeira {
+    text-align: end;
+    padding-top: 1em;
+}
+
+
+.cartao-input{
+
+}
+#bandeira-exemplo{
+    width: 25%;
+}
+
+.cartao-input{
+    border: none!important;
+    font-size: 16px;
+    padding-left: 0!important;
+    background: transparent;
+    border: none;
+    /* padding: 0 !important;
+    margin: 0 !important; */
+}
+
+ .cartao-nomes{
+    width: 385px;
+} 
+
+.box-cartao-valores{
+    display: flex!important;
 }

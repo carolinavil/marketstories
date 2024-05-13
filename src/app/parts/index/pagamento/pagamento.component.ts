@@ -13,7 +13,8 @@ import { ProdutoModel } from '../../../models/pagamento.module';
 import { format, addDays } from 'date-fns';
 import { Router ,ActivatedRoute} from '@angular/router';
 import { faInstagram } from '@fortawesome/free-brands-svg-icons';
-
+import { Input, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import Swiper from 'swiper';
 interface Car {
   label: string;
   value: string;
@@ -41,7 +42,7 @@ export class PagamentoComponent {
   usuariosModel = new UsersMkModel();
   arquivoSelecionado: File | null = null;
   primeiraSenha: string = '';
-
+  mySwiper?: Swiper;
   teste123: string = 'fa-user'; 
   cepInfo: any;
   cepInvalido: boolean = false;
@@ -99,7 +100,7 @@ objetoUsuarios = new UsersMkModel ()
     {label: 'Visa', value:'Visa'},
     {label: 'American Express', value: 'American Express'},
     {label: 'Diners Club', value: 'Diners Club'},
-    {label: 'Elo', value: 'Diners Club'},
+    {label: 'Elo', value: 'Elo'},
     {label: 'Hipercard', value: 'Hipercard'},
     {label: 'JCB', value: 'JCB'},
    
@@ -229,7 +230,15 @@ objetoUsuarios = new UsersMkModel ()
   }
 
 
+  exibirTeste: boolean = false;
 
+  // Método para lidar com o envio do formulário
+  enviarFormulario(form: any) {
+    console.log('oi')
+    if (form.invalid) {
+      // Se o formulário for inválido, exibe o elemento "teste"
+      this.exibirTeste = true;
+    }}
 
   onFileDrop(event: any) {
     // Lógica para lidar com os arquivos soltos
@@ -387,6 +396,7 @@ objetoUsuarios = new UsersMkModel ()
 
 
   send(form: NgForm) {
+    
     console.log('TESTE')
     console.log('telefones', this.telefones, this.endereco, this.objeto, this.clienteModel);
     this.clienteModel.phones = this.telefones;
@@ -552,7 +562,7 @@ objetoUsuarios = new UsersMkModel ()
 
       this.usuariosModel.crypto = true
       this.usuariosModel.email = this.clienteModel.email
-      this.usuariosModel.nome = this.clienteModel.name
+      // this.usuariosModel.nome = this.clienteModel.name
       
       console.log('444',this.usuariosModel, this.clienteModel, clientePostado)
  
