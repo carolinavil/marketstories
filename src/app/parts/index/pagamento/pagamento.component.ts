@@ -15,6 +15,7 @@ import { Router ,ActivatedRoute} from '@angular/router';
 import { faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { Input, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import Swiper from 'swiper';
+import * as lottie from 'lottie-web';
 interface Car {
   label: string;
   value: string;
@@ -31,6 +32,7 @@ interface Phone {
   styleUrl: './pagamento.component.css'
 })
 export class PagamentoComponent {
+  loading=false
   // objeto: PagamentoModel = new PagamentoModel;
   nome!: string;
   numero!: string;
@@ -75,26 +77,16 @@ objetoUsuarios = new UsersMkModel ()
   perfilModel = new PerfilPagamentoModel();
   faturaModel = new FaturaModel();
   cartaoModel = new CartaoModel();
-
   telefonesModel = new TelefoneModel();
   telefones: any
   endereco: any
   data = new Date();
-
-
   dataFormatadaDias = addDays(this.data, 10);
-
   dataFormatada = format(this.dataFormatadaDias, 'yyyy-MM-dd');
-
   dataFormatadaTestes = format(this.data, 'yyyy-MM-dd');
-
   inputs: Phone[] = [{ number: '' }];
   valorNaoClicado: Phone[] = [{ number: '' }];
-
-
   visible: boolean = false;
-
-
   bandeiras: any = [
     {label: 'MasterCard', value: 'MasterCard'},
     {label: 'Visa', value:'Visa'},
@@ -103,10 +95,8 @@ objetoUsuarios = new UsersMkModel ()
     {label: 'Elo', value: 'Elo'},
     {label: 'Hipercard', value: 'Hipercard'},
     {label: 'JCB', value: 'JCB'},
-   
     // Adicione mais opções conforme necessário
   ];
-
   isExpanded: boolean = false;
 
   expandFooter() {
@@ -300,6 +290,8 @@ objetoUsuarios = new UsersMkModel ()
     return value.length <= 11 ? '000.000.000-009' : '00.000.000/0000-00';
   }
 
+
+
   // getMaskTelefone(phoneNumber: string): string {
    
   //   return phoneNumber.startsWith('9') ? '(00) 00000-0000' : '(00) 0000-0000';
@@ -325,6 +317,7 @@ objetoUsuarios = new UsersMkModel ()
   @ViewChild('btn') btn: any;
   ngOnInit(): void {
     // this.getMetodos();
+   
   }
 
 

@@ -105,7 +105,31 @@ getPlanos(): Observable<any> {
   } }));
 }
 
+base64toThumbnails(base64Strings: string[], width: number, height: number): string[] {
+  return base64Strings.map(base64 => this.getThumbnail(base64, width, height));
+}
 
+// Função para criar uma miniatura a partir de uma imagem em base64
+private getThumbnail(base64: string, width: number, height: number): string {
+  const canvas = document.createElement('canvas');
+  const ctx = canvas.getContext('2d');
+  const image = new Image();
+
+  // Defina a largura e altura do canvas
+  canvas.width = width;
+  canvas.height = height;
+
+  // Quando a imagem é carregada, desenhe-a no canvas
+  image.onload = () => {
+    ctx!.drawImage(image, 0, 0, width, height);
+  };
+
+  // Carregue a imagem
+  image.src = 'data:image/jpeg;base64,' + base64;
+
+  // Retorne a miniatura como URL
+  return canvas.toDataURL('image/jpeg');
+}
 
 
 postUsuarios(request: UsersMkModel): Observable<any> {

@@ -1,0 +1,26 @@
+ngAfterViewInit(): void {
+    var params = this.activatedRoute.params.subscribe(x => {
+      if (x['id']) {
+        const strNumero = x['id']; // Acessa a propriedade 'id' dentro do objeto 'x'
+        const numeroInteiro = parseInt(strNumero, 10); // Converte para número inteiro
+        console.log('teste', numeroInteiro); 
+        console.log('params', x);
+        // this.id = numeroInteiro;
+        
+        lastValueFrom(this.vindiService.getAssinaturas())
+          .then(res => {
+            // console.log('oi', this.id);
+            console.log('teste543', res.subscriptions[0].customer.id);
+            const customerDesejada = res.subscriptions.find((assinatura: any) => assinatura.customer.id === +x['id']);
+            console.log('teste2', customerDesejada);
+          })
+          .catch(error => {
+            console.log('Erro ao buscar assinaturas.', error);
+          });
+  
+      } else {
+        console.log('Parâmetro id não encontrado.');
+      }
+    });
+  }
+  

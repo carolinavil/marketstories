@@ -26,14 +26,17 @@ import { RouterModule } from '@angular/router';
 import { UsuarioComponent } from './usuario/usuario.component';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { NgxFileDropModule } from 'ngx-file-drop';
-
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
+import { TableModule } from 'primeng/table';
+import { AdminComponent } from '../painel/admin/admin.component';
 PagamentoRoutingModule
 @NgModule({
   declarations: [
     PagamentoComponent,
     FinalComponent,
     StepperComponent,
-    UsuarioComponent
+    UsuarioComponent,
+   
   
   ],
   imports: [
@@ -51,7 +54,7 @@ PagamentoRoutingModule
     DropdownModule,
     CalendarModule,
     
-
+    ProgressSpinnerModule,
     FileUploadModule ,
 
     CommonModule,
@@ -65,7 +68,6 @@ PagamentoRoutingModule
     NgxMaskPipe,
     FileUploadModule,
 
- 
 
    
 

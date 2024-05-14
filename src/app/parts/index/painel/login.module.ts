@@ -24,10 +24,14 @@ import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
 import { RouterModule } from '@angular/router';
 import { PainelRoutingModule } from './painel.routing';
 import { PainelComponent } from './painel.component';
+import { AdminComponent } from './admin/admin.component';
+import { TableModule } from 'primeng/table';
+
 
 @NgModule({
   declarations: [
-    PainelComponent
+    PainelComponent,
+    AdminComponent
 
   ],
   imports: [
@@ -51,6 +55,7 @@ import { PainelComponent } from './painel.component';
     NgxMaskDirective,
     NgxMaskPipe,
     FileUploadModule,
+    TableModule
 
   ],
   providers: [

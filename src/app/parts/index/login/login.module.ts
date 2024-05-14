@@ -24,6 +24,7 @@ import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
 import { RouterModule } from '@angular/router';
 import { LoginRoutingModule } from './login.routing';
 import { LoginComponent } from './login.component';
+import { DividerModule } from 'primeng/divider';
 @NgModule({
   declarations: [
     LoginComponent
@@ -50,7 +51,7 @@ import { LoginComponent } from './login.component';
     NgxMaskDirective,
     NgxMaskPipe,
     FileUploadModule,
-
+DividerModule
   ],
   providers: [
     provideNgxMask()

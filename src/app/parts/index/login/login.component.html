@@ -1,24 +1,52 @@
-<form #form="ngForm" class="needs-validation formulario" (submit)="send(form)">
-    <div class="caixa-formulario">
-        <div class="row d-flex align-item-center">
-            <label class="form-label">Email <span class="text-danger">*</span> </label>
-            <input type="text" class="form-control" [(ngModel)]="loginModel.email" name="email" id="email"
-                email="email" #email="ngModel" required autocomplete="off"
-                style="padding-left: 10px; border: 1px solid #ccc;">
-            <div *ngIf="email.touched && email.errors">
-                <p class="text-danger" *ngIf="email.errors['required']">Este campo é obrigatório.</p>
-            </div>
-        </div>
-        <div class="form-group col s12 m12">
-            <label class="form-label">Confirmar Senha <span class="text-danger">*</span></label>
-            <input type="password" class="form-control" [(ngModel)]="loginModel.senha" name="confirmarSenha"
-                id="confirmarSenha" required autocomplete="off"
-                style="padding-left: 10px; border: 1px solid #ccc;">
-        </div>
-    </div>
-    <button type="submit" >Enviar</button>
-</form>
+<section class="login">
+    <div class="form-box">
+        <div class="formulario-login">
+            <h1 class="titulo-banner">Bem vindo de volta! </h1>
+            <h2 class="subtitulo-banner">Faça login para continuar</h2>
+            <form #form="ngForm" class="needs-validation formulario" (submit)="send(form)">
+                <div class="row">
+                    <div class="form-group col s12 m12 ">
+                        <label class="form-label">E-mail<span class="text-danger">*</span> </label>
+                        <input type="text" class="form-control " [(ngModel)]="loginModel.email" type="text"
+                            class="form-control" name="email" id="email" email="email" #email="ngModel" required=""
+                            autocomplete="off" style="padding-left: 10px; ">
+                        <div *ngIf="email.touched && email.errors">
+                            <p class="text-danger" *ngIf="email.errors['required']">Este campo é
+                                obrigatório.</p>
+                        </div>
+                    </div>
+                </div>
 
-<div *ngIf="falhaLogin" class="alert alert-danger" role="alert">
-    Login recusado. Por favor, verifique suas credenciais e tente novamente.
-</div>
+                <div class="row">
+                    <div class="form-group col s12 m12 ">
+                        <label class="form-label">Senha<span class="text-danger">*</span> </label>
+                        <input type="text" class="form-control " [(ngModel)]="loginModel.senha" type="text"
+                            class="form-control" name="senha" id="senha" senha="senha" #senha="ngModel" required=""
+                            autocomplete="off" style="padding-left: 10px; ">
+                        <div *ngIf="senha.touched && senha.errors">
+                            <p class="text-danger" *ngIf="senha.errors['required']">Este campo é
+                                obrigatório.</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="form-group col s12 m12">
+                        <button type="submit" class="me-0 ms-auto btn-login col m12">Enviar</button>
+                    </div>
+
+                </div>
+                <div *ngIf="falhaLogin" class="alert alert-danger" role="alert">
+                    Login recusado. Por favor, verifique suas credenciais e tente novamente.
+                </div>
+            </form>
+
+            <p-divider layout="horizontal" styleClass="flex md:hidden" [align]="'center'"><b>OU</b></p-divider>
+        </div>
+
+
+
+    </div>
+
+</section>

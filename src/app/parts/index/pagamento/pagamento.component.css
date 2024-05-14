@@ -1,6 +1,10 @@
 /* @import 'primeng/resources/themes/saga-blue/theme.css'; */
 /* @import 'primeng/resources/primeng.min.css'; */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+/* @import '../../../../../node_modules/bootstrap/dist/css/bootstrap.min.css'; */
+
+/* @import '~bootstrap/dist/css/bootstrap.min.css'; */
+
 /* @import "~primeng/resources/themes/saga-blue/theme.css"; */
 /*@import "~primeng/resources/primeng.min.css"; */
 
@@ -921,3 +925,18 @@ p.cartao-nome{
 .box-cartao-valores{
     display: flex!important;
 }
+
+.cartao-valor{
+    padding-top: 0.7em;
+}
+
+::ng-deep .ui-progressbar-value {
+    background-color: #ef5439;
+  }
+
+  
+  ::ng-deep .customProgress .ui-progressbar .ui-progressbar-value {
+    background: #ef5439;
+}
+
+

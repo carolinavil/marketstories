@@ -1,9 +1,21 @@
 <!-- <h1>Bem vindo de volta, {{}}!</h1> -->
+<div *ngIf="!admin">
+    <h1>informacoes</h1>
 
-<h1>informacoes</h1>
+    <ul>
+        <li>plano: {{objeto?.plan.name}}</li>
+        <li>usuario instagram:</li>
+    </ul>
+</div>
 
-<ul>
-    <li>plano: </li>
-    <li>usuario instagram:</li>
-</ul>
+
+
+
+
+
+
+<!-- <h1>Bem vindo de volta, {{}}!</h1> -->
+<div *ngIf="admin">
+<app-admin></app-admin>
+</div>
 <router-outlet></router-outlet>

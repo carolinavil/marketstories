@@ -1,0 +1,45 @@
+<!-- <div *ngIf="usuarios">
+    <h2>Lista de Usuários:</h2>
+    <ul>
+      <li class="teste123" *ngFor="let usuario of usuarios">
+        <a href="">{{ usuario.foto_instagram }}</a>
+      </li>
+    </ul>
+  </div>
+  
+  <div>
+    <h2>Lista de Usuários com Template PrimeNG:</h2>
+    <ul>
+      <li class="teste123" *ngFor="let usuario of usuarios">
+        <a href="javascript:void(0);" (click)="redirecionarParaInstagram(usuario.foto_instagram)">imagem</a>
+        <ng-template pTemplate="item" let-usuario>
+          <div>{{usuario.nome}}</div>
+          <div>{{usuario.email}}</div>
+       
+        </ng-template>
+      </li>
+    </ul>
+  </div>
+   -->
+
+
+<div class="tabela">
+  <p-table [value]="usuarios" [tableStyle]="{ 'min-width': '50rem' }">
+    <ng-template pTemplate="header">
+        <tr>
+            <th>Nome</th>
+            <th>E-mail</th>
+            <th>Usuário</th>
+            <th>Imagem</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-usuarios>
+        <tr>
+            <td>{{ usuarios.nome }}</td>
+            <td>{{ usuarios.email }}</td>
+            <td>{{ usuarios.usuario_instagram }}</td>
+        <td><a href="javascript:void(0);" (click)="redirecionarParaInstagram(usuarios.foto_instagram)">imagem</a></td>
+        </tr>
+    </ng-template>
+</p-table>
+</div>

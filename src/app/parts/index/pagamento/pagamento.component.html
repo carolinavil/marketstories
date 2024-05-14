@@ -1,3 +1,4 @@
+
 <!-- <section class="caixa-forms">
 
 
@@ -27,8 +28,10 @@
 
 
 <body class="teste123">
+
     <section class="box">
         <div class="caixa-logo">
+
             <div class="texto-caixa-logo">
                 <img src="../../../../assets/img/Logo P&B MarketStories.png" alt="" class="logo-caixa">
                 <h1 class="titulo-banner">Para manter-se no topo, é preciso rapidez </h1>
@@ -64,7 +67,7 @@
 
                             <div class="row d-flex align-item-center">
                                 <div class="form-group col s12 m6" [ngClass]="{'has-success': name.valid}">
-                                    <label class="form-label">Nome </label>
+                                    <label class="form-label">Nome <span class="text-danger">*</span> </label>
                                     <div class="input-group">
                                         <input [(ngModel)]="clienteModel.name" class="form-control" name="name"
                                             id="name" #name="ngModel" required autocomplete="off"
@@ -125,7 +128,7 @@
                         <swiper-container [slidesPerView]="5"
                             [autoplay]="{ delay: 3000, disableOnInteraction: false, reverse: true }">
                             <swiper-slide>
-                                <img src="../../../assets/img/agendaSemanaP.png" alt="" class="item-slide-cadastro tes">
+                                <img src="../../../assets/img/agendaSemanaP.png" alt="" class="item-slide-cadastro tes ">
                             </swiper-slide>
                             <swiper-slide>
                                 <img src="../../../assets/img/metalicasP.png" alt="" class="item-slide-cadastro">
@@ -163,22 +166,19 @@
                                 <img src="../../../assets/img/fechamentoP.png" alt="" class="item-slide-cadastro">
                             </swiper-slide>
                             <swiper-slide>
-                                <img src="../../../assets/img/brasilAgoraP.png" alt="" class="item-slide-cadastro">
+                                <img src="../../../assets/img/brasilAgoraP.png" alt="" class="item-slide-cadastro tes">
                             </swiper-slide>
                             <swiper-slide>
                                 <img src="../../../assets/img/nasdaqP.png" alt="" class="item-slide-cadastro">
                             </swiper-slide>
                             <swiper-slide>
-                                <img src="../../../assets/img/nasdaqP.png" alt="" class="item-slide-cadastro">
-                            </swiper-slide>
-                            <swiper-slide>
-                                <img src="../../../assets/img/indicesP.png" alt="" class="item-slide-cadastro">
+                                <img src="../../../assets/img/indicesP.png" alt="" class="item-slide-cadastro tes">
                             </swiper-slide>
                             <swiper-slide>
                                 <img src="../../../assets/img/selicP.png" alt="" class="item-slide-cadastro">
                             </swiper-slide>
                             <swiper-slide>
-                                <img src="../../../assets/img/minerioFerroP.png" alt="" class="item-slide-cadastro">
+                                <img src="../../../assets/img/minerioFerroP.png" alt="" class="item-slide-cadastro tes">
                             </swiper-slide>
                         </swiper-container>
                         <!-- <div class="endereco" style="padding-top:30px">
@@ -368,8 +368,7 @@
 
 
                                 <div class="form-group col s12 m12" [ngClass]="{'has-success': name.valid}">
-                                    <label class="form-label">Qual seu nome? <span class="form-label-explicacao">Ele
-                                            ficará visível nos layouts criados</span> <span class="text-danger">*</span>
+                                    <label class="form-label">Qual o nome você quer que fique visivel nos layouts criados? <span class="text-danger">*</span>
                                     </label>
                                     <div class="input-group">
                                         <input [(ngModel)]="usuariosModel.nome" class="form-control" name="name"
@@ -503,8 +502,8 @@
                                         </div>
                                     </div>
 
-                                    <!-- <div *ngIf="mostrarBotao()"> -->
-                                    <div>
+                                    <div *ngIf="mostrarBotao()">
+                                    <!-- <div> -->
                                         <div class="row">
                                             <div class="form-group col s12 m8">
                                                 <label class="form-label">Nome <span class="text-danger">*</span>
@@ -713,7 +712,7 @@
                                 </button>
 
                                 <button class="me-0 ms-auto prox-btn btn-stepper" type="submit" cdkStepperNext>
-                                    <!-- <span>Criar</span> -->
+ 
                                     <fa-icon [icon]="['fas','check']" class="icone-seta"></fa-icon>
                                 </button>
                             </div>
@@ -727,3 +726,4 @@
         </form>
     </section>
 </body>
+

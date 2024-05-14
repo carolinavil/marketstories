@@ -1,0 +1,37 @@
+.text-danger{
+    color: red;
+}
+
+.form-control,
+.btn-login {
+    border-radius: 20px !important;
+    border: 1px solid  #00000054 !important;
+    margin: 1em 0 !important;
+    height: 2.5rem !important;
+}
+
+.form-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+.formulario-login{
+    width: 30%;
+}
+.titulo-banner {
+    text-align: center;
+    font-size: 51px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.subtitulo-banner {
+    margin: 0;
+    margin: 0.2em 0 2em 0;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+}
