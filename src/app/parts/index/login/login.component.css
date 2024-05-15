@@ -1,3 +1,7 @@
+.login{
+    height: 100vh;
+    /* background: linear-gradient(5deg, #1a3c71, #355595); */
+}
 .text-danger{
     color: red;
 }
@@ -8,8 +12,20 @@
     border: 1px solid  #00000054 !important;
     margin: 1em 0 !important;
     height: 2.5rem !important;
+    
 }
 
+/* .form-control{
+    background-color: white!important;
+}
+
+.btn-login{
+    background-color: white!important;
+} */
+.form-label{
+    /* color: white!important; */
+    font-size: 16px;
+}
 .form-box{
     display: flex;
     justify-content: center;
@@ -18,9 +34,13 @@
     width: 100%;
 }
 
+h1, h2{
+    /* color: white; */
+}
+
 
 .formulario-login{
-    width: 50%;
+    width: 100%;
 }
 .titulo-banner {
     text-align: center;
@@ -38,23 +58,40 @@
 }
 
 .box-logo {
-    background: red;
-    width: 36%;
+    /* background: red; */
+    position: absolute;
+    left: 0;
+    width: 30%;
+    height: 100%;
 }
 
 .texto-caixa-logo {
     /* width: 20%; */
-    background: rebeccapurple;
+    /* background: rebeccapurple; */
     /* position: relative; */
 }
 
-.logo-caixa, .imagem-astronauta{
-    width: 100%;
+.logo-caixa{
+    width: 90%;
+    /* background-color: red; */
+    padding-top: 2em;
+    padding-left: 2em;
 }
 
 .login{
     display: flex;
     align-items: center;
-    justify-content: start;
+    justify-content: center;
 }
 
+.box-login {
+    display: flex;
+    /* background: green; */
+    width: 30%;
+}
+
+.imagem-astronauta {
+    width: 80%;
+    position: absolute;
+    bottom: 30px;
+}

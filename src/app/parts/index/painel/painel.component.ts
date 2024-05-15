@@ -5,6 +5,7 @@ import { lastValueFrom } from 'rxjs';
 import { LoginModel } from '../../../models/pagamento.module';
 import { AfterViewInit, OnDestroy, TemplateRef, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { map } from 'rxjs';
 @Component({
   selector: 'app-painel',
   templateUrl: './painel.component.html',
@@ -25,7 +26,7 @@ export class PainelComponent {
       // Acessando diretamente o array payment_methods
       const customers = res.customers;
       this.cus = customers
-      console.log('clientes:', this.cus);
+      console.log('clientess:', this.cus);
     });
     lastValueFrom(this.vindiService.getAssinaturas()).then(res => {
       // Acessando diretamente o array payment_methods
@@ -64,9 +65,18 @@ export class PainelComponent {
         const numeroInteiro = parseInt(strNumero, 10); // Converte para número inteiro
         console.log('teste', numeroInteiro); 
         console.log('params', x);
+        // lastValueFrom(
+        //   this.vindiService.getClientes().pipe(
+        //     map(res => res.customers.filter((cliente: any) => cliente.status === 'active'))
+        //   )
+        // ).then(customersAtivos => {
+        //   console.log(customersAtivos); // clientes com status ativo
+        // }).catch(error => {
+        //   console.error('Erro ao obter clientes:', error);
+        // });
         lastValueFrom(this.vindiService.getAssinaturas())
           .then(res => {
-            const customerDesejada = res.subscriptions.find((assinatura: any) => assinatura.customer.id === numeroInteiro);
+            const customerDesejada = res.subscriptions.find((assinatura: any) => assinatura.customer.id === 82532108);
             console.log('teste2', customerDesejada);
             this.objeto = customerDesejada
             console.log(this.objeto.id)
