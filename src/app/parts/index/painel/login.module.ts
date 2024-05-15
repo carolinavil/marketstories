@@ -26,12 +26,14 @@ import { PainelRoutingModule } from './painel.routing';
 import { PainelComponent } from './painel.component';
 import { AdminComponent } from './admin/admin.component';
 import { TableModule } from 'primeng/table';
+import { UserComponent } from './user/user.component';
 
 
 @NgModule({
   declarations: [
     PainelComponent,
-    AdminComponent
+    AdminComponent,
+    UserComponent
 
   ],
   imports: [

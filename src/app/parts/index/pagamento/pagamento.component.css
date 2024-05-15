@@ -206,11 +206,26 @@ img.img-exemplo-insta {
 }
 .titulo-cadastro {
     text-align: center;
-    font-size: 32px;
+    font-size: 28px;
     font-weight: 600;
     /* padding: 8em 0; */
     margin: 1em 0 !important;
     color: #62a6ec;
+}
+
+.titulo-secao{
+    text-align: center;
+    font-size: 28px;
+    font-weight: 600;
+    color: #62a6ec; 
+ margin-bottom: 15px;
+}
+
+p.subtitulo-secao {
+    font-size: 14px;
+    text-align: center;
+    padding-bottom: 2em;
+    color: #000000a6;
 }
 
 p.img-selecionada {

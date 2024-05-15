@@ -1,32 +1,62 @@
-.login{
+.login {
     height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
     /* background: linear-gradient(5deg, #1a3c71, #355595); */
 }
-.text-danger{
+
+
+.login::before {
+    content: '';
+    position: absolute;
+    width: 300px; /* Tamanho do círculo externo */
+    height: 300px; /* Tamanho do círculo externo */
+    background-color: #A084CA; /* Cor do círculo externo */
+    border-radius: 50%;
+    z-index: -2; /* Coloca o círculo atrás do conteúdo */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.login::after {
+    content: '';
+    position: absolute;
+    width: 200px; /* Tamanho do círculo interno */
+    height: 200px; /* Tamanho do círculo interno */
+    background-color: #683C92; /* Cor do círculo interno */
+    border-radius: 50%;
+    z-index: -1; /* Coloca o círculo atrás do conteúdo mas acima do círculo externo */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+.text-danger {
     color: red;
 }
 
 .form-control,
 .btn-login {
     border-radius: 20px !important;
-    border: 1px solid  #00000054 !important;
+    border: 1px solid #00000054 !important;
     margin: 1em 0 !important;
     height: 2.5rem !important;
-    
 }
 
-/* .form-control{
-    background-color: white!important;
+.form-control {
+    border: none !important;
+    box-shadow: 1px 1px 9px 1px #00000014 !important;
 }
 
-.btn-login{
-    background-color: white!important;
-} */
-.form-label{
-    /* color: white!important; */
+.form-label {
     font-size: 16px;
 }
-.form-box{
+
+.form-box {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -34,14 +64,14 @@
     width: 100%;
 }
 
-h1, h2{
+h1, h2 {
     /* color: white; */
 }
 
-
-.formulario-login{
+.formulario-login {
     width: 100%;
 }
+
 .titulo-banner {
     text-align: center;
     font-size: 51px;
@@ -58,7 +88,6 @@ h1, h2{
 }
 
 .box-logo {
-    /* background: red; */
     position: absolute;
     left: 0;
     width: 30%;
@@ -67,26 +96,16 @@ h1, h2{
 
 .texto-caixa-logo {
     /* width: 20%; */
-    /* background: rebeccapurple; */
-    /* position: relative; */
 }
 
-.logo-caixa{
+.logo-caixa {
     width: 90%;
-    /* background-color: red; */
     padding-top: 2em;
     padding-left: 2em;
 }
 
-.login{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
 .box-login {
     display: flex;
-    /* background: green; */
     width: 30%;
 }
 

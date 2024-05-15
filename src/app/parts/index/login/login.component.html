@@ -15,7 +15,7 @@
                     <div class="row">
                         <div class="form-group col s12 m12 ">
                             <label class="form-label">E-mail<span class="text-danger">*</span> </label>
-                            <input type="text" class="form-control " [(ngModel)]="loginModel.email" type="text"
+                            <input type="text"  [(ngModel)]="loginModel.email" type="text"
                                 class="form-control" name="email" id="email" email="email" #email="ngModel" required=""
                                 autocomplete="off" style="padding-left: 10px; ">
                             <div *ngIf="email.touched && email.errors">
@@ -28,7 +28,7 @@
                     <div class="row">
                         <div class="form-group col s12 m12 ">
                             <label class="form-label">Senha<span class="text-danger">*</span> </label>
-                            <input type="text" class="form-control " [(ngModel)]="loginModel.senha" type="text"
+                            <input type="text"  [(ngModel)]="loginModel.senha" type="text"
                                 class="form-control" name="senha" id="senha" senha="senha" #senha="ngModel" required=""
                                 autocomplete="off" style="padding-left: 10px; ">
                             <div *ngIf="senha.touched && senha.errors">

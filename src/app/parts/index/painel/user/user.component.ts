@@ -1,17 +1,19 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { VindiService } from '../../../services/vindi-service';
+import { VindiService } from '../../../../services/vindi-service';
 import { lastValueFrom } from 'rxjs';
-import { LoginModel } from '../../../models/pagamento.module';
+import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
+import { faArrowRightArrowLeft, faArrowRightFromBracket, faChevronRight,  } from '@fortawesome/free-solid-svg-icons';
 import { AfterViewInit, OnDestroy, TemplateRef, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { map } from 'rxjs';
+import { LoginModel } from '../../../../models/pagamento.module';
 @Component({
-  selector: 'app-painel',
-  templateUrl: './painel.component.html',
-  styleUrl: './painel.component.css'
+  selector: 'app-user',
+  templateUrl: './user.component.html',
+  styleUrl: './user.component.css'
 })
-export class PainelComponent {
+export class UserComponent {
   loginModel = new LoginModel()
   falhaLogin = false
   cus: any
@@ -21,7 +23,9 @@ export class PainelComponent {
   admin = false
   constructor(private vindiService: VindiService,
     private activatedRoute: ActivatedRoute,
+    private library: FaIconLibrary,
   ) {
+    library.addIcons(faChevronRight, faArrowRightFromBracket)
     lastValueFrom(this.vindiService.getClientes()).then(res => {
       // Acessando diretamente o array payment_methods
       const customers = res.customers;
@@ -79,7 +83,7 @@ export class PainelComponent {
             const customerDesejada = res.subscriptions.find((assinatura: any) => assinatura.customer.id === numeroInteiro);
             console.log('teste2', customerDesejada);
             this.objeto = customerDesejada
-            console.log(this.objeto.id)
+            console.log(this.objeto.id, 'teste', this.objeto)
           })
           .catch(error => {
             console.log('Erro ao buscar assinaturas.', error);
