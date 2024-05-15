@@ -15,11 +15,12 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
+    width: 100%;
 }
 
 
 .formulario-login{
-    width: 30%;
+    width: 50%;
 }
 .titulo-banner {
     text-align: center;
@@ -35,3 +36,25 @@
     font-size: 30px;
     font-weight: 600;
 }
+
+.box-logo {
+    background: red;
+    width: 36%;
+}
+
+.texto-caixa-logo {
+    /* width: 20%; */
+    background: rebeccapurple;
+    /* position: relative; */
+}
+
+.logo-caixa, .imagem-astronauta{
+    width: 100%;
+}
+
+.login{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
