@@ -25,9 +25,11 @@ import { RouterModule } from '@angular/router';
 import { LoginRoutingModule } from './login.routing';
 import { LoginComponent } from './login.component';
 import { DividerModule } from 'primeng/divider';
+import { ForgotComponent } from './forgot/forgot.component';
 @NgModule({
   declarations: [
-    LoginComponent
+    LoginComponent,
+    ForgotComponent
 
   ],
   imports: [

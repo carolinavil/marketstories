@@ -1,4 +1,3 @@
-
 <!-- <section class="caixa-forms">
 
 
@@ -40,6 +39,7 @@
             <img src="../../../../assets/img/astronauta2 (2).png" alt="" class="imagem-astronauta">
         </div>
         <form #form="ngForm" class="needs-validation formulario " (submit)="send(form)">
+
             <!-- <form #form="ngForm" class="needs-validation formulario " > -->
 
             <div class="caixa-formulario">
@@ -51,401 +51,376 @@
 
                 <app-stepper [linearModeSelected]="false" #appStepper>
 
+                    <form #form1="ngForm" class="needs-validation formulario ">
+                        <!-- <app-stepper [linearModeSelected]="false" [teste]="'fa-brands fa-instagram'" #appStepper> -->
+                        <cdk-step [label]="'Checkout'" #step1>
 
-                    <!-- <app-stepper [linearModeSelected]="false" [teste]="'fa-brands fa-instagram'" #appStepper> -->
-                    <cdk-step [label]="'Checkout'" #step1>
-
-                        <div class="pessoal" style="padding-top:30px">
-                            <i class="fa-solid fa-user"></i>
-                            <h1 class="titulo-secao">
-                                Informações de Checkout
-                            </h1>
-                            <p class="subtitulo-secao">Precisamos desses detalhes para processar seu pedido e garantir que os produtos cheguem direitinho até você. Por favor, confira se tudo está correto!</p>
-                            <!-- <div class="row form-group">
+                            <div class="pessoal" style="padding-top:30px">
+                                <i class="fa-solid fa-user"></i>
+                                <h1 class="titulo-secao">
+                                    Informações de Checkout
+                                </h1>
+                                <p class="subtitulo-secao">Precisamos desses detalhes para processar seu pedido e
+                                    garantir que os produtos cheguem direitinho até você. Por favor, confira se tudo
+                                    está correto!</p>
+                                <!-- <div class="row form-group">
                                 <h5 class="titulo-formulario">
                                     Dados pessoais
                                   
                                 </h5>
                             </div> -->
-                            <!-- <fa-icon [icon]="['fas','location-dot']"></fa-icon> -->
+                                <!-- <fa-icon [icon]="['fas','location-dot']"></fa-icon> -->
 
-                            <div class="row d-flex align-item-center">
-                                <div class="form-group col s12 m6" [ngClass]="{'has-success': name.valid}">
-                                    <label class="form-label">Nome <span class="text-danger">*</span> </label>
-                                    <div class="input-group">
-                                        <input [(ngModel)]="clienteModel.name" class="form-control" name="name"
-                                            id="name" #name="ngModel" required autocomplete="off"
-                                            style="padding-left: 15px">
-                                        <span class="input-group-addon" [ngClass]="{'input-success': name.valid}">
-                                            <i class="fas fa-check" *ngIf="name.valid"></i>
-                                        </span>
+                                <div class="row d-flex align-item-center">
+                                    <div class="form-group col s12 m6" [ngClass]="{'has-success': name.valid}">
+                                        <label class="form-label">Nome <span class="text-danger">*</span> </label>
+                                        <div class="input-group">
+                                            <input [(ngModel)]="clienteModel.name" class="form-control" name="name"
+                                                id="name" #name="ngModel" required autocomplete="off"
+                                                style="padding-left: 15px">
+                                            <span class="input-group-addon" [ngClass]="{'input-success': name.valid}">
+                                                <i class="fas fa-check" *ngIf="name.valid"></i>
+                                            </span>
+                                        </div>
+                                        <div *ngIf="name.touched && name.errors">
+                                            <p class="text-danger" *ngIf="name.errors['required']">Este campo é
+                                                obrigatório.
+                                            </p>
+                                        </div>
                                     </div>
-                                    <div *ngIf="name.touched && name.errors">
-                                        <p class="text-danger" *ngIf="name.errors['required']">Este campo é obrigatório.
-                                        </p>
+                                    <div class="form-group col s12 m6">
+                                        <label class="form-label">E-mail <span class="text-danger">*</span> </label>
+                                        <input required type="text" class="form-control"
+                                            [(ngModel)]="clienteModel.email" type="email" class="form-control"
+                                            email="email" id="email" name="email" #email="ngModel"
+                                            placeholder="example@hotmail.com" required style="padding-left: 10px ;">
+                                        <div *ngIf="email.touched && email.errors">
+                                            <p class="text-danger" *ngIf="email.errors['required']">Este campo é
+                                                obrigatório.</p>
+                                            <p class="text-danger" *ngIf="email.errors['email']">E-mail inválido</p>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="form-group col s12 m6">
-                                    <label class="form-label">E-mail <span class="text-danger">*</span> </label>
-                                    <input required type="text" class="form-control" [(ngModel)]="clienteModel.email"
-                                        type="email" class="form-control" email="email" id="email" name="email"
-                                        #email="ngModel" placeholder="example@hotmail.com" required
-                                        style="padding-left: 10px ;">
-                                    <div *ngIf="email.touched && email.errors">
-                                        <p class="text-danger" *ngIf="email.errors['required']">Este campo é
-                                            obrigatório.</p>
-                                        <p class="text-danger" *ngIf="email.errors['email']">E-mail inválido</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
+                                <div class="row">
 
-                                <div class="form-group col s12 m12">
-                                    <label for="" class="form-label-explicacao">Você cadastrará uma senha para acesso ao
-                                        painel de controle.</label>
-                                </div>
-                                <div class="form-group col s12 m6">
+                                    <div class="form-group col s12 m12">
+                                        <label for="" class="form-label-explicacao">Você cadastrará uma senha para
+                                            acesso ao
+                                            painel de controle.</label>
+                                    </div>
+                                    <div class="form-group col s12 m6">
+                                        <label class="form-label">Senha <span class="text-danger">*</span> </label>
+                                        <input type="password" class="form-control" [(ngModel)]="primeiraSenha"
+                                            #senha="ngModel" name="senha" id="senha" [required]="primeiraSenha"
+                                            autocomplete="off" style="padding-left: 10px; " senha="senha" required>
+                                        <!-- <input required type="text" class="form-control" [(ngModel)]="primeiraSenha"
+                                        type="senha" class="form-control" senha="senha" id="senha" name="senha"
+                                        [required]="primeiraSenha !== ''"
+                                        #senha="ngModel" autocomplete="off"  required
+                                        style="padding-left: 10px ;"> -->
+                                        <div *ngIf="senha.touched && senha.errors">
+                                            <p class="text-danger" *ngIf="senha.errors['required']">Este campo é
+                                                obrigatório.</p>
+
+                                        </div>
+                                    </div>
+                                    <!-- <div class="form-group col s12 m6">
                                     <label class="form-label">Senha <span class="text-danger">*</span></label>
                                     <input type="password" class="form-control" [(ngModel)]="primeiraSenha"
                                         #senha="ngModel" name="senha" id="senha" [required]="primeiraSenha !== ''"
                                         autocomplete="off" style="padding-left: 10px; " required>
-                                    <div *ngIf="senha.touched && senha.errors">
-                                        <p class="text-danger" *ngIf="senha.errors['required']">Este campo é
-                                            obrigatório.</p>
-                                    </div>
-                                </div>
+                                        <div *ngIf="senha.touched && senha.errors">
+                                            <p class="text-danger" *ngIf="senha.errors['required']">Este campo é
+                                                obrigatório.</p>
+                                            <p class="text-danger" *ngIf="senha.errors['senha']">E-mail inválido</p>
+                                        </div>
+                                </div> -->
 
-                                <div class="form-group col s12 m6">
-                                    <label class="form-label">Confirmar Senha <span class="text-danger">*</span></label>
-                                    <input type="password" class="form-control" [(ngModel)]="usuariosModel.senha"
-                                        name="confirmarSenha" id="confirmarSenha" required autocomplete="off"
-                                        (input)="teste()" style="padding-left: 10px; ">
-                                    <div *ngIf="verdade">
-                                        <p class="text-danger">As senhas não coincidem.</p>
+                                    <div class="form-group col s12 m6">
+                                        <label class="form-label">Confirmar Senha <span
+                                                class="text-danger">*</span></label>
+                                        <input type="password" class="form-control" [(ngModel)]="usuariosModel.senha"
+                                            name="confirmarSenha" id="confirmarSenha" required autocomplete="off"
+                                            (input)="teste()" style="padding-left: 10px; ">
+                                        <div *ngIf="verdade">
+                                            <p class="text-danger">As senhas não coincidem.</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <h1 class="titulo-cadastro">Receba +400 stories personalizados por mês</h1>
-                    
-                  
-              
-                
-                  
-                        <swiper-container [slidesPerView]="5"
-                            [autoplay]="{ delay: 3000, disableOnInteraction: false, reverse: true }">
-                            <swiper-slide>
-                                <img src="../../../assets/img/indicesP.png" alt="" class="item-slide-cadastro  ">
-                            </swiper-slide>
-                            <swiper-slide>
-                                <img src="../../../assets/img/selicP.png" alt="" class="item-slide-cadastro">
-                            </swiper-slide>
-                            <swiper-slide>
-                                <img src="../../../assets/img/ranking.png" alt="" class="item-slide-cadastro ">
-                            </swiper-slide>
-                            <swiper-slide>
-                                <img src="../../../assets/img/nasdaqP.png" alt="" class="item-slide-cadastro">
-                            </swiper-slide>
-                            <swiper-slide>
-                                <img src="../../../assets/img/brasilAgoraP.png" alt="" class="item-slide-cadastro ">
-                            </swiper-slide>
-                            <swiper-slide>
-                                <img src="../../../assets/img/minerioFerroP.png" alt=""
-                                    class="item-slide-cadastro">
-                            </swiper-slide>
-                            <swiper-slide>
-                                <img src="../../../assets/img/fechamentoMercadoP.png" alt="" class="item-slide-cadastro ">
-                            </swiper-slide>
-                            <swiper-slide>
-                                <img src="../../../assets/img/ethereumP.png" alt="" class="item-slide-cadastro">
-                            </swiper-slide>
-                            <swiper-slide>
-                                <img src="../../../assets/img/ttP.png" alt=""
-                                    class="item-slide-cadastro ">
-                            </swiper-slide>
-                            <swiper-slide>
-                                <img src="../../../assets/img/commoditiesAgricolaP.png" alt="" class="item-slide-cadastro">
-                            </swiper-slide>
-                            <swiper-slide>
-                                <img src="../../../assets/img/superQuartaP.png" alt="" class="item-slide-cadastro ">
-                            </swiper-slide>
-                            <swiper-slide>
-                                <img src="../../../assets/img/CommoditiesPetroleoP.png" alt="" class="item-slide-cadastro">
-                            </swiper-slide>
-                            <swiper-slide>
-                                <img src="../../../assets/img/fundosImobiliariosP.png" alt="" class="item-slide-cadastro ">
-                            </swiper-slide>
-                            <swiper-slide>
-                                <img src="../../../assets/img/urgenteP.png" alt="" class="item-slide-cadastro">
-                            </swiper-slide>
-                            <swiper-slide>
-                                <img src="../../../assets/img/mundoAgoraP.png" alt="" class="item-slide-cadastro ">
-                            </swiper-slide>
-                            <swiper-slide>
-                                <img src="../../../assets/img/metalicasP.png" alt="" class="item-slide-cadastro">
-                            </swiper-slide>
-                            <swiper-slide>
-                                <img src="../../../assets/img/agendaSemanaP.png" alt="" class="item-slide-cadastro ">
-                            </swiper-slide>
-                        </swiper-container>
-                        <!-- <div class="endereco" style="padding-top:30px">
-                            <div class="row">
-                                <div class="form-group col s12 m12 telefone-explicacao">
-                                    <label for="" class="form-label-explicacao ">O seu número de WhatsApp será utilizado
-                                        para o envio dos stories</label>
-                                </div>
-                              
-                                <div class="form-group col s12 m4">
-                                    <label class="form-label">Número de WhatsApp <span class="text-danger">*</span>
-                                    </label>
-                                    <div *ngFor="let input of inputs; let i = index" class="caixa-input-telefone">
+                            <h1 class="titulo-cadastro">Receba +400 stories personalizados por mês</h1>
 
-                                        <input type="text" name="phone{{i}}" id="phone{{i}}" class="form-control"
-                                            placeholder="example@hotmail.com" [(ngModel)]="inputs[i].number"
-                                            (blur)="atribuirValor()" mask="(00) 00000-0000"
-                                            placeholder="(00) 00000-0000" style="padding-left: 10px; " required>
-                                    </div>
 
-                                </div>
-                                <div class="form-group col s12 m4">
-                                    <label class="form-label">CPF/CNPJ <span class="text-danger">*</span> </label>
-                                    <input required [(ngModel)]="clienteModel.registry_code" type="text"
-                                        class="form-control" registry_code="registry_code" id="registry_code"
-                                        name="registry_code" #registry_code="ngModel"
-                                        [mask]="getMask(clienteModel.registry_code)" style="padding-left: 10px; ">
-                                    <div *ngIf="registry_code.touched && registry_code.errors">
-                                        <p class="text-danger" *ngIf="registry_code.errors['required']">Este campo é
-                                            obrigatório.</p>
-                                    </div>
-                                </div>
-                                <div class="form-group col s12 m4">
-                                    <label class="form-label">CEP <span class="text-danger">*</span> </label>
-                                    <input required type="text" class="form-control " name="documento" id="documento"
-                                        #documento="ngModel" [(ngModel)]="cep" required #buscaCEP (blur)="blur($event)"
-                                        [(ngModel)]="cep" required f mask="00000-000" placeholder="00000-000"
-                                        style="padding-left: 10px; ">
-                                    <div *ngIf="documento.touched && documento.errors">
-                                        <p class="text-danger" *ngIf="documento.errors['required']">Este campo é
-                                            obrigatório.</p>
-                                    </div>
-                                </div>
 
-                            </div>
-                            <div class="row">
-                                <div class="form-group col s12 m8">
-                                    <label class="form-label">Endereço <span class="text-danger">*</span> </label>
-                                    <input required type="text" #endereco="ngModel" [(ngModel)]="enderecoFormat"
-                                        class="form-control" name="endereco" id="endereco" ngModel required type="text"
-                                        style="padding-left: 10px; ">
-                                    <div *ngIf="endereco.touched && endereco.errors">
-                                        <p class="text-danger" *ngIf="endereco.errors['required']">Este campo é
-                                            obrigatório.</p>
-                                    </div>
-                                </div>
-                                <div class="form-group col s12 m4">
-                                    <label class="form-label">Número </label>
-                                    <input required type="text" #documento="ngModel" [(ngModel)]="numero"
-                                        class="form-control" name="numero" id="numero" ngModel required type="text">
 
-                                </div>
-                            </div>
+
+                            <swiper-container [slidesPerView]="5"
+                                [autoplay]="{ delay: 3000, disableOnInteraction: false, reverse: true }">
+                                <swiper-slide>
+                                    <img src="../../../assets/img/indicesP.png" alt="" class="item-slide-cadastro  ">
+                                </swiper-slide>
+                                <swiper-slide>
+                                    <img src="../../../assets/img/selicP.png" alt="" class="item-slide-cadastro">
+                                </swiper-slide>
+                                <swiper-slide>
+                                    <img src="../../../assets/img/ranking.png" alt="" class="item-slide-cadastro ">
+                                </swiper-slide>
+                                <swiper-slide>
+                                    <img src="../../../assets/img/nasdaqP.png" alt="" class="item-slide-cadastro">
+                                </swiper-slide>
+                                <swiper-slide>
+                                    <img src="../../../assets/img/brasilAgoraP.png" alt="" class="item-slide-cadastro ">
+                                </swiper-slide>
+                                <swiper-slide>
+                                    <img src="../../../assets/img/minerioFerroP.png" alt="" class="item-slide-cadastro">
+                                </swiper-slide>
+                                <swiper-slide>
+                                    <img src="../../../assets/img/fechamentoMercadoP.png" alt=""
+                                        class="item-slide-cadastro ">
+                                </swiper-slide>
+                                <swiper-slide>
+                                    <img src="../../../assets/img/ethereumP.png" alt="" class="item-slide-cadastro">
+                                </swiper-slide>
+                                <swiper-slide>
+                                    <img src="../../../assets/img/ttP.png" alt="" class="item-slide-cadastro ">
+                                </swiper-slide>
+                                <swiper-slide>
+                                    <img src="../../../assets/img/commoditiesAgricolaP.png" alt=""
+                                        class="item-slide-cadastro">
+                                </swiper-slide>
+                                <swiper-slide>
+                                    <img src="../../../assets/img/superQuartaP.png" alt="" class="item-slide-cadastro ">
+                                </swiper-slide>
+                                <swiper-slide>
+                                    <img src="../../../assets/img/CommoditiesPetroleoP.png" alt=""
+                                        class="item-slide-cadastro">
+                                </swiper-slide>
+                                <swiper-slide>
+                                    <img src="../../../assets/img/fundosImobiliariosP.png" alt=""
+                                        class="item-slide-cadastro ">
+                                </swiper-slide>
+                                <swiper-slide>
+                                    <img src="../../../assets/img/urgenteP.png" alt="" class="item-slide-cadastro">
+                                </swiper-slide>
+                                <swiper-slide>
+                                    <img src="../../../assets/img/mundoAgoraP.png" alt="" class="item-slide-cadastro ">
+                                </swiper-slide>
+                                <swiper-slide>
+                                    <img src="../../../assets/img/metalicasP.png" alt="" class="item-slide-cadastro">
+                                </swiper-slide>
+                                <swiper-slide>
+                                    <img src="../../../assets/img/agendaSemanaP.png" alt=""
+                                        class="item-slide-cadastro ">
+                                </swiper-slide>
+                            </swiper-container>
                             <div class="d-flex justify-content-between flex-row mb-5 mt-4 btns-caixa btn-avancar">
-
-                                <button class="me-0 ms-auto prox-btn btn-stepper" type="submit" cdkStepperNext>
+                                <button class="me-0 ms-auto prox-btn btn-stepper" type="submit" cdkStepperNext [disabled]="form1.invalid">
                                     <fa-icon [icon]="['fas','arrow-right']" class="icone-seta"></fa-icon>
                                 </button>
                             </div>
-                        </div> -->
+                        </cdk-step>
+                    </form>
+                    <form #form2="ngForm" class="needs-validation formulario ">
+                        <cdk-step [label]="'teste'" #step1 id="test">
 
-                        <div class="d-flex justify-content-between flex-row mb-5 mt-4 btns-caixa btn-avancar">
+                            <div class="pessoal" style="padding-top:30px">
+                                <i class="fa-solid fa-user"></i>
+                                <div class="endereco" style="padding-top:30px">
+                                    <div class="row">
+                                        <div class="form-group col s12 m12 telefone-explicacao">
+                                            <label for="" class="form-label-explicacao ">O seu número de WhatsApp será
+                                                utilizado
+                                                para o envio dos stories</label>
+                                        </div>
 
-                            <button class="me-0 ms-auto prox-btn btn-stepper" type="submit" cdkStepperNext >
-                                <fa-icon [icon]="['fas','arrow-right']" class="icone-seta"></fa-icon>
-                            </button>
-                            
+                                        <div class="form-group col s12 m4">
+                                            <label class="form-label">Número de WhatsApp <span
+                                                    class="text-danger">*</span></label>
+                                            <div *ngFor="let input of inputs; let i = index">
+                                                <input type="text" name="phone{{i}}" id="phone{{i}}"
+                                                    class="form-control" placeholder="example@hotmail.com"
+                                                    [(ngModel)]="inputs[i].number" #phone="ngModel"
+                                                    (blur)="atribuirValor(inputs[i].number)" mask="(00) 00000-0000"
+                                                    placeholder="(00) 00000-0000" style="padding-left: 10px;" required>
+                                                <div *ngIf="phone.touched && phone.errors">
+                                                    <p class="text-danger" *ngIf="phone.errors['required']">Este campo é
+                                                        obrigatório.</p>
+                                                </div>
+                                                <div *ngIf="numeroInvalido">
+                                                    <p class="text-danger">Número inválido.</p>
+                                                </div>
 
+                                                <!-- Show invalid image if phone number is invalid -->
 
-                            <!-- <button class="me-0 ms-auto prox-btn btn-stepper" type="submit" cdkStepperNext [disabled]="form.invalid" (click)="enviarFormulario(form)">
-                                <fa-icon [icon]="['fas','arrow-right']" class="icone-seta"></fa-icon>
-                            </button>
-                            <div *ngIf="exibirTeste">teste</div> -->
-                        </div>
+                                            </div>
+                                        </div>
 
+                                        <div class="form-group col s12 m4">
+                                            <label class="form-label">CPF/CNPJ <span class="text-danger">*</span>
+                                            </label>
+                                            <input required [(ngModel)]="clienteModel.registry_code" type="text"
+                                                class="form-control" registry_code="registry_code" id="registry_code"
+                                                name="registry_code" #registry_code="ngModel"
+                                                [mask]="getMask(clienteModel.registry_code)"
+                                                style="padding-left: 10px; ">
+                                            <div *ngIf="registry_code.touched && registry_code.errors">
+                                                <p class="text-danger" *ngIf="registry_code.errors['required']">Este
+                                                    campo é
+                                                    obrigatório.</p>
+                                            </div>
+                                        </div>
+                                        <div class="form-group col s12 m4">
+                                            <label class="form-label">CEP <span class="text-danger">*</span> </label>
+                                            <input required type="text" class="form-control " name="documento"
+                                                id="documento" #documento="ngModel" [(ngModel)]="cep" required #buscaCEP
+                                                (blur)="blur($event)" [(ngModel)]="cep" required f mask="00000-000"
+                                                placeholder="00000-000" style="padding-left: 10px; ">
+                                            <div *ngIf="documento.touched && documento.errors">
+                                                <p class="text-danger" *ngIf="documento.errors['required']">Este campo é
+                                                    obrigatório.</p>
+                                            </div>
+                                        </div>
 
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group col s12 m8">
+                                            <label class="form-label">Endereço <span class="text-danger">*</span>
+                                            </label>
+                                            <input required type="text" #endereco="ngModel" [(ngModel)]="enderecoFormat"
+                                                class="form-control" name="endereco" id="endereco" ngModel required
+                                                type="text" style="padding-left: 10px; ">
+                                            <div *ngIf="endereco.touched && endereco.errors">
+                                                <p class="text-danger" *ngIf="endereco.errors['required']">Este campo é
+                                                    obrigatório.</p>
+                                            </div>
+                                        </div>
+                                        <div class="form-group col s12 m4">
+                                            <label class="form-label">Número </label>
+                                            <input required type="text" #documento="ngModel" [(ngModel)]="numero"
+                                                class="form-control" name="numero" id="numero" ngModel required
+                                                type="text" style="padding-left: 10px; ">
 
-
-
-
-
-                    </cdk-step>
-                    <cdk-step  [label]="'teste'" #step1 id="test">
-
-                        <div class="pessoal" style="padding-top:30px">
-                            <i class="fa-solid fa-user"></i>
-                        <div class="endereco" style="padding-top:30px">
-                            <div class="row">
-                                <div class="form-group col s12 m12 telefone-explicacao">
-                                    <label for="" class="form-label-explicacao ">O seu número de WhatsApp será utilizado
-                                        para o envio dos stories</label>
+                                        </div>
+                                    </div>
                                 </div>
-                              
-                                <div class="form-group col s12 m4">
-                                    <label class="form-label">Número de WhatsApp <span class="text-danger">*</span>
-                                    </label>
-                                    <div *ngFor="let input of inputs; let i = index" class="caixa-input-telefone">
 
-                                        <input type="text" name="phone{{i}}" id="phone{{i}}" class="form-control"
-                                            placeholder="example@hotmail.com" [(ngModel)]="inputs[i].number"
-                                            (blur)="atribuirValor()" mask="(00) 00000-0000"
-                                            placeholder="(00) 00000-0000" style="padding-left: 10px; " required>
+
+                                <div class="d-flex justify-content-between flex-row mb-5 mt-4  btns-caixa">
+                                    <div class="btns-arrow">
+                                        <button class="me-0 ms-auto prox-btn btn-stepper" type="submit"
+                                            cdkStepperPrevious>
+                                            <!-- <span>Voltar</span> -->
+                                            <fa-icon [icon]="['fas','arrow-left']" class="icone-seta"></fa-icon>
+                                        </button>
+
+                                        <button class="me-0 ms-auto prox-btn btn-stepper" type="submit" cdkStepperNext [disabled]="form2.invalid">
+                                            <!-- <span>Criar</span> -->
+                                            <fa-icon [icon]="['fas','arrow-right']" class="icone-seta"></fa-icon>
+                                        </button>
                                     </div>
 
-                                </div>
-                                <div class="form-group col s12 m4">
-                                    <label class="form-label">CPF/CNPJ <span class="text-danger">*</span> </label>
-                                    <input required [(ngModel)]="clienteModel.registry_code" type="text"
-                                        class="form-control" registry_code="registry_code" id="registry_code"
-                                        name="registry_code" #registry_code="ngModel"
-                                        [mask]="getMask(clienteModel.registry_code)" style="padding-left: 10px; ">
-                                    <div *ngIf="registry_code.touched && registry_code.errors">
-                                        <p class="text-danger" *ngIf="registry_code.errors['required']">Este campo é
-                                            obrigatório.</p>
-                                    </div>
-                                </div>
-                                <div class="form-group col s12 m4">
-                                    <label class="form-label">CEP <span class="text-danger">*</span> </label>
-                                    <input required type="text" class="form-control " name="documento" id="documento"
-                                        #documento="ngModel" [(ngModel)]="cep" required #buscaCEP (blur)="blur($event)"
-                                        [(ngModel)]="cep" required f mask="00000-000" placeholder="00000-000"
-                                        style="padding-left: 10px; ">
-                                    <div *ngIf="documento.touched && documento.errors">
-                                        <p class="text-danger" *ngIf="documento.errors['required']">Este campo é
-                                            obrigatório.</p>
-                                    </div>
-                                </div>
 
+
+                                </div>
                             </div>
-                            <div class="row">
-                                <div class="form-group col s12 m8">
-                                    <label class="form-label">Endereço <span class="text-danger">*</span> </label>
-                                    <input required type="text" #endereco="ngModel" [(ngModel)]="enderecoFormat"
-                                        class="form-control" name="endereco" id="endereco" ngModel required type="text"
-                                        style="padding-left: 10px; ">
-                                    <div *ngIf="endereco.touched && endereco.errors">
-                                        <p class="text-danger" *ngIf="endereco.errors['required']">Este campo é
-                                            obrigatório.</p>
-                                    </div>
-                                </div>
-                                <div class="form-group col s12 m4">
-                                    <label class="form-label">Número </label>
-                                    <input required type="text" #documento="ngModel" [(ngModel)]="numero"
-                                        class="form-control" name="numero" id="numero" ngModel required type="text" style="padding-left: 10px; ">
-
-                                </div>
-                            </div>
-                        </div>
-
-           
-                        <div class="d-flex justify-content-between flex-row mb-5 mt-4  btns-caixa">
-                            <div class="btns-arrow">
-                                <button class="me-0 ms-auto prox-btn btn-stepper" type="submit" cdkStepperPrevious>
-                                    <!-- <span>Voltar</span> -->
-                                    <fa-icon [icon]="['fas','arrow-left']" class="icone-seta"></fa-icon>
-                                </button>
-
-                                <button class="me-0 ms-auto prox-btn btn-stepper" type="submit" cdkStepperNext>
-                                    <!-- <span>Criar</span> -->
-                                    <fa-icon [icon]="['fas','arrow-right']" class="icone-seta"></fa-icon>
-                                </button>
-                            </div>
-
-
-
-                        </div>
-                    </div>
-                    </cdk-step>
-
-                    <cdk-step [label]="'Instagram'" #step1>
-                        <div class="pessoal" style="padding-top:15px">
-                            <div class="row form-group">
-                                <!-- <h5 class="titulo-formulario">
+                        </cdk-step>
+                    </form>
+                    <form #form3="ngForm" class="needs-validation formulario ">
+                        <cdk-step [label]="'Instagram'" #step1>
+                            <div class="pessoal" style="padding-top:15px">
+                                <div class="row form-group">
+                                    <!-- <h5 class="titulo-formulario">
                                     Dados para pagamento
                                     <fa-icon [icon]="['fas','money-check-dollar']"></fa-icon>
                                 </h5> -->
-<h1 class="titulo-secao">
-    Conectar ao Instagram
-</h1>
-<p class="subtitulo-secao">Conecte sua conta do Instagram para que possamos criar layouts personalizados pra você. Usaremos suas informações para entender melhor suas preferências e oferecer algo que tenha a sua cara.</p>
+                                    <h1 class="titulo-secao">
+                                        Conectar ao Instagram
+                                    </h1>
+                                    <p class="subtitulo-secao">Conecte sua conta do Instagram para que possamos criar
+                                        layouts personalizados pra você. Usaremos suas informações para entender melhor
+                                        suas preferências e oferecer algo que tenha a sua cara.</p>
 
-                                <div class="form-group col s12 m12" [ngClass]="{'has-success': name.valid}">
+
+                                    <div class="form-group col s12 m12 ">
+                                        <label class="form-label">Qual o nome você quer que fique visivel nos layouts
+                                            criados?</label>
+                                        <input type="text" class="form-control " [(ngModel)]="usuariosModel.nome"
+                                            type="text" class="form-control" name="nome" id="nome" nome="nome"
+                                            #nome="ngModel" required="" autocomplete="off" style="padding-left: 10px; ">
+                                        <div *ngIf="nome.touched && nome.errors">
+                                            <p class="text-danger" *ngIf="nome.errors['required']">Este campo é
+                                                obrigatório.</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- <div class="form-group col s12 m12" [ngClass]="{'has-success': name.valid}">
                                     <label class="form-label">Qual o nome você quer que fique visivel nos layouts criados? <span class="text-danger">*</span>
                                     </label>
                                     <div class="input-group">
                                         <input [(ngModel)]="usuariosModel.nome" class="form-control" name="name"
                                             id="name" #name="ngModel" required autocomplete="off"
                                             style="padding-left: 15px">
-                                        <span class="input-group-addon" [ngClass]="{'input-success': name.valid}">
-                                            <i class="fas fa-check" *ngIf="name.valid"></i>
-                                        </span>
+                                            <div *ngIf="name.touched && name.errors">
+                                                <p class="text-danger" *ngIf="name.errors['required']">Este campo é obrigatório.
+                                                </p>
+                                            </div>
                                     </div>
-                                    <div *ngIf="name.touched && name.errors">
-                                        <p class="text-danger" *ngIf="name.errors['required']">Este campo é obrigatório.
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="form-group col s12 m12" [ngClass]="{'has-success': name.valid}">
-                                    <div class="imagem-ex-instagram">
-                                        <img src="../../../../assets/img/exemplo-instagram.png" alt="">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="form-group col s12 m12 ">
-                                    <label class="form-label">Qual é o {{'@'}} do seu Instagram? <span
-                                            class="form-label-explicacao ">Se não tiver um, como gostaria que fosse
-                                            colocado?</span><span class="text-danger">*</span> </label>
-                                    <input type="text" class="form-control "
-                                        [(ngModel)]="usuariosModel.usuario_instagram" type="text" class="form-control"
-                                        name="usuario_instagram" id="usuario_instagram"
-                                        usuario_instagram="usuario_instagram" #usuario_instagram="ngModel" required=""
-                                        autocomplete="off" style="padding-left: 10px; ">
-                                    <div *ngIf="usuario_instagram.touched && usuario_instagram.errors">
-                                        <p class="text-danger" *ngIf="usuario_instagram.errors['required']">Este campo é
-                                            obrigatório.</p>
+                                 
+                                </div> -->
+                                    <div class="form-group col s12 m12" [ngClass]="{'has-success': name.valid}">
+                                        <div class="imagem-ex-instagram">
+                                            <img src="../../../../assets/img/exemplo-instagram.png" alt="">
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+
+                                <div class="row">
+                                    <div class="form-group col s12 m12 ">
+                                        <label class="form-label">Qual é o {{'@'}} do seu Instagram? <span
+                                                class="form-label-explicacao ">Se não tiver um, como gostaria que fosse
+                                                colocado?</span><span class="text-danger">*</span> </label>
+                                        <input type="text" class="form-control "
+                                            [(ngModel)]="usuariosModel.usuario_instagram" type="text"
+                                            class="form-control" name="usuario_instagram" id="usuario_instagram"
+                                            usuario_instagram="usuario_instagram" #usuario_instagram="ngModel"
+                                            required="" autocomplete="off" style="padding-left: 10px; ">
+                                        <div *ngIf="usuario_instagram.touched && usuario_instagram.errors">
+                                            <p class="text-danger" *ngIf="usuario_instagram.errors['required']">Este
+                                                campo é
+                                                obrigatório.</p>
+                                        </div>
+                                    </div>
+                                </div>
 
 
 
-                            <!-- <div class="form-group col s12 m12">
+                                <!-- <div class="form-group col s12 m12">
                                         <label class="form-label">Foto <span class="text-danger">*</span></label>
         
         
                                         <input type="file" (change)="onFileSelected($event)" accept="image/*" class="form-control" name="foto__instagram" id="foto_instagram" required>
                                        
                                     </div> -->
-                            <div class="form-group col s12 m12 caixa-imagem">
-                                <div class="form-group col s12 m12 telefone-explicacao">
-                                    <label for="" class="form-label">Por favor, envie uma foto sua para que ela seja
-                                        colocada no seu layout<span class="text-danger">*</span></label>
-                                </div>
-                                <div>
+                                <div class="form-group col s12 m12 caixa-imagem">
+                                    <div class="form-group col s12 m12 telefone-explicacao">
+                                        <label for="" class="form-label">Por favor, envie uma foto sua para que ela seja
+                                            colocada no seu layout<span class="text-danger">*</span></label>
+                                    </div>
+                                    <div>
 
-                                    <input type="file" id="fileInput" (change)="onFileSelected2($event)"
-                                        style="display: none;">
-                                    <label for="fileInput" class="custom-file-upload">
-                                        Selecionar Imagem
-                                    </label>
+                                        <input type="file" id="fileInput" (change)="onFileSelected2($event)"
+                                            style="display: none;">
+                                        <label for="fileInput" class="custom-file-upload">
+                                            Selecionar Imagem
+                                        </label>
+                                    </div>
+                                    <p *ngIf="selectedImage" class="img-selecionada">Imagem selecionada:</p>
+                                    <img *ngIf="selectedImage" [src]="selectedImage" alt="Imagem Selecionada"
+                                        class="imagem-escolhida-instagram">
                                 </div>
-                                <p *ngIf="selectedImage" class="img-selecionada">Imagem selecionada:</p>
-                                <img *ngIf="selectedImage" [src]="selectedImage" alt="Imagem Selecionada"
-                                    class="imagem-escolhida-instagram">
-                            </div>
 
-                            <!-- <div class="form-group col s12 m12">
+                                <!-- <div class="form-group col s12 m12">
                                         <label class="form-label">Senha <span class="text-danger">*</span></label>
                                         <input type="password" class="form-control" [(ngModel)]="primeiraSenha" #senha="ngModel"
                                             name="senha" id="senha" [required]="primeiraSenha !== ''" autocomplete="off"
@@ -468,140 +443,151 @@
 
 
 
-                            <div class="d-flex justify-content-between flex-row mb-5 mt-4  btns-caixa">
-                                <div class="btns-arrow">
-                                    <button class="me-0 ms-auto prox-btn btn-stepper" type="submit" cdkStepperPrevious>
-                                        <!-- <span>Voltar</span> -->
-                                        <fa-icon [icon]="['fas','arrow-left']" class="icone-seta"></fa-icon>
-                                    </button>
+                                <div class="d-flex justify-content-between flex-row mb-5 mt-4  btns-caixa">
+                                    <div class="btns-arrow">
+                                        <button class="me-0 ms-auto prox-btn btn-stepper" type="submit"
+                                            cdkStepperPrevious>
+                                            <!-- <span>Voltar</span> -->
+                                            <fa-icon [icon]="['fas','arrow-left']" class="icone-seta"></fa-icon>
+                                        </button>
 
-                                    <button class="me-0 ms-auto prox-btn btn-stepper" type="submit" cdkStepperNext>
-                                        <!-- <span>Criar</span> -->
-                                        <fa-icon [icon]="['fas','arrow-right']" class="icone-seta"></fa-icon>
-                                    </button>
+                                        <button class="me-0 ms-auto prox-btn btn-stepper" type="submit" cdkStepperNext
+                                            [disabled]="form3.invalid">
+                                            <!-- <span>Criar</span> -->
+                                            <fa-icon [icon]="['fas','arrow-right']" class="icone-seta"></fa-icon>
+                                        </button>
+                                    </div>
+
+
+
                                 </div>
-
-
-
                             </div>
-                        </div>
-                    </cdk-step>
-
-                    <cdk-step [label]="'Pagamento'" #step1>
-                        <div class="pessoal" style="padding-top:30px">
-                            <div class="row form-group">
-                                <h1 class="titulo-secao">
-                                    Informações do pagamento
-                                </h1>
-                                <p class="subtitulo-secao"> Preencha suas informações de pagamento para finalizar sua compra. Não se preocupe, mantemos tudo seguro e confidencial.</p>
-                                <!-- <h5 class="titulo-formulario">
+                        </cdk-step>
+                    </form>
+                    <form #form4="ngForm" class="needs-validation formulario ">
+                        <cdk-step [label]="'Pagamento'" #step1>
+                            <div class="pessoal" style="padding-top:30px">
+                                <div class="row form-group">
+                                    <h1 class="titulo-secao">
+                                        Informações do pagamento
+                                    </h1>
+                                    <p class="subtitulo-secao"> Preencha suas informações de pagamento para finalizar
+                                        sua compra. Não se preocupe, mantemos tudo seguro e confidencial.</p>
+                                    <!-- <h5 class="titulo-formulario">
                                     Dados para pagamento
                                     <fa-icon [icon]="['fas','money-check-dollar']"></fa-icon>
                                 </h5> -->
-                            </div>
+                                </div>
 
-                            <div class="row">
-                                <div class="pagamento-caixa">
-                                    <div class="form-group col s12 dropDown">
-                                        <label class="form-label" for="">Método de pagamento <span
-                                                class="text-danger">*</span> </label>
-                                        <p-dropdown [options]="pay" optionLabel="name" optionValue="code"
-                                            [(ngModel)]="perfilModel.payment_method_code" type="paymemnt_method_code"
-                                            class="form-control drop" paymemnt_method_code="paymemnt_method_code"
-                                            id="paymemnt_method_code" name="paymemnt_method_code"
-                                            #paymemnt_method_code="ngModel" placeholder="Selecione um método" id="drops"
-                                            required></p-dropdown>
-                                        <div *ngIf="paymemnt_method_code.touched && paymemnt_method_code.errors">
-                                            <p class="text-danger" *ngIf="paymemnt_method_code.errors['required']">Este
-                                                campo é obrigatório.</p>
+                                <div class="row">
+                                    <div class="pagamento-caixa">
+                                        <div class="form-group col s12 dropDown">
+                                            <label class="form-label" for="">Método de pagamento <span
+                                                    class="text-danger">*</span> </label>
+                                            <p-dropdown [options]="pay" optionLabel="name" optionValue="code"
+                                                [(ngModel)]="perfilModel.payment_method_code"
+                                                type="paymemnt_method_code" class="form-control drop"
+                                                paymemnt_method_code="paymemnt_method_code" id="paymemnt_method_code"
+                                                name="paymemnt_method_code" #paymemnt_method_code="ngModel"
+                                                placeholder="Selecione um método" id="drops" required></p-dropdown>
+                                            <div *ngIf="paymemnt_method_code.touched && paymemnt_method_code.errors">
+                                                <p class="text-danger" *ngIf="paymemnt_method_code.errors['required']">
+                                                    Este
+                                                    campo é obrigatório.</p>
+                                            </div>
                                         </div>
-                                    </div>
 
-                                    <div *ngIf="mostrarBotao()">
-                                    <!-- <div> -->
-                                        <div class="row">
-                                            <div class="form-group col s12 m8">
-                                                <label class="form-label">Nome <span class="text-danger">*</span>
-                                                </label>
-                                                <input type="text" class="form-control "
-                                                    [(ngModel)]="perfilModel.holder_name" class="form-control"
-                                                    name="email" id="email" #nomeCartao="ngModel"
-                                                    style="padding-left: 10px; ">
-                                                <div *ngIf="nomeCartao.touched && nomeCartao.errors">
-                                                    <p class="text-danger" *ngIf="nomeCartao.errors['required']">Este
-                                                        campo é obrigatório.</p>
+                                        <div *ngIf="mostrarBotao()">
+                                            <!-- <div> -->
+                                            <div class="row">
+                                                <div class="form-group col s12 m8">
+                                                    <label class="form-label">Nome <span class="text-danger">*</span>
+                                                    </label>
+                                                    <input type="text" class="form-control "
+                                                        [(ngModel)]="perfilModel.holder_name" class="form-control"
+                                                        name="email" id="email" #nomeCartao="ngModel"
+                                                        style="padding-left: 10px; " required>
+                                                    <div *ngIf="nomeCartao.touched && nomeCartao.errors">
+                                                        <p class="text-danger" *ngIf="nomeCartao.errors['required']">
+                                                            Este
+                                                            campo é obrigatório.</p>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="form-group col s12 m4">
+                                                <div class="form-group col s12 m4">
 
-                                                <label class="form-label">Número do cartão <span
-                                                        class="text-danger">*</span> </label>
-                                                <input type="text" class="form-control "
-                                                    [(ngModel)]="perfilModel.card_number" type="text"
-                                                    class="form-control" name="card_number" id="card_number"
-                                                    #card_number="ngModel" placeholder="0000 0000 0000 0000" mask="0000 0000 0000 0000"
-                                                    style="padding-left: 10px; ">
-                                                <div *ngIf="card_number.touched && card_number.errors">
-                                                    <p class="text-danger" *ngIf="card_number.errors['required']">Este
-                                                        campo é obrigatório.</p>
+                                                    <label class="form-label">Número do cartão <span
+                                                            class="text-danger">*</span> </label>
+                                                    <input type="text" class="form-control "
+                                                        [(ngModel)]="perfilModel.card_number" type="text"
+                                                        class="form-control" name="card_number" id="card_number"
+                                                        #card_number="ngModel" placeholder="0000 0000 0000 0000"
+                                                        mask="0000 0000 0000 0000" style="padding-left: 10px; " required>
+                                                        <div
+                                                        *ngIf="card_number.touched && card_number.errors">
+                                                        <p class="text-danger"
+                                                            *ngIf="card_number.errors['required']">Este campo é
+                                                            obrigatório.</p>
+                                                    </div>
+                                                  
                                                 </div>
-                                            </div>
 
-                                        </div>
-                                        <div class="row">
-                                            <div class="form-group col s12 m4">
-                                                <label class="form-label">Validade do cartão <span
-                                                        class="text-danger">*</span> </label>
-                                                <input type="text" class="form-control "
-                                                    [(ngModel)]="perfilModel.card_expiration" type="text"
-                                                    class="form-control" name="card_expiration" id="card_expiration"
-                                                    #card_expiration="ngModel" mask="00/00" placeholder="00/00"
-                                                    style="padding-left: 10px; ">
-                                                <div *ngIf="card_expiration.touched && card_expiration.errors">
-                                                    <p class="text-danger" *ngIf="card_expiration.errors['required']">
-                                                        Este campo é obrigatório.</p>
-                                                </div>
                                             </div>
-                                            <div class="form-group col s12 m4 ">
-                                                <label class="form-label">CVV <span class="text-danger">*</span>
-                                                </label>
-                                                <input type="text" class="form-control "
-                                                    [(ngModel)]="perfilModel.card_cvv" class="form-control"
-                                                    name="card_cvv" id="card_cvv" #card_cvv="ngModel" mask="000"
-                                                    placeholder="000"  style="padding-left: 10px; ">
-                                                <div *ngIf="card_cvv.touched && card_cvv.errors"
-                                                    >
-                                                    <p class="text-danger" *ngIf="card_cvv.errors['required']">Este
-                                                        campo é obrigatório.</p>
+                                            <div class="row">
+                                                <div class="form-group col s12 m4">
+                                                    <label class="form-label">Validade do cartão <span
+                                                            class="text-danger">*</span> </label>
+                                                    <input type="text" class="form-control "
+                                                        [(ngModel)]="perfilModel.card_expiration" type="text"
+                                                        class="form-control" name="card_expiration" id="card_expiration"
+                                                        #card_expiration="ngModel" mask="00/00" placeholder="00/00"
+                                                        style="padding-left: 10px; " required>
+                                                    <div *ngIf="card_expiration.touched && card_expiration.errors">
+                                                        <p class="text-danger"
+                                                            *ngIf="card_expiration.errors['required']">
+                                                            Este campo é obrigatório.</p>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="form-group col s12 m4">
-                                                <label class="form-label">Bandeira <span class="text-danger">*</span>
-                                                </label>
-                                                <p-dropdown [options]="bandeiras"
-                                                    [(ngModel)]="perfilModel.payment_company_code" type="text"
-                                                    class="form-control drop" metodo="metodo" id="metodo" name="metodo"
-                                                    #payment_company_code="ngModel" placeholder="Selecione uma bandeira"
-                                                    id="drops" required></p-dropdown>
+                                                <div class="form-group col s12 m4 ">
+                                                    <label class="form-label">CVV <span class="text-danger">*</span>
+                                                    </label>
+                                                    <input type="text" class="form-control "
+                                                        [(ngModel)]="perfilModel.card_cvv" class="form-control"
+                                                        name="card_cvv" id="card_cvv" #card_cvv="ngModel" mask="000"
+                                                        placeholder="000" style="padding-left: 10px; " required>
+                                                    <div *ngIf="card_cvv.touched && card_cvv.errors">
+                                                        <p class="text-danger" *ngIf="card_cvv.errors['required']">Este
+                                                            campo é obrigatório.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group col s12 m4">
+                                                    <label class="form-label">Bandeira <span
+                                                            class="text-danger">*</span>
+                                                    </label>
+                                                    <p-dropdown [options]="bandeiras"
+                                                        [(ngModel)]="perfilModel.payment_company_code" type="text"
+                                                        class="form-control drop" metodo="metodo" id="metodo"
+                                                        name="metodo" #payment_company_code="ngModel"
+                                                        placeholder="Selecione uma bandeira" id="drops"
+                                                        required></p-dropdown>
 
-                                                <div
-                                                    *ngIf="payment_company_code.touched && payment_company_code.errors">
-                                                    <p class="text-danger"
-                                                        *ngIf="payment_company_code.errors['required']">Este campo é
-                                                        obrigatório.</p>
-                                                </div>
-                                                <!-- 
+                                                    <div
+                                                        *ngIf="payment_company_code.touched && payment_company_code.errors">
+                                                        <p class="text-danger"
+                                                            *ngIf="payment_company_code.errors['required']">Este campo é
+                                                            obrigatório.</p>
+                                                    </div>
+                                                    <!-- 
                                                 <input type="text" class="form-control "
                                                     [(ngModel)]="perfilModel.payment_company_code" class="form-control"
                                                     name="payment_company_code" id="payment_company_code"
                                                     #payment_company_code="ngModel"> -->
 
 
+                                                </div>
+
                                             </div>
 
-                                        </div>
-
-                                        <!-- 
+                                            <!-- 
                             <div class="caixa-txt">
                                 <label for="">Nome</label>
                                 <input [(ngModel)]="cartaoModel.holder_name" type="text" class="form-control" email="email"
@@ -626,62 +612,75 @@
                                     id="payment_company_code" name="payment_company_code" #payment_company_code="ngModel"
                                     value="5555 5555 5555 5557">
                             </div> -->
-                                        <div class="box-cartao">
-                                            <div class="cartao">
-                                                <div class="cartao-bandeira" [ngSwitch]="perfilModel.payment_company_code">
-                                                    <img *ngSwitchCase="''" src="../../../../assets/img/simbolo.svg" alt="" class="img-bandeira " id="bandeira-exemplo">
-                                                    <img *ngSwitchCase="'MasterCard'" src="../../../../assets/img/mastercard.svg" alt="" class="img-bandeira">
-                                                    <img *ngSwitchCase="'Visa'" src="../../../../assets/img/visa.svg" alt="" class="img-bandeira">
-                                                    <img *ngSwitchCase="'American Express'" src="../../../../assets/img/american.svg" alt="" class="img-bandeira">
-                                                    <img *ngSwitchCase="'Hipercard'" src="../../../../assets/img/hipercard.svg" alt="" class="img-bandeira">
-                                                    <img *ngSwitchCase="'JCB'" src="../../../../assets/img/jcb.svg" alt="" class="img-bandeira">
-                                                    <img *ngSwitchCase="'Elo'" src="../../../../assets/img/elo.svg" alt="" class="img-bandeira">
-                                                    <img *ngSwitchCase="'Diners Club'" src="../../../../assets/img/dinerscard (2).svg" alt="" class="img-bandeira">
-                                                    <!-- Adicione mais casos conforme necessário -->
-                                                </div>
-                                                <div class="cartao-numero">
-                                                    <input type="
-                                                    " readonly="true"
-                                                    class="cartao-numero-valor cartao-input"
-                                                    mask="0000 0000 0000 0000"
-                                                    [(ngModel)]="perfilModel.card_number"  name="card_number" id="card_number"
-                                                    #card_number="ngModel" placeholder="0000 0000 0000 0000" mask="0000 0000 0000 0000"
-                                                    >
-                                                    <!-- <p class="cartao-numero-valor" mask="0000 0000 0000 0000" >
+                                            <div class="box-cartao">
+                                                <div class="cartao">
+                                                    <div class="cartao-bandeira"
+                                                        [ngSwitch]="perfilModel.payment_company_code">
+                                                        <img *ngSwitchCase="''" src="../../../../assets/img/simbolo.svg"
+                                                            alt="" class="img-bandeira " id="bandeira-exemplo">
+                                                        <img *ngSwitchCase="'MasterCard'"
+                                                            src="../../../../assets/img/mastercard.svg" alt=""
+                                                            class="img-bandeira">
+                                                        <img *ngSwitchCase="'Visa'"
+                                                            src="../../../../assets/img/visa.svg" alt=""
+                                                            class="img-bandeira">
+                                                        <img *ngSwitchCase="'American Express'"
+                                                            src="../../../../assets/img/american.svg" alt=""
+                                                            class="img-bandeira">
+                                                        <img *ngSwitchCase="'Hipercard'"
+                                                            src="../../../../assets/img/hipercard.svg" alt=""
+                                                            class="img-bandeira">
+                                                        <img *ngSwitchCase="'JCB'" src="../../../../assets/img/jcb.svg"
+                                                            alt="" class="img-bandeira">
+                                                        <img *ngSwitchCase="'Elo'" src="../../../../assets/img/elo.svg"
+                                                            alt="" class="img-bandeira">
+                                                        <img *ngSwitchCase="'Diners Club'"
+                                                            src="../../../../assets/img/dinerscard (2).svg" alt=""
+                                                            class="img-bandeira">
+                                                        <!-- Adicione mais casos conforme necessário -->
+                                                    </div>
+                                                    <div class="cartao-numero">
+                                                        <input type="
+                                                    " readonly="true" class="cartao-numero-valor cartao-input"
+                                                            mask="0000 0000 0000 0000"
+                                                            [(ngModel)]="perfilModel.card_number" name="card_number"
+                                                            id="card_number" #card_number="ngModel"
+                                                            placeholder="0000 0000 0000 0000"
+                                                            mask="0000 0000 0000 0000">
+                                                        <!-- <p class="cartao-numero-valor" mask="0000 0000 0000 0000" >
                                                        {{perfilModel.card_number}}
                                                     </p> -->
-                                                </div>
-                                                <div class="cartao-infos">
-                                                    <div class="cartao-nomes info ">
-                                                        <p class="cartao-titulo">Nome</p>
-                                                        <p class="cartao-valor">  {{perfilModel.holder_name}}</p>
                                                     </div>
-                                                   <div class="box-cartao-valores">
-                                                    <div class="cartao-validades info">
-                                                        <p class="cartao-titulo">Validade</p>
-                                                        <!-- <p class="cartao-valor"> {{perfilModel.card_expiration}}</p> -->
-                                                        <input type="text" class="cartao-input col m8 "
-                                                        [(ngModel)]="perfilModel.card_expiration"
-                                                       name="card_expiration" id="card_expiration"
-                                                        #card_expiration="ngModel" mask="00/00" placeholder="00/00"
-                                                        style="padding-left: 10px; " >
+                                                    <div class="cartao-infos">
+                                                        <div class="cartao-nomes info ">
+                                                            <p class="cartao-titulo">Nome</p>
+                                                            <p class="cartao-valor"> {{perfilModel.holder_name}}</p>
+                                                        </div>
+                                                        <div class="box-cartao-valores">
+                                                            <div class="cartao-validades info">
+                                                                <p class="cartao-titulo">Validade</p>
+                                                                <!-- <p class="cartao-valor"> {{perfilModel.card_expiration}}</p> -->
+                                                                <input type="text" class="cartao-input col m8 "
+                                                                    [(ngModel)]="perfilModel.card_expiration"
+                                                                    name="card_expiration" id="card_expiration"
+                                                                    #card_expiration="ngModel" mask="00/00"
+                                                                    placeholder="00/00" style="padding-left: 10px; ">
+                                                            </div>
+                                                            <div class="cartao-cvvs info">
+                                                                <p class="cartao-titulo">CVV</p>
+                                                                <input type="text" class="cartao-input col m6 "
+                                                                    [(ngModel)]="perfilModel.card_cvv" name="card_cvv"
+                                                                    id="card_cvv" #card_cvv="ngModel" placeholder="000"
+                                                                    style="padding-left: 10px; ">
+                                                                <!-- <p class="cartao-valor"> {{perfilModel.card_cvv}}</p> -->
+
+                                                            </div>
+                                                        </div>
                                                     </div>
-                                                    <div class="cartao-cvvs info">
-                                                        <p class="cartao-titulo">CVV</p>
-                                                        <input type="text" class="cartao-input col m6 "
-                                                        [(ngModel)]="perfilModel.card_cvv"
-                                                       name="card_cvv" id="card_cvv"
-                                                        #card_cvv="ngModel"  placeholder="000"
-                                                        style="padding-left: 10px; " >
-                                                        <!-- <p class="cartao-valor"> {{perfilModel.card_cvv}}</p> -->
-                                                
-                                                   </div>
-                                                </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    
-                                    <!-- <div class="testes">
+
+                                            <!-- <div class="testes">
                                         <input [(ngModel)]="cartaoModel.card_cvv" type="card_cvv" class="form-control"
                                         card_cvv="card_cvv" id="card_cvv" name="card_cvv" #card_cvv="ngModel"
                                         value="5555 5555 5555 5557">
@@ -691,54 +690,75 @@
                                         value="5555 5555 5555 5557">
                                         </div>
                                     </div> -->
+                                        </div>
+
+
                                     </div>
 
+                                </div>
+                                <div class="row">
+                                    <div class="form-group col s12 dropDown">
+                                        <label class="form-label" for="">Plano <span
+                                                class="text-danger">*</span> </label>
+                                        <p-dropdown [options]="plans" optionLabel="name" optionValue="id"
+                                            [(ngModel)]="assinaturaModel.plan_id"
+                                            type="plan_id" class="form-control drop"
+                                            plan_id="plan_id" id="plan_id"
+                                            name="plan_id" #plan_id="ngModel"
+                                            placeholder="Selecione um método" id="drops" required></p-dropdown>
+                                        <div *ngIf="plan_id.touched">
+                                            <p class="text-danger" *ngIf="!plan_id.dirty">
+                                                Este
+                                                campo é obrigatório.</p>
+                                        </div>
+                                    </div>
+                                    <!-- <div class="form-group col s12 dropDown">
+                                        <label class="form-label" for="">Plano <span class="text-danger">*</span>
+                                        </label>
+                                        <p-dropdown [options]="plans" optionLabel="name" optionValue="id"
+                                            [(ngModel)]="assinaturaModel.plan_id" class="form-control drop"
+                                            plan_id="plan_id" id="plan_id" name="plan_id" #plan_id="ngModel"
+                                            placeholder="Selecione um método" id="drops" required></p-dropdown>
+                                            <div
+                                            *ngIf="plan_id.touched && plan_id.errors">
+                                            <p class="text-danger"
+                                                *ngIf="plan_id.errors['required']">Este campo é
+                                                obrigatório.</p>
+                                        </div>
+                                    </div> -->
 
+                                </div>
+                                <div class="form-group col s12 m12 caixa-aviso-pagamento">
+                                    <label for="" class="form-label-explicacao ">Após a realização do pagamento, a
+                                        próxima
+                                        cobrança será efetuada após um período de dez dias. Esta medida visa
+                                        proporcionar
+                                        maior comodidade e flexibilidade em sua experiência conosco.</label>
                                 </div>
 
                             </div>
-                            <div class="row">
+                            <div class="d-flex justify-content-between flex-row mb-5 mt-4  btns-caixa">
+                                <div class="btns-arrow">
+                                    <button class="me-0 ms-auto prox-btn btn-stepper" type="submit" cdkStepperPrevious>
+                                        <!-- <span>Voltar</span> -->
+                                        <fa-icon [icon]="['fas','arrow-left']" class="icone-seta"></fa-icon>
+                                    </button>
 
-                                <div class="form-group col s12 dropDown">
-                                    <label class="form-label" for="">Plano <span class="text-danger">*</span> </label>
-                                    <p-dropdown [options]="plans" optionLabel="name" optionValue="id"
-                                        [(ngModel)]="assinaturaModel.plan_id" class="form-control drop"
-                                        plan_id="plan_id" id="plan_id" name="plan_id" #plan_id="ngModel"
-                                        placeholder="Selecione um método" id="drops" required></p-dropdown>
-                                    <div *ngIf="plan_id.touched && plan_id.errors">
-                                        <p class="text-danger" *ngIf="plan_id.errors['required']">Este campo é
-                                            obrigatório.</p>
-                                    </div>
+                                    <button class="me-0 ms-auto prox-btn btn-stepper" type="submit" cdkStepperNext
+                                        [disabled]="form4.invalid">
+
+                                        <fa-icon [icon]="['fas','check']" class="icone-seta"></fa-icon>
+                                    </button>
                                 </div>
 
+
+
                             </div>
-                            <div class="form-group col s12 m12 caixa-aviso-pagamento">
-                                <label for="" class="form-label-explicacao ">Após a realização do pagamento, a próxima
-                                    cobrança será efetuada após um período de dez dias. Esta medida visa proporcionar
-                                    maior comodidade e flexibilidade em sua experiência conosco.</label>
-                            </div>
-
-                        </div>
-                        <div class="d-flex justify-content-between flex-row mb-5 mt-4  btns-caixa">
-                            <div class="btns-arrow">
-                                <button class="me-0 ms-auto prox-btn btn-stepper" type="submit" cdkStepperPrevious>
-                                    <!-- <span>Voltar</span> -->
-                                    <fa-icon [icon]="['fas','arrow-left']" class="icone-seta"></fa-icon>
-                                </button>
-
-                                <button class="me-0 ms-auto prox-btn btn-stepper" type="submit" cdkStepperNext>
- 
-                                    <fa-icon [icon]="['fas','check']" class="icone-seta"></fa-icon>
-                                </button>
-                            </div>
-
-
-
-                        </div>
-                    </cdk-step>
+                        </cdk-step>
+                    </form>
                 </app-stepper>
             </div>
         </form>
+
     </section>
 </body>
-

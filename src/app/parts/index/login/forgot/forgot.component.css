@@ -1,0 +1,121 @@
+/* @import 'primeng/resources/themes/saga-blue/theme.css'; */
+/* @import 'primeng/resources/primeng.min.css'; */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+/* @import '../../../../../node_modules/bootstrap/dist/css/bootstrap.min.css'; */
+
+/* @import '~bootstrap/dist/css/bootstrap.min.css'; */
+
+/* @import "~primeng/resources/themes/saga-blue/theme.css"; */
+/*@import "~primeng/resources/primeng.min.css"; */
+
+
+* {
+    font-family: "Montserrat", sans-serif !important;
+    padding: 0;
+    margin: 0;
+}
+section.box {
+    background: linear-gradient(to bottom, #2165AB, #62A6EC, #62A6EC, #1F5EA0);
+    height: 100vh;
+
+
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+    align-items: center;
+}
+
+
+.logo-caixa{
+    width: 40%;
+}
+
+.titulo-forgot, .subtitulo-forgot{
+    color: white;
+    font-weight: 600;
+}
+h1.titulo-forgot {
+    font-size: 45px;
+    margin-bottom: 0.1em;
+}
+.subtitulo-forgot{
+    font-size: 20px;
+    font-weight: 400;
+}
+
+
+.texto-forgot {
+    margin: 2em 0 6em 0;
+}
+.form-control{
+    background-color: white;
+    border-radius: 50px;
+    border: none;
+}
+
+.form-group{
+    text-align: start;
+}
+.caixa-formulario {
+    text-align: center;
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    flex-flow: column;
+
+    align-items: center;
+ 
+}/* 
+.caixa-formulario{
+    margin: 0 1em;
+}
+section.box {
+    display: flex;
+    justify-content: start;
+    flex-flow: column;
+    align-items: center;
+    padding-top: 7em;
+}
+
+
+
+.form-label{
+    color: white;
+   
+}
+
+.conteudo-forgot {
+    height: 76%;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-evenly;
+} */
+
+
+.container-logo {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    position: absolute;
+    top: 42px;
+    width: 59%;
+}
+
+.btn-forgot{
+    width: 100%;
+    background-color: #1d1d1d;
+    font-weight: 600;
+    color: white;
+    border: none;
+    padding: 0.9em 0;
+    font-size: 18px;
+    border-radius: 30px;
+    margin-top: 2em;
+}
+
+label.form-label {
+    /* color: red; */
+    font-weight: 600;
+    font-size: 16px;
+    color: white;
+}

@@ -26,6 +26,8 @@ interface Phone {
 
 }
 
+
+
 @Component({
   selector: 'app-pagamento',
   templateUrl: './pagamento.component.html',
@@ -40,10 +42,12 @@ export class PagamentoComponent {
   exp_month!: string;
   exp_year!: string;
   date!: Date;
-  usuarios: any
+  usuarios: any;
+  btnClicado: boolean = false;
   usuariosModel = new UsersMkModel();
   arquivoSelecionado: File | null = null;
   primeiraSenha: string = '';
+  numeroInvalido: boolean = false
   mySwiper?: Swiper;
   teste123: string = 'fa-user'; 
   cepInfo: any;
@@ -98,12 +102,15 @@ objetoUsuarios = new UsersMkModel ()
     // Adicione mais opções conforme necessário
   ];
   isExpanded: boolean = false;
-
+  desativado: boolean = false;
   expandFooter() {
     this.isExpanded = !this.isExpanded;
   }
   selectedImage: string | ArrayBuffer | null = null;
-
+  onBtnClicado() {
+    this.btnClicado = true;
+    console.log('teste')
+}
   onFileSelected2(event: any) {
     const file = event.target.files[0];
     if (file) {
@@ -123,6 +130,12 @@ objetoUsuarios = new UsersMkModel ()
       console.log('Nenhum arquivo selecionado.');
     }
   }
+
+  verificarTelefoneValido(numero: string): boolean {
+    // Regex para verificar se o número de telefone tem o formato correto
+    const telefoneRegex = /^\(\d{2}\) \d{5}-\d{4}$/;
+    return telefoneRegex.test(numero);
+}
   constructor(private vindiService: VindiService,
     private cepService: CepService,
     private library: FaIconLibrary,
@@ -361,8 +374,16 @@ objetoUsuarios = new UsersMkModel ()
     console.log('Cliente Model:', this.clienteModel);
   }
 
-  atribuirValor() {
-    console.log(this.inputs);
+  atribuirValor(numero:string) {
+    
+    console.log('testethis.inputs', this.inputs, this.inputs, numero);
+    if (numero.length >= 3 && numero[2] !== '9') {
+      this.numeroInvalido = true
+      
+  }
+  else{
+    this.numeroInvalido = false
+  }
     const telefones: TelefoneModel[] = this.inputs.map(input => {
       const numeroCompleto = `55${input.number}`;
       return {

@@ -6,33 +6,35 @@
     position: relative;
     /* background: linear-gradient(5deg, #1a3c71, #355595); */
 }
+.titulo-banner, .subtitulo-banner{
+    color: white;
+}
 
-
-.login::before {
+/* .login::before {
     content: '';
     position: absolute;
-    width: 300px; /* Tamanho do círculo externo */
-    height: 300px; /* Tamanho do círculo externo */
-    background-color: #A084CA; /* Cor do círculo externo */
+    width: 300px; 
+    height: 300px; 
+    background-color: #A084CA; 
     border-radius: 50%;
-    z-index: -2; /* Coloca o círculo atrás do conteúdo */
+    z-index: -2; 
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-}
-
+} */
+/* 
 .login::after {
     content: '';
     position: absolute;
-    width: 200px; /* Tamanho do círculo interno */
-    height: 200px; /* Tamanho do círculo interno */
-    background-color: #683C92; /* Cor do círculo interno */
+    width: 200px; 
+    height: 200px; 
+    background-color: #683C92;
     border-radius: 50%;
-    z-index: -1; /* Coloca o círculo atrás do conteúdo mas acima do círculo externo */
+    z-index: -1; 
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-}
+} */
 
 
 .text-danger {
@@ -43,23 +45,26 @@
 .btn-login {
     border-radius: 20px !important;
     border: 1px solid #00000054 !important;
-    margin: 1em 0 !important;
+    margin: 0.5em 0 !important;
     height: 2.5rem !important;
 }
 
-.form-control {
-    border: none !important;
-    box-shadow: 1px 1px 9px 1px #00000014 !important;
+.form-control{
+    background-color: white!important;
 }
+
+
 
 .form-label {
     font-size: 16px;
+    font-weight: 400;
+    color:white;
 }
 
 .form-box {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: start;
     height: 100vh;
     width: 100%;
 }
@@ -70,6 +75,7 @@ h1, h2 {
 
 .formulario-login {
     width: 100%;
+    /* text-align: center; */
 }
 
 .titulo-banner {
@@ -81,16 +87,16 @@ h1, h2 {
 
 .subtitulo-banner {
     margin: 0;
-    margin: 0.2em 0 2em 0;
+    margin: 0.5em 0 2em 0;
     text-align: center;
-    font-size: 30px;
-    font-weight: 600;
+    font-size: 27px;
+    font-weight: 500;
 }
 
 .box-logo {
     position: absolute;
     left: 0;
-    width: 30%;
+    width:26%;
     height: 100%;
 }
 
@@ -99,18 +105,68 @@ h1, h2 {
 }
 
 .logo-caixa {
-    width: 90%;
-    padding-top: 2em;
-    padding-left: 2em;
+    width: 100%;
+padding: 4em 0 2em 0;
 }
 
+/* .texto-caixa-logo{
+    width: 100%;
+} */
 .box-login {
     display: flex;
-    width: 30%;
+    width: 26%;
 }
 
 .imagem-astronauta {
     width: 80%;
     position: absolute;
     bottom: 30px;
+}
+
+
+.titulo-cadastrar-login{
+    font-size: 20px;
+    text-align: center;
+    color: white;
+    font-weight: 500;
+}
+
+.cadastrar-login{
+    text-align: center;
+}
+
+
+button.me-0.ms-auto.btn-login.col.m12 {
+    background-color: #1d1d1d;
+    color: white;
+    font-weight: 600;
+    font-size: 19px;
+    /* border-radius: 121px; */
+    height: 2rem;
+    /* padding: 1em 0; */
+    height: 3rem !important;
+}
+
+
+
+.btn-cadastr-login{
+
+}
+
+button.btn-cadastar-login {
+    background: #62a6ec;
+    color: white;
+    border: none;
+    padding: 1em 6em;
+    border-radius: 35px;
+    font-weight: 600;
+}
+
+section.login {
+    background: linear-gradient(to bottom,#3157a3, #6b3998); 
+    height: 100vh;
+}
+
+.link-forgot{
+    margin-left: 0.5em;
 }
