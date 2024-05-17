@@ -41,7 +41,7 @@
         <form #form="ngForm" class="needs-validation formulario " (submit)="send(form)">
 
             <!-- <form #form="ngForm" class="needs-validation formulario " > -->
-
+            <a href="https://lottie.host/embed/c7f9f151-c2fb-4537-8f9f-348cc37b0727/TS10GE1hWz.json"></a>
             <div class="caixa-formulario">
                 <!-- <h1 >Be</h1> -->
                 <!-- <div class="img-formulario">
@@ -61,7 +61,7 @@
                                     Informações de Checkout
                                 </h1>
                                 <p class="subtitulo-secao">Precisamos desses detalhes para processar seu pedido e
-                                    garantir que os produtos cheguem direitinho até você. Por favor, confira se tudo
+                                    garantir que os layouts cheguem direitinho até você. Por favor, confira se tudo
                                     está correto!</p>
                                 <!-- <div class="row form-group">
                                 <h5 class="titulo-formulario">
@@ -176,7 +176,7 @@
                                     <img src="../../../assets/img/minerioFerroP.png" alt="" class="item-slide-cadastro">
                                 </swiper-slide>
                                 <swiper-slide>
-                                    <img src="../../../assets/img/fechamentoMercadoP.png" alt=""
+                                    <img src="../../../../assets/img/fechamentoMercadoP.png" alt=""
                                         class="item-slide-cadastro ">
                                 </swiper-slide>
                                 <swiper-slide>
@@ -197,7 +197,11 @@
                                         class="item-slide-cadastro">
                                 </swiper-slide>
                                 <swiper-slide>
-                                    <img src="../../../assets/img/fundosImobiliariosP.png" alt=""
+                                    <img src="../../../../assets/img/fundoImobiliarioP.png" alt=""
+                                        class="item-slide-cadastro ">
+                                </swiper-slide>
+                                <swiper-slide>
+                                    <img src="../../../../assets/img/cyptoP.png" alt=""
                                         class="item-slide-cadastro ">
                                 </swiper-slide>
                                 <swiper-slide>
@@ -225,6 +229,12 @@
                         <cdk-step [label]="'teste'" #step1 id="test">
 
                             <div class="pessoal" style="padding-top:30px">
+                                <h1 class="titulo-secao">
+                                    Informações de Checkout
+                                </h1>
+                                <p class="subtitulo-secao">Precisamos desses detalhes para processar seu pedido e
+                                    garantir que os layouts cheguem direitinho até você. Por favor, confira se tudo
+                                    está correto!</p>
                                 <i class="fa-solid fa-user"></i>
                                 <div class="endereco" style="padding-top:30px">
                                     <div class="row">
@@ -341,18 +351,50 @@
                                         layouts personalizados pra você. Usaremos suas informações para entender melhor
                                         suas preferências e oferecer algo que tenha a sua cara.</p>
 
-
-                                    <div class="form-group col s12 m12 ">
-                                        <label class="form-label">Qual o nome você quer que fique visivel nos layouts
-                                            criados?</label>
-                                        <input type="text" class="form-control " [(ngModel)]="usuariosModel.nome"
-                                            type="text" class="form-control" name="nome" id="nome" nome="nome"
-                                            #nome="ngModel" required="" autocomplete="off" style="padding-left: 10px; ">
-                                        <div *ngIf="nome.touched && nome.errors">
-                                            <p class="text-danger" *ngIf="nome.errors['required']">Este campo é
-                                                obrigatório.</p>
+                                    <div class="row row-exp">
+                                        <div class="form-group col s12 m10 ">
+                                            <label class="form-label">Qual o nome você quer que fique visivel nos
+                                                layouts
+                                                criados?</label>
+                                            <input type="text" class="form-control " [(ngModel)]="usuariosModel.nome"
+                                                type="text" class="form-control" name="nome" id="nome" nome="nome"
+                                                #nome="ngModel" required="" autocomplete="off"
+                                                style="padding-left: 10px; ">
+                                            <div *ngIf="nome.touched && nome.errors">
+                                                <p class="text-danger" *ngIf="nome.errors['required']">Este campo é
+                                                    obrigatório.</p>
+                                            </div>
+                                        </div>
+                                        <div class="caixa-imagem-exp">
+                                            <img src="../../../../assets/img/teste-exp (1).png" alt=""
+                                                class="imagem-exp">
                                         </div>
                                     </div>
+
+
+                                    <div class="row row-exp">
+                                        <div class="caixa-imagem-exp caixa-imagem-exp-esq">
+                                            <img src="../../../../assets/img/teste-exp (2).png" alt=""
+                                                class="imagem-exp ">
+                                        </div>
+                                        <div class="form-group col s12 m10 ">
+                                            <label class="form-label">Qual é o {{'@'}} do seu Instagram? <span
+                                                class="form-label-explicacao ">Se não tiver um, como gostaria que fosse
+                                                colocado?</span><span class="text-danger">*</span> </label>
+                                        <input type="text" class="form-control "
+                                            [(ngModel)]="usuariosModel.usuario_instagram" type="text"
+                                            class="form-control" name="usuario_instagram" id="usuario_instagram"
+                                            usuario_instagram="usuario_instagram" #usuario_instagram="ngModel"
+                                            required="" autocomplete="off" style="padding-left: 10px; ">
+                                        <div *ngIf="usuario_instagram.touched && usuario_instagram.errors">
+                                            <p class="text-danger" *ngIf="usuario_instagram.errors['required']">Este
+                                                campo é
+                                                obrigatório.</p>
+                                        </div>
+                                        </div>
+
+                                    </div>
+
 
                                     <!-- <div class="form-group col s12 m12" [ngClass]="{'has-success': name.valid}">
                                     <label class="form-label">Qual o nome você quer que fique visivel nos layouts criados? <span class="text-danger">*</span>
@@ -368,14 +410,14 @@
                                     </div>
                                  
                                 </div> -->
-                                    <div class="form-group col s12 m12" [ngClass]="{'has-success': name.valid}">
+                                    <!-- <div class="form-group col s12 m12" [ngClass]="{'has-success': name.valid}">
                                         <div class="imagem-ex-instagram">
                                             <img src="../../../../assets/img/exemplo-instagram.png" alt="">
                                         </div>
-                                    </div>
+                                    </div> -->
                                 </div>
 
-                                <div class="row">
+                                <!-- <div class="row">
                                     <div class="form-group col s12 m12 ">
                                         <label class="form-label">Qual é o {{'@'}} do seu Instagram? <span
                                                 class="form-label-explicacao ">Se não tiver um, como gostaria que fosse
@@ -391,7 +433,7 @@
                                                 obrigatório.</p>
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
 
 
 
@@ -402,23 +444,30 @@
                                         <input type="file" (change)="onFileSelected($event)" accept="image/*" class="form-control" name="foto__instagram" id="foto_instagram" required>
                                        
                                     </div> -->
-                                <div class="form-group col s12 m12 caixa-imagem">
-                                    <div class="form-group col s12 m12 telefone-explicacao">
-                                        <label for="" class="form-label">Por favor, envie uma foto sua para que ela seja
-                                            colocada no seu layout<span class="text-danger">*</span></label>
+                                  <div class="row">
+                                    <div class="form-group col s8 m8 caixa-imagem">
+                                   
+                                        <div class="telefone-explicacao">
+                                            <label for="" class="form-label">Por favor, envie uma foto sua para que ela seja
+                                                colocada no seu layout<span class="text-danger">*</span></label>
+                                        </div>
+                                        <div >
+                                            <input type="file" id="fileInput" (change)="onFileSelected2($event)"
+                                                style="display: none;">
+                                            <label for="fileInput" class="custom-file-upload">
+                                                Selecionar Imagem
+                                            </label>
+                                        </div>
+                                        <p *ngIf="selectedImage" class="img-selecionada">Imagem selecionada:</p>
+                                        <img *ngIf="selectedImage" [src]="selectedImage" alt="Imagem Selecionada"
+                                            class="imagem-escolhida-instagram">
                                     </div>
-                                    <div>
-
-                                        <input type="file" id="fileInput" (change)="onFileSelected2($event)"
-                                            style="display: none;">
-                                        <label for="fileInput" class="custom-file-upload">
-                                            Selecionar Imagem
-                                        </label>
+                                    <div class="caixa-imagem-exp caixa-imagem-exp-esq">
+                                        <img src="../../../../assets/img/teste-exp (3).png" alt=""
+                                            class="imagem-exp ">
                                     </div>
-                                    <p *ngIf="selectedImage" class="img-selecionada">Imagem selecionada:</p>
-                                    <img *ngIf="selectedImage" [src]="selectedImage" alt="Imagem Selecionada"
-                                        class="imagem-escolhida-instagram">
-                                </div>
+                                  </div>
+                                
 
                                 <!-- <div class="form-group col s12 m12">
                                         <label class="form-label">Senha <span class="text-danger">*</span></label>
@@ -521,14 +570,14 @@
                                                         [(ngModel)]="perfilModel.card_number" type="text"
                                                         class="form-control" name="card_number" id="card_number"
                                                         #card_number="ngModel" placeholder="0000 0000 0000 0000"
-                                                        mask="0000 0000 0000 0000" style="padding-left: 10px; " required>
-                                                        <div
-                                                        *ngIf="card_number.touched && card_number.errors">
-                                                        <p class="text-danger"
-                                                            *ngIf="card_number.errors['required']">Este campo é
+                                                        mask="0000 0000 0000 0000" style="padding-left: 10px; "
+                                                        required>
+                                                    <div *ngIf="card_number.touched && card_number.errors">
+                                                        <p class="text-danger" *ngIf="card_number.errors['required']">
+                                                            Este campo é
                                                             obrigatório.</p>
                                                     </div>
-                                                  
+
                                                 </div>
 
                                             </div>
@@ -698,14 +747,13 @@
                                 </div>
                                 <div class="row">
                                     <div class="form-group col s12 dropDown">
-                                        <label class="form-label" for="">Plano <span
-                                                class="text-danger">*</span> </label>
+                                        <label class="form-label" for="">Plano <span class="text-danger">*</span>
+                                        </label>
                                         <p-dropdown [options]="plans" optionLabel="name" optionValue="id"
-                                            [(ngModel)]="assinaturaModel.plan_id"
-                                            type="plan_id" class="form-control drop"
-                                            plan_id="plan_id" id="plan_id"
-                                            name="plan_id" #plan_id="ngModel"
-                                            placeholder="Selecione um método" id="drops" required></p-dropdown>
+                                            [(ngModel)]="assinaturaModel.plan_id" type="plan_id"
+                                            class="form-control drop" plan_id="plan_id" id="plan_id" name="plan_id"
+                                            #plan_id="ngModel" placeholder="Selecione um método" id="drops"
+                                            required></p-dropdown>
                                         <div *ngIf="plan_id.touched">
                                             <p class="text-danger" *ngIf="!plan_id.dirty">
                                                 Este

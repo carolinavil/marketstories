@@ -955,3 +955,31 @@ p.cartao-nome{
 }
 
 
+img.imagem-exp {
+    width: 77%;
+}
+
+.row.row-exp {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.caixa-imagem-exp {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.caixa-imagem-exp-esq{
+    display: flex;
+    align-items: center;
+    justify-content: start!important;
+}
+
+.caixa-imagem{
+    width:50%;
+    padding-top: 1em;
+   
+}
+
