@@ -49,6 +49,9 @@
     height: 2.5rem !important;
 }
 
+.btn-login{
+    border: none !important;
+}
 .form-control{
     background-color: white!important;
 }
@@ -64,7 +67,7 @@
 .form-box {
     display: flex;
     justify-content: center;
-    align-items: start;
+    align-items: center;
     height: 100vh;
     width: 100%;
 }

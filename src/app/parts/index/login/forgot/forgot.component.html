@@ -1,23 +1,5 @@
-<!-- <section class="caixa-forms">
 
 
- 
-
-
-</section> -->
-
-<!-- <div class="caixa-logo">
-    <div class="texto-caixa-logo">
-        <h1 class="titulo-banner">Para manter-se no topo, é preciso rapidez </h1>
-        <img src="../../../../assets/img/Logo P&B MarketStories 2.png" alt="" class="logo-caixa">
-    </div>
-    <img src="../../../../assets/img/astronauta2 (2).png" alt="" class="imagem-astronauta">
-
-<div>
-   
-</div>
-
-</div> -->
 
 <router-outlet></router-outlet>
 
@@ -27,20 +9,14 @@
 
 
 
-
+<!-- 
     <section class="box">
-        <!-- <div class="caixa-logo">
-
-            <div class="texto-caixa-logo">
-          
-            </div>
-            <img src="../../../../assets/img/astronauta2 (2).png" alt="" class="imagem-astronauta">
-        </div>  -->
-        <div class="container-logo">
-            <img src="../../../../assets/img/Logo P&B MarketStories.png" alt="" class="logo-caixa">
-        </div>
+    
+      
         <div class="caixa-formulario">
-         
+            <div class="container-logo">
+                <img src="../../../../assets/img/Logo P&B MarketStories.png" alt="" class="logo-caixa">
+            </div>
             <div class="conteudo-forgot">
                 <div class="texto-forgot">
                     <h1 class="titulo-forgot">Esqueci minha senha</h1>
@@ -61,4 +37,42 @@
             </div>
           
         </div>
+    </section> -->
+
+    <section class="login">
+        <div class="box-login">
+            <!-- <div class="box-logo">
+        </div> -->
+            <div class="form-box">
+              
+                <div class="formulario-login">
+                    <div class="texto-caixa-logo">
+                        <img src="../../../../assets/img/Logo P&B MarketStories.png" alt="" class="logo-caixa">
+                </div>
+                    <h1 class="titulo-banner">Esqueci minha senha </h1>
+                    <h2 class="subtitulo-banner">Enviaremos um e-mail para a redefinição de senha</h2>
+                    <form #form="ngForm" class="needs-validation formulario " (submit)="send(form)">
+                   
+                        <div class="form-group col m12">
+                            <label for="" class="form-label">E-mail</label>
+                            <input  class="form-control" style="padding-left: 10px;">
+                    </div>
+                    <div class="form-group col s12 m12">
+                        <button type="submit" class="me-0 ms-auto btn-login col m12">Entrar</button>
+                    </div>
+                </form>
+                    <!-- <p-divider layout="horizontal" styleClass="flex md:hidden " [align]="'center'" ><b>OU</b></p-divider> -->
+                    <div class="cadastrar-login">
+                        <h3 class="titulo-cadastrar-login">Ainda não possui uma conta?</h3>
+                        <button class="btn-cadastar-login" routerLink="../pagamento">Me cadastrar</button>
+                    </div>
+                </div>
+        
+        
+        
+            </div>
+        </div>
     </section>
+
+
+

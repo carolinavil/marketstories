@@ -1,121 +1,155 @@
-/* @import 'primeng/resources/themes/saga-blue/theme.css'; */
-/* @import 'primeng/resources/primeng.min.css'; */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-/* @import '../../../../../node_modules/bootstrap/dist/css/bootstrap.min.css'; */
-
-/* @import '~bootstrap/dist/css/bootstrap.min.css'; */
-
-/* @import "~primeng/resources/themes/saga-blue/theme.css"; */
-/*@import "~primeng/resources/primeng.min.css"; */
-
-
-* {
-    font-family: "Montserrat", sans-serif !important;
-    padding: 0;
-    margin: 0;
-}
-section.box {
-    background: linear-gradient(to bottom, #2165AB, #62A6EC, #62A6EC, #1F5EA0);
+.login {
     height: 100vh;
-
-
     display: flex;
-    justify-content: center;
-    flex-flow: column;
     align-items: center;
+    justify-content: center;
+    position: relative;
+    /* background: linear-gradient(5deg, #1a3c71, #355595); */
 }
-
-
-.logo-caixa{
-    width: 40%;
-}
-
-.titulo-forgot, .subtitulo-forgot{
+.titulo-banner, .subtitulo-banner{
     color: white;
-    font-weight: 600;
-}
-h1.titulo-forgot {
-    font-size: 45px;
-    margin-bottom: 0.1em;
-}
-.subtitulo-forgot{
-    font-size: 20px;
-    font-weight: 400;
 }
 
 
-.texto-forgot {
-    margin: 2em 0 6em 0;
+.text-danger {
+    color: red;
+}
+
+.form-control,
+.btn-login {
+    border-radius: 20px !important;
+    border: 1px solid #00000054 !important;
+    margin: 0.5em 0 !important;
+    height: 2.5rem !important;
+}
+
+.btn-login{
+    border: none !important;
+    width: 100%;
 }
 .form-control{
-    background-color: white;
-    border-radius: 50px;
-    border: none;
-}
-
-.form-group{
-    text-align: start;
-}
-.caixa-formulario {
-    text-align: center;
-    width: 50%;
-    display: flex;
-    justify-content: space-between;
-    flex-flow: column;
-
-    align-items: center;
- 
-}/* 
-.caixa-formulario{
-    margin: 0 1em;
-}
-section.box {
-    display: flex;
-    justify-content: start;
-    flex-flow: column;
-    align-items: center;
-    padding-top: 7em;
+    background-color: white!important;
 }
 
 
 
-.form-label{
-    color: white;
-   
+.form-label {
+    font-size: 16px;
+    font-weight: 400;
+    color:white;
 }
 
-.conteudo-forgot {
-    height: 76%;
-    display: flex;
-    flex-flow: column;
-    justify-content: space-evenly;
-} */
-
-
-.container-logo {
+.form-box {
     display: flex;
     justify-content: center;
-    align-items: start;
-    position: absolute;
-    top: 42px;
-    width: 59%;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
 }
 
-.btn-forgot{
+h1, h2 {
+    /* color: white; */
+}
+
+.formulario-login {
     width: 100%;
-    background-color: #1d1d1d;
+    /* text-align: center; */
+}
+
+.titulo-banner {
+    text-align: center;
+    font-size: 51px;
     font-weight: 600;
+    margin: 0;
+}
+
+.subtitulo-banner {
+    margin: 0;
+    margin: 0.5em 0 2em 0;
+    text-align: center;
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.box-logo {
+    position: absolute;
+    left: 0;
+    width:26%;
+    height: 100%;
+}
+
+.texto-caixa-logo {
+    margin: 0 auto;
+    width: 65%;
+}
+
+.logo-caixa {
+    width: 100%;
+padding: 4em 0 2em 0;
+}
+
+/* .texto-caixa-logo{
+    width: 100%;
+} */
+.box-login {
+    display: flex;
+    width: 30%;
+}
+
+.imagem-astronauta {
+    width: 80%;
+    position: absolute;
+    bottom: 30px;
+}
+
+.formulario{
+    
+    margin: 0 3em;
+}
+
+.titulo-cadastrar-login{
+    font-size: 20px;
+    text-align: center;
+    color: white;
+    font-weight: 500;
+}
+
+.cadastrar-login{
+    text-align: center;
+}
+
+
+button.me-0.ms-auto.btn-login.col.m12 {
+    background-color: #1d1d1d;
+    color: white;
+    font-weight: 600;
+    font-size: 19px;
+    /* border-radius: 121px; */
+    height: 2rem;
+    /* padding: 1em 0; */
+    height: 3rem !important;
+}
+
+
+
+.btn-cadastr-login{
+
+}
+
+button.btn-cadastar-login {
+    background: #62a6ec;
     color: white;
     border: none;
-    padding: 0.9em 0;
-    font-size: 18px;
-    border-radius: 30px;
-    margin-top: 2em;
+    padding: 1em 6em;
+    border-radius: 35px;
+    font-weight: 600;
 }
 
-label.form-label {
-    /* color: red; */
-    font-weight: 600;
-    font-size: 16px;
-    color: white;
+section.login {
+    background: linear-gradient(to bottom,#3157a3, #6b3998); 
+    height: 100vh;
+}
+
+.link-forgot{
+    margin-left: 0.5em;
 }
