@@ -446,34 +446,20 @@
                                             <div class="caixa-file">
                                                 <label for="" class="form-label">Por favor, envie uma foto sua para que ela seja
                                                     colocada no seu layout<span class="text-danger">*</span></label>
-    
-                                                    <input type="file" id="fileInput" (change)="onFileSelected2($event)" 
-                                                    
-                                                    style="display: none;" class=" form-control-file ">
+                                                <input type="file" id="fileInput" (change)="onFileSelected2($event)" style="display: none;" class="form-control-file">
                                                 <label for="fileInput" class="form-control">
                                                     Selecionar Imagem
                                                 </label>
                                                 <p *ngIf="selectedImage" class="img-selecionada">Imagem selecionada:</p>
-                                                <img *ngIf="selectedImage" [src]="selectedImage" alt="Imagem Selecionada"
-                                                    class="imagem-escolhida-instagram">
+                                                <img *ngIf="selectedImage" [src]="selectedImage" alt="Imagem Selecionada" class="imagem-escolhida-instagram">
                                             </div>
-                                         
-                                          
-                                            <!-- <input type="text" class="form-control " [(ngModel)]="usuariosModel.nome"
-                                                type="text" class="form-control" name="nome" id="nome" nome="nome"
-                                                #nome="ngModel" required="" autocomplete="off"
-                                                style="padding-left: 10px; "> -->
-                                            <!-- <div *ngIf="nome.touched && nome.errors">
-                                                <p class="text-danger" *ngIf="nome.errors['required']">Este campo é
-                                                    obrigatório.</p>
-                                            </div> -->
                                         </div>
-                                        <div class="caixa-imagem-exp">
-                                            <img src="../../../../assets/img/teste-exp (4).png" alt=""
-                                                class="imagem-exp">
+                                        <div class="caixa-imagem-exp" [ngClass]="{'hidden': selectedImage}">
+                                            <img src="../../../../assets/img/teste-exp (4).png" alt="" class="imagem-exp">
                                         </div>
                                     </div>
-
+                                    
+                                    
                                     <!-- <div class="row row-exp">
                                      
                                         <div class="form-group col s12 m10 ">
