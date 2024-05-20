@@ -55,3 +55,38 @@ p.txt-final {
     background: linear-gradient(317deg, #DA6627, #643C8E, #120031, #120031);
     color: white;
 }
+
+@media screen and (min-width: 9px) {
+
+    .txts-final {
+        width: 90%;
+        text-align: center;
+    }
+
+    p.txt-final {
+        margin: 1.5em 0 1em;
+        font-size: 16px;
+    }
+
+    h1.titulo-final {
+        font-size: 44px;
+    }
+}
+
+@media screen and (min-width: 900px) {
+
+    .txts-final {
+        width: 51%;
+        text-align: start;
+    }
+
+    p.txt-final {
+        margin: 1.5em 0 1em;
+        font-size: 23px;
+    }
+
+    h1.titulo-final {
+        font-size: 60px;
+    }
+}
+
