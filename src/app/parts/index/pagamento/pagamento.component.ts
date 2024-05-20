@@ -25,6 +25,7 @@ interface Phone {
   number: string;
 
 }
+declare var M: any;
 
 
 
@@ -73,6 +74,7 @@ objetoUsuarios = new UsersMkModel ()
   metodos: MetodosModel[] = []
   pay: any
   subs: any
+
   prods: any
   cus: any
   plans: any
@@ -101,8 +103,29 @@ objetoUsuarios = new UsersMkModel ()
     {label: 'JCB', value: 'JCB'},
     // Adicione mais opções conforme necessário
   ];
+
+
+
   isExpanded: boolean = false;
   desativado: boolean = false;
+
+
+  ngAfterViewInit(){
+    const elemsBanner = document.querySelectorAll('.carrossel-banner');
+    const optionsBanner = {
+      numVisible: 3,
+      maxVisible: 5, // Ajuste o número de imagens visíveis aqui
+      fullWidth: true,
+      padding: 60,// Define o padding desejado,
+      autoplay: true, // Ativa o autoplay
+      interval: 2000,
+      opacity: false, // Intervalo em milissegundos entre as transições dos slides,
+
+    };
+
+
+    M.Carousel.init(elemsBanner, optionsBanner);
+  }
   expandFooter() {
     this.isExpanded = !this.isExpanded;
   }

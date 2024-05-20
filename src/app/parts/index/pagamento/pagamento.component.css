@@ -16,7 +16,6 @@
 }
 section.box {
     background: linear-gradient(to bottom, #2165AB, #62A6EC, #62A6EC, #1F5EA0);
-    height: 100vh;
 }
 
 
@@ -74,6 +73,11 @@ section.box {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.caixa-file {
+    display: flex;
+    flex-flow: column;
 }
 
 .formulario {
@@ -192,9 +196,9 @@ img.img-exemplo-insta {
 }
 
 
-.item-slide-cadastro{
+ .item-slide-cadastro{
     width: 100%;
-}
+} 
 
 .imagem-astronauta {
     right: 0;
@@ -773,7 +777,7 @@ img.imagem-escolhida-instagram.ng-star-inserted {
 }
 
 .btns-arrow {
-    width: 20%;
+    width: 40%;
     display: flex;
     justify-content: space-between;
 }
@@ -989,7 +993,7 @@ label.form-control {
     color: white;
     background: #62a6ec;
     padding: 0.2em 1em;
-    margin-left: 0.5em!important;
+    width: 50%;
 }
 
 /* .caixa-file{
@@ -1000,4 +1004,86 @@ label.form-control {
 .form-group {
     align-items: center;
     align-self: center;
+}
+
+
+
+
+
+@media screen and (min-width: 9px) {
+
+    img.logo-caixa {
+        display: none;
+    }
+    .caixa-logo {
+        display: none;
+    }
+
+    section.box{
+        min-height: 100vh;
+        height: 100%;
+        
+    }
+
+
+    .carousel .carousel-item > img {
+        width: 99%;
+        margin: 0 -9em;
+    }
+    /* img.item-slide-cadastro {
+        width: 35%;
+    }  */
+
+
+    .carrossel-desktop{
+        display: none;
+    }
+
+    
+    .carrossel-mobile{
+        display: block;
+    }
+    
+}
+
+
+
+@media screen and (min-width: 1040px) {
+
+    .carrossel-mobile{
+        display: none;
+    }
+
+    .carrossel-desktop{
+        display: block!important;
+    }
+    
+
+    img.logo-caixa {
+
+        display: block;
+    }
+    .caixa-logo {
+        display: block;
+    }
+
+    section.box {
+       
+        height: 100vh;
+    }
+
+    img.imagem-astronauta {
+        display: none !important;
+    }
+    
+}
+
+
+@media screen and (min-width: 1200px) {
+
+
+    img.imagem-astronauta {
+        display: block !important;
+    }
+    
 }
