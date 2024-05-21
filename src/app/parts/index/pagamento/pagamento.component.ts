@@ -35,6 +35,8 @@ declare var M: any;
   styleUrl: './pagamento.component.css'
 })
 export class PagamentoComponent {
+  spaceBetween:any
+  slidesPerView:any
   loading=false
   // objeto: PagamentoModel = new PagamentoModel;
   nome!: string;
@@ -113,12 +115,12 @@ objetoUsuarios = new UsersMkModel ()
   ngAfterViewInit(){
     const elemsBanner = document.querySelectorAll('.carrossel-banner');
     const optionsBanner = {
-      numVisible: 3,
+      autoplay: true, // Ativa o autoplay      numVisible: 3,
       maxVisible: 5, // Ajuste o número de imagens visíveis aqui
       fullWidth: true,
       padding: 60,// Define o padding desejado,
-      autoplay: true, // Ativa o autoplay
-      interval: 2000,
+      
+      interval: 100,
       opacity: false, // Intervalo em milissegundos entre as transições dos slides,
 
     };
@@ -166,7 +168,7 @@ objetoUsuarios = new UsersMkModel ()
     private activatedRoute: ActivatedRoute
   ) {
 
-
+    this.adjustSlidesPerView(window.innerWidth);
 
     console.log('prosssd', this.dataFormatada, this.dataFormatadaDias)
 
@@ -216,8 +218,12 @@ objetoUsuarios = new UsersMkModel ()
     lastValueFrom(this.vindiService.getProdutos()).then(res => {
       // Acessando diretamente o array payment_methods
       const products = res.products;
-      this.prods = products
-      console.log('produtos:', products);
+     
+      
+      this.prods =products.filter((opcao: any) => opcao.id == 1479734);
+      console.log('Opções de pagamento após o filtro:', this.prods);
+      console.log('produtos:', this.prods);
+      
     });
 
 
@@ -227,7 +233,7 @@ objetoUsuarios = new UsersMkModel ()
       // Acessando diretamente o array payment_methods
       const planos = res.plans;
 
-      this.plans = planos.filter((opcao: any) => opcao.status !== 'inactive');
+      this.plans = planos.filter((opcao: any) => opcao.id == 430912);
       console.log('Opções de pagamento após o filtro:', this.plans);
 
     });
@@ -255,6 +261,33 @@ objetoUsuarios = new UsersMkModel ()
 
   }
 
+
+
+  adjustSlidesPerView(windowWidth: number) {
+
+    if (windowWidth <= 2000) {
+      this.spaceBetween = '-150'
+      this.slidesPerView = '6.5'
+      console.log('oooooo')
+      // console.log(this.slidesPerView, 'teste234')
+      if (windowWidth >= 900) {
+        console.log('1400', this.slidesPerView)
+        this.slidesPerView = 5;
+        this.spaceBetween = '0'
+        console.log(this.slidesPerView)
+  
+        // console.log(this.slidesPerView, 'teste234')
+      }
+      if (windowWidth <= 900) {
+        console.log('1400', this.slidesPerView)
+        this.slidesPerView = 2;
+        this.spaceBetween = '-20'
+        console.log(this.slidesPerView, 'teste234')
+  
+     
+      }
+    }
+  }
 
   exibirTeste: boolean = false;
 
@@ -433,7 +466,7 @@ objetoUsuarios = new UsersMkModel ()
 
 
   send(form: NgForm) {
-    
+    this.loading = true
     console.log('TESTE')
     console.log('telefones', this.telefones, this.endereco, this.objeto, this.clienteModel);
     this.clienteModel.phones = this.telefones;
@@ -592,7 +625,7 @@ objetoUsuarios = new UsersMkModel ()
         // lastValueFrom(this.vindiService.postFatura(this.faturaModel)).then((res => {
         //   return console.log(res, "corpo", this.faturaModel)
         // }))
-
+        this.loading = false
         console.log('id', id, assinaturaPostada, this.faturaModel, produtoModel, this.cartaoModel, this.clienteModel)
         this.router.navigate(['final'], { relativeTo: this.activatedRoute });
       })
