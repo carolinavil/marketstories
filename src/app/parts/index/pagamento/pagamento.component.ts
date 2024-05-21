@@ -16,6 +16,7 @@ import { faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { Input, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import Swiper from 'swiper';
 import * as lottie from 'lottie-web';
+import {NavigationEnd } from '@angular/router';
 interface Car {
   label: string;
   value: string;
@@ -168,8 +169,21 @@ objetoUsuarios = new UsersMkModel ()
     private activatedRoute: ActivatedRoute
   ) {
 
+
+
     this.adjustSlidesPerView(window.innerWidth);
 
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        if (event.urlAfterRedirects === '/pagamento') {
+          this.scrollToTop();
+        }
+      }
+    });
+ 
+
+
+  
     console.log('prosssd', this.dataFormatada, this.dataFormatadaDias)
 
     // this.cars = [
@@ -248,7 +262,9 @@ objetoUsuarios = new UsersMkModel ()
       });
     library.addIcons(faChevronRight, faUser, faTrash, faLocationDot, faPhone, faChevronLeft, faPlus, faMoneyCheckDollar, faArrowRight, faArrowLeft, faCheck, faCreditCard, faInstagram)
   }
-
+  scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 
   showDialog() {
     this.visible = true;

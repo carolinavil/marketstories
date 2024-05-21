@@ -86,6 +86,11 @@ span#preco {
     font-weight: 600;
 }
 @media screen and (min-width: 1040px) {
+
+    .escrito-preco {
+        display: block!important;
+       
+    }
     h2.escrito-subtitulo-precos {
         font-size: 30px;
     }
@@ -183,4 +188,9 @@ span#preco {
 
 
 
+}
+
+.escrito-preco {
+    display: flex;
+    flex-flow: column;
 }
