@@ -203,7 +203,20 @@ export class IndexComponent implements OnDestroy {
 
   ngOnInit() {
 
+    const elemsBanner = document.querySelectorAll('.carrossel-banner');
+    const optionsBanner = {
+      numVisible: 3,
+      maxVisible: 3, // Ajuste o número de imagens visíveis aqui
+      fullWidth: false,
+      padding: 60,// Define o padding desejado,
+      autoplay: true, // Ativa o autoplay
+      interval: 2000,
+      opacity: false, // Intervalo em milissegundos entre as transições dos slides,
 
+    };
+
+
+    M.Carousel.init(elemsBanner, optionsBanner);
 
 
 const options = {
@@ -282,6 +295,21 @@ const options = {
 
   };
 
+  reinicializarCarrosselBanner() {
+    const elemsBanner = document.querySelectorAll('.carrossel-banner');
+    const optionsBanner = {
+      numVisible: 3,
+      maxVisible: 3,
+      fullWidth: false,
+      padding: 60,
+      autoplay: true,
+      interval: 2000,
+      opacity: false,
+    };
+  
+    M.Carousel.init(elemsBanner, optionsBanner);
+  }
+
   verifica(): boolean {
     if (this.drawer && this.drawer.opened) {
       console.log('teste')
@@ -318,6 +346,7 @@ const options = {
 
 
   ngAfterViewInit(): void {
+    this.reinicializarCarrosselBanner();
     console.log('tesste')
 
     document.addEventListener('DOMContentLoaded', function () {
@@ -367,20 +396,7 @@ const options = {
     // Adicione o script ao corpo do documento
   
 
-    const elemsBanner = document.querySelectorAll('.carrossel-banner');
-    const optionsBanner = {
-      numVisible: 3,
-      maxVisible: 3, // Ajuste o número de imagens visíveis aqui
-      fullWidth: false,
-      padding: 60,// Define o padding desejado,
-      autoplay: true, // Ativa o autoplay
-      interval: 2000,
-      opacity: false, // Intervalo em milissegundos entre as transições dos slides,
 
-    };
-
-
-    M.Carousel.init(elemsBanner, optionsBanner);
 
 
     
@@ -520,12 +536,13 @@ const options = {
 
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {
+    this.reinicializarCarrosselBanner();
     this.adjustSlidesPerView(event.target.innerWidth);
-    const newWidth = event.target.innerWidth;
-    if (newWidth !== this.windowWidth) {
-      this.windowWidth = newWidth;
-      location.reload();
-    }
+    // const newWidth = event.target.innerWidth;
+    // if (newWidth !== this.windowWidth) {
+    //   this.windowWidth = newWidth;
+    //   location.reload();
+    // }
   }
   adjustSlidesPerView(windowWidth: number) {
     this.mobileCard = false
