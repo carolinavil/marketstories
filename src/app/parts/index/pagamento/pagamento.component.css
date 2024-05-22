@@ -55,6 +55,7 @@ section.box {
 }
 
 
+
 .form-control,
 .drop {
     border-radius: 20px !important;
@@ -1048,6 +1049,90 @@ img.imagem-exp {
 }
 
 @media screen and (min-width: 9px) {
+
+    p.porDesconto {
+        margin-left: 1em;
+    }
+    .textos-caixa-desconto {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-flow: column;
+        color: white;
+    }
+    .caixas-desconto{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 1em;
+    }
+    p.plano-desconto {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+    }
+    
+    .caixas-desconto2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0.5em;
+        line-height: 26px;
+        position: relative;
+        margin-top: -29px;
+    }
+
+    p.prct-desconto {
+        font-size: 60px;
+        font-weight: 600;
+    }
+    
+    p.plano-desconto {
+        font-size: 21px;
+        line-height: 23px;
+    }
+    p.plano-desconto {
+        font-weight: 600;
+    }
+    
+    span.light-plano-desconto {
+        font-weight: 300;
+    }
+    
+    span.enfaseDe {
+        font-weight: 600;
+        font-size: 21px;
+    }
+    
+    span.enfasePor {
+        font-weight: 700;
+        font-size: 37px;
+    }
+
+    .caixa-desconto{
+        margin: 2em 0;
+        margin-left: calc(10em - 11em);
+        background: linear-gradient(to right, #653d91, #2687b4);
+        width: calc(100% + 2em);
+        box-sizing: border-box;
+        /* margin: 2em 0; */
+    }
+
+    .caixa-desconto{
+        margin: 2em 0;
+        margin-left: calc(12em - 14em);
+        background: linear-gradient(to right, #653d91, #2687b4);
+        background-color: red;
+        width: calc(100% + 4em);
+        box-sizing: border-box;
+        min-height: 7em;
+    }
+ 
+    ::ng-deep span.ng-star-inserted {
+  
+        font-size: 11px;
+    }
+    
 .caixa-balao-desktop{
     display: none!important;
 }
@@ -1193,7 +1278,94 @@ a.link-voltar {
     padding-left: 0.5em;
     color: white;
 }
+
+
+
+
 @media screen and (min-width: 1040px) {
+    p.porDesconto {
+        margin-left: 0;
+    }
+    .textos-caixa-desconto{
+        display: flex;
+        justify-content: center;
+        flex-flow: row!important;
+        align-items: center;
+        color: white;
+    }
+    
+    .caixas-desconto{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 1em;
+    }
+    p.plano-desconto {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+    }
+    
+    .caixas-desconto2 {
+        display: flex;
+        flex-flow: column !important;
+        justify-content: start;
+        align-items: start;
+        padding: 0.5em;
+        line-height: 26px;
+        position: relative;
+      }
+    
+      .caixas-desconto2::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        height: 50%; /* Ajuste a altura conforme necessário */
+        width: 1px;
+        background-color: rgba(255, 255, 255, 0.712);
+      }
+    p.prct-desconto {
+        font-size: 60px;
+        font-weight: 600;
+    }
+    
+    p.plano-desconto {
+        font-size: 24px;
+        line-height: 23px;
+    }
+    
+    p.plano-desconto {
+        font-weight: 600;
+    }
+    
+    span.light-plano-desconto {
+        font-weight: 300;
+    }
+    
+    span.enfaseDe {
+        font-weight: 600;
+        font-size: 21px;
+    }
+    
+    span.enfasePor {
+        font-weight: 700;
+        font-size: 37px;
+    }
+
+    .caixa-desconto{
+        margin: 2em 0;
+        margin-left: calc(10em - 11em);
+        background: linear-gradient(to right, #653d91, #2687b4);
+        width: calc(100% + 2em);
+        box-sizing: border-box;
+        /* margin: 2em 0; */
+    }
+    ::ng-deep span.ng-star-inserted {
+  
+        font-size: 16px;
+    }
     .caixa-balao-desktop{
         display: block!important;
     }

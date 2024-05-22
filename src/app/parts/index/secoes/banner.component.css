@@ -1,8 +1,27 @@
+.caixa-seta-banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -13em;
+    padding-bottom: 4em;
+  }
 
+  fa-icon.ng-fa-icon.seta-banner {
+    font-size: 26px;
+    animation: moveRightLeft 2s linear infinite;
+  }
 
-
-
-
+  @keyframes moveRightLeft {
+    0% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(10px);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
 .imagem-logo-banner {
     width: 100%;
     display: flex;
