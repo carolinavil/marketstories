@@ -29,6 +29,7 @@ import { NgxFileDropModule } from 'ngx-file-drop';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { TableModule } from 'primeng/table';
 import { AdminComponent } from '../painel/admin/admin.component';
+
 PagamentoRoutingModule
 @NgModule({
   declarations: [
@@ -67,7 +68,7 @@ PagamentoRoutingModule
     NgxMaskDirective, 
     NgxMaskPipe,
     FileUploadModule,
-
+  
 
    
 

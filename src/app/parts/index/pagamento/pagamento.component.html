@@ -66,7 +66,7 @@
 
                 <app-stepper [linearModeSelected]="false" #appStepper>
 
-                    <form #form1="ngForm" class="needs-validation formulario ">
+                    <form #form1="ngForm" class="needs-validation formulario " > 
 
                         <!-- <app-stepper [linearModeSelected]="false" [teste]="'fa-brands fa-instagram'" #appStepper> -->
                         <cdk-step [label]="'Checkout'" #step1>
@@ -351,7 +351,7 @@
                                 </swiper-slide>
                             </swiper-container>
                             <div class="d-flex justify-content-between flex-row mb-5 mt-4 btns-caixa btn-avancar">
-                                <button class="me-0 ms-auto prox-btn btn-stepper" type="submit" cdkStepperNext [disabled]="form1.invalid">
+                                <button class="me-0 ms-auto prox-btn btn-stepper" type="submit" cdkStepperNext  [disabled]="form1.invalid" >
                                     <fa-icon [icon]="['fas','arrow-right']" class="icone-seta"></fa-icon>
                                 </button>
                             </div>
@@ -464,7 +464,7 @@
                                             <fa-icon [icon]="['fas','arrow-left']" class="icone-seta"></fa-icon>
                                         </button>
 
-                                        <button class="me-0 ms-auto prox-btn btn-stepper" type="submit" cdkStepperNext [disabled]="form2.invalid">
+                                        <button class="me-0 ms-auto prox-btn btn-stepper" type="submit"  (click)="btnDisabled(form2, appStepper)" [disabled]="form2.invalid">
                                             <!-- <span>Criar</span> -->
                                             <fa-icon [icon]="['fas','arrow-right']" class="icone-seta"></fa-icon>
                                         </button>

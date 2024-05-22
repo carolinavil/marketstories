@@ -17,6 +17,9 @@ import { Input, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import Swiper from 'swiper';
 import * as lottie from 'lottie-web';
 import {NavigationEnd } from '@angular/router';
+import { cpf, cnpj } from 'cpf-cnpj-validator';
+import { StepperComponent } from './stepper/stepper.component';
+
 interface Car {
   label: string;
   value: string;
@@ -402,6 +405,7 @@ objetoUsuarios = new UsersMkModel ()
   @ViewChild('btn') btn: any;
   ngOnInit(): void {
     // this.getMetodos();
+    
    
   }
 
@@ -412,7 +416,18 @@ objetoUsuarios = new UsersMkModel ()
 
 
 
-
+  // validateRegistryCode() {
+  //   const registryCode = this.clienteModel.registry_code;
+  //   this.http.get(`${this.apiUrl}/validate/${registryCode}`).subscribe(
+  //     (response: any) => {
+  //       if (!response.isValid) {
+  //         alert('CPF/CNPJ não encontrado.');
+  //       }
+  //     },
+  //     (error) => {
+  //       console.error('Erro ao validar CPF/CNPJ', error);
+  //     }
+  //   );}
   onUpload(event: any) {
     // Acesso aos arquivos enviados
     for (let file of event.files) {
@@ -479,188 +494,132 @@ objetoUsuarios = new UsersMkModel ()
   removerInput(index: number) {
     this.inputs.splice(index, 1);
   }
+  btnDisabled(form1: NgForm, stepper: StepperComponent) {
+    lastValueFrom(this.vindiService.postCliente(this.clienteModel)).then((clientePostado) => {
+console.log(clientePostado, 'teste')
+      
+  })
+  console.log('foi')
+    this.appStepper.next();
 
+        
+    
+        
+}
 
   send(form: NgForm) {
-    this.loading = true
-    console.log('TESTE')
+    this.loading = true;
+    console.log('TESTE');
     console.log('telefones', this.telefones, this.endereco, this.objeto, this.clienteModel);
     this.clienteModel.phones = this.telefones;
     this.clienteModel.address = this.endereco;
 
     // Posta o cliente
     lastValueFrom(this.vindiService.postCliente(this.clienteModel)).then((clientePostado) => {
-      const id = clientePostado.customer.id;
+        const id = clientePostado.customer.id;
 
-      console.log('Cliente postado:', id);
-      this.assinaturaModel.customer_id = id;
+        console.log('Cliente postado:', id);
+        this.assinaturaModel.customer_id = id;
+        this.perfilModel.registry_code = clientePostado.customer.registry_code;
 
-      this.perfilModel.registry_code = clientePostado.customer.registry_code
-      
-      console.log('cpf,',this.perfilModel.registry_code, clientePostado, clientePostado.customer.registry_code)
-      // Todo o código que depende de idCliente deve estar dentro deste bloco then
-      console.log('objeto final cliente', this.idCliente, clientePostado);
-      console.log('objeto final', this.clienteModel, this.clienteModel.address, this.assinaturaModel);
-      console.log('objeto assinatura final', this.assinaturaModel, this.perfilModel);
+        console.log('cpf,', this.perfilModel.registry_code, clientePostado, clientePostado.customer.registry_code);
+        console.log('objeto final cliente', this.idCliente, clientePostado);
+        console.log('objeto final', this.clienteModel, this.clienteModel.address, this.assinaturaModel);
+        console.log('objeto assinatura final', this.assinaturaModel, this.perfilModel);
 
-      if (this.perfilModel.card_expiration.length === 4) {
-        // Remove todos os caracteres não numéricos
-        const onlyNumbers = this.perfilModel.card_expiration.replace(/\D/g, '');
-        // Formata a string para "00/00"
-        const expiration = this.perfilModel.card_expiration.trim();
-        this.perfilModel.card_expiration = `${expiration.slice(0, 2)}/${expiration.slice(2)}`;
-        console.log('validade', this.perfilModel.card_expiration);
-      }
-
-      
-
-
-      const perfil_Pagamento: any = {
-        holder_name: this.perfilModel.holder_name,
-        registry_code: this.perfilModel.registry_code,
-        card_expiration: this.perfilModel.card_expiration,
-        card_number: this.perfilModel.card_number,
-        card_cvv: this.perfilModel.card_cvv,
-        payment_method_code: this.perfilModel.payment_method_code,
-        payment_company_code: this.perfilModel.payment_company_code,
-
-
-
-      }
-
-  
-      this.assinaturaModel.payment_method_code = this.perfilModel.payment_method_code
-      this.assinaturaModel.payment_profile = perfil_Pagamento;
-
-
-
-      // const plano = this.plans
-      // this.assinaturaModel.product_items[0].product_id = clientePostado
-
-
-      interface Produto {
-        id: number;
-        // outras propriedades do produto
-      }
-
-      // Supondo que this.plans seja um array do tipo Produto
-      const planoEncontrado = this.plans.find((produto: Produto) => produto.id === this.assinaturaModel.plan_id);
-
-
-      if (planoEncontrado) {
-        if (!this.assinaturaModel.product_items) {
-          this.assinaturaModel.product_items = [];
+        if (this.perfilModel.card_expiration.length === 4) {
+            const onlyNumbers = this.perfilModel.card_expiration.replace(/\D/g, '');
+            const expiration = this.perfilModel.card_expiration.trim();
+            this.perfilModel.card_expiration = `${expiration.slice(0, 2)}/${expiration.slice(2)}`;
+            console.log('validade', this.perfilModel.card_expiration);
         }
 
-        const produto: ProdutosModel = new ProdutosModel();
-        produto.product_id = planoEncontrado.plan_items[0].product.id;
-
-        const teste: any = {
-          product_id: planoEncontrado.plan_items[0].product.id
-        }
-
-
-        this.assinaturaModel.product_items.push(teste);
-
-        console.log('objeto finallllll', this.assinaturaModel, clientePostado);
-
-      }
-
-
-      // const planoEncontrado = this.plans.find((produto: ProdutosModel) => produto.product_id === this.assinaturaModel.plan_id);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      else {
-        console.log('Nenhum plano encontrado com o ID correspondente.');
-      }
-
-      console.log('objeto assinatura final atualizado', this.assinaturaModel, this.perfilModel, planoEncontrado,);
-
-      // this.assinaturaModel.payment_method_code[0].holder_name = this.perfilModel.holder_name
-
-      lastValueFrom(this.vindiService.postAssinatura(this.assinaturaModel)).then((assinaturaPostada) => {
-        const id = assinaturaPostada.subscription.customer.id
-        console.log(assinaturaPostada, assinaturaPostada.subscription.id)
-        const plano = assinaturaPostada.subscription.plan.id
-        // const metodo = assinaturaPostada.subscription.payment_method.code
-        const produto = assinaturaPostada.subscription.product_items[0].product.id
-        const preco = assinaturaPostada.subscription.product_items[0].pricing_schema.price
-        const valorSemPontos = preco.replace(/\./g, '');
-        console.log('preco', preco, valorSemPontos)
-        const produtoModel = new ProdutoModel();
-        produtoModel.product_id = produto;
-
-        const produtos: any = {
-          product_id: produto,
-          amount: valorSemPontos,
-
+        const perfil_Pagamento: any = {
+            holder_name: this.perfilModel.holder_name,
+            registry_code: this.perfilModel.registry_code,
+            card_expiration: this.perfilModel.card_expiration,
+            card_number: this.perfilModel.card_number,
+            card_cvv: this.perfilModel.card_cvv,
+            payment_method_code: this.perfilModel.payment_method_code,
+            payment_company_code: this.perfilModel.payment_company_code,
         };
 
-        this.faturaModel.bill_items.push(produtos);
+        this.assinaturaModel.payment_method_code = this.perfilModel.payment_method_code;
+        this.assinaturaModel.payment_profile = perfil_Pagamento;
 
-        this.faturaModel.customer_id = id
-        this.faturaModel.plan_id = plano
-        // this.faturaModel.due_at = metodo
-        // this.faturaModel.payment_method_code = metodo
-        this.faturaModel.billing_at = this.dataFormatadaTestes
-        this.faturaModel.due_at = this.dataFormatadaTestes
+        interface Produto {
+            id: number;
+        }
 
+        const planoEncontrado = this.plans.find((produto: Produto) => produto.id === this.assinaturaModel.plan_id);
 
+        if (planoEncontrado) {
+            if (!this.assinaturaModel.product_items) {
+                this.assinaturaModel.product_items = [];
+            }
 
-        // if (this.assinaturaModel.payment_method_code=='credit_card') {
-        //   this.cartaoModel.payment_method_code = this.faturaModel.payment_method_code
-        //   lastValueFrom(this.vindiService.postCartao(this.cartaoModel)).then((res => {
-        //     return console.log(res, "corpo", this.cartaoModel)
-        //   }))
-        // }
+            const produto: ProdutosModel = new ProdutosModel();
+            produto.product_id = planoEncontrado.plan_items[0].product.id;
 
+            const teste: any = {
+                product_id: planoEncontrado.plan_items[0].product.id
+            };
 
+            this.assinaturaModel.product_items.push(teste);
 
+            console.log('objeto finallllll', this.assinaturaModel, clientePostado);
+        } else {
+            console.log('Nenhum plano encontrado com o ID correspondente.');
+        }
 
+        console.log('objeto assinatura final atualizado', this.assinaturaModel, this.perfilModel, planoEncontrado);
 
-        // lastValueFrom(this.vindiService.postFatura(this.faturaModel)).then((res => {
-        //   return console.log(res, "corpo", this.faturaModel)
-        // }))
-        this.loading = false
-        console.log('id', id, assinaturaPostada, this.faturaModel, produtoModel, this.cartaoModel, this.clienteModel)
-        this.router.navigate(['final'], { relativeTo: this.activatedRoute });
-      })
+        lastValueFrom(this.vindiService.postAssinatura(this.assinaturaModel)).then((assinaturaPostada) => {
+            const id = assinaturaPostada.subscription.customer.id;
+            console.log(assinaturaPostada, assinaturaPostada.subscription.id);
+            const plano = assinaturaPostada.subscription.plan.id;
+            const produto = assinaturaPostada.subscription.product_items[0].product.id;
+            const preco = assinaturaPostada.subscription.product_items[0].pricing_schema.price;
+            const valorSemPontos = preco.replace(/\./g, '');
+            console.log('preco', preco, valorSemPontos);
+            const produtoModel = new ProdutoModel();
+            produtoModel.product_id = produto;
 
-      this.usuariosModel.crypto = true
-      this.usuariosModel.email = this.clienteModel.email
-      // this.usuariosModel.nome = this.clienteModel.name
-      
-      console.log('444',this.usuariosModel, this.clienteModel, clientePostado)
- 
-   
-      lastValueFrom(this.vindiService.postUsuarios(this.usuariosModel)).then((res) => {
-        
-        console.log('oooo',res)
-      })
+            const produtos: any = {
+                product_id: produto,
+                amount: valorSemPontos,
+            };
+
+            this.faturaModel.bill_items.push(produtos);
+
+            this.faturaModel.customer_id = id;
+            this.faturaModel.plan_id = plano;
+            this.faturaModel.billing_at = this.dataFormatadaTestes;
+            this.faturaModel.due_at = this.dataFormatadaTestes;
+
+            this.loading = false;
+            console.log('id', id, assinaturaPostada, this.faturaModel, produtoModel, this.cartaoModel, this.clienteModel);
+            this.router.navigate(['final'], { relativeTo: this.activatedRoute });
+        }).catch((error) => {
+            console.error('Erro ao postar assinatura:', error);
+            this.loading = false; // Ensure loading is set to false on error
+        });
+
+        this.usuariosModel.crypto = true;
+        this.usuariosModel.email = this.clienteModel.email;
+
+        lastValueFrom(this.vindiService.postUsuarios(this.usuariosModel)).then((res) => {
+            console.log('oooo', res);
+        }).catch((error) => {
+            console.error('Erro ao postar usuário:', error);
+            this.loading = false; // Ensure loading is set to false on error
+        });
+    }).catch((error) => {
+        console.error('Erro ao postar cliente:', error);
+        this.loading = false; // Ensure loading is set to false on error
     });
+}
 
- 
-  }
 
   onFileSelected(event: any): void {
 
