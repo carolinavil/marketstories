@@ -205,21 +205,6 @@ export class IndexComponent implements OnDestroy {
     this.reinicializarCarrosselBanner();
 
 
-
-    const elemsBanner = document.querySelectorAll('.carrossel-banner');
-    const optionsBanner = {
-      numVisible: 3,
-      maxVisible: 3, // Ajuste o número de imagens visíveis aqui
-      fullWidth: false,
-      padding: 60,// Define o padding desejado,
-      autoplay: true, // Ativa o autoplay
-      interval: 2000,
-      opacity: false, // Intervalo em milissegundos entre as transições dos slides,
-
-    };
-
-
-    M.Carousel.init(elemsBanner, optionsBanner);
 const options = {
       root: null,
       rootMargin: '0px',
@@ -347,7 +332,26 @@ const options = {
 
 
   ngAfterViewInit(): void {
-    this.reinicializarCarrosselBanner();
+    setTimeout(() => {
+      this.reinicializarCarrosselBanner();
+    }, 0); 
+
+    
+
+    const elemsBanner = document.querySelectorAll('.carrossel-banner');
+    const optionsBanner = {
+      numVisible: 3,
+      maxVisible: 3, // Ajuste o número de imagens visíveis aqui
+      fullWidth: false,
+      padding: 60,// Define o padding desejado,
+      autoplay: true, // Ativa o autoplay
+      interval: 2000,
+      opacity: false, // Intervalo em milissegundos entre as transições dos slides,
+
+    };
+
+
+    M.Carousel.init(elemsBanner, optionsBanner);
     console.log('tesste')
 
     document.addEventListener('DOMContentLoaded', function () {
