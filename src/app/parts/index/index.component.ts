@@ -25,8 +25,7 @@ export class IndexComponent implements OnDestroy {
   valorInicial: number = 0;
   valorFinal: number = 1000;
   showMenu = false;
-  private touchStartY: number = 0;
-  private touchEndY: number = 0;
+
   contadorLayouts: number = 0;
   contadorStories: number = 0;
   contadorAssessores: number = 0;
@@ -98,22 +97,6 @@ export class IndexComponent implements OnDestroy {
 
     library.addIcons(faBars, faXmark, faHouse, faInstagram, faLinkedin, faTwitter, faYoutube, faFacebook, faTiktok, faWhatsapp, faStar)
   }
-  @HostListener('touchstart', ['$event'])
-  onTouchStart(event: TouchEvent) {
-    this.touchStartY = event.touches[0].clientY;
-  }
-
-  @HostListener('touchend', ['$event'])
-onTouchEnd(event: TouchEvent) {
-  this.touchEndY = event.changedTouches[0].clientY;
-  this.checkPullToRefresh();
-}
-
-checkPullToRefresh() {
-  if (this.touchStartY - this.touchEndY > 150) {
-    // A pull down gesture was detected, refresh the page
-    location.reload();
-  }}
 
 
   teste44(){
@@ -220,7 +203,20 @@ checkPullToRefresh() {
 
   ngOnInit() {
 
+    const elemsBanner = document.querySelectorAll('.carrossel-banner');
+    const optionsBanner = {
+      numVisible: 3,
+      maxVisible: 3, // Ajuste o número de imagens visíveis aqui
+      fullWidth: false,
+      padding: 60,// Define o padding desejado,
+      autoplay: true, // Ativa o autoplay
+      interval: 2000,
+      opacity: false, // Intervalo em milissegundos entre as transições dos slides,
 
+    };
+
+
+    M.Carousel.init(elemsBanner, optionsBanner);
 
 
 const options = {
@@ -272,8 +268,6 @@ const options = {
     }
   }
 
-  
-
   subir() {
     const scrollY = window.scrollY || window.pageYOffset;
     const seta = document.querySelector('.link-top');
@@ -300,6 +294,21 @@ const options = {
 
 
   };
+
+  reinicializarCarrosselBanner() {
+    const elemsBanner = document.querySelectorAll('.carrossel-banner');
+    const optionsBanner = {
+      numVisible: 3,
+      maxVisible: 3,
+      fullWidth: false,
+      padding: 60,
+      autoplay: true,
+      interval: 2000,
+      opacity: false,
+    };
+  
+    M.Carousel.init(elemsBanner, optionsBanner);
+  }
 
   verifica(): boolean {
     if (this.drawer && this.drawer.opened) {
@@ -337,6 +346,7 @@ const options = {
 
 
   ngAfterViewInit(): void {
+    this.reinicializarCarrosselBanner();
     console.log('tesste')
 
     document.addEventListener('DOMContentLoaded', function () {
@@ -386,20 +396,7 @@ const options = {
     // Adicione o script ao corpo do documento
   
 
-    const elemsBanner = document.querySelectorAll('.carrossel-banner');
-    const optionsBanner = {
-      numVisible: 3,
-      maxVisible: 3, // Ajuste o número de imagens visíveis aqui
-      fullWidth: false,
-      padding: 60,// Define o padding desejado,
-      autoplay: true, // Ativa o autoplay
-      interval: 2000,
-      opacity: false, // Intervalo em milissegundos entre as transições dos slides,
 
-    };
-
-
-    M.Carousel.init(elemsBanner, optionsBanner);
 
 
     
@@ -539,12 +536,13 @@ const options = {
 
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {
+    this.reinicializarCarrosselBanner();
     this.adjustSlidesPerView(event.target.innerWidth);
-    const newWidth = event.target.innerWidth;
-    if (newWidth !== this.windowWidth) {
-      this.windowWidth = newWidth;
-      location.reload();
-    }
+    // const newWidth = event.target.innerWidth;
+    // if (newWidth !== this.windowWidth) {
+    //   this.windowWidth = newWidth;
+    //   location.reload();
+    // }
   }
   adjustSlidesPerView(windowWidth: number) {
     this.mobileCard = false
