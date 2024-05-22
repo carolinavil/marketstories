@@ -20,6 +20,7 @@
 <ngx-countup [startVal]="valorInicial" [endVal]="valorFinal" [options]="opcoes"></ngx-countup> -->
 
 <header class="header">
+
     <div class="menu-desktop">
         <div class="conteudo-header">
             <img src="../../../assets/img/Logo Colorido MarketStories (1).png" alt="" class="logo-header">
@@ -38,8 +39,7 @@
 
                     <!-- <button class="btn-associar-header"><a routerLink="pagamento"></a></button> -->
 
-                    <button routerLink="pagamento" class="btn-associar-header"> <a >Be
-                            MktStories</a></button>
+                    <button routerLink="pagamento" class="btn-associar-header"> <a >Quero 10 dias grátis!</a></button>
                 </ul>
 
             </div>
@@ -112,10 +112,11 @@
 
 
 <div class="caixa-menu-mobile mobile">
+    <!-- <fa-icon [icon]="['fas','arrow-right']"></fa-icon>a -->
     <mat-toolbar color="primary" class="mat-elevation-z">
         <!-- <button class="btn-menu-mobile"><fa-icon [icon]="['fas','house']"></fa-icon></button> -->
-        <button routerLink="pagamento" class="btn-associar-header"><a>Be
-            MktStories</a></button>
+  
+        <button routerLink="pagamento" class="btn-associar-header"><a>Quero 10 dias grátis!</a></button>
         <!-- <button (click)="teste()" (click)="verifica()" (click)="drawer.toggle()" mat-icon-button position="end"
             class="btn-menu-mobile">
             <fa-icon [icon]="['fas',getIconName()]"></fa-icon>
@@ -187,7 +188,13 @@
             <a class="carousel-item no-opacity carousel-banner " href="#one!"> <img src="../../../assets/img/selicP.png"
                     alt="" class="img-banner"></a>
         </div>
+
+
     </div>
+    <!-- <div class="caixa-seta-banner">
+        <fa-icon
+        [icon]="['fas','arrow-right']" class="seta-banner"></fa-icon>
+    </div> -->
 
 </section>
 
@@ -263,7 +270,7 @@
                     <li class="numeros-item">
 
                         <h1 class="titulo-numeros">+{{Storiescount}}</h1>
-                        <h1 class="subtitulo-numeros">Stories entregues por mês</h1>
+                        <h1 class="subtitulo-numeros">Stories entregues por mês/por assessor</h1>
 
 
                     </li>
@@ -947,8 +954,28 @@
     <div class="  conteiner-footer">
 
         <div class="conteudo-footer">
-            <div class="logo-footer">
+            <div class="logo-footer-mobile logo-footer">
                 <img class="img-logo-footer" src="../../../assets/img/logo.png" alt="">
+                <div class=" redes-footer-mobile redes-footer ">
+                    <ul class="lista-redes-footer">
+                        <li class="item-rede-footer">
+                            <a href="https://www.instagram.com/marketstories.pro/" class="link-item-header"><fa-icon
+                                    [icon]="['fab','instagram']"></fa-icon></a>
+                        </li>
+                        <li class="item-rede-footer">
+                            <a href="https://www.linkedin.com/company/marketstories" class="link-item-header"><fa-icon
+                                    [icon]="['fab','linkedin']"></fa-icon></a>
+                        </li>
+                        <li class="item-rede-footer">
+                            <a href="https://twitter.com/mktstories" class="link-item-header"><fa-icon
+                                    [icon]="['fab','twitter']"></fa-icon></a>
+                        </li>
+                        <li class="item-rede-footer">
+                            <a href="https://www.tiktok.com/@mktstories" class="link-item-header"><fa-icon
+                                    [icon]="['fab','tiktok']"></fa-icon></a>
+                        </li>
+                    </ul>
+                </div>
                 <p class="texto-footer">Velocidade é o que define se algo é relevante ou não no mercado.</p>
             </div>
 
@@ -969,7 +996,7 @@
                 </ul>
             </div>
 
-            <div class="redes-footer">
+            <div class="redes-footer-desktop redes-footer ">
                 <ul class="lista-redes-footer">
                     <li class="item-rede-footer">
                         <a href="https://www.instagram.com/marketstories.pro/" class="link-item-header"><fa-icon

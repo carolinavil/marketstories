@@ -1,15 +1,8 @@
 .footer {
-  margin-top: 5em;
+
     background: #0D0611;
 }
-.conteudo-footer {
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
-    padding: 4em 1em;
-    width: 90%;
 
-}
 
 img.img-logo-footer {
     width: 40%;
@@ -102,18 +95,108 @@ li.item-link-footer {
 
 
   @media screen and (min-width: 250px) {
+    .redes-footer-desktop{
+        display: none;
+    }
+    .logo-footer{
+        display: flex;
+        flex-flow: row;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: white;
+        margin-left: -2em;
+    }
+    .links-footer {
+        margin: 1em 0;
+    }
+    p.texto-footer {
+        display: none;
+    }
+    .conteudo-footer {
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        padding: 0em 0em 7em 0em;
+        width: 90%;
+    }
+    ul.lista-links-footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .footer {
+        margin-top: -3em;
+          background: #0D0611;
+      }
     a.link-footer {
         text-decoration: none;
         font-size: 16px;
         color: white;
         padding: 2em 0;
     }
+
+    img.img-logo-footer{
+        width: 33%;
+    }
+
+    .link-item-header {
+        color: white;
+        transition: background-color 0.7s ease;
+        font-size: 31px;
+        margin: 0 0.5em;
+    }
+
+   
   }
 
 
 
 
   @media screen and (min-width: 1040px) {
+    .redes-footer-mobile{
+        display: none!important;
+    }
+    .redes-footer-desktop{
+        display: block;
+    }
+    .link-item-header{
+        color: white;
+        transition: background-color 0.7s ease;
+        font-size: 26px;
+        margin: 0 0.5em;
+      }
+
+    .logo-footer {
+        display: flex;
+        flex-flow: column;
+        justify-content: start;
+        align-items: start;
+        text-align: start;
+        width: 30%;
+        color: white;
+    }
+    p.texto-footer {
+        display: block;
+
+    }
+    .conteudo-footer {
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        padding: 4em 1em;
+        width: 90%;
+    
+    }
+
+    ul.lista-links-footer {
+        display: block;
+    }
+
+    .footer {
+        margin-top: 5em;
+          background: #0D0611;
+      }
 
     ul.lista-redes-header {
         display: flex;
@@ -154,15 +237,7 @@ li.item-link-footer {
         align-self: center;
     }    
 
-    .logo-footer {
-        display: flex;
-        flex-flow: column;
-        justify-content: start;
-        align-items: start;
-        text-align: start;
-        width: 30%;
-        color: white;
-    }
+
 
     li.item-link-footer{
         padding: 0.5em 1em;

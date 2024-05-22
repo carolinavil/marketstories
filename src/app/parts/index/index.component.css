@@ -54,15 +54,7 @@
     background-color: red;
 }
 
-.conteiner-footer {
-    display: flex;
-    flex-flow: column;
-    align-items: center;
-    margin-top: 80px;
-    width: 100%;
 
-
-}
 
 .teste6{
 height: 40vh;
@@ -170,7 +162,18 @@ height: 40vh;
 }
 
 
+
 @media screen and (min-width: 250px) {
+
+    .conteiner-footer {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        margin-top: -6em;
+        width: 100%;
+    
+    
+    }
     .desktop-btn{
         display: none;
     }
@@ -201,7 +204,16 @@ img.titulo-logo {
 }
 }
 @media screen and (min-width: 900px) {
-
+    .conteiner-footer {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        margin-top: 80px;
+        width: 100%;
+    
+    
+    }
+    
     .desktop-btn{
         display: block;
     }

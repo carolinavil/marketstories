@@ -5,7 +5,7 @@ import Swiper from 'swiper';
 import { Router } from '@angular/router';
 import { AfterViewInit, ViewChild, ElementRef } from '@angular/core';
 import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faBars, faHouse, faMask, faStar, faXmark, } from '@fortawesome/free-solid-svg-icons';
+import { faArrowRight, faBars, faHouse, faMask, faStar, faXmark, } from '@fortawesome/free-solid-svg-icons';
 import { faFacebook, faInstagram, faLinkedin, faTiktok, faTwitter, faYoutube, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import { IconName } from '@fortawesome/free-solid-svg-icons';
 import { MatDrawer } from '@angular/material/sidenav';
@@ -95,7 +95,7 @@ export class IndexComponent implements OnDestroy {
     
     this.adjustSlidesPerView(window.innerWidth);
 
-    library.addIcons(faBars, faXmark, faHouse, faInstagram, faLinkedin, faTwitter, faYoutube, faFacebook, faTiktok, faWhatsapp, faStar)
+    library.addIcons(faBars, faXmark, faHouse, faInstagram, faLinkedin, faTwitter, faYoutube, faFacebook, faTiktok, faWhatsapp, faStar, faArrowRight)
   }
 
 
@@ -326,7 +326,7 @@ const options = {
       autoplay: true, // Ativa o autoplay
       interval: 2000,
       opacity: false,
-      indicators: true// Intervalo em milissegundos entre as transições dos slides
+      indicators: false// Intervalo em milissegundos entre as transições dos slides
 
     };
 
@@ -382,6 +382,7 @@ const options = {
       padding: 60,// Define o padding desejado,
       autoplay: true, // Ativa o autoplay
       interval: 2000,
+      // indicators:true,
       opacity: false, // Intervalo em milissegundos entre as transições dos slides,
 
     };
@@ -428,7 +429,7 @@ const options = {
       autoplay: true, // Ativa o autoplay
       interval: 2000,
       opacity: false,
-      indicators: true// Intervalo em milissegundos entre as transições dos slides
+      indicators: false// Intervalo em milissegundos entre as transições dos slides
 
     };
 
@@ -534,7 +535,7 @@ const options = {
       autoplay: true, // Ativa o autoplay
       interval: 2000,
       opacity: false,
-      indicators: true// Intervalo em milissegundos entre as transições dos slides
+      indicators: false// Intervalo em milissegundos entre as transições dos slides
 
     };
 

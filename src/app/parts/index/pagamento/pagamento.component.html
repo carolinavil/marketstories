@@ -30,7 +30,10 @@
 
     <section class="box">
         <div class="caixa-logo">
-
+<div class="caixa-voltar"  routerLink="../" >
+    <fa-icon [icon]="['fas','arrow-left']"></fa-icon>
+    <a routerLink="../" class="link-voltar">Voltar</a>
+</div>
             <div class="texto-caixa-logo">
                 <img src="../../../../assets/img/Logo P&B MarketStories.png" alt="" class="logo-caixa">
                 <h1 class="titulo-banner">Para manter-se no topo, é preciso rapidez </h1>
@@ -41,6 +44,10 @@
         <form #form="ngForm" class="needs-validation formulario " (submit)="send(form)">
 
             <!-- <form #form="ngForm" class="needs-validation formulario " > -->
+                <div class="caixa-voltar-mobile" routerLink="../">
+                    <fa-icon [icon]="['fas','arrow-left']"></fa-icon>
+                    <a  class="link-voltar">Voltar</a>
+                </div>
             <a href="https://lottie.host/embed/c7f9f151-c2fb-4537-8f9f-348cc37b0727/TS10GE1hWz.json"></a>
             <div class="caixa-formulario">
                 <!-- <h1 >Be</h1> -->
@@ -49,6 +56,9 @@
                     </div>
                      -->
 <div class="caixa-logo-formulario">
+    <div class="caixa-balao ">
+        <p class="texto-caixa-balao">10 dias grátis sem fidelidade!</p>
+    </div>
     <img src="../../../../assets/img/Logo Colorido MarketStories (1).png" alt="" class="logo-formulario">
 
 </div>
@@ -56,17 +66,25 @@
                 <app-stepper [linearModeSelected]="false" #appStepper>
 
                     <form #form1="ngForm" class="needs-validation formulario ">
+                        
                         <!-- <app-stepper [linearModeSelected]="false" [teste]="'fa-brands fa-instagram'" #appStepper> -->
                         <cdk-step [label]="'Checkout'" #step1>
 
                             <div class="pessoal" style="padding-top:30px">
                                 <i class="fa-solid fa-user"></i>
-                                <h1 class="titulo-secao">
-                                    Informações de Checkout
-                                </h1>
-                                <p class="subtitulo-secao">Precisamos desses detalhes para processar seu pedido e
-                                    garantir que os layouts cheguem direitinho até você. Por favor, confira se tudo
-                                    está correto!</p>
+                                <div class="caixa-titulos">
+                                    <div class="caixa-balao-desktop caixa-balao">
+                                        <p class="texto-caixa-balao">10 dias grátis sem fidelidade!</p>
+                                    </div>
+                                    <h1 class="titulo-secao">
+                                        Informações de Checkout
+                                    </h1>
+                                    <p class="subtitulo-secao">Precisamos desses detalhes para processar seu pedido e
+                                        garantir que os layouts cheguem direitinho até você. Por favor, confira se tudo
+                                        está correto!</p>
+                                </div>
+                            </div>
+                            
                                 <!-- <div class="row form-group">
                                 <h5 class="titulo-formulario">
                                     Dados pessoais
@@ -151,7 +169,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+            
 
                             <h1 class="titulo-cadastro">Receba +400 stories personalizados por mês</h1>
 
@@ -348,12 +366,17 @@
                         <cdk-step [label]="'teste'" #step1 id="test">
 
                             <div class="pessoal" style="padding-top:30px">
+                                <div class="caixa-titulos">
+                                    <div class="caixa-balao-desktop caixa-balao">
+                                        <p class="texto-caixa-balao">10 dias grátis sem fidelidade!</p>
+                                    </div>
                                 <h1 class="titulo-secao">
                                     Informações de Checkout
                                 </h1>
                                 <p class="subtitulo-secao">Precisamos desses detalhes para processar seu pedido e
                                     garantir que os layouts cheguem direitinho até você. Por favor, confira se tudo
                                     está correto!</p>
+                                </div>
                                 <i class="fa-solid fa-user"></i>
                                 <div class="endereco" style="padding-top:30px">
                                     <div class="row">
@@ -463,13 +486,17 @@
                                     Dados para pagamento
                                     <fa-icon [icon]="['fas','money-check-dollar']"></fa-icon>
                                 </h5> -->
+                                <div class="caixa-titulos">
+                                    <div class="caixa-balao-desktop caixa-balao">
+                                        <p class="texto-caixa-balao">10 dias grátis sem fidelidade!</p>
+                                    </div>
                                     <h1 class="titulo-secao">
                                         Layout Instagram (Stories)
 
                                     </h1>
                                     <p class="subtitulo-secao">Vamos personalizar seus stories com a sua cara, precisamos que preencha as informações abaixo para montarmos o seu layout.
                                         Siga o passo a passo abaixo, para cadastrasmos você no sistema.</p>
-
+                                    </div>
                                     <div class="row row-exp">
                                         <div class="form-group col s12 m10 ">
                                             <label class="form-label">Qual o nome você quer que fique visivel nos
@@ -673,16 +700,23 @@
                         <cdk-step [label]="'Pagamento'" #step1>
                             <div class="pessoal" style="padding-top:30px">
                                 <div class="row form-group">
+                                    <div class="caixa-titulos">
+                                        <div class="caixa-balao-desktop caixa-balao">
+                                            <p class="texto-caixa-balao">10 dias grátis sem fidelidade!</p>
+                                        </div>
                                     <h1 class="titulo-secao">
                                         Informações do pagamento
                                     </h1>
-                                    <p class="subtitulo-secao"> Preencha suas informações de pagamento para finalizar
-                                        sua compra. Não se preocupe, mantemos tudo seguro e confidencial.</p>
+                                    <p class="subtitulo-secao">Preencha suas informações de pagamento para 
+                                        finalizar sua compra. Não se preocupe, mantemos tudo seguro e confidencial. 
+                                        <span class="str"> Caso queira cancelar antes do período de 10 dias, favor entrar em contato com o nosso suporte pelo WhatsApp.</span></p>
+
                                     <!-- <h5 class="titulo-formulario">
                                     Dados para pagamento
                                     <fa-icon [icon]="['fas','money-check-dollar']"></fa-icon>
                                 </h5> -->
                                 </div>
+                            </div>
 
                                 <div class="row">
                                     <div class="pagamento-caixa">

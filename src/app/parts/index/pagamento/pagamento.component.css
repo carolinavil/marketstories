@@ -15,6 +15,37 @@
     margin: 0;
 }
 
+.str{
+    font-weight: 600;
+    color:#653d91 ;
+}
+
+.caixa-titulos {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+
+.caixa-balao{
+    text-align: center;
+    background: linear-gradient(to right, #653d91, #2687b4);
+    display: inline-block;
+    padding: 0.5em 1em;
+    border-radius: 7em;
+    margin-bottom: 2em;
+    color: white;
+    font-weight: 500;
+}
+
+
+.caixa-logo-formulario {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .pessoal.ng-star-inserted {
     /* padding: 33em 0; */
     margin-top: 2em;
@@ -261,7 +292,7 @@ font-size: 40px;
 
 .caixa-logo{
     padding-left: 4em;
-    padding-top: 4em;
+    padding-top: 3em;
 }
 
 }
@@ -606,6 +637,10 @@ label.form-label {
 
 @media screen and (min-width: 1100px) {
 
+    .caixa-voltar-mobile {
+
+        display: none;
+    }
     .caixa-formulario {
         position: absolute;
         max-height: 100%;
@@ -1008,8 +1043,25 @@ img.imagem-exp {
     display: inline-block;
 }
 
+::ng-deep svg.svg-inline--fa.fa-arrow-left {
+    color: white!important;
+}
+
 @media screen and (min-width: 9px) {
+.caixa-balao-desktop{
+    display: none!important;
+}
  
+    .caixa-voltar-mobile{
+        display: block;
+        background: #62a6ec;
+        margin: 1em 1em 0em 0em 2em;
+        padding: 0.4em 1em;
+        width: auto;
+        margin: 1em 1em 0em 1em;
+        border-radius: 21em;
+        display: inline-block;
+    }
    .logo-formulario{
     width: 100%;
    }
@@ -1129,10 +1181,30 @@ swiper-container.carrossel-desktop.ng-star-inserted {
    
     width: 100%!important;
 }
-
-
+.caixa-voltar {
+    display: inline-block;
+    background: #683c92;
+    padding: 0.5em 1em;
+    border-radius: 3em;
+    margin-bottom: 2em;
+}
+a.link-voltar {
+    font-weight: 600;
+    padding-left: 0.5em;
+    color: white;
+}
 @media screen and (min-width: 1040px) {
-
+    .caixa-balao-desktop{
+        display: block!important;
+    }
+    p.texto-caixa-balao {
+        font-size: 17px;
+    }
+    .caixa-voltar-mobile {
+        display: none
+                
+            }
+            
     .titulo-secao{
         font-size: 28px;
        }
