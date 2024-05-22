@@ -203,7 +203,7 @@ export class IndexComponent implements OnDestroy {
 
   ngOnInit() {
     this.reinicializarCarrosselBanner();
-
+    this.reinicializarCarrosselConteudo();
 
 const options = {
       root: null,
@@ -296,6 +296,43 @@ const options = {
     M.Carousel.init(elemsBanner, optionsBanner);
   }
 
+
+  reinicializarCarrosselConteudo() {
+    const elemsConteudo = document.querySelectorAll('.carrossel-conteudo');
+    const optionsConteudo = {
+      numVisible: 4,
+      maxVisible: 4, // Ajuste o número de imagens visíveis aqui
+      fullWidth: false,
+      padding: this.paddingConteudo,// Define o padding desejado,
+      autoplay: true, // Ativa o autoplay
+      interval: 2000,
+      opacity: false,
+      indicators: true// Intervalo em milissegundos entre as transições dos slides
+
+    };
+
+
+    M.Carousel.init(elemsConteudo, optionsConteudo);
+  }
+
+
+  reinicializarCarrosselConteudoFeed() {
+    const elemsFeed = document.querySelectorAll('.carrossel-conteudo-feed');
+    const optionsFeed = {
+      numVisible: 4,
+      maxVisible: 4, // Ajuste o número de imagens visíveis aqui
+      fullWidth: false,
+      padding: this.paddingFeed,// Define o padding desejado,
+      autoplay: true, // Ativa o autoplay
+      interval: 2000,
+      opacity: false,
+      indicators: true// Intervalo em milissegundos entre as transições dos slides
+
+    };
+
+
+    M.Carousel.init(elemsFeed, optionsFeed);
+  }
   verifica(): boolean {
     if (this.drawer && this.drawer.opened) {
       console.log('teste')
@@ -336,7 +373,6 @@ const options = {
       this.reinicializarCarrosselBanner();
     }, 0); 
 
-    
 
     const elemsBanner = document.querySelectorAll('.carrossel-banner');
     const optionsBanner = {
@@ -352,6 +388,54 @@ const options = {
 
 
     M.Carousel.init(elemsBanner, optionsBanner);
+
+
+
+    setTimeout(() => {
+      this.reinicializarCarrosselConteudo();
+    }, 0); 
+
+
+    const elemsConteudo = document.querySelectorAll('.carrossel-conteudo');
+    const optionsConteudo = {
+      numVisible: 4,
+      maxVisible: 4, // Ajuste o número de imagens visíveis aqui
+      fullWidth: false,
+      padding: this.paddingConteudo,// Define o padding desejado,
+      autoplay: true, // Ativa o autoplay
+      interval: 2000,
+      opacity: false,
+      indicators: true// Intervalo em milissegundos entre as transições dos slides
+
+    };
+
+
+    M.Carousel.init(elemsConteudo, optionsConteudo);
+
+
+
+    
+    setTimeout(() => {
+      this.reinicializarCarrosselConteudoFeed();
+    }, 0); 
+
+    const elemsFeed = document.querySelectorAll('.carrossel-conteudo-feed');
+    const optionsFeed = {
+      numVisible: 4,
+      maxVisible: 4, // Ajuste o número de imagens visíveis aqui
+      fullWidth: false,
+      padding: this.paddingFeed,// Define o padding desejado,
+      autoplay: true, // Ativa o autoplay
+      interval: 2000,
+      opacity: false,
+      indicators: true// Intervalo em milissegundos entre as transições dos slides
+
+    };
+
+
+    M.Carousel.init(elemsFeed, optionsFeed);
+
+   
     console.log('tesste')
 
     document.addEventListener('DOMContentLoaded', function () {
@@ -419,36 +503,22 @@ const options = {
     // M.Carousel.init(elemsApelativo, optionsApelativo);
 
 
-    const elemsConteudo = document.querySelectorAll('.carrossel-conteudo');
-    const optionsConteudo = {
-      numVisible: 4,
-      maxVisible: 4, // Ajuste o número de imagens visíveis aqui
-      fullWidth: false,
-      padding: this.paddingConteudo,// Define o padding desejado,
-      autoplay: true, // Ativa o autoplay
-      interval: 2000,
-      opacity: false,
-      indicators: true// Intervalo em milissegundos entre as transições dos slides
-
-    };
-
-
-    M.Carousel.init(elemsConteudo, optionsConteudo);
 
 
 
-    const elemsFeed = document.querySelectorAll('.carrossel-conteudo-feed');
-    const optionsFeed = {
-      numVisible: 4,
-      maxVisible: 4, // Ajuste o número de imagens visíveis aqui
-      fullWidth: false,
-      padding: this.paddingFeed,// Define o padding desejado,
-      autoplay: true, // Ativa o autoplay
-      interval: 2000,
-      opacity: false,
-      indicators: true// Intervalo em milissegundos entre as transições dos slides
 
-    };
+    // const elemsFeed = document.querySelectorAll('.carrossel-conteudo-feed');
+    // const optionsFeed = {
+    //   numVisible: 4,
+    //   maxVisible: 4, 
+    //   fullWidth: false,
+    //   padding: this.paddingFeed,
+    //   autoplay: true, 
+    //   interval: 2000,
+    //   opacity: false,
+    //   indicators: true
+
+    // };
 
 
     M.Carousel.init(elemsFeed, optionsFeed);
@@ -542,6 +612,7 @@ const options = {
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {
     this.reinicializarCarrosselBanner();
+    this.reinicializarCarrosselConteudo();
     this.adjustSlidesPerView(event.target.innerWidth);
     // const newWidth = event.target.innerWidth;
     // if (newWidth !== this.windowWidth) {
