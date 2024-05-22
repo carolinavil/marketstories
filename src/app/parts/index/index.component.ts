@@ -25,7 +25,8 @@ export class IndexComponent implements OnDestroy {
   valorInicial: number = 0;
   valorFinal: number = 1000;
   showMenu = false;
-
+  private touchStartY: number = 0;
+  private touchEndY: number = 0;
   contadorLayouts: number = 0;
   contadorStories: number = 0;
   contadorAssessores: number = 0;
@@ -97,6 +98,22 @@ export class IndexComponent implements OnDestroy {
 
     library.addIcons(faBars, faXmark, faHouse, faInstagram, faLinkedin, faTwitter, faYoutube, faFacebook, faTiktok, faWhatsapp, faStar)
   }
+  @HostListener('touchstart', ['$event'])
+  onTouchStart(event: TouchEvent) {
+    this.touchStartY = event.touches[0].clientY;
+  }
+
+  @HostListener('touchend', ['$event'])
+onTouchEnd(event: TouchEvent) {
+  this.touchEndY = event.changedTouches[0].clientY;
+  this.checkPullToRefresh();
+}
+
+checkPullToRefresh() {
+  if (this.touchStartY - this.touchEndY > 150) {
+    // A pull down gesture was detected, refresh the page
+    location.reload();
+  }}
 
 
   teste44(){
@@ -254,6 +271,8 @@ const options = {
       seta.classList.toggle('link-on', scrollY > 700);
     }
   }
+
+  
 
   subir() {
     const scrollY = window.scrollY || window.pageYOffset;
