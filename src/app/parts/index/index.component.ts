@@ -202,6 +202,9 @@ export class IndexComponent implements OnDestroy {
   
 
   ngOnInit() {
+    this.reinicializarCarrosselBanner();
+
+
 
     const elemsBanner = document.querySelectorAll('.carrossel-banner');
     const optionsBanner = {
@@ -217,8 +220,6 @@ export class IndexComponent implements OnDestroy {
 
 
     M.Carousel.init(elemsBanner, optionsBanner);
-
-
 const options = {
       root: null,
       rootMargin: '0px',
