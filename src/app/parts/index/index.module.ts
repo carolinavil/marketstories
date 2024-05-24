@@ -17,6 +17,7 @@ import { PagamentoModule } from './pagamento/pagamento.module';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { TableModule } from 'primeng/table';
+import { IndexTesteComponent } from './indexTeste.component';
 
 register()
 
@@ -24,6 +25,7 @@ register()
 @NgModule({
   declarations: [
     IndexComponent,
+    IndexTesteComponent
 
   ],
   imports: [

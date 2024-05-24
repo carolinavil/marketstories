@@ -151,6 +151,23 @@ a.carousel-item.no-opacity-cont.active {
     ::ng-deep ul.indicators {
         margin-right: 3em !important;
     }
+
+    ::ng-deep     ul.indicators {
+        /* color: red !important; */
+        padding-bottom: 2em;
+        margin-right: 3em !important;
+        /* margin-top: -37px !important; */
+    }
+
+    ::ng-deep .carousel .indicators .indicator-item {
+        background: rgba(255, 255, 255, 0.295) !important;
+        /* background-color: #4bb9ec3d !important; */
+    }
+
+    ::ng-deep .carousel .indicators .indicator-item.active {
+        background: white !important;
+        /* background-color: #4BB9EC !important; */
+    }
 }
 
 @media screen and (min-width: 1040px) {

@@ -5,6 +5,7 @@ import { lastValueFrom } from 'rxjs';
 import { LoginModel } from '../../../models/pagamento.module';
 import { Router } from '@angular/router';
 
+declare var M: any;
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -15,7 +16,7 @@ export class LoginComponent {
   falhaLogin = false;
   id = 0;
   cus: any;
-
+  paddingConteudo = -100
   constructor(private vindiService: VindiService, private router: Router) {
     lastValueFrom(this.vindiService.getClientes()).then(res => {
       // Acessando diretamente o array customers
@@ -24,6 +25,26 @@ export class LoginComponent {
       console.log('clientes:', this.cus);
     });
   }
+
+
+
+  ngAfterViewInit(): void {
+    const elemsConteudo = document.querySelectorAll('.carrossel-conteudo');
+    const optionsConteudo = {
+      numVisible: 5,
+      maxVisible: 5, // Ajuste o número de imagens visíveis aqui
+      fullWidth: false,
+      padding: -1000,// Define o padding desejado,
+      autoplay: true, // Ativa o autoplay
+      interval: 2000,
+      opacity: false,
+      indicators: true// Intervalo em milissegundos entre as transições dos slides
+  
+    };
+    M.Carousel.init(elemsConteudo, optionsConteudo);
+  }
+
+
 
   send(form: NgForm) {
     console.log(this.loginModel);
