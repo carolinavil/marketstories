@@ -8,6 +8,13 @@
 /* @import "~primeng/resources/themes/saga-blue/theme.css"; */
 /*@import "~primeng/resources/primeng.min.css"; */
 
+.input-group {
+    position: relative;
+}
+
+
+
+
 
 * {
     font-family: "Montserrat", sans-serif !important;
@@ -21,7 +28,31 @@
 }
  .form-control:focus{
 box-shadow: none!important;
+border: 2px solid #007bff6c!important; /* Substitua pela cor desejada */
+transition: border-color 0.3s ease-in-out!important; /* Transição suave */
 }
+.check-icon{
+    color: green!important;
+  
+}
+
+
+.form-control {
+   
+}
+
+.form-control:hover {
+    border-color: #0056b3; /* Cor da borda ao passar o mouse */
+}
+
+.form-control:focus {
+    border-color: #003f7f; /* Cor da borda ao focar */
+}
+
+/* .form-control:valid + label.form-label {
+    color: green!important;
+} */
+
 
 /* .form-control:focus{
     border: 2px solid !important;
@@ -33,9 +64,7 @@ box-shadow: none!important;
   }
   
 
-.form-control:valid{
-    border-color: red!important;
-}
+
 
 .form-group:valid-within .form-label {
     color: red!important;

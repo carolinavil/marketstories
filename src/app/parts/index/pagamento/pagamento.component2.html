@@ -1,1465 +1,1070 @@
-/* @import 'primeng/resources/themes/saga-blue/theme.css'; */
-/* @import 'primeng/resources/primeng.min.css'; */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-/* @import '../../../../../node_modules/bootstrap/dist/css/bootstrap.min.css'; */
+<!-- <section class="caixa-forms">
 
-/* @import '~bootstrap/dist/css/bootstrap.min.css'; */
 
-/* @import "~primeng/resources/themes/saga-blue/theme.css"; */
-/*@import "~primeng/resources/primeng.min.css"; */
-
-
-* {
-    font-family: "Montserrat", sans-serif !important;
-    padding: 0;
-    margin: 0;
-}
-
-.str{
-    font-weight: 600;
-    color:#653d91 ;
-}
-
-.caixa-titulos {
-    display: flex;
-    flex-flow: column;
-    align-items: center;
-}
-
-
-.caixa-balao{
-    text-align: center;
-    background: linear-gradient(to right, #653d91, #2687b4);
-    display: inline-block;
-    padding: 0.5em 1em;
-    border-radius: 7em;
-    margin-bottom: 2em;
-    color: white;
-    font-weight: 500;
-}
-
-
-.caixa-logo-formulario {
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.pessoal.ng-star-inserted {
-    /* padding: 33em 0; */
-    margin-top: 2em;
-}
-section.box {
-    background: linear-gradient(to bottom, #2165AB, #62A6EC, #62A6EC, #1F5EA0);
-}
-
-
-
-.form-control,
-.drop {
-    border-radius: 20px !important;
-    border: 1px solid  #00000054 !important;
-    margin: 1em 0 !important;
-    height: 2.5rem !important;
-}
-
-
-
-.form-label-explicacao {
-    font-weight: 400;
-}
-
-.prox-btn {
-    background: #3E6AAD;
-    color: white;
-    font-weight: 700;
-    padding: 0.9em 1.2em;
-    border-radius: 60px;
-}
-
-/* .txt-form {
-    font-size: 15px;
-    text-align: center;
-    color: rgba(0, 0, 0, 0.5);
-    padding: 2em 2em 0 2em;
-} */
-
-/* .titulo-caixa-form {
-    color: #643f93;
-    font-weight: 600;
-    text-align: center;
-    font-size: 60px;
-} */
-
-
-
-/* .img-bg-pagamento {
-    position: absolute;
-    left: 0;
-    bottom: 66px;
-    width: 33%;
-} */
-
-
-.form-pagamento {
-    position: absolute;
-    width: 68%;
-    height: 100vh;
-    right: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.caixa-file {
-    display: flex;
-    flex-flow: column;
-}
-
-.formulario {
-    width: 100%;
-
-}
-
-li.nav-item.ng-star-inserted {
-    width: 170px;
-    display: flex;
-    justify-content: center;
-}
-
-
-::ng-deep ul.nav.nav-pills.nav-justified.header-steper {
-    display: flex;
-    display: flex;
-    justify-content: center;
-    /* align-items: center; */
-}
-
-::ng-deep button.nav-link.py-3.fw-bold {
-    margin: 0 1em;
-}
-
-
-::ng-deep button.nav-link {
-    background: none !important;
-    color: rgb(39, 39, 39) !important;
-    font-weight: 500 !important;
-    cursor: pointer !important;
-}
-
-
-::ng-deep button.nav-link.active {
-    background: none !important;
-    color: #137fcb !important;
-    font-weight: 500 !important;
-    cursor: hover !important;
-}
-
-.d-flex.justify-content-between.flex-row.mb-5.mt-4 {
-    display: flex;
-    justify-content: center
-}
-
-div#inicio {
-    justify-content: end;
-}
-
-
-.caixa-form {
-    max-height: 100vh;
-    min-height: 100vh;
-}
-
-label {
-    font-size: 1rem;
-    font-weight: 500;
-    color: #717171;
-}
-
-.caixa-arquivo {
-    display: flex;
-    flex-flow: column;
-}
-
-
-.caixa-logo2 {
-    position: absolute;
-    height: 100%;
-    width: 32%;
-    background: linear-gradient(317deg, #DA6627, #643C8E, #120031, #120031);
-}
-
-h1.titulo-mk {
-    font-weight: 700;
-    font-size: 44px;
-    background: linear-gradient(5deg, #1a3c71, #355595);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-
-}
-
-
-
-h1.titulo-caixa-logo2 {
-    font-size: 33px;
-    text-align: center;
-    margin: 0 1em;
-    padding-top: 1em;
-    font-weight: 600;
-    color: white;
-}
-
-.txt-form {
-    text-align: center;
-    width: 60%;
-}
-
-.caixa-txt {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-bottom: 2em;
-    flex-flow: column;
-}
-
-img.img-exemplo-insta {
-    padding: 1em 0 2em 0;
-    width: 39%;
-}
-
-.form-group {
-    margin: 0.5em 0 !important;
-}
-
-
- .item-slide-cadastro{
-    width: 100%;
-} 
-
-.imagem-astronauta {
-    right: 0;
-    position: absolute;
-}
-
-.tes{
-    padding-top: 1em;
-}
-.titulo-cadastro {
-    text-align: center;
-    font-size: 28px;
-    font-weight: 600;
-    /* padding: 8em 0; */
-    margin: 1em 0 !important;
-    color: #62a6ec;
-}
-
-.titulo-secao{
-    text-align: center;
-    font-size: 28px;
-    font-weight: 600;
-    color: #62a6ec; 
- margin-bottom: 15px;
-}
-
-p.subtitulo-secao {
-    font-size: 14px;
-    text-align: center;
-    padding-bottom: 2em;
-    color: #000000a6;
-}
-
-p.img-selecionada {
-    font-weight: 500;
-    color: #4BB9EC;
-    font-size: 15px;
-    padding-top: 1em;
-}
-
-@media screen and (min-width: 1040px) {
-
-.titulo-banner{
-font-size: 40px;
-}
-
-.logo-caixa {
-    width: 70%;
-    padding-bottom: 2em;
-}
-
-.imagem-astronauta{
-    width: 85%;
-}
-
-.caixa-logo{
-    padding-left: 4em;
-    padding-top: 3em;
-}
-
-}
-
-
-@media screen and (min-width: 1300px) {
-
-    .titulo-banner{
-        font-size: 45px;
-        }
-        
-
-}
-
-
-
-
-@media screen and (min-width: 1300px) {
-
-    .titulo-banner{
-        font-size: 45px;
-        }
-        
-
-}
-
-
-@media screen and (min-width: 1500px) {
-
-    .titulo-banner{
-        font-size: 50px;
-        }
-        
-        .imagem-astronauta{
-            width: 75%;
-        }
-      
-                
-}
-
-@media screen and (min-width: 1700px) {
-
-    .titulo-banner{
-        font-size: 55px;
-        }
-        
-        .imagem-astronauta{
-            width: 70%;
-            bottom: 20px;
-        }
-      
-                
-}
-
-@media screen and (min-width: 1800px) {
-
-    .titulo-banner{
-        font-size: 55px;
-        }
-        
-        .imagem-astronauta{
-            width: 65%;
-          
-         
-        }
-      
-                
-}
-
-
-
-
-
-
-
-
-/* @media screen and (min-width: 900px) {
-
-
-
-    img.img-caixa-astronauta {
-        position: absolute;
-        bottom: 0;
-        right: -24px;
-        width: 100%;
-
-    }
-
-} */
-
-/* @media screen and (min-width: 1300px) {
-    img.img-caixa-logo2 {
-        width: 100%;
-        position: absolute;
-        top: 303px;
-        right: -66px;
-    }
-
-
-    img.img-caixa-astronauta {
-        position: absolute;
-
-        bottom: 0;
-        right: -24px;
-        width: 90%;
-
-    }
-
-} */
-
-/* @media screen and (min-width: 1700px) {
-    img.img-caixa-logo2 {
-        width: 100%;
-        position: absolute;
-        top: 215px;
-        right: -66px;
-    }
-
-
-    img.img-caixa-astronauta {
-        position: absolute;
-      
-        bottom: 0;
-        right: -24px;
-        width: 40%;
-
-
-    }
-
-} */
-
-.row.ng-star-inserted {
-    margin: 2em 0
-}
-
-
-
-.caixa-astronauta {
-    width: 32%;
-    background: linear-gradient(317deg, #DA6627, #643C8E, #120031, #120031);
-    height: 100% !important;
-    position: absolute;
-}
-
-.caixa-astronauta {
-    width: 32%;
-}
-
-
-.titulo-caixa {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-flow: column;
-}
-
-.espacametno {
-    padding-top: 40em;
-    width: 50%;
-
-}
-
-
-
-.caixa-btn-telefone {
-    display: flex;
-    align-items: center;
-}
-
-.btn-telefone {
-    padding: 0.5em;
-    margin-left: 1em;
-    background: #057ec3;
-    border: none;
-    border-radius: 40px;
-    transition: 0.9s;
-    cursor: pointer;
-}
-
-.btn-telefone label {
-    font-weight: 600;
-    color: white;
-    font-size: 15px;
-}
-
-.btn-stepper {
-    /* padding: 0.5em; */
-    /* margin-left: 1em; */
-    background: #683c92;
-    color: white;
-    border: none;
-    font-size: 15px;
-    transition: 0.9s;
-    cursor: pointer;
-}
-
-/* ::ng-deep div#drops {
-    border-radius: 54px;
-    width: 100% !important;
-    height: 2.5rem;
-    align-items: center;
-    margin-top: 1em;
-    border-color:  #00000054 ;
-    
-} */
-
-
-
-h5.titulo-formulario {
-    margin-left: 0.4em;
-    width: 100%;
-    border-bottom: 1px solid #adadad4d;
-    padding-bottom: 0.7em;
-    color: #adadad;
-    font-size: 19px;
-    font-weight: 600;
-    color: #056997;
-    margin-bottom: 2em;
-    /* margin: 1em; */
-
-}
-
-.caixa-input-telefone.ng-star-inserted {
-    display: flex;
-    align-items: center;
-}
-
-button.p-element.btn-excluir-telefone.p-button.p-component {
-    width: 20%;
-    margin-left: 1em;
-    background: transparent;
-    border: none;
-}
-
-
-.caixa-logo {
-    height: 100%;
-    position: absolute;
-    left: 0;
-    /* width: 30%; */
-    /* background: linear-gradient(317deg, #DA6627, #643C8E, #120031, #120031); */
-    width: 35%;
-    overflow: hidden;
-    /* box-shadow: -13px -3px 4px 4px #DA6627, 0 0 12px 0 #FF72A0, 0 0 7px 0 #BC72FF, 0 0 3px 0 #643C8E; */
-    /* box-shadow: -3px 3px 15px 3px #9457cf; */
-}
-
-/* .caixa-formulario {
-    position: absolute;
-    right: 0;
-} */
-
-.imagem-astronauta {
-    object-fit: cover;
-    display: inline-block;
-    /* right: -38px !important; */
-
-    animation: floatAstronaut 5s ease-in-out infinite alternate;
-}
-
-/* 
-.imagem-astronauta {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-} */
-
-
-
-h1.titulo-banner {
-    text-align: start;
-    color: white;
-    /* font-size: 38px; */
-    font-weight: 600;
-    /* padding-top: 1em; */
-}
-
-.texto-caixa-logo {
-    text-align: start;
-    /* padding-top: 3em; */
-}
-
-label.form-label {
-    font-weight: 600;
-    color: rgb(39, 39, 39);
-}
-
-.icone-lixo {
-    color: #056997;
-    font-size: 20px;
-}
-
-.logo-formulario {
-    text-align: center;
-    width: 35%;
-}
-
-.img-formulario {
-    text-align: center;
-    padding-top: 3em;
-}
-
-
-/* astronauta */
-
-/* 
-@media screen and (min-width: 1200px) {
-
-    .imagem-astronauta {
-        position: absolute;
-        object-fit: cover; 
-        display: inline-block; 
-        bottom: 0;
-        width: 77%;
-     
-        right: 0;
-        bottom: 10px;
-    }
-    .form-label {
-        font-size: 15px;
-    }
-} */
-
-/* @media screen and (min-width: 200px) {
-    .caixa-logo {
-        display: none;
-    }
-
-    .caixa-formulario {
-        width: 100%;
-        position: relative;
-
-    }
-
-
-
-} */
-
-
-@media screen and (min-width: 1100px) {
-
-    .caixa-voltar-mobile {
-
-        display: none;
-    }
-    .caixa-formulario {
-        position: absolute;
-        max-height: 100%;
-        right: 0;
-        /* padding-top: 5em; */
-        overflow-y: auto;
-        padding-bottom: 4em;
-        scrollbar-width: thin;
-        scrollbar-color: #888888 #f0f0f0;
-    }
-
-
-    .caixa-formulario::-webkit-scrollbar {
-        width: 8px;
-    
-    }
-
-    .caixa-formulario::-webkit-scrollbar-track {
-        background: #f0f0f0;
-        
-    }
-
-    .caixa-formulario::-webkit-scrollbar-thumb {
-        background-color: #888888;
-  
-        border-radius: 4px;
-     
-    }
-
-
-
-    .caixa-formulario {
-        width: 70%;
-
-    } 
-
-
-
-    /* .imagem-astronauta {
-        position: absolute;
-        object-fit: cover;
-        display: inline-block;
-        bottom: 0;
-        width: 60%;
-        right: 50px;
-        left: 50px;
-    } */
-  
-  
-}
-
-/* @media screen and (min-width: 1200px) {
-
-    h1.titulo-banner {
-        font-size: 40px;
-        text-align: start;
-    }
-
-    .imagem-astronauta {
-        position: absolute;
-        object-fit: cover;
-        display: inline-block;
-    
-        bottom: 40px;
-        width: 90%;
-        right: -15px;
-    }
-
-    .caixa-logo{
-        width: 40%;
-        padding-left: 68px;
-        padding-top: 2em;
-     
-    }
-} */
-
-
-/* @media screen and (min-width: 1500px) {
-
-    h1.titulo-banner {
-        font-size: 55px;
-        padding-top: 0.5em;
-        width: 90%;
-    }
-
-    .imagem-astronauta {
-        width: 60%;
-    }
-} */
-
-/* @media screen and (min-width: 1900px) {
-
-    h1.titulo-banner {
-        font-size: 55px;
-        padding-top: 0.5em;
-        width: 90%;
-    }
-
-    .imagem-astronauta {
-        width: 55%;
-    }
-} */
-
-fa-icon.ng-fa-icon.icone-seta {
-    /* background: white; */
-    /* padding: 0.1em 0.4em; */
-    color: white;
-    /* border-radius: 31px; */
-    flex-flow: column;
-    text-align: center;
-    font-size: 25px;
-}
-
-.btns-caixa {
-    padding: 2em 0;
-}
-
-.icone-seta-plus {
-    margin-left: 0.5em;
-}
-
-.row.caixa-telefone {
-    max-height: 200px;
-    overflow-y: auto;
-}
-
-.text-danger {
-    color: red;
-}
-
-
-
-.form-control {
-    height: 2rem !important;
-}
-
-
-
-.telefone-explicacao {
-    margin: 1em 0 !important;
-}
-
-
-.custom-file-upload {
-    cursor: pointer;
-    background-color: #4BB9EC;
-    color: #fff;
-    padding: 5px;
-    display: block;
-    text-align: center;
-    height: 2.5rem;
-    align-items: center;
-    border-radius: 60px;
-    /* width: 30%; */
-}
-
-.custom-file-upload:hover {
-    background-color: #247da6;
-}
-
-.img-escolhida-instagram {
-    max-width: 100%;
-    max-height: 300px;
-    margin-top: 10px;
-
-}
-
-
-
-
-img.imagem-escolhida-instagram.ng-star-inserted {
-    padding-top: 3em;
-    max-width: 200px;
-
-}
-
-.btns-arrow {
-    width: 40%;
-    display: flex;
-    justify-content: space-between;
-}
-
-.caixa-imagem {
-    display: flex !important;
-    flex-flow: column !important;
-}
-
-.space {
-    background-color: #000;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.astronaut {
-    width: 200px;
-    /* Ajuste conforme necessário */
-    height: auto;
-
-}
-
-@keyframes floatAstronaut {
-    0% {
-        transform: translateY(-10px);
-    }
-
-    100% {
-        transform: translateY(10px);
-    }
-}
-
-.caixa-aviso-pagamento{
-    padding: 2em 0;
-    text-align: center;
-}
-
-/* .form-control:valid{
-    border: 1px solid black!important;
-} */
-
-
-
-.endereco.ng-star-inserted {
-    /* margin-top: 3em; */
-    border-top: 2px solid transparent; /* Define uma borda transparente inicialmente */
-    /* border-image: linear-gradient(to right,#5fa0ce71, #683c92, #5fa0ce71); */
-    border-image-slice: 1; /* Define a largura do gradiente */
-}
-
-
-.footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 120%; /* Largura maior que a página */
-    height: 200px; /* Altura do rodapé */
-    background-color: #007bff; /* Cor de fundo do rodapé */
-    overflow: hidden;
-    transform: translateX(-10%); /* Move para a esquerda para manter o centro */
-    z-index: 9999; /* Garante que fique acima de outros elementos */
-    transition: width 0.5s ease; /* Transição suave para largura */
-  }
-  
-  .footer::after {
-    content: '';
-    position: absolute;
-    bottom: -50px; /* Altura da ondulação */
-    left: 0;
-    width: 100%;
-    height: 300px; /* Altura da ondulação */
-    background-color: #0056b3; /* Cor de fundo da ondulação */
-    border-radius: 50%;
-  }
-  
-  .footer-expanded {
-    width: 200%; /* Largura expandida */
-  }
-
-  .teste123{
-    background: linear-gradient(to bottom right, #693c91, #176aaa)!important;
-    height: 100%;
-  }
-
-  .imagem-ex-instagram img {
-    width: 44%;
-}
-
-.box-cartao{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 1em 0 ;
-}
-.cartao {
-    background: linear-gradient(to bottom, #cdcdcd, #c5c5c5, #c5c5c5, #a9a9a9);
-    height: 170px;
-    width: 320px;
-    border-radius: 14px;
-    box-shadow: 3px 1px 5px 2px #00000017;
-}
-
-.cartao-infos{
-    display: flex;
-}
-
-.cartao-infos, .cartao-numero-valor, .cartao-bandeira{
-    margin: 0 20px;
-}
-
-p.cartao-titulo {
-    font-size: 11px;
-}
-
-p.cartao-nome{
-    font-size: 13px;
-    font-weight: 500;
-
-}
-
-/* .cartao-infos{
-    padding: 0.2em 20px;
-} */
-
-.cartao-numero-valor{
-    font-size: 24px;
-    margin: 0.5em 20px;
-}
-
-.img-bandeira {
-    text-align: end;
-    width: 30%;
-}
-.cartao-bandeira {
-    text-align: end;
-    padding-top: 1em;
-}
-
-
-.cartao-input{
-
-}
-#bandeira-exemplo{
-    width: 25%;
-}
-
-.cartao-input{
-    border: none!important;
-    font-size: 16px;
-    padding-left: 0!important;
-    background: transparent;
-    border: none;
-    /* padding: 0 !important;
-    margin: 0 !important; */
-}
-
- .cartao-nomes{
-    width: 385px;
-} 
-
-.box-cartao-valores{
-    display: flex!important;
-}
-
-.cartao-valor{
-    padding-top: 0.7em;
-}
-
-::ng-deep .ui-progressbar-value {
-    background-color: #ef5439;
-  }
-
-  
-  ::ng-deep .customProgress .ui-progressbar .ui-progressbar-value {
-    background: #ef5439;
-}
-
-
-img.imagem-exp {
-    width: 77%;
-}
-
-
-
-.caixa-imagem-exp-esq{
-    display: flex;
-    align-items: center;
-    justify-content: start!important;
-}
-
-.caixa-imagem{
-    width:50%;
-    padding-top: 1em;
-   
-}
-
-
-
-/* .caixa-file{
-    align-self: center!important;
-} */
-
-
-.form-group {
-    align-items: center;
-    align-self: center;
-}
-
-
-
-
-::ng-deep .p-progress-spinner {
-    position: relative;
-    margin: 0 auto;
-    /* width: 56px; */
-    /* height: 37px; */
-    width: 20px!important;
-    height: 24px!important;
-    display: inline-block;
-}
-
-::ng-deep svg.svg-inline--fa.fa-arrow-left {
-    color: white!important;
-}
-
-@media screen and (min-width: 9px) {
-
-    p.porDesconto {
-        margin-left: 1em;
-    }
-    .textos-caixa-desconto {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-flow: column;
-        color: white;
-    }
-    .caixas-desconto{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 1em;
-    }
-    p.plano-desconto {
-        display: flex;
-        flex-flow: column;
-        align-items: center;
-    }
-    
-    .caixas-desconto2 {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 0.5em;
-        line-height: 26px;
-        position: relative;
-        margin-top: -19px;
-    }
-
-    p.prct-desconto {
-        font-size: 60px;
-        font-weight: 600;
-    }
-    
-    p.plano-desconto {
-        font-size: 21px;
-        line-height: 23px;
-    }
-    p.plano-desconto {
-        font-weight: 600;
-    }
-    
-    span.light-plano-desconto {
-        font-weight: 300;
-    }
-    
-    span.enfaseDe {
-        font-weight: 600;
-        font-size: 21px;
-    }
-    
-    span.enfasePor {
-        font-weight: 700;
-        font-size: 37px;
-    }
-
-    .caixa-desconto{
-        margin: 2em 0;
-        margin-left: calc(10em - 11em);
-        background: linear-gradient(to right, #653d91, #2687b4);
-        width: calc(100% + 2em);
-        box-sizing: border-box;
-        /* margin: 2em 0; */
-    }
-
-    .caixa-desconto{
-        margin: 2em 0;
-        margin-left: calc(12em - 14em);
-        background: linear-gradient(to right, #653d91, #2687b4);
-        background-color: red;
-        width: calc(100% + 4em);
-        box-sizing: border-box;
-        min-height: 7em;
-    }
  
-    ::ng-deep span.ng-star-inserted {
-  
-        font-size: 11px;
-    }
-    
-.caixa-balao-desktop{
-    display: none!important;
-}
- 
-    .caixa-voltar-mobile{
-        display: block;
-        background: #62a6ec;
-        margin: 1em 1em 0em 0em 2em;
-        padding: 0.4em 1em;
-        width: auto;
-        margin: 1em 1em 0em 1em;
-        border-radius: 21em;
-        display: inline-block;
-    }
-   .logo-formulario{
-    width: 100%;
-   }
-
-   .titulo-secao{
-    font-size: 24px;
-   }
-
-   .caixa-logo-formulario {
-    /* width: 89%; */
-    margin: 0 3em;
-    margin-top: 3em;
-}
-    ::ng-deepdiv#drops {
-        border-radius: 54px;
-        width: 100% !important;
-        height: 2.5rem;
-        align-items: center;
-        margin-top: 1em;
-        border-color: #00000054;
-        max-width: 323px!important;
-    }
-
-        
-    #drops2 {
-        border-radius: 54px;
-        width: 100% !important;
-        height: 2.5rem;
-        align-items: center;
-        margin-top: 1em;
-        border-color: #ff000054;
-        max-width: 400px!important;
-    }
-    .testedrop{
-        background-color: red!important;
-        max-width: 74%!important;
-    }
-
-    .item-slide-cadastro {
-        width: 80%;
-    }
-
-    section.box {
-        background: transparent;
-    }
-
-    img.logo-caixa {
-        display: none;
-    }
-    .caixa-logo {
-        display: none;
-    }
-
-    section.box{
-        min-height: 100vh;
-        height: 100%;
-        
-    }
 
 
-    .carousel .carousel-item > img {
-        width: 99%;
-        margin: 0 -9em;
-    }
-    /* img.item-slide-cadastro {
-        width: 35%;
-    }  */
+</section> -->
 
+<!-- <div class="caixa-logo">
+    <div class="texto-caixa-logo">
+        <h1 class="titulo-banner">Para manter-se no topo, é preciso rapidez </h1>
+        <img src="../../../../assets/img/Logo P&B MarketStories 2.png" alt="" class="logo-caixa">
+    </div>
+    <img src="../../../../assets/img/astronauta2 (2).png" alt="" class="imagem-astronauta">
 
-    /* .carrossel-desktop{
-        display: none;
-    } */
-
-    
-    .carrossel-mobile{
-        display: block;
-    }
-
-    .row.row-exp {
-        display: flex;
-        flex-flow: column;
-        justify-content: center;
-        align-items: center;
-        margin: 2em 0 3em 0;
-    }
-
-    .caixa-imagem-exp {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 71%;
-    }
-
-    label.form-control {
-        border: none !important;
-        color: white;
-        background: #62a6ec;
-        padding: 0.2em 1em;
-        width: 100%;
-        text-align: center;
-    }
-    
-    
-.hidden {
-    display: none;
-}
-
-swiper-container.carrossel-desktop.ng-star-inserted {
-    /* background: red; */
-    max-width: 100vw;
-    display: inline-grid;
-}
-}
-
-
-::ng-deep .ng-tns-c3756965041-1.p-overlay.p-component.ng-star-inserted {
+<div>
    
-    width: 100%!important;
-}
-.caixa-voltar {
-    display: inline-block;
-    background: #683c92;
-    padding: 0.5em 1em;
-    border-radius: 3em;
-    margin-bottom: 2em;
-}
-a.link-voltar {
-    font-weight: 600;
-    padding-left: 0.5em;
-    color: white;
-}
+</div>
+
+</div> -->
+
+<router-outlet></router-outlet>
 
 
 
 
-@media screen and (min-width: 1040px) {
-    p.porDesconto {
-        margin-left: 0;
-    }
-    .textos-caixa-desconto{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: white;
-    }
-    
-    .caixas-desconto{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 1em;
-    }
-    p.plano-desconto {
-        display: flex;
-        flex-flow: column;
-        align-items: center;
-    }
-    
-    .caixas-desconto2 {
-        display: flex;
-        flex-flow: column !important;
-        justify-content: start;
-        align-items: start;
-        padding: 0.5em;
-        line-height: 26px;
-        position: relative;
-      }
-    
-      .caixas-desconto2::before {
-        content: '';
-        position: absolute;
-        left: 0;
-        top: 50%;
-        transform: translateY(-50%);
-        height: 50%; /* Ajuste a altura conforme necessário */
-        width: 1px;
-        background-color: rgba(255, 255, 255, 0.712);
-      }
-    p.prct-desconto {
-        font-size: 60px;
-        font-weight: 600;
-    }
-    
-    p.plano-desconto {
-        font-size: 24px;
-        line-height: 23px;
-    }
-    
-    p.plano-desconto {
-        font-weight: 600;
-    }
-    
-    span.light-plano-desconto {
-        font-weight: 300;
-    }
-    
-    span.enfaseDe {
-        font-weight: 600;
-        font-size: 21px;
-    }
-    
-    span.enfasePor {
-        font-weight: 700;
-        font-size: 37px;
-    }
-
-    .caixa-desconto{
-        margin: 2em 0;
-        margin-left: calc(10em - 11em);
-        background: linear-gradient(to right, #653d91, #2687b4);
-        width: calc(100% + 2em);
-        box-sizing: border-box;
-        /* margin: 2em 0; */
-    }
-    ::ng-deep span.ng-star-inserted {
-  
-        font-size: 16px;
-    }
-    .caixa-balao-desktop{
-        display: block!important;
-    }
-    p.texto-caixa-balao {
-        font-size: 17px;
-    }
-    .caixa-voltar-mobile {
-        display: none
-                
-            }
-            
-    .titulo-secao{
-        font-size: 28px;
-       }
-    
-    .caixa-logo-formulario{
-        display: none;
-    }
-       
-    ::ng-deep div#drops {
-        border-radius: 54px;
-        width: 100% !important;
-        height: 2.5rem;
-        align-items: center;
-        margin-top: 1em;
-        border-color: none!important;
-        max-width: none!important;
-    }
-
-    section.box {
-        background: linear-gradient(to bottom, #2165AB, #62A6EC, #62A6EC, #1F5EA0);
-    }
-
-    .hidden {
-        display:block
-    }
-    label.form-control {
-        border: none !important;
-        color: white;
-        background: #62a6ec;
-        padding: 0.2em 1em;
-        width: 50%;
-        text-align: start;
-    }
-    
-    .caixa-imagem-exp {
-        display: flex;
-        justify-content: end;
-        align-items: center;
-        width: 65%;
-    }
-    
-    .carrossel-mobile{
-        display: none;
-    }
-
-    .carrossel-desktop{
-        display: block!important;
-    }
-    
-
-    img.logo-caixa {
-
-        display: block;
-    }
-    .caixa-logo {
-        display: block;
-    }
-
-    section.box {
-       
-        height: 100vh;
-    }
-
-    img.imagem-astronauta {
-        display: none !important;
-    }
-
-    .row.row-exp {
-        display: flex;
-        flex-flow: row;
-        align-items: start;
-        justify-content: space-between;
-        margin: 2em 0 3em 0;
-    }
-    
-    
-}
 
 
-@media screen and (min-width: 1200px) {
+<body>
+
+    <section class="box">
+        <div class="caixa-logo">
+            <div class="caixa-voltar" routerLink="../">
+                <fa-icon [icon]="['fas','arrow-left']"></fa-icon>
+                <a routerLink="../" class="link-voltar">Voltar</a>
+            </div>
+            <div class="texto-caixa-logo">
+                <img src="../../../../assets/img/Logo P&B MarketStories.png" alt="" class="logo-caixa">
+                <h1 class="titulo-banner">Para manter-se no topo, é preciso rapidez </h1>
+                <!-- <img src="../../../../assets/img/Logo P&B MarketStories 2.png" alt="" class="logo-caixa"> -->
+            </div>
+            <img src="../../../../assets/img/astronauta2 (2).png" alt="" class="imagem-astronauta">
+        </div>
+        <form #form="ngForm" class="needs-validation formulario " (submit)="send(form)">
+
+            <!-- <form #form="ngForm" class="needs-validation formulario " > -->
+            <div class="caixa-voltar-mobile" routerLink="../">
+                <fa-icon [icon]="['fas','arrow-left']"></fa-icon>
+                <a class="link-voltar">Voltar</a>
+            </div>
+            <a href="https://lottie.host/embed/c7f9f151-c2fb-4537-8f9f-348cc37b0727/TS10GE1hWz.json"></a>
+            <div class="caixa-formulario">
+                <!-- <h1 >Be</h1> -->
+                <!-- <div class="img-formulario">
+                        <img src="../../../../assets/img/Logo Colorido MarketStories (1).png" alt="" class="logo-formulario">
+                    </div>
+                     -->
+                <div class="caixa-logo-formulario">
+                    <div class="caixa-balao ">
+                        <p class="texto-caixa-balao">10 dias grátis sem fidelidade!</p>
+                    </div>
+                    <img src="../../../../assets/img/Logo Colorido MarketStories (1).png" alt=""
+                        class="logo-formulario">
+
+                </div>
+
+                <app-stepper [linearModeSelected]="false" #appStepper>
+
+                    <form #form1="ngForm" class="needs-validation formulario " > 
+
+                        <!-- <app-stepper [linearModeSelected]="false" [teste]="'fa-brands fa-instagram'" #appStepper> -->
+                        <cdk-step [label]="'Checkout'" #step1>
+
+                            <div class="pessoal" style="padding-top:30px">
+                                <i class="fa-solid fa-user"></i>
+                                <div class="caixa-titulos">
+                                    <div class="caixa-balao-desktop caixa-balao">
+                                        <p class="texto-caixa-balao">10 dias grátis sem fidelidade!</p>
+                                    </div>
+                                    <h1 class="titulo-secao">
+                                        Informações de Checkout
+                                    </h1>
+                                    <p class="subtitulo-secao">Precisamos desses detalhes para processar seu pedido e
+                                        garantir que os layouts cheguem direitinho até você. Por favor, confira se tudo
+                                        está correto!</p>
+                                </div>
+                            </div>
+
+                            <!-- <div class="row form-group">
+                                <h5 class="titulo-formulario">
+                                    Dados pessoais
+                                  
+                                </h5>
+                            </div> -->
+                            <!-- <fa-icon [icon]="['fas','location-dot']"></fa-icon> -->
+
+                            <div class="row d-flex align-item-center">
+                                <div class="form-group col s12 m6" [ngClass]="{'has-success': name.valid}">
+                                    
+                                    <label class="form-label">Nome <span class="text-danger" *ngIf="!name.valid" >*</span> </label>
+                                    <fa-icon *ngIf="name.valid" [icon]="['fas','circle-check']" class="check-icon" class="check-icon"></fa-icon>
+                                    <!-- <div *ngIf="name.valid"><fa-icon [icon]="['fas','arrow-right']" ></fa-icon></div> -->
+                                    
+                                    <div class="input-group">
+                                        <input [(ngModel)]="clienteModel.name" class="form-control" name="name"
+                                            id="name" #name="ngModel" required autocomplete="off"
+                                            style="padding-left: 15px" >
+                                           
+                                        <span class="input-group-addon" [ngClass]="{'input-success': name.valid}">
+                                            <i class="fas fa-check" *ngIf="name.valid"></i>
+                                        </span>
+                                    </div>
+                                    <div *ngIf="name.touched && name.errors">
+                                        <p class="text-danger" *ngIf="name.errors['required']">Este campo é
+                                            obrigatório.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="form-group col s12 m6">
+                                    
+                                    <label class="form-label">E-mail <span class="text-danger" *ngIf="!email.valid" >*</span></label>
+                                    <fa-icon *ngIf="email.valid" [icon]="['fas','circle-check']" class="check-icon" ></fa-icon>
+                                    <input required type="text" class="form-control" [(ngModel)]="clienteModel.email"
+                                        type="email" class="form-control" email="email" id="email" name="email"
+                                        #email="ngModel" placeholder="example@hotmail.com" required
+                                        style="padding-left: 10px ;">
+                                    <div *ngIf="email.touched && email.errors">
+                                        <p class="text-danger" *ngIf="email.errors['required']">Este campo é
+                                            obrigatório.</p>
+                                        <p class="text-danger" *ngIf="email.errors['email']">E-mail inválido</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+
+                                <div class="form-group col s12 m12">
+                                    <label for="" class="form-label-explicacao">Você cadastrará uma senha para
+                                        acesso ao
+                                        painel de controle.</label>
+                                </div>
+                                <div class="form-group col s12 m6">
+                                    <label class="form-label">Senha <span class="text-danger" *ngIf="!senha.valid" >*</span> </label>
+                                    <fa-icon *ngIf="senha.valid" [icon]="['fas','circle-check']" class="check-icon" ></fa-icon>
+                                    <input type="password" class="form-control" [(ngModel)]="primeiraSenha"
+                                        #senha="ngModel" name="senha" id="senha" [required]="primeiraSenha"
+                                        autocomplete="off" style="padding-left: 10px; " senha="senha" required>
+                                    <!-- <input required type="text" class="form-control" [(ngModel)]="primeiraSenha"
+                                        type="senha" class="form-control" senha="senha" id="senha" name="senha"
+                                        [required]="primeiraSenha !== ''"
+                                        #senha="ngModel" autocomplete="off"  required
+                                        style="padding-left: 10px ;"> -->
+                                    <div *ngIf="senha.touched && senha.errors">
+                                        <p class="text-danger" *ngIf="senha.errors['required']">Este campo é
+                                            obrigatório.</p>
+
+                                    </div>
+                                </div>
+                                <!-- <div class="form-group col s12 m6">
+                                    <label class="form-label">Senha <span class="text-danger">*</span></label>
+                                    <input type="password" class="form-control" [(ngModel)]="primeiraSenha"
+                                        #senha="ngModel" name="senha" id="senha" [required]="primeiraSenha !== ''"
+                                        autocomplete="off" style="padding-left: 10px; " required>
+                                        <div *ngIf="senha.touched && senha.errors">
+                                            <p class="text-danger" *ngIf="senha.errors['required']">Este campo é
+                                                obrigatório.</p>
+                                            <p class="text-danger" *ngIf="senha.errors['senha']">E-mail inválido</p>
+                                        </div>
+                                </div> -->
+
+                                <div class="form-group col s12 m6">
+                                    <label class="form-label">Confirmar Senha <span class="text-danger" *ngIf="!senhaConf.valid || verdade || !senhaConf.valid"  >*</span></label>
+                                    <fa-icon *ngIf="senhaConf.value && !verdade" [icon]="['fas', 'circle-check']" class="check-icon"></fa-icon>
+                                    <input type="password" class="form-control" [(ngModel)]="usuariosModel.senha"
+                                    #senhaConf="ngModel"
+                                        name="confirmarSenha" id="confirmarSenha" required autocomplete="off"
+                                        (input)="teste()" style="padding-left: 10px; ">
+                                    <div *ngIf="verdade">
+                                        <p class="text-danger">As senhas não coincidem.</p>
+                                    </div>
+                                </div>
+                            </div>
 
 
-    img.imagem-astronauta {
-        display: block !important;
-    }
-    
-}
+                            <h1 class="titulo-cadastro">Receba +400 stories personalizados por mês</h1>
+
+
+                            <!-- 
+                            <div class="carrossel carrossel-mobile ">
+                                <div class="carousel carrossel-banner" data-num-visible="4">
+                                    <a class="carousel-item no-opacity carousel-banner " href="#one!"> <img
+                                        src="../../../assets/img/indicesP.png" alt="" class="img-banner"></a>
+                                            <a class="carousel-item no-opacity carousel-banner " href="#one!"> <img
+                                                src="../../../assets/img/selicP.png" alt="" class="img-banner"></a>
+                                                <a class="carousel-item no-opacity carousel-banner " href="#one!"> <img
+                                                    src="../../../assets/img/ranking.png" alt="" class="img-banner"></a>
+                                                    <a class="carousel-item no-opacity carousel-banner " href="#one!"> <img
+                                                        src="../../../assets/img/nasdaqP.png" alt="" class="img-banner"></a>
+
+
+                                                        <a class="carousel-item no-opacity carousel-banner " href="#one!"> <img
+                                                            src="../../../assets/img/brasilAgoraP.png" alt="" class="img-banner"></a>
+                                                            <a class="carousel-item no-opacity carousel-banner " href="#one!"> <img
+                                                                src="../../../assets/img/minerioFerroP.png" alt="" class="img-banner"></a>
+                                                                <a class="carousel-item no-opacity carousel-banner " href="#one!"> <img
+                                                                    src="../../../../assets/img/fechamentoMercadoP.png" alt="" class="img-banner"></a>
+                                                                    <a class="carousel-item no-opacity carousel-banner " href="#one!"> <img
+                                                                        src="../../../assets/img/ethereumP.png" alt="" class="img-banner"></a>
+                                                                        <a class="carousel-item no-opacity carousel-banner " href="#one!"> <img
+                                                                            src="../../../assets/img/ttP.png" alt="" class="img-banner"></a>
+                                                                            <a class="carousel-item no-opacity carousel-banner " href="#one!"> <img
+                                                                                src="../../../assets/img/commoditiesAgricolaP.png" alt="" class="img-banner"></a>
+                                                                                <a class="carousel-item no-opacity carousel-banner " href="#one!"> <img
+                                                                                    src="../../../assets/img/superQuartaP.png" alt="" class="img-banner"></a>
+
+                                                                                    <a class="carousel-item no-opacity carousel-banner " href="#one!"> <img
+                                                                                        src="../../../assets/img/CommoditiesPetroleoP.png" alt="" class="img-banner"></a>
+                                                                                        <a class="carousel-item no-opacity carousel-banner " href="#one!"> <img
+                                                                                            src="../../../../assets/img/fundoImobiliarioP.png" alt="" class="img-banner"></a>
+                                                                                            <a class="carousel-item no-opacity carousel-banner " href="#one!"> <img
+                                                                                                src="../../../../assets/img/cyptoP.png" alt="" class="img-banner"></a>
+                                                                                                <a class="carousel-item no-opacity carousel-banner " href="#one!"> <img
+                                                                                                    src="../../../assets/img/urgenteP.png" alt="" class="img-banner"></a>
+                                                                                                    <a class="carousel-item no-opacity carousel-banner " href="#one!"> <img
+                                                                                                        src="../../../assets/img/mundoAgoraP.png" alt="" class="img-banner"></a>
+                                                                                                        <a class="carousel-item no-opacity carousel-banner " href="#one!"> <img
+                                                                                                            src="../../../assets/img/metalicasP.png" alt="" class="img-banner"></a>
+                                                                                                            <a class="carousel-item no-opacity carousel-banner " href="#one!"> <img
+                                                                                                                src="../../../assets/img/agendaSemanaP.png" alt="" class="img-banner"></a>
+
+
+                             
+                                </div>
+                            </div> -->
+
+                            <!-- <swiper-container [slidesPerView]="5"
+                            [autoplay]="{ delay: 3000, disableOnInteraction: false, reverse: true }"
+                             class="carrossel-desktop">
+                            <swiper-slide>
+                                <img src="../../../assets/img/indicesP.png" alt="" class="item-slide-cadastro  ">
+                            </swiper-slide>
+                            <swiper-slide>
+                                <img src="../../../assets/img/selicP.png" alt="" class="item-slide-cadastro">
+                            </swiper-slide>
+                            <swiper-slide>
+                                <img src="../../../assets/img/ranking.png" alt="" class="item-slide-cadastro ">
+                            </swiper-slide>
+                            <swiper-slide>
+                                <img src="../../../assets/img/nasdaqP.png" alt="" class="item-slide-cadastro">
+                            </swiper-slide>
+                            <swiper-slide>
+                                <img src="../../../assets/img/brasilAgoraP.png" alt="" class="item-slide-cadastro ">
+                            </swiper-slide>
+                            <swiper-slide>
+                                <img src="../../../assets/img/minerioFerroP.png" alt="" class="item-slide-cadastro">
+                            </swiper-slide>
+                            <swiper-slide>
+                                <img src="../../../../assets/img/fechamentoMercadoP.png" alt=""
+                                    class="item-slide-cadastro ">
+                            </swiper-slide>
+                            <swiper-slide>
+                                <img src="../../../assets/img/ethereumP.png" alt="" class="item-slide-cadastro">
+                            </swiper-slide>
+                            <swiper-slide>
+                                <img src="../../../assets/img/ttP.png" alt="" class="item-slide-cadastro ">
+                            </swiper-slide>
+                            <swiper-slide>
+                                <img src="../../../assets/img/commoditiesAgricolaP.png" alt=""
+                                    class="item-slide-cadastro">
+                            </swiper-slide>
+                            <swiper-slide>
+                                <img src="../../../assets/img/superQuartaP.png" alt="" class="item-slide-cadastro ">
+                            </swiper-slide>
+                            <swiper-slide>
+                                <img src="../../../assets/img/CommoditiesPetroleoP.png" alt=""
+                                    class="item-slide-cadastro">
+                            </swiper-slide>
+                            <swiper-slide>
+                                <img src="../../../../assets/img/fundoImobiliarioP.png" alt=""
+                                    class="item-slide-cadastro ">
+                            </swiper-slide>
+                            <swiper-slide>
+                                <img src="../../../../assets/img/cyptoP.png" alt=""
+                                    class="item-slide-cadastro ">
+                            </swiper-slide>
+                            <swiper-slide>
+                                <img src="../../../assets/img/urgenteP.png" alt="" class="item-slide-cadastro">
+                            </swiper-slide>
+                            <swiper-slide>
+                                <img src="../../../assets/img/mundoAgoraP.png" alt="" class="item-slide-cadastro ">
+                            </swiper-slide>
+                            <swiper-slide>
+                                <img src="../../../assets/img/metalicasP.png" alt="" class="item-slide-cadastro">
+                            </swiper-slide>
+                            <swiper-slide>
+                                <img src="../../../assets/img/agendaSemanaP.png" alt=""
+                                    class="item-slide-cadastro ">
+                            </swiper-slide>
+                        </swiper-container>  -->
+
+                            <swiper-container [slidesPerView]="slidesPerView"
+                                [autoplay]="{ delay: 3000, disableOnInteraction: false, reverse: true }"
+                                [spaceBetween]="spaceBetween" class="carrossel-desktop">
+                                <swiper-slide>
+                                    <img src="../../../assets/img/indicesP.png" alt="" class="item-slide-cadastro  ">
+                                </swiper-slide>
+                                <swiper-slide>
+                                    <img src="../../../assets/img/selicP.png" alt="" class="item-slide-cadastro">
+                                </swiper-slide>
+                                <swiper-slide>
+                                    <img src="../../../assets/img/ranking.png" alt="" class="item-slide-cadastro ">
+                                </swiper-slide>
+                                <swiper-slide>
+                                    <img src="../../../assets/img/nasdaqP.png" alt="" class="item-slide-cadastro">
+                                </swiper-slide>
+                                <swiper-slide>
+                                    <img src="../../../assets/img/brasilAgoraP.png" alt="" class="item-slide-cadastro ">
+                                </swiper-slide>
+                                <swiper-slide>
+                                    <img src="../../../assets/img/minerioFerroP.png" alt="" class="item-slide-cadastro">
+                                </swiper-slide>
+                                <swiper-slide>
+                                    <img src="../../../../assets/img/fechamentoMercadoP.png" alt=""
+                                        class="item-slide-cadastro ">
+                                </swiper-slide>
+                                <swiper-slide>
+                                    <img src="../../../assets/img/ethereumP.png" alt="" class="item-slide-cadastro">
+                                </swiper-slide>
+                                <swiper-slide>
+                                    <img src="../../../assets/img/ttP.png" alt="" class="item-slide-cadastro ">
+                                </swiper-slide>
+                                <swiper-slide>
+                                    <img src="../../../assets/img/commoditiesAgricolaP.png" alt=""
+                                        class="item-slide-cadastro">
+                                </swiper-slide>
+                                <swiper-slide>
+                                    <img src="../../../assets/img/superQuartaP.png" alt="" class="item-slide-cadastro ">
+                                </swiper-slide>
+                                <swiper-slide>
+                                    <img src="../../../assets/img/CommoditiesPetroleoP.png" alt=""
+                                        class="item-slide-cadastro">
+                                </swiper-slide>
+                                <swiper-slide>
+                                    <img src="../../../../assets/img/fundoImobiliarioP.png" alt=""
+                                        class="item-slide-cadastro ">
+                                </swiper-slide>
+                                <swiper-slide>
+                                    <img src="../../../../assets/img/cyptoP.png" alt="" class="item-slide-cadastro ">
+                                </swiper-slide>
+                                <swiper-slide>
+                                    <img src="../../../assets/img/urgenteP.png" alt="" class="item-slide-cadastro">
+                                </swiper-slide>
+                                <swiper-slide>
+                                    <img src="../../../assets/img/mundoAgoraP.png" alt="" class="item-slide-cadastro ">
+                                </swiper-slide>
+                                <swiper-slide>
+                                    <img src="../../../assets/img/metalicasP.png" alt="" class="item-slide-cadastro">
+                                </swiper-slide>
+                                <swiper-slide>
+                                    <img src="../../../assets/img/agendaSemanaP.png" alt=""
+                                        class="item-slide-cadastro ">
+                                </swiper-slide>
+                            </swiper-container>
+                            <div class="d-flex justify-content-between flex-row mb-5 mt-4 btns-caixa btn-avancar">
+                                <button class="me-0 ms-auto prox-btn btn-stepper" type="submit" cdkStepperNext  [disabled]="form1.invalid" >
+                                    <fa-icon [icon]="['fas','arrow-right']" class="icone-seta"></fa-icon>
+                                </button>
+                            </div>
+
+
+                        </cdk-step>
+
+                    </form>
+                    <form #form2="ngForm" class="needs-validation formulario ">
+                        <cdk-step [label]="'teste'" #step1 id="test">
+
+                            <div class="pessoal" style="padding-top:30px">
+                                <div class="caixa-titulos">
+                                    <div class="caixa-balao-desktop caixa-balao">
+                                        <p class="texto-caixa-balao">10 dias grátis sem fidelidade!</p>
+                                    </div>
+                                    <h1 class="titulo-secao">
+                                        Informações de Checkout
+                                    </h1>
+                                    <p class="subtitulo-secao">Precisamos desses detalhes para processar seu pedido e
+                                        garantir que os layouts cheguem direitinho até você. Por favor, confira se tudo
+                                        está correto!</p>
+                                </div>
+                                <i class="fa-solid fa-user"></i>
+                                <div class="endereco" style="padding-top:30px">
+                                    <div class="row">
+                                        <div class="form-group col s12 m12 telefone-explicacao">
+                                            <label for="" class="form-label-explicacao ">O seu número de WhatsApp será
+                                                utilizado
+                                                para o envio dos stories</label>
+                                        </div>
+
+                                        <div class="form-group col s12 m4">
+                                            <div *ngFor="let input of inputs; let i = index">
+                                                
+                                            <label class="form-label">Número de WhatsApp <span
+                                                    class="text-danger"  *ngIf="!phone.dirty || numeroInvalido || input.number.length !=11">*</span><fa-icon *ngIf="phone.dirty && !numeroInvalido && input.number.length ===11" [icon]="['fas','circle-check']" class="check-icon"></fa-icon></label>
+                                            
+                                                <input type="text" name="phone{{i}}" id="phone{{i}}"
+                                                    class="form-control" placeholder="example@hotmail.com"
+                                                    [(ngModel)]="inputs[i].number" #phone="ngModel"
+                                                    (blur)="atribuirValor(inputs[i].number)" mask="(00) 00000-0000"
+                                                    placeholder="(00) 00000-0000" style="padding-left: 10px;" required>
+                                                <div *ngIf="phone.touched && phone.errors">
+                                                    <p class="text-danger" *ngIf="phone.errors['required']">Este campo é
+                                                        obrigatório.</p>
+                                                </div>
+                                                <div *ngIf="numeroInvalido">
+                                                    <p class="text-danger">Número inválido.</p>
+                                                </div>
+
+                                                <!-- Show invalid image if phone number is invalid -->
+
+                                            </div>
+                                        </div>
+                                        
+                                        
+                                        <div class="form-group col s12 m4">
+                                            
+                                            <label class="form-label">CPF/CNPJ <span class="text-danger" *ngIf="!registry_code.valid || validacaoRegistro " >*</span>
+                                                <fa-icon *ngIf="registry_code.valid && !validacaoRegistro" [icon]="['fas','circle-check']" class="check-icon" ></fa-icon>
+                                            </label>
+                                            <input required [(ngModel)]="clienteModel.registry_code" type="text"
+                                                class="form-control" registry_code="registry_code" id="registry_code"
+                                                name="registry_code" #registry_code="ngModel"
+                                                [mask]="getMask(clienteModel.registry_code)"
+                                                style="padding-left: 10px; ">
+                                                <div *ngIf="validacaoRegistro"> 
+                                                    <p class="text-danger" >Insira informações válidas</p>
+                                                  </div>  
+                                            <div *ngIf="registry_code.touched && registry_code.errors">
+                                                <p class="text-danger" *ngIf="registry_code.errors['required']">Este
+                                                    campo é
+                                                    obrigatório.</p>
+                                            </div>
+                                        </div>
+                                        <div class="form-group col s12 m4">
+                                            <label class="form-label">CEP <span class="text-danger" *ngIf="!documento.valid || documento.touched && documento.errors">*</span> 
+                                                <fa-icon *ngIf="documento.valid" [icon]="['fas','circle-check']" class="check-icon" ></fa-icon>
+                                            </label>
+                                            <input required type="text" class="form-control " name="documento"
+                                                id="documento" #documento="ngModel" [(ngModel)]="cep" required #buscaCEP
+                                                (blur)="blur($event)" [(ngModel)]="cep" required f mask="00000-000"
+                                                placeholder="00000-000" style="padding-left: 10px; ">
+                                            <div *ngIf="documento.touched && documento.errors">
+                                                <p class="text-danger" *ngIf="documento.errors['required']">Este campo é
+                                                    obrigatório.</p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group col s12 m8">
+                                            <label class="form-label">Endereço <span class="text-danger" *ngIf="!endereco.valid && !documento.valid && documento.dirty || !endereco.valid">*</span>
+                                                <fa-icon *ngIf="endereco.valid && documento.valid && documento.dirty" [icon]="['fas','circle-check']" class="check-icon" ></fa-icon>
+                                            </label>
+                                            <input required type="text" #endereco="ngModel" [(ngModel)]="enderecoFormat"
+                                                class="form-control" name="endereco" id="endereco" ngModel required
+                                                type="text" style="padding-left: 10px; ">
+                                            <div *ngIf="endereco.touched && endereco.errors">
+                                                <p class="text-danger" *ngIf="endereco.errors['required']">Este campo é
+                                                    obrigatório.</p>
+                                            </div>
+                                        </div>
+                                        <div class="form-group col s12 m4">
+                                            <label class="form-label">Número 
+                                                <!-- <fa-icon *ngIf="documento.dirty" [icon]="['fas','circle-check']" class="check-icon" ></fa-icon> -->
+                                            </label>
+
+                                            <input required type="text" [(ngModel)]="numero"
+                                                class="form-control" name="numero" id="numero" ngModel required
+                                                type="text" style="padding-left: 10px; ">
+
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="d-flex justify-content-between flex-row mb-5 mt-4  btns-caixa">
+                                    <div class="btns-arrow">
+                                        <button class="me-0 ms-auto prox-btn btn-stepper" type="submit"
+                                            cdkStepperPrevious>
+                                            <!-- <span>Voltar</span> -->
+                                            <fa-icon [icon]="['fas','arrow-left']" class="icone-seta"></fa-icon>
+                                        </button>
+
+                                        <button class="me-0 ms-auto prox-btn btn-stepper" type="submit"   (click)="validateRegistry(form2, appStepper)"  [disabled]="form2.invalid">
+
+                                        <!-- <button class="me-0 ms-auto prox-btn btn-stepper" type="submit"  cdkStepperNext  (click)="validateRegistry(form2, appStepper)" [disabled]="form2.invalid"> -->
+                                            <!-- <span>Criar</span> -->
+                                            <fa-icon [icon]="['fas','arrow-right']" class="icone-seta"></fa-icon>
+                                        </button>
+                                    </div>
+
+
+
+                                </div>
+                            </div>
+                        </cdk-step>
+                    </form>
+                    <form #form3="ngForm" class="needs-validation formulario ">
+                        <cdk-step [label]="'Instagram'" #step1>
+                            <div class="pessoal" style="padding-top:15px">
+                                <div class="row form-group">
+                                    <!-- <h5 class="titulo-formulario">
+                                    Dados para pagamento
+                                    <fa-icon [icon]="['fas','money-check-dollar']"></fa-icon>
+                                </h5> -->
+                                    <div class="caixa-titulos">
+                                        <div class="caixa-balao-desktop caixa-balao">
+                                            <p class="texto-caixa-balao">10 dias grátis sem fidelidade!</p>
+                                        </div>
+                                        <h1 class="titulo-secao">
+                                            Layout Instagram (Stories)
+
+                                        </h1>
+                                        <p class="subtitulo-secao">Vamos personalizar seus stories com a sua cara,
+                                            precisamos que preencha as informações abaixo para montarmos o seu layout.
+                                            Siga o passo a passo abaixo, para cadastrasmos você no sistema.</p>
+                                    </div>
+                                    <div class="row row-exp">
+                                        <div class="form-group col s12 m10 ">
+                                            <label class="form-label">Qual o nome você quer que fique visivel nos
+                                                layouts
+                                                criados? <span class="text-danger"*ngIf="!nome.valid || nome.touched && nome.errors">*</span></label>
+                                                <fa-icon *ngIf="nome.valid" [icon]="['fas','circle-check']" class="check-icon" ></fa-icon>
+                                            <input type="text" class="form-control " [(ngModel)]="usuariosModel.nome"
+                                                type="text" class="form-control" name="nome" id="nome" nome="nome"
+                                                #nome="ngModel" required="" autocomplete="off"
+                                                style="padding-left: 10px; ">
+                                            <div *ngIf="nome.touched && nome.errors">
+                                                <p class="text-danger" *ngIf="nome.errors['required']">Este campo é
+                                                    obrigatório.</p>
+                                            </div>
+                                        </div>
+                                        <div class="caixa-imagem-exp">
+                                            <img src="../../../../assets/img/teste-exp (1).png" alt=""
+                                                class="imagem-exp">
+                                        </div>
+                                    </div>
+
+                                    <div class="row row-exp">
+                                        <div class="form-group col s12 m10 ">
+                                            <label class="form-label">Qual é o {{'@'}} do seu Instagram? <span
+                                                    class="form-label-explicacao ">Se não tiver um, como gostaria que
+                                                    fosse
+                                                    colocado? </span><span class="text-danger" *ngIf="!usuario_instagram.valid || usuario_instagram.touched && usuario_instagram.errors">*</span> </label>
+                                                    <fa-icon *ngIf="usuario_instagram.valid" [icon]="['fas','circle-check']" class="check-icon" ></fa-icon>
+                                                    <input type="text" class="form-control "
+                                                [(ngModel)]="usuariosModel.usuario_instagram" type="text"
+                                                class="form-control" name="usuario_instagram" id="usuario_instagram"
+                                                usuario_instagram="usuario_instagram" #usuario_instagram="ngModel"
+                                                required="" autocomplete="off" style="padding-left: 10px; ">
+                                            <div *ngIf="usuario_instagram.touched && usuario_instagram.errors">
+                                                <p class="text-danger" *ngIf="usuario_instagram.errors['required']">Este
+                                                    campo é
+                                                    obrigatório.</p>
+                                            </div>
+                                        </div>
+                                        <div class="caixa-imagem-exp">
+                                            <img src="../../../../assets/img/TESTE-EXP-ROXO.png" alt=""
+                                                class="imagem-exp">
+                                        </div>
+                                    </div>
+
+
+                                    <div class="row row-exp">
+                                        <div class="form-group col s12 m10 ">
+                                            <div class="caixa-file">
+                                                <label for="" class="form-label">
+                                                    Por favor, envie uma foto sua para que ela seja colocada no seu layout
+                                                    <span class="text-danger" *ngIf="!fileInput.valid || (fileInput.touched && fileInput.errors)"> *</span>
+                                                </label>
+                                                <fa-icon *ngIf="fileInput.valid" [icon]="['fas','circle-check']" class="check-icon" ></fa-icon>
+                                                <input type="file" id="fileInput" (change)="onFileSelected2($event)" #fileInput="ngModel" 
+                                                    ngModel name="fileInput" required
+                                                    style="display: none;" class="form-control-file">
+                                                <label for="fileInput" class="form-control">
+                                                    Selecionar Imagem
+                                                </label>
+                                                <p *ngIf="selectedImage" class="img-selecionada">Imagem selecionada:</p>
+                                                <img *ngIf="selectedImage" [src]="selectedImage" alt="Imagem Selecionada" class="imagem-escolhida-instagram">
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="caixa-imagem-exp" [ngClass]="{'hidden': selectedImage}">
+                                            <img src="../../../../assets/img/teste-exp (4).png" alt=""
+                                                class="imagem-exp">
+                                        </div>
+                                    </div>
+
+
+                                    <!-- <div class="row row-exp">
+                                     
+                                        <div class="form-group col s12 m10 ">
+                                            <label class="form-label">Qual é o {{'@'}} do seu Instagram? <span
+                                                class="form-label-explicacao ">Se não tiver um, como gostaria que fosse
+                                                colocado?</span><span class="text-danger">*</span> </label>
+                                        <input c>
+                                        <div *ngIf="usuario_instagram.touched && usuario_instagram.errors">
+                                            <p class="text-danger" *ngIf="usuario_instagram.errors['required']">Este
+                                                campo é
+                                                obrigatório.</p>
+                                        </div>
+                                        </div>
+                                        <div class="caixa-imagem-exp ">
+                                            <img src="../../../../assets/img/teste-exp (2).png" alt=""
+                                                class="imagem-exp ">
+                                        </div>
+                                    </div> -->
+
+
+                                    <!-- <div class="form-group col s12 m12" [ngClass]="{'has-success': name.valid}">
+                                    <label class="form-label">Qual o nome você quer que fique visivel nos layouts criados? <span class="text-danger">*</span>
+                                    </label>
+                                    <div class="input-group">
+                                        <input [(ngModel)]="usuariosModel.nome" class="form-control" name="name"
+                                            id="name" #name="ngModel" required autocomplete="off"
+                                            style="padding-left: 15px">
+                                            <div *ngIf="name.touched && name.errors">
+                                                <p class="text-danger" *ngIf="name.errors['required']">Este campo é obrigatório.
+                                                </p>
+                                            </div>
+                                    </div>
+                                 
+                                </div> -->
+                                    <!-- <div class="form-group col s12 m12" [ngClass]="{'has-success': name.valid}">
+                                        <div class="imagem-ex-instagram">
+                                            <img src="../../../../assets/img/exemplo-instagram.png" alt="">
+                                        </div>
+                                    </div> -->
+                                </div>
+
+                                <!-- <div class="row">
+                                    <div class="form-group col s12 m12 ">
+                                        <label class="form-label">Qual é o {{'@'}} do seu Instagram? <span
+                                                class="form-label-explicacao ">Se não tiver um, como gostaria que fosse
+                                                colocado?</span><span class="text-danger">*</span> </label>
+                                        <input type="text" class="form-control "
+                                            [(ngModel)]="usuariosModel.usuario_instagram" type="text"
+                                            class="form-control" name="usuario_instagram" id="usuario_instagram"
+                                            usuario_instagram="usuario_instagram" #usuario_instagram="ngModel"
+                                            required="" autocomplete="off" style="padding-left: 10px; ">
+                                        <div *ngIf="usuario_instagram.touched && usuario_instagram.errors">
+                                            <p class="text-danger" *ngIf="usuario_instagram.errors['required']">Este
+                                                campo é
+                                                obrigatório.</p>
+                                        </div>
+                                    </div>
+                                </div> -->
+
+
+
+                                <!-- <div class="form-group col s12 m12">
+                                        <label class="form-label">Foto <span class="text-danger">*</span></label>
+        
+        
+                                        <input type="file" (change)="onFileSelected($event)" accept="image/*" class="form-control" name="foto__instagram" id="foto_instagram" required>
+                                       
+                                    </div> -->
+                                <!-- <div class="row">
+                                    <div class="form-group col s8 m8 caixa-imagem">
+                                   
+                                        <div class="telefone-explicacao">
+                                            <label for="" class="form-label">Por favor, envie uma foto sua para que ela seja
+                                                colocada no seu layout<span class="text-danger">*</span></label>
+                                        </div>
+                                        <div >
+                                            <input type="file" id="fileInput" (change)="onFileSelected2($event)"
+                                                style="display: none;">
+                                            <label for="fileInput" class="custom-file-upload">
+                                                Selecionar Imagem
+                                            </label>
+                                        </div>
+                                        <p *ngIf="selectedImage" class="img-selecionada">Imagem selecionada:</p>
+                                        <img *ngIf="selectedImage" [src]="selectedImage" alt="Imagem Selecionada"
+                                            class="imagem-escolhida-instagram">
+                                    </div>
+                                    <div class="caixa-imagem-exp caixa-imagem-exp-esq">
+                                        <img src="../../../../assets/img/teste-exp (3).png" alt=""
+                                            class="imagem-exp ">
+                                    </div>
+                                  </div> -->
+
+
+                                <!-- <div class="form-group col s12 m12">
+                                        <label class="form-label">Senha <span class="text-danger">*</span></label>
+                                        <input type="password" class="form-control" [(ngModel)]="primeiraSenha" #senha="ngModel"
+                                            name="senha" id="senha" [required]="primeiraSenha !== ''" autocomplete="off"
+                                            style="padding-left: 10px; ">
+                                        <div *ngIf="senha.touched && senha.errors">
+                                            <p class="text-danger" *ngIf="senha.errors['required']">Este campo é obrigatório.</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group col s12 m12">
+                                        <label class="form-label">Confirmar Senha <span class="text-danger">*</span></label>
+                                        <input type="password" class="form-control" [(ngModel)]="usuariosModel.senha"
+                                            name="confirmarSenha" id="confirmarSenha" required autocomplete="off"  (input)="teste()"
+                                            style="padding-left: 10px; ">
+                                        <div *ngIf="verdade">
+                                            <p class="text-danger">As senhas não coincidem.</p>
+                                        </div>
+                                    </div> -->
+
+
+
+
+                                <div class="d-flex justify-content-between flex-row mb-5 mt-4  btns-caixa">
+                                    <div class="btns-arrow">
+                                        <button class="me-0 ms-auto prox-btn btn-stepper" type="submit"
+                                            cdkStepperPrevious>
+                                            <!-- <span>Voltar</span> -->
+                                            <fa-icon [icon]="['fas','arrow-left']" class="icone-seta"></fa-icon>
+                                        </button>
+
+                                        <button class="me-0 ms-auto prox-btn btn-stepper" type="submit" cdkStepperNext [disabled]="form3.invalid">
+                                            <!-- <span>Criar</span> -->
+                                            <fa-icon [icon]="['fas','arrow-right']" class="icone-seta"></fa-icon>
+                                        </button>
+                                    </div>
+
+
+
+                                </div>
+                            </div>
+                        </cdk-step>
+                    </form>
+                    <form #form4="ngForm" class="needs-validation formulario ">
+                        <cdk-step [label]="'Pagamento'" #step1>
+                            <div class="pessoal" style="padding-top:30px">
+                                <div class="row form-group">
+                                    <div class="caixa-titulos">
+                                        <div class="caixa-balao-desktop caixa-balao">
+                                            <p class="texto-caixa-balao">10 dias grátis sem fidelidade!</p>
+                                        </div>
+                                        <h1 class="titulo-secao">
+                                            Informações do pagamento
+                                        </h1>
+                                        <p class="subtitulo-secao">Preencha suas informações de pagamento para
+                                            finalizar sua compra. Não se preocupe, mantemos tudo seguro e confidencial.
+                                            <span class="str"> Caso queira cancelar antes do período de 10 dias, favor
+                                                entrar em contato com o nosso suporte pelo WhatsApp.</span>
+                                        </p>
+
+                                        <!-- <h5 class="titulo-formulario">
+                                    Dados para pagamento
+                                    <fa-icon [icon]="['fas','money-check-dollar']"></fa-icon>
+                                </h5> -->
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="pagamento-caixa">
+                                        <div class="form-group col s12 dropDown">
+                                            <label class="form-label" for="">Método de pagamento <span
+                                                    class="text-danger" *ngIf="!paymemnt_method_code.valid" > *</span> </label>
+                                                    <fa-icon *ngIf="paymemnt_method_code.valid" [icon]="['fas','circle-check']" class="check-icon" ></fa-icon>
+                                            <p-dropdown [options]="pay" optionLabel="name" optionValue="code"
+                                                [(ngModel)]="perfilModel.payment_method_code"
+                                                type="paymemnt_method_code" class="form-control drop"
+                                                paymemnt_method_code="paymemnt_method_code" id="paymemnt_method_code"
+                                                name="paymemnt_method_code" #paymemnt_method_code="ngModel"
+                                                placeholder="Selecione um método" id="drops" required></p-dropdown>
+                                            <div *ngIf="paymemnt_method_code.touched && paymemnt_method_code.errors">
+                                                <p class="text-danger" *ngIf="paymemnt_method_code.errors['required']">
+                                                    Este
+                                                    campo é obrigatório.</p>
+                                            </div>
+                                        </div>
+
+                                        <div *ngIf="mostrarBotao()">
+                                            <!-- <div> -->
+                                            <div class="row">
+                                                <div class="form-group col s12 m8">
+                                                    <label class="form-label">Nome <span class="text-danger"  *ngIf="!nomeCartao.valid" > *</span>
+                                                    </label>
+                                                    <fa-icon *ngIf="nomeCartao.valid" [icon]="['fas','circle-check']" class="check-icon" ></fa-icon>
+                                                    <input type="text" class="form-control "
+                                                        [(ngModel)]="perfilModel.holder_name" class="form-control"
+                                                        name="email" id="email" #nomeCartao="ngModel"
+                                                        style="padding-left: 10px; " required>
+                                                    <div *ngIf="nomeCartao.touched && nomeCartao.errors">
+                                                        <p class="text-danger" *ngIf="nomeCartao.errors['required']">
+                                                            Este
+                                                            campo é obrigatório.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group col s12 m4">
+
+                                                    <label class="form-label">Número do cartão <span
+                                                            class="text-danger"  *ngIf="!card_number.valid" >*</span> </label>
+                                                            <fa-icon *ngIf="card_number.valid" [icon]="['fas','circle-check']" class="check-icon" ></fa-icon>
+                                                            <input type="text" class="form-control "
+                                                        [(ngModel)]="perfilModel.card_number" type="text"
+                                                        class="form-control" name="card_number" id="card_number"
+                                                        #card_number="ngModel" placeholder="0000 0000 0000 0000"
+                                                        mask="0000 0000 0000 0000" style="padding-left: 10px; "
+                                                        required>
+                                                    <div *ngIf="card_number.touched && card_number.errors">
+                                                        <p class="text-danger" *ngIf="card_number.errors['required']">
+                                                            Este campo é
+                                                            obrigatório.</p>
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+                                            <div class="row">
+                                                <div class="form-group col s12 m4">
+                                                    <label class="form-label">Validade do cartão <span
+                                                            class="text-danger"  *ngIf="!card_expiration.valid" v>*</span> </label>
+                                                            <fa-icon *ngIf="card_expiration.valid" [icon]="['fas','circle-check']" class="check-icon" ></fa-icon>
+                                                            <input type="text" class="form-control "
+                                                        [(ngModel)]="perfilModel.card_expiration" type="text"
+                                                        class="form-control" name="card_expiration" id="card_expiration"
+                                                        #card_expiration="ngModel" mask="00/00" placeholder="00/00"
+                                                        style="padding-left: 10px; " required>
+                                                    <div *ngIf="card_expiration.touched && card_expiration.errors">
+                                                        <p class="text-danger"
+                                                            *ngIf="card_expiration.errors['required']">
+                                                            Este campo é obrigatório.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group col s12 m4 ">
+                                                    <label class="form-label">CVV <span class="text-danger"  *ngIf="!card_cvv.valid" >*</span>
+                                                    </label>
+                                                    <fa-icon *ngIf="card_cvv.valid" [icon]="['fas','circle-check']" class="check-icon" ></fa-icon>
+                                                    <input type="text" class="form-control "
+                                                        [(ngModel)]="perfilModel.card_cvv" class="form-control"
+                                                        name="card_cvv" id="card_cvv" #card_cvv="ngModel" mask="000"
+                                                        placeholder="000" style="padding-left: 10px; " required>
+                                                    <div *ngIf="card_cvv.touched && card_cvv.errors">
+                                                        <p class="text-danger" *ngIf="card_cvv.errors['required']">Este
+                                                            campo é obrigatório.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group col s12 m4">
+                                                    <label class="form-label">Bandeira <span
+                                                            class="text-danger"  *ngIf="!payment_company_code.valid" >*</span>
+                                                    </label>
+
+                                                    <fa-icon *ngIf="payment_company_code.valid" [icon]="['fas','circle-check']" class="check-icon" ></fa-icon>
+                                                    <p-dropdown [options]="bandeiras"
+                                                        [(ngModel)]="perfilModel.payment_company_code" type="text"
+                                                        class="form-control drop" metodo="metodo" id="metodo"
+                                                        name="metodo" #payment_company_code="ngModel"
+                                                        placeholder="Selecione uma bandeira" id="drops"
+                                                        required></p-dropdown>
+
+                                                    <div
+                                                        *ngIf="payment_company_code.touched && payment_company_code.errors">
+                                                        <p class="text-danger"
+                                                            *ngIf="payment_company_code.errors['required']">Este campo é
+                                                            obrigatório.</p>
+                                                    </div>
+                                                    <!-- 
+                                                <input type="text" class="form-control "
+                                                    [(ngModel)]="perfilModel.payment_company_code" class="form-control"
+                                                    name="payment_company_code" id="payment_company_code"
+                                                    #payment_company_code="ngModel"> -->
+
+
+                                                </div>
+
+                                            </div>
+
+                                            <!-- 
+                            <div class="caixa-txt">
+                                <label for="">Nome</label>
+                                <input [(ngModel)]="cartaoModel.holder_name" type="text" class="form-control" email="email"
+                                    id="email" name="email" #email="ngModel" value="5555 5555 5555 5557">
+                            </div>
+                            <div class="caixa-txt">
+                                <label for="">Validade</label>
+                                <input [(ngModel)]="cartaoModel.card_expiration" type="card_expiration" class="form-control"
+                                    card_expiration="card_expiration" id="card_expiration" name="card_expiration"
+                                    #card_expiration="ngModel" value="5555 5555 5555 5557">
+                            </div>
+                            <div class="caixa-txt">
+                                <label for="">Codido de seguranca</label>
+                                <input [(ngModel)]="cartaoModel.card_cvv" type="card_cvv" class="form-control"
+                                    card_cvv="card_cvv" id="card_cvv" name="card_cvv" #card_cvv="ngModel"
+                                    value="5555 5555 5555 5557">
+                            </div>
+                            <div class="caixa-txt">
+                                <label for="">Bandeira</label>
+                                <input [(ngModel)]="cartaoModel.payment_company_code" type="payment_company_code"
+                                    class="form-control" payment_company_code="payment_company_code"
+                                    id="payment_company_code" name="payment_company_code" #payment_company_code="ngModel"
+                                    value="5555 5555 5555 5557">
+                            </div> -->
+                                            <div class="box-cartao">
+                                                <div class="cartao">
+                                                    <div class="cartao-bandeira"
+                                                        [ngSwitch]="perfilModel.payment_company_code">
+                                                        <img *ngSwitchCase="''" src="../../../../assets/img/simbolo.svg"
+                                                            alt="" class="img-bandeira " id="bandeira-exemplo">
+                                                        <img *ngSwitchCase="'MasterCard'"
+                                                            src="../../../../assets/img/mastercard.svg" alt=""
+                                                            class="img-bandeira">
+                                                        <img *ngSwitchCase="'Visa'"
+                                                            src="../../../../assets/img/visa.svg" alt=""
+                                                            class="img-bandeira">
+                                                        <img *ngSwitchCase="'American Express'"
+                                                            src="../../../../assets/img/american.svg" alt=""
+                                                            class="img-bandeira">
+                                                        <img *ngSwitchCase="'Hipercard'"
+                                                            src="../../../../assets/img/hipercard.svg" alt=""
+                                                            class="img-bandeira">
+                                                        <img *ngSwitchCase="'JCB'" src="../../../../assets/img/jcb.svg"
+                                                            alt="" class="img-bandeira">
+                                                        <img *ngSwitchCase="'Elo'" src="../../../../assets/img/elo.svg"
+                                                            alt="" class="img-bandeira">
+                                                        <img *ngSwitchCase="'Diners Club'"
+                                                            src="../../../../assets/img/dinerscard (2).svg" alt=""
+                                                            class="img-bandeira">
+                                                        <!-- Adicione mais casos conforme necessário -->
+                                                    </div>
+                                                    <div class="cartao-numero">
+                                                        <input type="
+                                                    " readonly="true" class="cartao-numero-valor cartao-input"
+                                                            mask="0000 0000 0000 0000"
+                                                            [(ngModel)]="perfilModel.card_number" name="card_number"
+                                                            id="card_number" #card_number="ngModel"
+                                                            placeholder="0000 0000 0000 0000"
+                                                            mask="0000 0000 0000 0000">
+                                                        <!-- <p class="cartao-numero-valor" mask="0000 0000 0000 0000" >
+                                                       {{perfilModel.card_number}}
+                                                    </p> -->
+                                                    </div>
+                                                    <div class="cartao-infos">
+                                                        <div class="cartao-nomes info ">
+                                                            <p class="cartao-titulo">Nome</p>
+                                                            <p class="cartao-valor"> {{perfilModel.holder_name}}</p>
+                                                        </div>
+                                                        <div class="box-cartao-valores">
+                                                            <div class="cartao-validades info">
+                                                                <p class="cartao-titulo">Validade</p>
+                                                                <!-- <p class="cartao-valor"> {{perfilModel.card_expiration}}</p> -->
+                                                                <input type="text" class="cartao-input col m8 "
+                                                                    [(ngModel)]="perfilModel.card_expiration"
+                                                                    name="card_expiration" id="card_expiration"
+                                                                    #card_expiration="ngModel" mask="00/00"
+                                                                    placeholder="00/00" style="padding-left: 10px; ">
+                                                            </div>
+                                                            <div class="cartao-cvvs info">
+                                                                <p class="cartao-titulo">CVV</p>
+                                                                <input type="text" class="cartao-input col m6 "
+                                                                    [(ngModel)]="perfilModel.card_cvv" name="card_cvv"
+                                                                    id="card_cvv" #card_cvv="ngModel" placeholder="000"
+                                                                    style="padding-left: 10px; ">
+                                                                <!-- <p class="cartao-valor"> {{perfilModel.card_cvv}}</p> -->
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- <div class="testes">
+                                        <input [(ngModel)]="cartaoModel.card_cvv" type="card_cvv" class="form-control"
+                                        card_cvv="card_cvv" id="card_cvv" name="card_cvv" #card_cvv="ngModel"
+                                        value="5555 5555 5555 5557">
+                                        <div class="teste-texto">
+                                            <input [(ngModel)]="cartaoModel.card_cvv" type="card_cvv" class="form-control"
+                                        card_cvv="card_cvv" id="card_cvv" name="card_cvv" #card_cvv="ngModel"
+                                        value="5555 5555 5555 5557">
+                                        </div>
+                                    </div> -->
+                                        </div>
+
+
+                                    </div>
+
+                                </div>
+                                <div class="row">
+                                    <div class="caixa-desconto">
+                                        <div class="textos-caixa-desconto">
+                                            <div class="caixas-desconto">
+                                                <p class="prct-desconto">50%</p>
+                                                <p class="plano-desconto">PLANO STANDARD <span
+                                                        class="light-plano-desconto">10 DIAS - FREE TIAL</span></p>
+                                            </div>
+                                            <div class="caixas-desconto caixas-desconto2 ">
+                                                <p class="deDesconto">De <span class="enfaseDe">399,90</span></p>
+                                                <p class="porDesconto">Por<span class="enfasePor">199,90</span></p>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="form-group col s12 dropDown">
+                                        <label class="form-label" for="">Plano <span class="text-danger"  *ngIf="!plan_id.dirty" >*</span>
+                                        </label>
+                                        <fa-icon *ngIf="plan_id.dirty" [icon]="['fas','circle-check']" class="check-icon" ></fa-icon>
+                                        <p-dropdown [options]="plans" optionLabel="name" optionValue="id"
+                                            [(ngModel)]="assinaturaModel.plan_id" type="plan_id"
+                                            class="form-control drop" plan_id="plan_id" id="plan_id" name="plan_id"
+                                            #plan_id="ngModel" placeholder="Selecione um método" id="drops"
+                                            required></p-dropdown>
+                                        <div *ngIf="plan_id.touched">
+                                            <p class="text-danger" *ngIf="!plan_id.dirty">
+                                                Este
+                                                campo é obrigatório.</p>
+                                        </div>
+                                    </div>
+                                    <!-- <div class="form-group col s12 dropDown">
+                                        <label class="form-label" for="">Plano <span class="text-danger">*</span>
+                                        </label>
+                                        <p-dropdown [options]="plans" optionLabel="name" optionValue="id"
+                                            [(ngModel)]="assinaturaModel.plan_id" class="form-control drop"
+                                            plan_id="plan_id" id="plan_id" name="plan_id" #plan_id="ngModel"
+                                            placeholder="Selecione um método" id="drops" required></p-dropdown>
+                                            <div
+                                            *ngIf="plan_id.touched && plan_id.errors">
+                                            <p class="text-danger"
+                                                *ngIf="plan_id.errors['required']">Este campo é
+                                                obrigatório.</p>
+                                        </div>
+                                    </div> -->
+
+                                </div>
+                                <div class="form-group col s12 m12 caixa-aviso-pagamento">
+                                    <label for="" class="form-label-explicacao ">Após a realização do pagamento, a
+                                        próxima
+                                        cobrança será efetuada após um período de dez dias grátis. Esta medida visa
+                                        proporcionar
+                                        maior comodidade e flexibilidade em sua experiência conosco.</label>
+                                </div>
+
+                            </div>
+                            <div class="d-flex flex-column align-items-center justify-content-between flex-row mb-5 mt-4  btns-caixa">
+                                <div *ngIf="validacaoPay"> 
+                                    <p class="text-danger" >Houve um problema ao processar seu cartão. Por favor, revise os dados e tente novamente. Agradecemos sua compreensão!</p>
+                                  </div>  
+                                <div class="btns-arrow">
+                                    <button class="me-0 ms-auto prox-btn btn-stepper" type="submit" cdkStepperPrevious>
+                                        <!-- <span>Voltar</span> -->
+                                        <fa-icon [icon]="['fas','arrow-left']" class="icone-seta"></fa-icon>
+                                    </button>
+
+                                    <button class="me-0 ms-auto prox-btn btn-stepper" type="submit"  
+                                        [disabled]="form4.invalid"  cdkStepperNext>
+                                        <div *ngIf="loading">
+                                            <p-progressSpinner styleClass="w-0.5rem h-0.5rem" strokeWidth="8"
+                                                fill="#683c92" animationDuration=".5s" />
+                                        </div>
+
+                                        <div *ngIf="!loading">
+                                            <fa-icon [icon]="['fas','check']" class="check-icon" class="icone-seta"></fa-icon>
+                                        </div>
+
+                                    </button>
+                                </div>
+
+
+
+                            </div>
+                        </cdk-step>
+                    </form>
+                </app-stepper>
+            </div>
+        </form>
+
+    </section>
+</body>

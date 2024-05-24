@@ -4,19 +4,19 @@ import { NgForm } from '@angular/forms';
 import { AdressModel, AssinaturaModel, ClienteModel, MetodosModel, PagamentoModel, CartaoModel, PerfilPagamentoModel, ProdutosModel, UsersMkModel } from '../../../models/pagamento.module';
 import { MatStepper } from '@angular/material/stepper';
 import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
-import { faArrowLeft, faArrowRight, faCheck, faChevronLeft, faChevronRight, faCreditCard, faLocationDot, faMoneyCheckDollar, faPhone, faPlus, faTrash, faUser } from '@fortawesome/free-solid-svg-icons';
+import { faArrowLeft, faArrowRight, faCheck, faChevronLeft, faChevronRight, faCircleCheck, faCreditCard, faLocationDot, faMoneyCheckDollar, faPhone, faPlus, faTrash, faUser } from '@fortawesome/free-solid-svg-icons';
 import { CepService } from '../../../services/cep.service';
 import { last, lastValueFrom } from 'rxjs';
 import { TelefoneModel } from '../../../models/pagamento.module';
 import { FaturaModel } from '../../../models/pagamento.module';
 import { ProdutoModel } from '../../../models/pagamento.module';
 import { format, addDays } from 'date-fns';
-import { Router ,ActivatedRoute} from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { Input, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import Swiper from 'swiper';
 import * as lottie from 'lottie-web';
-import {NavigationEnd } from '@angular/router';
+import { NavigationEnd } from '@angular/router';
 import { cpf, cnpj } from 'cpf-cnpj-validator';
 import { StepperComponent } from './stepper/stepper.component';
 
@@ -39,11 +39,11 @@ declare var M: any;
   styleUrl: './pagamento.component.css'
 })
 export class PagamentoComponent {
-  validacaoRegistro=false
-  validacaoPay=false
-  spaceBetween:any
-  slidesPerView:any
-  loading=false
+  validacaoRegistro = false
+  validacaoPay = false
+  spaceBetween: any
+  slidesPerView: any
+  loading = false
   // objeto: PagamentoModel = new PagamentoModel;
   nome!: string;
   numero!: string;
@@ -58,14 +58,14 @@ export class PagamentoComponent {
   primeiraSenha: string = '';
   numeroInvalido: boolean = false
   mySwiper?: Swiper;
-  teste123: string = 'fa-user'; 
+  teste123: string = 'fa-user';
   cepInfo: any;
   cepInvalido: boolean = false;
   idCliente: number = 0;
   objeto: MetodosModel = new MetodosModel;
   objetoCliente = new ClienteModel;
   objetoEndereco = new AdressModel();
-objetoUsuarios = new UsersMkModel ()
+  objetoUsuarios = new UsersMkModel()
   // objeto: Usuario = new Usuario;
   cep: any;
   logradouro: any;
@@ -102,13 +102,13 @@ objetoUsuarios = new UsersMkModel ()
   valorNaoClicado: Phone[] = [{ number: '' }];
   visible: boolean = false;
   bandeiras: any = [
-    {label: 'MasterCard', value: 'MasterCard'},
-    {label: 'Visa', value:'Visa'},
-    {label: 'American Express', value: 'American Express'},
-    {label: 'Diners Club', value: 'Diners Club'},
-    {label: 'Elo', value: 'Elo'},
-    {label: 'Hipercard', value: 'Hipercard'},
-    {label: 'JCB', value: 'JCB'},
+    { label: 'MasterCard', value: 'MasterCard' },
+    { label: 'Visa', value: 'Visa' },
+    { label: 'American Express', value: 'American Express' },
+    { label: 'Diners Club', value: 'Diners Club' },
+    { label: 'Elo', value: 'Elo' },
+    { label: 'Hipercard', value: 'Hipercard' },
+    { label: 'JCB', value: 'JCB' },
     // Adicione mais opções conforme necessário
   ];
 
@@ -118,14 +118,14 @@ objetoUsuarios = new UsersMkModel ()
   desativado: boolean = false;
 
 
-  ngAfterViewInit(){
+  ngAfterViewInit() {
     const elemsBanner = document.querySelectorAll('.carrossel-banner');
     const optionsBanner = {
       autoplay: true, // Ativa o autoplay      numVisible: 3,
       maxVisible: 5, // Ajuste o número de imagens visíveis aqui
       fullWidth: true,
       padding: 60,// Define o padding desejado,
-      
+
       interval: 100,
       opacity: false, // Intervalo em milissegundos entre as transições dos slides,
 
@@ -141,7 +141,7 @@ objetoUsuarios = new UsersMkModel ()
   onBtnClicado() {
     this.btnClicado = true;
     console.log('teste')
-}
+  }
   onFileSelected2(event: any) {
     const file = event.target.files[0];
     if (file) {
@@ -154,7 +154,7 @@ objetoUsuarios = new UsersMkModel ()
 
     const arquivoSelecionado: File = event.target.files[0];
     if (arquivoSelecionado) {
-     
+
       this.previewImagem(arquivoSelecionado);
       console.log('Arquivo selecionado:', arquivoSelecionado);
     } else {
@@ -166,7 +166,7 @@ objetoUsuarios = new UsersMkModel ()
     // Regex para verificar se o número de telefone tem o formato correto
     const telefoneRegex = /^\(\d{2}\) \d{5}-\d{4}$/;
     return telefoneRegex.test(numero);
-}
+  }
   constructor(private vindiService: VindiService,
     private cepService: CepService,
     private library: FaIconLibrary,
@@ -185,10 +185,10 @@ objetoUsuarios = new UsersMkModel ()
         }
       }
     });
- 
 
 
-  
+
+
     console.log('prosssd', this.dataFormatada, this.dataFormatadaDias)
 
     // this.cars = [
@@ -207,7 +207,7 @@ objetoUsuarios = new UsersMkModel ()
 
       console.log('usuarios', res);
     });
-    
+
     lastValueFrom(this.vindiService.getMetodos()).then(res => {
       // Acessando diretamente o array payment_methods
       const paymentMethods = res.payment_methods;
@@ -237,12 +237,12 @@ objetoUsuarios = new UsersMkModel ()
     lastValueFrom(this.vindiService.getProdutos()).then(res => {
       // Acessando diretamente o array payment_methods
       const products = res.products;
-     
-      
-      this.prods =products.filter((opcao: any) => opcao.id == 1479734);
+
+
+      this.prods = products.filter((opcao: any) => opcao.id == 1479734);
       console.log('Opções de pagamento após o filtro:', this.prods);
       console.log('produtos:', this.prods);
-      
+
     });
 
 
@@ -265,7 +265,7 @@ objetoUsuarios = new UsersMkModel ()
         this.metodos = res;
         console.log('teste', this.metodos)
       });
-    library.addIcons(faChevronRight, faUser, faTrash, faLocationDot, faPhone, faChevronLeft, faPlus, faMoneyCheckDollar, faArrowRight, faArrowLeft, faCheck, faCreditCard, faInstagram)
+    library.addIcons(faChevronRight, faUser, faTrash, faLocationDot, faPhone, faChevronLeft, faPlus, faMoneyCheckDollar, faArrowRight, faArrowLeft, faCheck, faCreditCard, faInstagram, faCircleCheck)
   }
   scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -296,7 +296,7 @@ objetoUsuarios = new UsersMkModel ()
         this.slidesPerView = 5;
         this.spaceBetween = '0'
         console.log(this.slidesPerView)
-  
+
         // console.log(this.slidesPerView, 'teste234')
       }
       if (windowWidth <= 900) {
@@ -304,8 +304,8 @@ objetoUsuarios = new UsersMkModel ()
         this.slidesPerView = 2;
         this.spaceBetween = '-20'
         console.log(this.slidesPerView, 'teste234')
-  
-     
+
+
       }
     }
   }
@@ -318,7 +318,8 @@ objetoUsuarios = new UsersMkModel ()
     if (form.invalid) {
       // Se o formulário for inválido, exibe o elemento "teste"
       this.exibirTeste = true;
-    }}
+    }
+  }
 
   onFileDrop(event: any) {
     // Lógica para lidar com os arquivos soltos
@@ -333,9 +334,9 @@ objetoUsuarios = new UsersMkModel ()
   }
   buscaCEP() {
     this.cepService.getCEP(this.cep).subscribe((data) => {
-      
- 
-      
+
+
+
       this.cep = data.cep;
       this.logradouro = data.logradouro
       this.localidade = data.localidade
@@ -355,9 +356,9 @@ objetoUsuarios = new UsersMkModel ()
       };
 
 
-    
 
-  
+
+
       this.endereco = endereco
       this.clienteModel.address = this.endereco;
       console.log('end', endereco)
@@ -365,7 +366,7 @@ objetoUsuarios = new UsersMkModel ()
 
       console.log(this.bairro, this.localidade, this.uf, 'teste', this.objetoEndereco, this.clienteModel);
 
-      
+
 
     });
   }
@@ -383,7 +384,7 @@ objetoUsuarios = new UsersMkModel ()
 
 
   // getMaskTelefone(phoneNumber: string): string {
-   
+
   //   return phoneNumber.startsWith('9') ? '(00) 00000-0000' : '(00) 0000-0000';
   // }
 
@@ -407,8 +408,8 @@ objetoUsuarios = new UsersMkModel ()
   @ViewChild('btn') btn: any;
   ngOnInit(): void {
     // this.getMetodos();
-    
-   
+
+
   }
 
 
@@ -463,21 +464,21 @@ objetoUsuarios = new UsersMkModel ()
     console.log('Cliente Model:', this.clienteModel);
   }
 
-  atribuirValor(numero:string) {
-    
+  atribuirValor(numero: string) {
+
     console.log('testethis.inputs', this.inputs, this.inputs, numero);
     if (numero.length >= 3 && numero[2] !== '9') {
       this.numeroInvalido = true
-      
-  }
-  else{
-    this.numeroInvalido = false
-  }
+
+    }
+    else {
+      this.numeroInvalido = false
+    }
     const telefones: TelefoneModel[] = this.inputs.map(input => {
       const numeroCompleto = `55${input.number}`;
       return {
         phone_type: 'mobile',  // You may need to set the phoneType here
-    
+
         number: numeroCompleto
       };
     });
@@ -496,12 +497,12 @@ objetoUsuarios = new UsersMkModel ()
   removerInput(index: number) {
     this.inputs.splice(index, 1);
   }
-  
- 
 
 
-validateRegistry(form1: NgForm, stepper: StepperComponent) {
-  lastValueFrom(this.vindiService.postSandBoxCliente(this.clienteModel)).then((clientePostado) => {
+
+
+  validateRegistry(form2: NgForm, stepper: StepperComponent) {
+    lastValueFrom(this.vindiService.postSandBoxCliente(this.clienteModel)).then((clientePostado) => {
       console.log(clientePostado.customer.id, 'Dados validados com sucesso');
       console.log('foi')
       this.appStepper.next();
@@ -513,15 +514,15 @@ validateRegistry(form1: NgForm, stepper: StepperComponent) {
       // }).catch((erroExclusao) => {
       //     console.error('Erro ao excluir dados:', erroExclusao);
       // });
-     
-  }).catch((erroPostagem) => {
-    this.validacaoRegistro = true
+
+    }).catch((erroPostagem) => {
+      this.validacaoRegistro = true
       // Captura qualquer erro ocorrido durante a validação com a Vindi
       console.error('Erro ao validar cliente com a Vindi:', erroPostagem);
-  });
+    });
 
-  console.log('Validando...');
-}
+ 
+  }
 
 
 
@@ -534,111 +535,111 @@ validateRegistry(form1: NgForm, stepper: StepperComponent) {
 
     // Posta o cliente
     lastValueFrom(this.vindiService.postCliente(this.clienteModel)).then((clientePostado) => {
-        const id = clientePostado.customer.id;
+      const id = clientePostado.customer.id;
 
-        console.log('Cliente postado:', id);
-        this.assinaturaModel.customer_id = id;
-        this.perfilModel.registry_code = clientePostado.customer.registry_code;
+      console.log('Cliente postado:', id);
+      this.assinaturaModel.customer_id = id;
+      this.perfilModel.registry_code = clientePostado.customer.registry_code;
 
-        console.log('cpf,', this.perfilModel.registry_code, clientePostado, clientePostado.customer.registry_code);
-        console.log('objeto final cliente', this.idCliente, clientePostado);
-        console.log('objeto final', this.clienteModel, this.clienteModel.address, this.assinaturaModel);
-        console.log('objeto assinatura final', this.assinaturaModel, this.perfilModel);
+      console.log('cpf,', this.perfilModel.registry_code, clientePostado, clientePostado.customer.registry_code);
+      console.log('objeto final cliente', this.idCliente, clientePostado);
+      console.log('objeto final', this.clienteModel, this.clienteModel.address, this.assinaturaModel);
+      console.log('objeto assinatura final', this.assinaturaModel, this.perfilModel);
 
-        if (this.perfilModel.card_expiration.length === 4) {
-            const onlyNumbers = this.perfilModel.card_expiration.replace(/\D/g, '');
-            const expiration = this.perfilModel.card_expiration.trim();
-            this.perfilModel.card_expiration = `${expiration.slice(0, 2)}/${expiration.slice(2)}`;
-            console.log('validade', this.perfilModel.card_expiration);
+      if (this.perfilModel.card_expiration.length === 4) {
+        const onlyNumbers = this.perfilModel.card_expiration.replace(/\D/g, '');
+        const expiration = this.perfilModel.card_expiration.trim();
+        this.perfilModel.card_expiration = `${expiration.slice(0, 2)}/${expiration.slice(2)}`;
+        console.log('validade', this.perfilModel.card_expiration);
+      }
+
+      const perfil_Pagamento: any = {
+        holder_name: this.perfilModel.holder_name,
+        registry_code: this.perfilModel.registry_code,
+        card_expiration: this.perfilModel.card_expiration,
+        card_number: this.perfilModel.card_number,
+        card_cvv: this.perfilModel.card_cvv,
+        payment_method_code: this.perfilModel.payment_method_code,
+        payment_company_code: this.perfilModel.payment_company_code,
+      };
+
+      console.log('testeteste', perfil_Pagamento)
+
+      this.assinaturaModel.payment_method_code = this.perfilModel.payment_method_code;
+      this.assinaturaModel.payment_profile = perfil_Pagamento;
+
+      interface Produto {
+        id: number;
+      }
+
+      const planoEncontrado = this.plans.find((produto: Produto) => produto.id === this.assinaturaModel.plan_id);
+
+      if (planoEncontrado) {
+        if (!this.assinaturaModel.product_items) {
+          this.assinaturaModel.product_items = [];
         }
 
-        const perfil_Pagamento: any = {
-            holder_name: this.perfilModel.holder_name,
-            registry_code: this.perfilModel.registry_code,
-            card_expiration: this.perfilModel.card_expiration,
-            card_number: this.perfilModel.card_number,
-            card_cvv: this.perfilModel.card_cvv,
-            payment_method_code: this.perfilModel.payment_method_code,
-            payment_company_code: this.perfilModel.payment_company_code,
+        const produto: ProdutosModel = new ProdutosModel();
+        produto.product_id = planoEncontrado.plan_items[0].product.id;
+
+        const teste: any = {
+          product_id: planoEncontrado.plan_items[0].product.id
         };
 
-        console.log('testeteste', perfil_Pagamento)
+        this.assinaturaModel.product_items.push(teste);
 
-        this.assinaturaModel.payment_method_code = this.perfilModel.payment_method_code;
-        this.assinaturaModel.payment_profile = perfil_Pagamento;
+        console.log('objeto finallllll', this.assinaturaModel, clientePostado);
+      } else {
+        console.log('Nenhum plano encontrado com o ID correspondente.');
+      }
 
-        interface Produto {
-            id: number;
-        }
+      console.log('objeto assinatura final atualizado', this.assinaturaModel, this.perfilModel, planoEncontrado);
 
-        const planoEncontrado = this.plans.find((produto: Produto) => produto.id === this.assinaturaModel.plan_id);
+      lastValueFrom(this.vindiService.postAssinatura(this.assinaturaModel)).then((assinaturaPostada) => {
+        const id = assinaturaPostada.subscription.customer.id;
+        console.log(assinaturaPostada, assinaturaPostada.subscription.id);
+        const plano = assinaturaPostada.subscription.plan.id;
+        const produto = assinaturaPostada.subscription.product_items[0].product.id;
+        const preco = assinaturaPostada.subscription.product_items[0].pricing_schema.price;
+        const valorSemPontos = preco.replace(/\./g, '');
+        console.log('preco', preco, valorSemPontos);
+        const produtoModel = new ProdutoModel();
+        produtoModel.product_id = produto;
 
-        if (planoEncontrado) {
-            if (!this.assinaturaModel.product_items) {
-                this.assinaturaModel.product_items = [];
-            }
+        const produtos: any = {
+          product_id: produto,
+          amount: valorSemPontos,
+        };
 
-            const produto: ProdutosModel = new ProdutosModel();
-            produto.product_id = planoEncontrado.plan_items[0].product.id;
+        this.faturaModel.bill_items.push(produtos);
 
-            const teste: any = {
-                product_id: planoEncontrado.plan_items[0].product.id
-            };
-
-            this.assinaturaModel.product_items.push(teste);
-
-            console.log('objeto finallllll', this.assinaturaModel, clientePostado);
-        } else {
-            console.log('Nenhum plano encontrado com o ID correspondente.');
-        }
-
-        console.log('objeto assinatura final atualizado', this.assinaturaModel, this.perfilModel, planoEncontrado);
-
-        lastValueFrom(this.vindiService.postAssinatura(this.assinaturaModel)).then((assinaturaPostada) => {
-            const id = assinaturaPostada.subscription.customer.id;
-            console.log(assinaturaPostada, assinaturaPostada.subscription.id);
-            const plano = assinaturaPostada.subscription.plan.id;
-            const produto = assinaturaPostada.subscription.product_items[0].product.id;
-            const preco = assinaturaPostada.subscription.product_items[0].pricing_schema.price;
-            const valorSemPontos = preco.replace(/\./g, '');
-            console.log('preco', preco, valorSemPontos);
-            const produtoModel = new ProdutoModel();
-            produtoModel.product_id = produto;
-
-            const produtos: any = {
-                product_id: produto,
-                amount: valorSemPontos,
-            };
-
-            this.faturaModel.bill_items.push(produtos);
-
-            this.faturaModel.customer_id = id;
-            this.faturaModel.plan_id = plano;
-            this.faturaModel.billing_at = this.dataFormatadaTestes;
-            this.faturaModel.due_at = this.dataFormatadaTestes;
-console.log('ASSINATURA',assinaturaPostada )
-            this.loading = false;
-            console.log('id', id, assinaturaPostada, this.faturaModel, produtoModel, this.cartaoModel, this.clienteModel);
-            this.router.navigate(['final'], { relativeTo: this.activatedRoute });
-        }).catch((error) => {
-            console.error('Erro ao postar assinatura:', error);
-            this.loading = false; // Ensure loading is set to false on error
-        });
-
-        this.usuariosModel.crypto = true;
-        this.usuariosModel.email = this.clienteModel.email;
-
-        lastValueFrom(this.vindiService.postUsuarios(this.usuariosModel)).then((res) => {
-            console.log('oooo', res);
-        }).catch((error) => {
-            console.error('Erro ao postar usuário:', error);
-            this.loading = false; // Ensure loading is set to false on error
-        });
-    }).catch((error) => {
-        console.error('Erro ao postar cliente:', error);
+        this.faturaModel.customer_id = id;
+        this.faturaModel.plan_id = plano;
+        this.faturaModel.billing_at = this.dataFormatadaTestes;
+        this.faturaModel.due_at = this.dataFormatadaTestes;
+        console.log('ASSINATURA', assinaturaPostada)
+        this.loading = false;
+        console.log('id', id, assinaturaPostada, this.faturaModel, produtoModel, this.cartaoModel, this.clienteModel);
+        this.router.navigate(['final'], { relativeTo: this.activatedRoute });
+      }).catch((error) => {
+        console.error('Erro ao postar assinatura:', error);
         this.loading = false; // Ensure loading is set to false on error
+      });
+
+      this.usuariosModel.crypto = true;
+      this.usuariosModel.email = this.clienteModel.email;
+
+      lastValueFrom(this.vindiService.postUsuarios(this.usuariosModel)).then((res) => {
+        console.log('oooo', res);
+      }).catch((error) => {
+        console.error('Erro ao postar usuário:', error);
+        this.loading = false; // Ensure loading is set to false on error
+      });
+    }).catch((error) => {
+      console.error('Erro ao postar cliente:', error);
+      this.loading = false; // Ensure loading is set to false on error
     });
-}
+  }
 
 
   onFileSelected(event: any): void {
@@ -653,18 +654,18 @@ console.log('ASSINATURA',assinaturaPostada )
     reader.readAsDataURL(arquivo);
     reader.onload = () => {
       const imagemBase64 = reader.result as string;
-   
+
       this.usuariosModel.foto_instagram = imagemBase64;
     };
   }
   verdade = false
-  teste(){
+  teste() {
     console.log(this.verdade)
-    if( this.primeiraSenha !== this.usuariosModel.senha){
-      this.verdade =true
+    if (this.primeiraSenha !== this.usuariosModel.senha) {
+      this.verdade = true
     }
-    else{
-      this.verdade =false
+    else {
+      this.verdade = false
     }
 
   }
@@ -678,8 +679,8 @@ console.log('ASSINATURA',assinaturaPostada )
 
 
 
-  
-  
+
+
 
 
 
