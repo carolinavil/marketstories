@@ -16,6 +16,8 @@
 
 
 section.conteudosTesteconteudos {
+    background: linear-gradient(to bottom right, #693c91, #176aaa)!important;
+
     background: #4BB9EC!important;
     height: 100%;
 }
