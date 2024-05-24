@@ -96,7 +96,10 @@
 
                             <div class="row d-flex align-item-center">
                                 <div class="form-group col s12 m6" [ngClass]="{'has-success': name.valid}">
+                                    <fa-icon *ngIf="name.valid" [icon]="['fas','check']" ></fa-icon>
                                     <label class="form-label">Nome <span class="text-danger">*</span> </label>
+                                    <!-- <div *ngIf="name.valid"><fa-icon [icon]="['fas','arrow-right']" ></fa-icon></div> -->
+                                   
                                     <div class="input-group">
                                         <input [(ngModel)]="clienteModel.name" class="form-control" name="name"
                                             id="name" #name="ngModel" required autocomplete="off"
@@ -112,6 +115,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group col s12 m6">
+                                    <fa-icon *ngIf="email.valid" [icon]="['fas','check']" ></fa-icon>
                                     <label class="form-label">E-mail <span class="text-danger">*</span> </label>
                                     <input required type="text" class="form-control" [(ngModel)]="clienteModel.email"
                                         type="email" class="form-control" email="email" id="email" name="email"
@@ -132,6 +136,7 @@
                                         painel de controle.</label>
                                 </div>
                                 <div class="form-group col s12 m6">
+                                    <fa-icon *ngIf="senha.valid" [icon]="['fas','check']" ></fa-icon>
                                     <label class="form-label">Senha <span class="text-danger">*</span> </label>
                                     <input type="password" class="form-control" [(ngModel)]="primeiraSenha"
                                         #senha="ngModel" name="senha" id="senha" [required]="primeiraSenha"
@@ -160,8 +165,10 @@
                                 </div> -->
 
                                 <div class="form-group col s12 m6">
+                                    <fa-icon *ngIf="senhaConf.value && !verdade" [icon]="['fas', 'check']"></fa-icon>
                                     <label class="form-label">Confirmar Senha <span class="text-danger">*</span></label>
                                     <input type="password" class="form-control" [(ngModel)]="usuariosModel.senha"
+                                    #senhaConf="ngModel"
                                         name="confirmarSenha" id="confirmarSenha" required autocomplete="off"
                                         (input)="teste()" style="padding-left: 10px; ">
                                     <div *ngIf="verdade">
@@ -385,6 +392,7 @@
                                         </div>
 
                                         <div class="form-group col s12 m4">
+                                            <fa-icon *ngIf="name.valid" [icon]="['fas','check']" ></fa-icon>
                                             <label class="form-label">Número de WhatsApp <span
                                                     class="text-danger">*</span></label>
                                             <div *ngFor="let input of inputs; let i = index">
@@ -407,6 +415,7 @@
                                         </div>
 
                                         <div class="form-group col s12 m4">
+                                            <fa-icon *ngIf="name.valid" [icon]="['fas','check']" ></fa-icon>
                                             <label class="form-label">CPF/CNPJ <span class="text-danger">*</span>
                                             </label>
                                             <input required [(ngModel)]="clienteModel.registry_code" type="text"
@@ -414,6 +423,9 @@
                                                 name="registry_code" #registry_code="ngModel"
                                                 [mask]="getMask(clienteModel.registry_code)"
                                                 style="padding-left: 10px; ">
+                                                <div *ngIf="validacaoRegistro"> 
+                                                    <p class="text-danger" >Insira informações válidas</p>
+                                                  </div>  
                                             <div *ngIf="registry_code.touched && registry_code.errors">
                                                 <p class="text-danger" *ngIf="registry_code.errors['required']">Este
                                                     campo é
@@ -464,7 +476,7 @@
                                             <fa-icon [icon]="['fas','arrow-left']" class="icone-seta"></fa-icon>
                                         </button>
 
-                                        <button class="me-0 ms-auto prox-btn btn-stepper" type="submit"  (click)="btnDisabled(form2, appStepper)" [disabled]="form2.invalid">
+                                        <button class="me-0 ms-auto prox-btn btn-stepper" type="submit"  (click)="validateRegistry(form2, appStepper)" [disabled]="form2.invalid">
                                             <!-- <span>Criar</span> -->
                                             <fa-icon [icon]="['fas','arrow-right']" class="icone-seta"></fa-icon>
                                         </button>
@@ -994,15 +1006,18 @@
                                 </div>
 
                             </div>
-                            <div class="d-flex justify-content-between flex-row mb-5 mt-4  btns-caixa">
+                            <div class="d-flex flex-column align-items-center justify-content-between flex-row mb-5 mt-4  btns-caixa">
+                                <div *ngIf="validacaoPay"> 
+                                    <p class="text-danger" >Houve um problema ao processar seu cartão. Por favor, revise os dados e tente novamente. Agradecemos sua compreensão!</p>
+                                  </div>  
                                 <div class="btns-arrow">
                                     <button class="me-0 ms-auto prox-btn btn-stepper" type="submit" cdkStepperPrevious>
                                         <!-- <span>Voltar</span> -->
                                         <fa-icon [icon]="['fas','arrow-left']" class="icone-seta"></fa-icon>
                                     </button>
 
-                                    <button class="me-0 ms-auto prox-btn btn-stepper" type="submit" cdkStepperNext 
-                                        [disabled]="form4.invalid">
+                                    <button class="me-0 ms-auto prox-btn btn-stepper" type="submit"  
+                                        [disabled]="form4.invalid"  cdkStepperNext>
                                         <div *ngIf="loading">
                                             <p-progressSpinner styleClass="w-0.5rem h-0.5rem" strokeWidth="8"
                                                 fill="#683c92" animationDuration=".5s" />

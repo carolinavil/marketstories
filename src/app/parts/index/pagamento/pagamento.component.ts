@@ -39,6 +39,8 @@ declare var M: any;
   styleUrl: './pagamento.component.css'
 })
 export class PagamentoComponent {
+  validacaoRegistro=false
+  validacaoPay=false
   spaceBetween:any
   slidesPerView:any
   loading=false
@@ -494,18 +496,34 @@ objetoUsuarios = new UsersMkModel ()
   removerInput(index: number) {
     this.inputs.splice(index, 1);
   }
-  btnDisabled(form1: NgForm, stepper: StepperComponent) {
-    lastValueFrom(this.vindiService.postCliente(this.clienteModel)).then((clientePostado) => {
-console.log(clientePostado, 'teste')
-      
-  })
-  console.log('foi')
-    this.appStepper.next();
+  
+ 
 
-        
-    
-        
+
+validateRegistry(form1: NgForm, stepper: StepperComponent) {
+  lastValueFrom(this.vindiService.postSandBoxCliente(this.clienteModel)).then((clientePostado) => {
+      console.log(clientePostado.customer.id, 'Dados validados com sucesso');
+      console.log('foi')
+      this.appStepper.next();
+      // lastValueFrom(this.vindiService.deleteCliente(clientePostado.customer.id)).then(() => {
+
+      //   console.log('nao foi')
+      //     console.log('Dados excluídos após validação');
+      //     this.appStepper.next();
+      // }).catch((erroExclusao) => {
+      //     console.error('Erro ao excluir dados:', erroExclusao);
+      // });
+     
+  }).catch((erroPostagem) => {
+    this.validacaoRegistro = true
+      // Captura qualquer erro ocorrido durante a validação com a Vindi
+      console.error('Erro ao validar cliente com a Vindi:', erroPostagem);
+  });
+
+  console.log('Validando...');
 }
+
+
 
   send(form: NgForm) {
     this.loading = true;
@@ -543,6 +561,8 @@ console.log(clientePostado, 'teste')
             payment_method_code: this.perfilModel.payment_method_code,
             payment_company_code: this.perfilModel.payment_company_code,
         };
+
+        console.log('testeteste', perfil_Pagamento)
 
         this.assinaturaModel.payment_method_code = this.perfilModel.payment_method_code;
         this.assinaturaModel.payment_profile = perfil_Pagamento;
@@ -596,7 +616,7 @@ console.log(clientePostado, 'teste')
             this.faturaModel.plan_id = plano;
             this.faturaModel.billing_at = this.dataFormatadaTestes;
             this.faturaModel.due_at = this.dataFormatadaTestes;
-
+console.log('ASSINATURA',assinaturaPostada )
             this.loading = false;
             console.log('id', id, assinaturaPostada, this.faturaModel, produtoModel, this.cartaoModel, this.clienteModel);
             this.router.navigate(['final'], { relativeTo: this.activatedRoute });

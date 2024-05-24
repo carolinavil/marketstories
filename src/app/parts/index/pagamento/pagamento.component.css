@@ -15,6 +15,33 @@
     margin: 0;
 }
 
+.btns-caixa{
+    flex-flow: column;
+    align-items: center;
+}
+ .form-control:focus{
+box-shadow: none!important;
+}
+
+/* .form-control:focus{
+    border: 2px solid !important;
+box-shadow: none!important;
+}
+
+.form-group:focus-within .form-label {
+    color: red!important;
+  }
+  
+
+.form-control:valid{
+    border-color: red!important;
+}
+
+.form-group:valid-within .form-label {
+    color: red!important;
+  }
+   */
+
 .str{
     font-weight: 600;
     color:#653d91 ;
@@ -580,6 +607,7 @@ h1.titulo-banner {
 }
 
 label.form-label {
+    transition: color 0.3s ease;
     font-weight: 600;
     color: rgb(39, 39, 39);
 }
@@ -775,6 +803,7 @@ fa-icon.ng-fa-icon.icone-seta {
 
 
 .form-control {
+    transition: color 0.2s ease;
     height: 2rem !important;
 }
 

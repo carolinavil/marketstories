@@ -55,10 +55,21 @@ getClientes(): Observable<any> {
   return this.http.get<any>(`${this.baseUrl}/Customer`);
 }
 
+deleteCliente(clienteId: string): Observable<any> {
+  return this.http.delete<any>(`${this.baseUrl}/Customer/${clienteId}`);
+}
+
 postCliente(request: ClienteModel): Observable<any> {
   return this.http.post<any>(`${this.baseUrl}/Customer`, request);
 }
 
+postSandBoxCliente(request: ClienteModel): Observable<any> {
+  return this.http.post<any>(`${this.baseUrl}/SandBox`, request);
+}
+
+postSandBoxSUB(request: AssinaturaModel): Observable<any> {
+  return this.http.post<any>(`${this.baseUrl}/SandBoxSUB`, request);
+}
 
 
 postCartao(request: CartaoModel): Observable<any> {
