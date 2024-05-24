@@ -64,11 +64,11 @@ postCliente(request: ClienteModel): Observable<any> {
 }
 
 postSandBoxCliente(request: ClienteModel): Observable<any> {
-  return this.http.post<any>(`${this.baseUrl}/SandBox`, request);
+  return this.http.post<any>(`${this.baseUrl}/SBCustomer`, request);
 }
 
 postSandBoxSUB(request: AssinaturaModel): Observable<any> {
-  return this.http.post<any>(`${this.baseUrl}/SandBoxSUB`, request);
+  return this.http.post<any>(`${this.baseUrl}/SBSubscriptions`, request);
 }
 
 
