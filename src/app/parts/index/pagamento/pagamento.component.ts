@@ -42,6 +42,7 @@ export class PagamentoComponent {
   validacaoRegistro = false
   validacaoPay = false
   spaceBetween: any
+  btnClicked = false;
   slidesPerView: any
   loading = false
   // objeto: PagamentoModel = new PagamentoModel;
@@ -525,121 +526,6 @@ export class PagamentoComponent {
   }
 
 
-
-  send(form: NgForm) {
-    this.loading = true;
-    console.log('TESTE');
-    console.log('telefones', this.telefones, this.endereco, this.objeto, this.clienteModel);
-    this.clienteModel.phones = this.telefones;
-    this.clienteModel.address = this.endereco;
-
-    // Posta o cliente
-    lastValueFrom(this.vindiService.postCliente(this.clienteModel)).then((clientePostado) => {
-      const id = clientePostado.customer.id;
-
-      console.log('Cliente postado:', id);
-      this.assinaturaModel.customer_id = id;
-      this.perfilModel.registry_code = clientePostado.customer.registry_code;
-
-      console.log('cpf,', this.perfilModel.registry_code, clientePostado, clientePostado.customer.registry_code);
-      console.log('objeto final cliente', this.idCliente, clientePostado);
-      console.log('objeto final', this.clienteModel, this.clienteModel.address, this.assinaturaModel);
-      console.log('objeto assinatura final', this.assinaturaModel, this.perfilModel);
-
-      if (this.perfilModel.card_expiration.length === 4) {
-        const onlyNumbers = this.perfilModel.card_expiration.replace(/\D/g, '');
-        const expiration = this.perfilModel.card_expiration.trim();
-        this.perfilModel.card_expiration = `${expiration.slice(0, 2)}/${expiration.slice(2)}`;
-        console.log('validade', this.perfilModel.card_expiration);
-      }
-
-      const perfil_Pagamento: any = {
-        holder_name: this.perfilModel.holder_name,
-        registry_code: this.perfilModel.registry_code,
-        card_expiration: this.perfilModel.card_expiration,
-        card_number: this.perfilModel.card_number,
-        card_cvv: this.perfilModel.card_cvv,
-        payment_method_code: this.perfilModel.payment_method_code,
-        payment_company_code: this.perfilModel.payment_company_code,
-      };
-
-      console.log('testeteste', perfil_Pagamento)
-
-      this.assinaturaModel.payment_method_code = this.perfilModel.payment_method_code;
-      this.assinaturaModel.payment_profile = perfil_Pagamento;
-
-      interface Produto {
-        id: number;
-      }
-
-      const planoEncontrado = this.plans.find((produto: Produto) => produto.id === this.assinaturaModel.plan_id);
-
-      if (planoEncontrado) {
-        if (!this.assinaturaModel.product_items) {
-          this.assinaturaModel.product_items = [];
-        }
-
-        const produto: ProdutosModel = new ProdutosModel();
-        produto.product_id = planoEncontrado.plan_items[0].product.id;
-
-        const teste: any = {
-          product_id: planoEncontrado.plan_items[0].product.id
-        };
-
-        this.assinaturaModel.product_items.push(teste);
-
-        console.log('objeto finallllll', this.assinaturaModel, clientePostado);
-      } else {
-        console.log('Nenhum plano encontrado com o ID correspondente.');
-      }
-
-      console.log('objeto assinatura final atualizado', this.assinaturaModel, this.perfilModel, planoEncontrado);
-
-      lastValueFrom(this.vindiService.postAssinatura(this.assinaturaModel)).then((assinaturaPostada) => {
-        const id = assinaturaPostada.subscription.customer.id;
-        console.log(assinaturaPostada, assinaturaPostada.subscription.id);
-        const plano = assinaturaPostada.subscription.plan.id;
-        const produto = assinaturaPostada.subscription.product_items[0].product.id;
-        const preco = assinaturaPostada.subscription.product_items[0].pricing_schema.price;
-        const valorSemPontos = preco.replace(/\./g, '');
-        console.log('preco', preco, valorSemPontos);
-        const produtoModel = new ProdutoModel();
-        produtoModel.product_id = produto;
-
-        const produtos: any = {
-          product_id: produto,
-          amount: valorSemPontos,
-        };
-
-        this.faturaModel.bill_items.push(produtos);
-
-        this.faturaModel.customer_id = id;
-        this.faturaModel.plan_id = plano;
-        this.faturaModel.billing_at = this.dataFormatadaTestes;
-        this.faturaModel.due_at = this.dataFormatadaTestes;
-        console.log('ASSINATURA', assinaturaPostada)
-        this.loading = false;
-        console.log('id', id, assinaturaPostada, this.faturaModel, produtoModel, this.cartaoModel, this.clienteModel);
-        this.router.navigate(['final'], { relativeTo: this.activatedRoute });
-      }).catch((error) => {
-        console.error('Erro ao postar assinatura:', error);
-        this.loading = false; // Ensure loading is set to false on error
-      });
-
-      this.usuariosModel.crypto = true;
-      this.usuariosModel.email = this.clienteModel.email;
-
-      lastValueFrom(this.vindiService.postUsuarios(this.usuariosModel)).then((res) => {
-        console.log('oooo', res);
-      }).catch((error) => {
-        console.error('Erro ao postar usuário:', error);
-        this.loading = false; // Ensure loading is set to false on error
-      });
-    }).catch((error) => {
-      console.error('Erro ao postar cliente:', error);
-      this.loading = false; // Ensure loading is set to false on error
-    });
-  }
 
 
   onFileSelected(event: any): void {

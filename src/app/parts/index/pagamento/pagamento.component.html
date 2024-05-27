@@ -41,7 +41,7 @@
             </div>
             <img src="../../../../assets/img/astronauta2 (2).png" alt="" class="imagem-astronauta">
         </div>
-        <form #form="ngForm" class="needs-validation formulario " (submit)="send(form)">
+        <form #form="ngForm" class="needs-validation formulario " >
 
             <!-- <form #form="ngForm" class="needs-validation formulario " > -->
             <div class="caixa-voltar-mobile" routerLink="../">
@@ -96,14 +96,16 @@
 
                             <div class="row d-flex align-item-center">
                                 <div class="form-group col s12 m6" [ngClass]="{'has-success': name.valid}">
-                                    <fa-icon *ngIf="name.valid" [icon]="['fas','check']" ></fa-icon>
-                                    <label class="form-label">Nome <span class="text-danger">*</span> </label>
+                                    
+                                    <label class="form-label">Nome <span class="text-danger" *ngIf="!name.valid" >*</span> </label>
+                                    <fa-icon *ngIf="name.valid" [icon]="['fas','circle-check']" class="check-icon" class="check-icon"></fa-icon>
                                     <!-- <div *ngIf="name.valid"><fa-icon [icon]="['fas','arrow-right']" ></fa-icon></div> -->
-                                   
+                                    
                                     <div class="input-group">
                                         <input [(ngModel)]="clienteModel.name" class="form-control" name="name"
                                             id="name" #name="ngModel" required autocomplete="off"
-                                            style="padding-left: 15px">
+                                            style="padding-left: 15px" >
+                                           
                                         <span class="input-group-addon" [ngClass]="{'input-success': name.valid}">
                                             <i class="fas fa-check" *ngIf="name.valid"></i>
                                         </span>
@@ -115,8 +117,9 @@
                                     </div>
                                 </div>
                                 <div class="form-group col s12 m6">
-                                    <fa-icon *ngIf="email.valid" [icon]="['fas','check']" ></fa-icon>
-                                    <label class="form-label">E-mail <span class="text-danger">*</span> </label>
+                                    
+                                    <label class="form-label">E-mail <span class="text-danger" *ngIf="!email.valid" >*</span></label>
+                                    <fa-icon *ngIf="email.valid" [icon]="['fas','circle-check']" class="check-icon" ></fa-icon>
                                     <input required type="text" class="form-control" [(ngModel)]="clienteModel.email"
                                         type="email" class="form-control" email="email" id="email" name="email"
                                         #email="ngModel" placeholder="example@hotmail.com" required
@@ -136,8 +139,8 @@
                                         painel de controle.</label>
                                 </div>
                                 <div class="form-group col s12 m6">
-                                    <fa-icon *ngIf="senha.valid" [icon]="['fas','check']" ></fa-icon>
-                                    <label class="form-label">Senha <span class="text-danger">*</span> </label>
+                                    <label class="form-label">Senha <span class="text-danger" *ngIf="!senha.valid" >*</span> </label>
+                                    <fa-icon *ngIf="senha.valid" [icon]="['fas','circle-check']" class="check-icon" ></fa-icon>
                                     <input type="password" class="form-control" [(ngModel)]="primeiraSenha"
                                         #senha="ngModel" name="senha" id="senha" [required]="primeiraSenha"
                                         autocomplete="off" style="padding-left: 10px; " senha="senha" required>
@@ -165,8 +168,8 @@
                                 </div> -->
 
                                 <div class="form-group col s12 m6">
-                                    <fa-icon *ngIf="senhaConf.value && !verdade" [icon]="['fas', 'check']"></fa-icon>
-                                    <label class="form-label">Confirmar Senha <span class="text-danger">*</span></label>
+                                    <label class="form-label">Confirmar Senha <span class="text-danger" *ngIf="!senhaConf.valid || verdade || !senhaConf.valid"  >*</span></label>
+                                    <fa-icon *ngIf="senhaConf.value && !verdade" [icon]="['fas', 'circle-check']" class="check-icon"></fa-icon>
                                     <input type="password" class="form-control" [(ngModel)]="usuariosModel.senha"
                                     #senhaConf="ngModel"
                                         name="confirmarSenha" id="confirmarSenha" required autocomplete="off"
@@ -392,10 +395,11 @@
                                         </div>
 
                                         <div class="form-group col s12 m4">
-                                            <fa-icon *ngIf="name.valid" [icon]="['fas','check']" ></fa-icon>
-                                            <label class="form-label">Número de WhatsApp <span
-                                                    class="text-danger">*</span></label>
                                             <div *ngFor="let input of inputs; let i = index">
+                                                
+                                            <label class="form-label">Número de WhatsApp <span
+                                                    class="text-danger"  *ngIf="!phone.dirty || numeroInvalido || input.number.length !=11">*</span><fa-icon *ngIf="phone.dirty && !numeroInvalido && input.number.length ===11" [icon]="['fas','circle-check']" class="check-icon"></fa-icon></label>
+                                            
                                                 <input type="text" name="phone{{i}}" id="phone{{i}}"
                                                     class="form-control" placeholder="example@hotmail.com"
                                                     [(ngModel)]="inputs[i].number" #phone="ngModel"
@@ -413,10 +417,12 @@
 
                                             </div>
                                         </div>
-
+                                        
+                                        
                                         <div class="form-group col s12 m4">
-                                            <fa-icon *ngIf="name.valid" [icon]="['fas','check']" ></fa-icon>
-                                            <label class="form-label">CPF/CNPJ <span class="text-danger">*</span>
+                                            
+                                            <label class="form-label">CPF/CNPJ <span class="text-danger" *ngIf="!registry_code.valid || validacaoRegistro " >*</span>
+                                                <fa-icon *ngIf="registry_code.valid && !validacaoRegistro" [icon]="['fas','circle-check']" class="check-icon" ></fa-icon>
                                             </label>
                                             <input required [(ngModel)]="clienteModel.registry_code" type="text"
                                                 class="form-control" registry_code="registry_code" id="registry_code"
@@ -433,7 +439,9 @@
                                             </div>
                                         </div>
                                         <div class="form-group col s12 m4">
-                                            <label class="form-label">CEP <span class="text-danger">*</span> </label>
+                                            <label class="form-label">CEP <span class="text-danger" *ngIf="!documento.valid || documento.touched && documento.errors">*</span> 
+                                                <fa-icon *ngIf="documento.valid" [icon]="['fas','circle-check']" class="check-icon" ></fa-icon>
+                                            </label>
                                             <input required type="text" class="form-control " name="documento"
                                                 id="documento" #documento="ngModel" [(ngModel)]="cep" required #buscaCEP
                                                 (blur)="blur($event)" [(ngModel)]="cep" required f mask="00000-000"
@@ -447,7 +455,8 @@
                                     </div>
                                     <div class="row">
                                         <div class="form-group col s12 m8">
-                                            <label class="form-label">Endereço <span class="text-danger">*</span>
+                                            <label class="form-label">Endereço <span class="text-danger" *ngIf="!endereco.valid && !documento.valid && documento.dirty || !endereco.valid">*</span>
+                                                <fa-icon *ngIf="endereco.valid && documento.valid && documento.dirty" [icon]="['fas','circle-check']" class="check-icon" ></fa-icon>
                                             </label>
                                             <input required type="text" #endereco="ngModel" [(ngModel)]="enderecoFormat"
                                                 class="form-control" name="endereco" id="endereco" ngModel required
@@ -458,8 +467,11 @@
                                             </div>
                                         </div>
                                         <div class="form-group col s12 m4">
-                                            <label class="form-label">Número </label>
-                                            <input required type="text" #documento="ngModel" [(ngModel)]="numero"
+                                            <label class="form-label">Número 
+                                                <!-- <fa-icon *ngIf="documento.dirty" [icon]="['fas','circle-check']" class="check-icon" ></fa-icon> -->
+                                            </label>
+
+                                            <input required type="text" [(ngModel)]="numero"
                                                 class="form-control" name="numero" id="numero" ngModel required
                                                 type="text" style="padding-left: 10px; ">
 
@@ -476,7 +488,9 @@
                                             <fa-icon [icon]="['fas','arrow-left']" class="icone-seta"></fa-icon>
                                         </button>
 
-                                        <button class="me-0 ms-auto prox-btn btn-stepper"   (click)="validateRegistry(form2, appStepper)" [disabled]="form2.invalid">
+                                        <button class="me-0 ms-auto prox-btn btn-stepper" type="submit"   (click)="validateRegistry(form2, appStepper)"  [disabled]="form2.invalid">
+
+                                        <!-- <button class="me-0 ms-auto prox-btn btn-stepper" type="submit"  cdkStepperNext  (click)="validateRegistry(form2, appStepper)" [disabled]="form2.invalid"> -->
                                             <!-- <span>Criar</span> -->
                                             <fa-icon [icon]="['fas','arrow-right']" class="icone-seta"></fa-icon>
                                         </button>
@@ -512,7 +526,8 @@
                                         <div class="form-group col s12 m10 ">
                                             <label class="form-label">Qual o nome você quer que fique visivel nos
                                                 layouts
-                                                criados?</label>
+                                                criados? <span class="text-danger"*ngIf="!nome.valid || nome.touched && nome.errors">*</span></label>
+                                                <fa-icon *ngIf="nome.valid" [icon]="['fas','circle-check']" class="check-icon" ></fa-icon>
                                             <input type="text" class="form-control " [(ngModel)]="usuariosModel.nome"
                                                 type="text" class="form-control" name="nome" id="nome" nome="nome"
                                                 #nome="ngModel" required="" autocomplete="off"
@@ -533,8 +548,9 @@
                                             <label class="form-label">Qual é o {{'@'}} do seu Instagram? <span
                                                     class="form-label-explicacao ">Se não tiver um, como gostaria que
                                                     fosse
-                                                    colocado?</span><span class="text-danger">*</span> </label>
-                                            <input type="text" class="form-control "
+                                                    colocado? </span><span class="text-danger" *ngIf="!usuario_instagram.valid || usuario_instagram.touched && usuario_instagram.errors">*</span> </label>
+                                                    <fa-icon *ngIf="usuario_instagram.valid" [icon]="['fas','circle-check']" class="check-icon" ></fa-icon>
+                                                    <input type="text" class="form-control "
                                                 [(ngModel)]="usuariosModel.usuario_instagram" type="text"
                                                 class="form-control" name="usuario_instagram" id="usuario_instagram"
                                                 usuario_instagram="usuario_instagram" #usuario_instagram="ngModel"
@@ -555,19 +571,22 @@
                                     <div class="row row-exp">
                                         <div class="form-group col s12 m10 ">
                                             <div class="caixa-file">
-                                                <label for="" class="form-label">Por favor, envie uma foto sua para que
-                                                    ela seja
-                                                    colocada no seu layout<span class="text-danger">*</span></label>
-                                                <input type="file" id="fileInput" (change)="onFileSelected2($event)"
+                                                <label for="" class="form-label">
+                                                    Por favor, envie uma foto sua para que ela seja colocada no seu layout
+                                                    <span class="text-danger" *ngIf="!fileInput.valid || (fileInput.touched && fileInput.errors)"> *</span>
+                                                </label>
+                                                <fa-icon *ngIf="fileInput.valid" [icon]="['fas','circle-check']" class="check-icon" ></fa-icon>
+                                                <input type="file" id="fileInput" (change)="onFileSelected2($event)" #fileInput="ngModel" 
+                                                    ngModel name="fileInput" required
                                                     style="display: none;" class="form-control-file">
                                                 <label for="fileInput" class="form-control">
                                                     Selecionar Imagem
                                                 </label>
                                                 <p *ngIf="selectedImage" class="img-selecionada">Imagem selecionada:</p>
-                                                <img *ngIf="selectedImage" [src]="selectedImage"
-                                                    alt="Imagem Selecionada" class="imagem-escolhida-instagram">
+                                                <img *ngIf="selectedImage" [src]="selectedImage" alt="Imagem Selecionada" class="imagem-escolhida-instagram">
                                             </div>
                                         </div>
+                                        
                                         <div class="caixa-imagem-exp" [ngClass]="{'hidden': selectedImage}">
                                             <img src="../../../../assets/img/teste-exp (4).png" alt=""
                                                 class="imagem-exp">
@@ -739,7 +758,8 @@
                                     <div class="pagamento-caixa">
                                         <div class="form-group col s12 dropDown">
                                             <label class="form-label" for="">Método de pagamento <span
-                                                    class="text-danger">*</span> </label>
+                                                    class="text-danger" *ngIf="!paymemnt_method_code.valid" > *</span> </label>
+                                                    <fa-icon *ngIf="paymemnt_method_code.valid" [icon]="['fas','circle-check']" class="check-icon" ></fa-icon>
                                             <p-dropdown [options]="pay" optionLabel="name" optionValue="code"
                                                 [(ngModel)]="perfilModel.payment_method_code"
                                                 type="paymemnt_method_code" class="form-control drop"
@@ -757,8 +777,9 @@
                                             <!-- <div> -->
                                             <div class="row">
                                                 <div class="form-group col s12 m8">
-                                                    <label class="form-label">Nome <span class="text-danger">*</span>
+                                                    <label class="form-label">Nome <span class="text-danger"  *ngIf="!nomeCartao.valid" > *</span>
                                                     </label>
+                                                    <fa-icon *ngIf="nomeCartao.valid" [icon]="['fas','circle-check']" class="check-icon" ></fa-icon>
                                                     <input type="text" class="form-control "
                                                         [(ngModel)]="perfilModel.holder_name" class="form-control"
                                                         name="email" id="email" #nomeCartao="ngModel"
@@ -772,8 +793,9 @@
                                                 <div class="form-group col s12 m4">
 
                                                     <label class="form-label">Número do cartão <span
-                                                            class="text-danger">*</span> </label>
-                                                    <input type="text" class="form-control "
+                                                            class="text-danger"  *ngIf="!card_number.valid" >*</span> </label>
+                                                            <fa-icon *ngIf="card_number.valid" [icon]="['fas','circle-check']" class="check-icon" ></fa-icon>
+                                                            <input type="text" class="form-control "
                                                         [(ngModel)]="perfilModel.card_number" type="text"
                                                         class="form-control" name="card_number" id="card_number"
                                                         #card_number="ngModel" placeholder="0000 0000 0000 0000"
@@ -791,8 +813,9 @@
                                             <div class="row">
                                                 <div class="form-group col s12 m4">
                                                     <label class="form-label">Validade do cartão <span
-                                                            class="text-danger">*</span> </label>
-                                                    <input type="text" class="form-control "
+                                                            class="text-danger"  *ngIf="!card_expiration.valid" v>*</span> </label>
+                                                            <fa-icon *ngIf="card_expiration.valid" [icon]="['fas','circle-check']" class="check-icon" ></fa-icon>
+                                                            <input type="text" class="form-control "
                                                         [(ngModel)]="perfilModel.card_expiration" type="text"
                                                         class="form-control" name="card_expiration" id="card_expiration"
                                                         #card_expiration="ngModel" mask="00/00" placeholder="00/00"
@@ -804,8 +827,9 @@
                                                     </div>
                                                 </div>
                                                 <div class="form-group col s12 m4 ">
-                                                    <label class="form-label">CVV <span class="text-danger">*</span>
+                                                    <label class="form-label">CVV <span class="text-danger"  *ngIf="!card_cvv.valid" >*</span>
                                                     </label>
+                                                    <fa-icon *ngIf="card_cvv.valid" [icon]="['fas','circle-check']" class="check-icon" ></fa-icon>
                                                     <input type="text" class="form-control "
                                                         [(ngModel)]="perfilModel.card_cvv" class="form-control"
                                                         name="card_cvv" id="card_cvv" #card_cvv="ngModel" mask="000"
@@ -817,8 +841,10 @@
                                                 </div>
                                                 <div class="form-group col s12 m4">
                                                     <label class="form-label">Bandeira <span
-                                                            class="text-danger">*</span>
+                                                            class="text-danger"  *ngIf="!payment_company_code.valid" >*</span>
                                                     </label>
+
+                                                    <fa-icon *ngIf="payment_company_code.valid" [icon]="['fas','circle-check']" class="check-icon" ></fa-icon>
                                                     <p-dropdown [options]="bandeiras"
                                                         [(ngModel)]="perfilModel.payment_company_code" type="text"
                                                         class="form-control drop" metodo="metodo" id="metodo"
@@ -968,8 +994,9 @@
                                         </div>
                                     </div>
                                     <div class="form-group col s12 dropDown">
-                                        <label class="form-label" for="">Plano <span class="text-danger">*</span>
+                                        <label class="form-label" for="">Plano <span class="text-danger"  *ngIf="!plan_id.dirty" >*</span>
                                         </label>
+                                        <fa-icon *ngIf="plan_id.dirty" [icon]="['fas','circle-check']" class="check-icon" ></fa-icon>
                                         <p-dropdown [options]="plans" optionLabel="name" optionValue="id"
                                             [(ngModel)]="assinaturaModel.plan_id" type="plan_id"
                                             class="form-control drop" plan_id="plan_id" id="plan_id" name="plan_id"
@@ -1007,7 +1034,7 @@
 
                             </div>
                             <div class="d-flex flex-column align-items-center justify-content-between flex-row mb-5 mt-4  btns-caixa">
-                                <div *ngIf="validacaoPay"> 
+                                <div *ngIf="btnClicked && validacaoPay"> 
                                     <p class="text-danger" >Houve um problema ao processar seu cartão. Por favor, revise os dados e tente novamente. Agradecemos sua compreensão!</p>
                                   </div>  
                                 <div class="btns-arrow">
@@ -1017,14 +1044,14 @@
                                     </button>
 
                                     <button class="me-0 ms-auto prox-btn btn-stepper" type="submit"  
-                                        [disabled]="form4.invalid"  cdkStepperNext>
+                                        [disabled]="form4.invalid"  cdkStepperNext >
                                         <div *ngIf="loading">
                                             <p-progressSpinner styleClass="w-0.5rem h-0.5rem" strokeWidth="8"
                                                 fill="#683c92" animationDuration=".5s" />
                                         </div>
 
                                         <div *ngIf="!loading">
-                                            <fa-icon [icon]="['fas','check']" class="icone-seta"></fa-icon>
+                                            <fa-icon [icon]="['fas','check']" class="check-icon" class="icone-seta"></fa-icon>
                                         </div>
 
                                     </button>
