@@ -18,6 +18,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { TableModule } from 'primeng/table';
 import { IndexTesteComponent } from './indexTeste.component';
+import { TermosDeUsoComponent } from './termos-de-uso/termos-de-uso.component';
 
 register()
 
@@ -25,7 +26,7 @@ register()
 @NgModule({
   declarations: [
     IndexComponent,
-    IndexTesteComponent
+    IndexTesteComponent,
 
   ],
   imports: [
