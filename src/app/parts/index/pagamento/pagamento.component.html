@@ -488,7 +488,7 @@
                                             <fa-icon [icon]="['fas','arrow-left']" class="icone-seta"></fa-icon>
                                         </button>
 
-                                        <button class="me-0 ms-auto prox-btn btn-stepper" type="submit"   (click)="validateRegistry(form2, appStepper)"  [disabled]="form2.invalid">
+                                        <button class="me-0 ms-auto prox-btn btn-stepper" type="submit"   (click)="validateRegistry(form2, appStepper);"  [disabled]="form2.invalid">
 
                                         <!-- <button class="me-0 ms-auto prox-btn btn-stepper" type="submit"  cdkStepperNext  (click)="validateRegistry(form2, appStepper)" [disabled]="form2.invalid"> -->
                                             <!-- <span>Criar</span> -->
@@ -1043,7 +1043,7 @@
                                         <fa-icon [icon]="['fas','arrow-left']" class="icone-seta"></fa-icon>
                                     </button>
 
-                                    <button class="me-0 ms-auto prox-btn btn-stepper" type="submit" (click)="btnClicked = true; send(form)  "  
+                                    <button class="me-0 ms-auto prox-btn btn-stepper" type="submit" (click)="validateCartao(form); send(form)  "  
                                         [disabled]="form4.invalid"  cdkStepperNext >
                                         <div *ngIf="loading">
                                             <p-progressSpinner styleClass="w-0.5rem h-0.5rem" strokeWidth="8"

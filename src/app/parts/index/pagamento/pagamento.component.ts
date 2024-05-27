@@ -88,6 +88,7 @@ export class PagamentoComponent {
   cus: any
   plans: any
   clienteModel = new ClienteModel();
+  clienteModelTestes = new ClienteModel();
   assinaturaModel = new AssinaturaModel();
   perfilModel = new PerfilPagamentoModel();
   faturaModel = new FaturaModel();
@@ -502,7 +503,7 @@ export class PagamentoComponent {
 
 
 
-  validateRegistry(form2: NgForm, stepper: StepperComponent) {
+  validateRegistry(form2:any, stepper: StepperComponent) {
     lastValueFrom(this.vindiService.postSandBoxCliente(this.clienteModel)).then((clientePostado) => {
       console.log(clientePostado.customer.id, 'Dados validados com sucesso');
       console.log('foi')
@@ -534,6 +535,44 @@ export class PagamentoComponent {
 
 
   }
+
+  validateCartao(form: NgForm){
+    this.btnClicked = true
+    lastValueFrom(this.vindiService.postAssinatura(this.assinaturaModel)).then((assinaturaPostada) => {
+      const id = assinaturaPostada.subscription.customer.id;
+      console.log(assinaturaPostada, assinaturaPostada.subscription.id);
+      const plano = assinaturaPostada.subscription.plan.id;
+      const produto = assinaturaPostada.subscription.product_items[0].product.id;
+      const preco = assinaturaPostada.subscription.product_items[0].pricing_schema.price;
+      const valorSemPontos = preco.replace(/\./g, '');
+      console.log('preco', preco, valorSemPontos);
+      const produtoModel = new ProdutoModel();
+      produtoModel.product_id = produto;
+
+      const produtos: any = {
+        product_id: produto,
+        amount: valorSemPontos,
+      };
+
+      this.faturaModel.bill_items.push(produtos);
+
+      this.faturaModel.customer_id = id;
+      this.faturaModel.plan_id = plano;
+      this.faturaModel.billing_at = this.dataFormatadaTestes;
+      this.faturaModel.due_at = this.dataFormatadaTestes;
+      console.log('ASSINATURA', assinaturaPostada)
+      this.loading = false;
+      console.log('id', id, assinaturaPostada, this.faturaModel, produtoModel, this.cartaoModel, this.clienteModel);
+      this.router.navigate(['final'], { relativeTo: this.activatedRoute });
+    }).catch((error) => {
+      this.validacaoPay = true
+      console.error('Erro ao postar assinatura:', error);
+      this.loading = false; // Ensure loading is set to false on error
+    });
+
+    
+  }
+
 
   send(form: NgForm) {
    
@@ -632,7 +671,7 @@ export class PagamentoComponent {
         console.log('id', id, assinaturaPostada, this.faturaModel, produtoModel, this.cartaoModel, this.clienteModel);
         this.router.navigate(['final'], { relativeTo: this.activatedRoute });
       }).catch((error) => {
-        this.validacaoPay = true
+        
         console.error('Erro ao postar assinatura:', error);
         this.loading = false; // Ensure loading is set to false on error
       });
