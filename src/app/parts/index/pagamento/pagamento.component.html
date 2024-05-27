@@ -41,7 +41,7 @@
             </div>
             <img src="../../../../assets/img/astronauta2 (2).png" alt="" class="imagem-astronauta">
         </div>
-        <form #form="ngForm" class="needs-validation formulario " >
+        <form #form="ngForm" class="needs-validation formulario "  (submit)="send(form)">
 
             <!-- <form #form="ngForm" class="needs-validation formulario " > -->
             <div class="caixa-voltar-mobile" routerLink="../">
@@ -1031,19 +1031,19 @@
                                         proporcionar
                                         maior comodidade e flexibilidade em sua experiência conosco.</label>
                                 </div>
-
+                                <div *ngIf="btnClicked && validacaoPay"> 
+                                    <p class="text-danger validacao" >Houve um problema ao processar seu cartão. Por favor, revise os dados e tente novamente. Agradecemos sua compreensão!</p>
+                                  </div>  
                             </div>
                             <div class="d-flex flex-column align-items-center justify-content-between flex-row mb-5 mt-4  btns-caixa">
-                                <div *ngIf="btnClicked && validacaoPay"> 
-                                    <p class="text-danger" >Houve um problema ao processar seu cartão. Por favor, revise os dados e tente novamente. Agradecemos sua compreensão!</p>
-                                  </div>  
+                              
                                 <div class="btns-arrow">
                                     <button class="me-0 ms-auto prox-btn btn-stepper" type="submit" cdkStepperPrevious>
                                         <!-- <span>Voltar</span> -->
                                         <fa-icon [icon]="['fas','arrow-left']" class="icone-seta"></fa-icon>
                                     </button>
 
-                                    <button class="me-0 ms-auto prox-btn btn-stepper" type="submit"  
+                                    <button class="me-0 ms-auto prox-btn btn-stepper" type="submit" (click)="btnClicked = true; send(form)  "  
                                         [disabled]="form4.invalid"  cdkStepperNext >
                                         <div *ngIf="loading">
                                             <p-progressSpinner styleClass="w-0.5rem h-0.5rem" strokeWidth="8"

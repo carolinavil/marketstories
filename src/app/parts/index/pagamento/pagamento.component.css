@@ -22,6 +22,10 @@
     margin: 0;
 }
 
+p.text-danger.validacao {
+    text-align: center;
+    font-size: 13px;
+}
 .btns-caixa{
     flex-flow: column;
     align-items: center;
