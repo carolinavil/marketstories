@@ -27,7 +27,7 @@ import { PainelComponent } from './painel.component';
 import { AdminComponent } from './admin/admin.component';
 import { TableModule } from 'primeng/table';
 import { UserComponent } from './user/user.component';
-
+import { PaginatorModule } from 'primeng/paginator';
 
 @NgModule({
   declarations: [
@@ -57,7 +57,8 @@ import { UserComponent } from './user/user.component';
     NgxMaskDirective,
     NgxMaskPipe,
     FileUploadModule,
-    TableModule
+    TableModule,
+    PaginatorModule
 
   ],
   providers: [

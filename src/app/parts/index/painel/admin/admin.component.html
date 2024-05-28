@@ -22,14 +22,16 @@
   </div>
    -->
 
-
 <div class="tabela">
+  
+<h1 class="titulo-tabela">Dados dos usuários da <span class="img-tabela"><img src="../../../../../assets/img/logo.png" alt=""></span></h1>
   <p-table [value]="usuarios" [tableStyle]="{ 'min-width': '50rem' }">
     <ng-template pTemplate="header">
         <tr>
             <th>Nome</th>
             <th>E-mail</th>
             <th>Usuário</th>
+            <th>Telefone</th>
             <th>Imagem</th>
         </tr>
     </ng-template>
@@ -38,8 +40,18 @@
             <td>{{ usuarios.nome }}</td>
             <td>{{ usuarios.email }}</td>
             <td>{{ usuarios.usuario_instagram }}</td>
+            <td>{{ usuarios.telefone }}</td>
         <td><a href="javascript:void(0);" (click)="redirecionarParaInstagram(usuarios.foto_instagram)">imagem</a></td>
         </tr>
     </ng-template>
-</p-table>
+    <p-paginator 
+    (onPageChange)="onPageChange($event)" 
+    [first]="first"
+    [rows]="rows" 
+    [totalRecords]="120" 
+    [rowsPerPageOptions]="[10, 20, 30]" />
+  </p-table>
+
 </div>
+
+

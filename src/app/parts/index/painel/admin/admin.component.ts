@@ -14,7 +14,9 @@ export class AdminComponent {
   imagem: any
   base64Strings: string[] = []; // Supondo que você tenha uma lista de strings em base64
 
-
+  first: number = 0; // Índice do primeiro item na página atual
+  rows: number = 10; // Número de itens por página
+  totalRecords: number = 120; // Total de registros (ajustar conforme necessário)
   thumbnails: string[] = []; // Lista de URLs de miniaturas
 
   images: string[] = []; // Lista de URLs de imagens
@@ -24,6 +26,13 @@ constructor(private vindiService: VindiService){
     this.usuarios = res
     
   })
+}
+
+
+onPageChange(event: any) {
+  this.first = event.first;
+  this.rows = event.rows;
+
 }
 
 
