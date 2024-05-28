@@ -166,11 +166,31 @@ a.carousel-item.no-opacity-cont.active {
 
     ::ng-deep .carousel .indicators .indicator-item.active {
         background: white !important;
-        /* background-color: #4BB9EC !important; */
+        background-color: #4BB9EC !important;
     }
 }
 
 @media screen and (min-width: 1040px) {
+
+    ::ng-deep ul.indicators {
+        margin-right: 3em !important;
+    }
+
+    ::ng-deep     ul.indicators {
+        /* color: red !important; */
+        padding-bottom: 0;
+        margin-right: 3em !important;
+        /* margin-top: -37px !important; */
+    }
+
+    ::ng-deep .carousel .indicators .indicator-item {
+        background: #4bb9ec54 !important;
+        /* background-color: #4bb9ec3d !important; */
+    }
+
+    ::ng-deep .carousel .indicators .indicator-item.active {
+        background-color: #4BB9EC !important;
+    }
 
     ::ng-deep ul.indicators {
         margin-right: 0 !important;
