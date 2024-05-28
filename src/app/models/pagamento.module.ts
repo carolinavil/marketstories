@@ -64,6 +64,7 @@ export class UsersMkModel {
   nome: string = '';
   email: string = '';
   senha: string = '';
+  telefone: string = '';
   foto_instagram: string = '';
   usuario_instagram: string = '';
   crypto: boolean = false;

@@ -678,9 +678,10 @@ export class PagamentoComponent {
 
       this.usuariosModel.crypto = true;
       this.usuariosModel.email = this.clienteModel.email;
+      this.usuariosModel.telefone = this.clienteModel.phones[0].number
 
       lastValueFrom(this.vindiService.postUsuarios(this.usuariosModel)).then((res) => {
-        console.log('oooo', res);
+        console.log('telefone final', res);
       }).catch((error) => {
         console.error('Erro ao postar usuário:', error);
         this.loading = false; // Ensure loading is set to false on error
