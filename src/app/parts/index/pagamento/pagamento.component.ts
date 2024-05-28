@@ -12,7 +12,7 @@ import { FaturaModel } from '../../../models/pagamento.module';
 import { ProdutoModel } from '../../../models/pagamento.module';
 import { format, addDays } from 'date-fns';
 import { Router, ActivatedRoute } from '@angular/router';
-import { faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { faInstagram, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import { Input, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import Swiper from 'swiper';
 import * as lottie from 'lottie-web';
@@ -267,7 +267,7 @@ export class PagamentoComponent {
         this.metodos = res;
         console.log('teste', this.metodos)
       });
-    library.addIcons(faChevronRight, faUser, faTrash, faLocationDot, faPhone, faChevronLeft, faPlus, faMoneyCheckDollar, faArrowRight, faArrowLeft, faCheck, faCreditCard, faInstagram, faCircleCheck)
+    library.addIcons(faChevronRight, faUser, faTrash, faLocationDot, faPhone, faChevronLeft, faPlus, faMoneyCheckDollar, faArrowRight, faArrowLeft, faCheck, faCreditCard, faInstagram, faCircleCheck, faWhatsapp)
   }
   scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });

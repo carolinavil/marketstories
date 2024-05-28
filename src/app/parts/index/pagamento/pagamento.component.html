@@ -1043,7 +1043,7 @@
                                         <fa-icon [icon]="['fas','arrow-left']" class="icone-seta"></fa-icon>
                                     </button>
 
-                                    <button class="me-0 ms-auto prox-btn btn-stepper" type="submit" (click)="validateCartao(form); send(form)  "  
+                                    <button class="me-0 ms-auto prox-btn btn-stepper" type="submit" (click)=" send(form)  "  
                                         [disabled]="form4.invalid"  cdkStepperNext >
                                         <div *ngIf="loading">
                                             <p-progressSpinner styleClass="w-0.5rem h-0.5rem" strokeWidth="8"
@@ -1066,5 +1066,8 @@
             </div>
         </form>
 
+        <div class="link-top link-on"><a href="https://wa.link/xyffod">
+    
+            <fa-icon [icon]="['fab','whatsapp']"></fa-icon></a></div>
     </section>
 </body>
