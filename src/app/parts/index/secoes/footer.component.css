@@ -165,14 +165,14 @@ li.item-link-footer-mobile {
         width: 25%;
     }
 
-    
+/*     
 
     .link-item-header {
         color: white;
         transition: background-color 0.7s ease;
         font-size: 31px;
         margin: 0 0.5em;
-    }
+    } */
 
     p.txt-origem-footer {
         color: white;
@@ -233,12 +233,12 @@ li.item-link-footer-mobile {
     .redes-footer-desktop{
         display: block;
     }
-    .link-item-header{
+    /* .link-item-footer{
         color: white;
         transition: background-color 0.7s ease;
         font-size: 26px;
         margin: 0 0.5em;
-      }
+      } */
 
     .logo-footer {
         display: flex;

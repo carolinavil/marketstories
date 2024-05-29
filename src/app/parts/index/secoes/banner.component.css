@@ -273,7 +273,13 @@ img.img-banner:hover{
 
 
 @media screen and (min-width: 1040px) {
-
+    .caixa-seta-banner{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: -1em;
+        padding-bottom: 3em;
+    }
 
 
     img.img-banner {

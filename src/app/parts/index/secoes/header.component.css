@@ -126,7 +126,7 @@ font-size: 20px;
 } */
 
 .link-item-header{
-  color: #464646;
+  color: #000000cc;
   transition: background-color 0.7s ease;
   font-size: 26px;
   margin: 0 0.5em;
@@ -152,7 +152,7 @@ font-size: 20px;
     justify-content: space-between;
     align-items: center;
     font-size: 20px;
-    padding: 1.3em;
+    padding: 1em;
     margin: 0 2em;
 
   }
@@ -267,4 +267,11 @@ ul .item-link-header:hover .link-header::before {
 .logo-header-pb-active{
   opacity: 100%;
 }
+
+/* .link-item-header{
+  color: #000000;
+  transition: background-color 0.7s ease;
+  font-size: 26px;
+  margin: 0 0.5em;
+} */
 }
