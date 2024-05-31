@@ -13,4 +13,3 @@ export const environment = {
     url:'https://api.marketstories.com.br'
     
 };
-
