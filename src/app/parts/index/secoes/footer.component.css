@@ -204,7 +204,7 @@ li.item-link-footer-mobile {
         display: flex;
         flex-flow: column;
         justify-content: end;
-        align-items: end;
+        align-items: flex-end;
     }
     p.txt-origem-footer {
         color: white;
