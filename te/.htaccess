@@ -1,13 +1,13 @@
 # Habilitar o mecanismo de reescrita
 RewriteEngine On
-RewriteBase /
+
+# Redirecionar HTTP para HTTPS e para o domínio correto
+RewriteCond %{HTTP_HOST} ^seudominio1\.com [NC]
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^(.*)$ https://www.marketstories.com.br/%{REQUEST_URI} [R=301,L]
 
 # Redirecionar todas as solicitações para o index.html, exceto arquivos estáticos
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_URI} !\.(css|js|png|jpg|gif|ico)$ [NC]
 RewriteRule ^ index.html [L]
-
-# Redirecionar HTTP para HTTPS
-RewriteCond %{SERVER_PORT} 80
-RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
