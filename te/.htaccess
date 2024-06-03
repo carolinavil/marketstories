@@ -1,3 +1,4 @@
+# Habilitar o mecanismo de reescrita
 RewriteEngine On
 RewriteBase /
 
@@ -6,3 +7,7 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_URI} !\.(css|js|png|jpg|gif|ico)$ [NC]
 RewriteRule ^ index.html [L]
+
+# Redirecionar HTTP para HTTPS
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
