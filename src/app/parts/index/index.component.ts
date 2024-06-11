@@ -204,7 +204,7 @@ export class IndexComponent implements OnDestroy {
 
   ngOnInit() {
        // Ajusta a posição do scroll após a inicialização do componente
-    this.adjustScrollTop();
+  
     this.reinicializarCarrosselBanner();
     this.reinicializarCarrosselConteudo();
 

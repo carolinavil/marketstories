@@ -15,12 +15,12 @@
 @import '~@fortawesome/fontawesome-free/scss/solid'; */
 
 
-    ::ng-deep html {
+    /* ::ng-deep html {
       scroll-behavior: smooth;
-    }
-.smooth{
+    } */
+/* .smooth{
     padding-top: 5em!important;
-}
+} */
 section.conteudosTesteconteudos {
     background: linear-gradient(to bottom right, #693c91, #176aaa)!important;
 
