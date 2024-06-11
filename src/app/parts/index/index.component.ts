@@ -34,7 +34,7 @@ export class IndexComponent implements OnDestroy {
   contadorStoriesInterval: any;
   contadorAssessoresInterval: any;
 
-  
+ 
   
   toggleMenu() {
     this.showMenu = !this.showMenu;
@@ -97,6 +97,7 @@ export class IndexComponent implements OnDestroy {
 
     library.addIcons(faBars, faXmark, faHouse, faInstagram, faLinkedin, faTwitter, faYoutube, faFacebook, faTiktok, faWhatsapp, faStar, faArrowRight)
   }
+
 
 
   teste44(){
@@ -202,6 +203,8 @@ export class IndexComponent implements OnDestroy {
   
 
   ngOnInit() {
+       // Ajusta a posição do scroll após a inicialização do componente
+    this.adjustScrollTop();
     this.reinicializarCarrosselBanner();
     this.reinicializarCarrosselConteudo();
 
@@ -244,6 +247,18 @@ const options = {
 
 
   }
+
+  adjustScrollTop(): void {
+    const headerHeight = 100; // Altura do cabeçalho em pixels (ajuste conforme necessário)
+    const targetElement = document.getElementById('quem-somosSection');
+
+    if (targetElement) {
+      const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+      window.scrollTo({
+        top: targetPosition - headerHeight,
+        behavior: 'smooth'
+      });
+    }}
 
   @HostListener('window:scroll', [])
   onWindowScroll() {

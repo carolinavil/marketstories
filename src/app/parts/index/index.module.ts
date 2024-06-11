@@ -19,6 +19,7 @@ import { RouterModule } from '@angular/router';
 import { TableModule } from 'primeng/table';
 import { IndexTesteComponent } from './indexTeste.component';
 import { TermosDeUsoComponent } from './termos-de-uso/termos-de-uso.component';
+import { NgxPageScrollCoreModule } from 'ngx-page-scroll-core';
 
 register()
 
@@ -39,6 +40,7 @@ register()
     MatListModule,
     FontAwesomeModule,
     CountUpModule,
+    NgxPageScrollCoreModule.forRoot({ duration: 1500 }) // Configura a duração da rolagem
     
   
 
