@@ -301,7 +301,7 @@
                                 [autoplay]="{ delay: 3000, disableOnInteraction: false, reverse: true }"
                                 [spaceBetween]="spaceBetween" class="carrossel-desktop">
                                 <swiper-slide>
-                                    <img src="../../../assets/img/indicesP.png" alt="" class="item-slide-cadastro  ">
+                                    <img src="../../../assets/img/indicesAmericanosP3.png" alt="" class="item-slide-cadastro  ">
                                 </swiper-slide>
                                 <swiper-slide>
                                     <img src="../../../assets/img/selicP.png" alt="" class="item-slide-cadastro">
@@ -316,7 +316,7 @@
                                     <img src="../../../assets/img/brasilAgoraP2.png" alt="" class="item-slide-cadastro ">
                                 </swiper-slide>
                                 <swiper-slide>
-                                    <img src="../../../assets/img/jurosFuturosp2.png" alt="" class="item-slide-cadastro ">
+                                    <img src="../../../assets/img/jurosFuturosP2.png" alt="" class="item-slide-cadastro ">
                                 </swiper-slide>
                                 <swiper-slide>
                                     <img src="../../../assets/img/minerioFerroP.png" alt="" class="item-slide-cadastro">
@@ -329,7 +329,7 @@
                                     <img src="../../../assets/img/ethereumP.png" alt="" class="item-slide-cadastro">
                                 </swiper-slide>
                                 <swiper-slide>
-                                    <img src="../../../assets/img/tesouroDiretoP2.png" alt="" class="item-slide-cadastro">
+                                    <img src="../../../assets/img/tesouroDiretoP3.png" alt="" class="item-slide-cadastro">
                                 </swiper-slide>
                                 <swiper-slide>
                                     <img src="../../../assets/img/ttP.png" alt="" class="item-slide-cadastro ">
@@ -351,6 +351,9 @@
                                 </swiper-slide>
                                 <swiper-slide>
                                     <img src="../../../../assets/img/mercadoCryptoP2.png" alt="" class="item-slide-cadastro ">
+                                </swiper-slide>
+                                <swiper-slide>
+                                    <img src="../../../../assets/img/taxaJurosEUAP3.png" alt="" class="item-slide-cadastro ">
                                 </swiper-slide>
                                 <swiper-slide>
                                     <img src="../../../assets/img/noticiaUrgenteP2.png" alt="" class="item-slide-cadastro">
@@ -461,7 +464,7 @@
                                     </div>
                                     <div class="row">
                                         <div class="form-group col s12 m8">
-                                            <label class="form-label">Endereço <span class="text-danger" *ngIf="!endereco.valid && !documento.valid && documento.dirty || !endereco.valid">*</span>
+                                            <label class="form-label">Endereço <span style="font-size: 14px; font-weight: 400;">(preenchimento automático)</span> <span class="text-danger" *ngIf="!endereco.valid && !documento.valid && documento.dirty || !endereco.valid">*</span>
                                                 <fa-icon *ngIf="endereco.valid && documento.valid && documento.dirty" [icon]="['fas','circle-check']" class="check-icon" ></fa-icon>
                                             </label>
                                             <input required type="text" #endereco="ngModel" [(ngModel)]="enderecoFormat"

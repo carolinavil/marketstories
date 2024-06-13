@@ -16,6 +16,10 @@ img.item-slide-quem-somos {
     width: 50%;
 }
 
+#mockup-juros{
+    width: 110%;
+}
+
 
 .swiper-quem-somos swiper-slide {
     display: flex;
