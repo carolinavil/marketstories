@@ -1,0 +1,129 @@
+.qr-code-caixa {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: black;
+    border-radius: 50px;
+    height: 500px; /* Ajuste conforme necessário */
+}
+
+p.txt-qr-code {
+    font-weight: 600;
+    font-size: 24px;
+}
+
+section.qr-code {
+    margin: 7em 15em;
+}
+
+.img-qr-code {
+    width: 40%;
+    height: 100%; /* Para que a altura acompanhe a altura do .qr-code-caixa */
+    border-radius: 220px 44px 44px 220px;
+    background: linear-gradient(to left, #efefef, #f3f3f3, #ffffff, #ffffff, #ffffff, #ffffff);
+    display: flex;
+    justify-content: start;
+    align-items: center;
+ 
+}
+
+.img-qr-code img {
+    margin-left: -39px;
+    /* width: 40%;  */
+  
+}
+
+.textos-qr-code {
+    width: 60%;
+    height: 100%; /* Para que a altura acompanhe a altura do .qr-code-caixa */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 3em;
+}
+
+ul.lista-qr-code {
+    display: flex;
+    text-align: center;
+    margin: 1em 0;
+    align-items: center;
+    /* margin: 0; */
+    /* padding: 0; */
+}
+
+li.item-lista-qr-code {
+    display: flex;
+    justify-content: center;
+    padding: 0.3em 1em;
+}
+
+/* p.texto-lista {
+    background: blue;
+    width: 100%;
+} */
+
+li.item-lista-qr-code {
+    background: #ff000000;
+    border: 1px solid rgba(255, 255, 255, 0.452);
+    padding: 1em;
+    margin: 0 1em;
+    border-radius: 12px;
+    height: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#item-qr-code-1{
+    margin-left: 0;
+}
+
+img#qrCodde-imgs {
+    margin-left: 2em;
+    box-shadow: 8px 6px 13px 0px #0000001c;
+    width: 40%;
+}
+
+#celularqrCode-imgs{
+margin-top: 2em;
+width: 47%;
+}
+
+.texto-lista{
+    font-weight: 500;
+    color: rgb(255, 255, 255);
+}
+
+
+.lista-qr-code span{
+    font-weight: 600;
+    font-size: 25px;
+    
+}
+
+#btn-qr-code{
+    padding: 0.5em 0!important;
+}
+
+
+@media screen and (max-width: 1600px) {
+
+    section.qr-code {
+        margin: 5em 7em!important;
+    }
+}
+
+
+@media screen and (min-width: 1100px) {
+
+    section.qr-code {
+        display: block!important;
+       
+    }
+}
+
+section.qr-code {
+    display: none;
+   
+}

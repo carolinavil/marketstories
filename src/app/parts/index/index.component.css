@@ -11,6 +11,7 @@
 @import url(secoes/leads.component.css);
 @import url(secoes/card-precos.component.css);
 @import url(secoes/time.component.css);
+@import url(secoes/qr-code.component.css);
 /* @import '~@fortawesome/fontawesome-free/scss/fontawesome';
 @import '~@fortawesome/fontawesome-free/scss/solid'; */
 
@@ -31,6 +32,10 @@ section.conteudosTesteconteudos {
     font-family: "Montserrat", sans-serif;
     padding: 0;
     margin: 0;
+}
+
+#mockup-insta{
+    width: 70%;
 }
 
 
