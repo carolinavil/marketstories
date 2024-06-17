@@ -245,6 +245,10 @@ ul.lista-topicos-quem-somos {
     .titulo2-quem-somos {
         text-align: center;
     }
+
+    #mockup-juros {
+        width: 148px;
+    }
 }
 
 @media screen and (min-width: 1040px) {
