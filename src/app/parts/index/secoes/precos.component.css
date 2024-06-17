@@ -194,3 +194,22 @@ span#preco {
     display: flex;
     flex-flow: column;
 }
+
+
+
+
+@media screen and (max-width: 600px) {
+
+    .imagem-precos {
+        width: 100%;
+        margin-left: 3em;
+    }
+}
+
+@media screen and (min-width: 650px) {
+
+    .imagem-precos {
+        width: 100%;
+        margin-left: 0;
+    }
+}

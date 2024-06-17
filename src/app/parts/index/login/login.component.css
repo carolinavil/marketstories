@@ -12,6 +12,11 @@
     color: white;
 }
 
+.btn-entrar{
+    cursor: pointer;
+}
+
+
 /* .login::before {
     content: '';
     position: absolute;
