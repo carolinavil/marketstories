@@ -1,6 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { VindiService } from '../../../../services/vindi-service';
 import { lastValueFrom } from 'rxjs';
+import { Column } from '../../../../helpers/column.interface';
+
+import { usuariosColumns } from '../../../../models/pagamento.module';
 
 @Component({
   selector: 'app-admin',
@@ -13,6 +16,14 @@ export class AdminComponent {
   objeto:any
   imagem: any
   base64Strings: string[] = []; // Supondo que você tenha uma lista de strings em base64
+  @Input() icone: string = '';
+  loading: boolean = true; // Initially set to true to show the spinner
+
+  columns: any= usuariosColumns;
+  @Input() list: any[] = [];
+  @Input() paginator: boolean = true;
+  filters: string[] = [];
+
 
   first: number = 0; // Índice do primeiro item na página atual
   rows: number = 10; // Número de itens por página
@@ -21,13 +32,32 @@ export class AdminComponent {
 
   images: string[] = []; // Lista de URLs de imagens
 constructor(private vindiService: VindiService){
+
+
   lastValueFrom(vindiService.getUsuarios()).then(res=>{
     console.log('usuarios',res)
     this.usuarios = res
     
   })
+
+  
 }
 
+
+ngOnInit() {
+  this.loadData();
+}
+
+async loadData() {
+  try {
+    const res = await lastValueFrom(this.vindiService.getUsuarios()); // Obter usuários do serviço
+    this.usuarios = res; // Atribuir resposta à lista de usuários
+  } catch (error) {
+    console.error('Erro ao carregar usuários:', error);
+  } finally {
+    this.loading = false; // Definir loading como false após o carregamento
+  }
+}
 
 onPageChange(event: any) {
   this.first = event.first;

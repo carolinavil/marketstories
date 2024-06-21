@@ -28,7 +28,9 @@ import { AdminComponent } from './admin/admin.component';
 import { TableModule } from 'primeng/table';
 import { UserComponent } from './user/user.component';
 import { PaginatorModule } from 'primeng/paginator';
-
+import { CardModule } from 'primeng/card';
+import { AvatarModule } from 'primeng/avatar';
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
 @NgModule({
   declarations: [
     PainelComponent,
@@ -37,6 +39,7 @@ import { PaginatorModule } from 'primeng/paginator';
 
   ],
   imports: [
+    ProgressSpinnerModule,
     CommonModule,
     PainelRoutingModule,
     FormsModule,
@@ -58,8 +61,9 @@ import { PaginatorModule } from 'primeng/paginator';
     NgxMaskPipe,
     FileUploadModule,
     TableModule,
-    PaginatorModule
-
+    PaginatorModule,
+    CardModule,
+    AvatarModule
   ],
   providers: [
     provideNgxMask()

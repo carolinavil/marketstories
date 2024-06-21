@@ -1,3 +1,4 @@
+import { Column, FilterDisplay, FilterType, MaskType } from "../helpers/column.interface";
 export class PagamentoModel {
   id: number = 0;
   nome: string = '';
@@ -60,17 +61,7 @@ export class CartaoModel {
 }
 
 
-export class UsersMkModel {
-  nome: string = '';
-  email: string = '';
-  senha: string = '';
-  telefone: string = '';
-  foto_instagram: string = '';
-  usuario_instagram: string = '';
-  crypto: boolean = false;
 
-
-}
 
 export class LoginModel {
   nome: string = '';
@@ -170,5 +161,78 @@ export class AdressModel {
 }
 
 
+export class UsersMkModel {
+  nome: string = '';
+  email: string = '';
+  senha: string = '';
+  telefone: string = '';
+  foto_instagram: string = '';
+  usuario_instagram: string = '';
+  crypto: boolean = false;
 
 
+}
+
+export var usuariosColumns: Column[] = [
+  {
+      field: 'nome',
+      header: ' Nome',
+      maskType: MaskType.undefined,
+      filterType: FilterType.text,
+      filterDisplay: FilterDisplay.menu,
+      showAddButton: false,
+      showMatchMode: true,
+      showOperator: false,
+  },
+  {
+    field: 'email',
+    header: 'E-mail',
+    maskType: MaskType.undefined,
+    filterType: FilterType.text,
+    filterDisplay: FilterDisplay.menu,
+    showAddButton: false,
+    showMatchMode: true,
+    showOperator: false,
+},
+  {
+    field: 'senha',
+    header: 'Senha',
+    maskType: MaskType.undefined,
+    filterType: FilterType.text,
+    filterDisplay: FilterDisplay.menu,
+    showAddButton: false,
+    showMatchMode: true,
+    showOperator: false,
+},
+{
+  field: 'telefone',
+  header: 'Telefone',
+  maskType: MaskType.undefined,
+  filterType: FilterType.text,
+  filterDisplay: FilterDisplay.menu,
+  showAddButton: false,
+  showMatchMode: true,
+  showOperator: false,
+},
+{
+  field: 'foto_instagram',
+  header: 'Instagram',
+  maskType: MaskType.undefined,
+  filterType: FilterType.text,
+  filterDisplay: FilterDisplay.menu,
+  showAddButton: false,
+  showMatchMode: true,
+  showOperator: false,
+},
+{
+  field: 'usuario_instagram',
+  header: 'Usuário',
+  maskType: MaskType.undefined,
+  filterType: FilterType.text,
+  filterDisplay: FilterDisplay.menu,
+  showAddButton: false,
+  showMatchMode: true,
+  showOperator: false,
+},
+
+];

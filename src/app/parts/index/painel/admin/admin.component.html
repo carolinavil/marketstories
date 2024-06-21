@@ -1,32 +1,21 @@
-<!-- <div *ngIf="usuarios">
-    <h2>Lista de Usuários:</h2>
-    <ul>
-      <li class="teste123" *ngFor="let usuario of usuarios">
-        <a href="">{{ usuario.foto_instagram }}</a>
-      </li>
-    </ul>
-  </div>
-  
-  <div>
-    <h2>Lista de Usuários com Template PrimeNG:</h2>
-    <ul>
-      <li class="teste123" *ngFor="let usuario of usuarios">
-        <a href="javascript:void(0);" (click)="redirecionarParaInstagram(usuario.foto_instagram)">imagem</a>
-        <ng-template pTemplate="item" let-usuario>
-          <div>{{usuario.nome}}</div>
-          <div>{{usuario.email}}</div>
-       
-        </ng-template>
-      </li>
-    </ul>
-  </div>
-   -->
 
-<div class="tabela">
+<!-- <div class="tabela">
   
 <h1 class="titulo-tabela">Dados dos usuários da <span class="img-tabela"><img src="../../../../../assets/img/logo.png" alt=""></span></h1>
-  <p-table [value]="usuarios" [tableStyle]="{ 'min-width': '50rem' }">
+  <p-table [value]="usuarios" [tableStyle]="{ 'min-width': '50rem' }" 
+  
+  #dt1
+  [columns]="columns"
+  [value]="usuarios"
+  dataKey="id"
+  [rows]="10"
+  [paginator]="paginator"
+  [showCurrentPageReport]="true"
+  [rowsPerPageOptions]="[10, 25, 50]"
+  currentPageReportTemplate="Mostrando de {first} até {last} do total de {totalRecords} registros"
+  [globalFilterFields]="filters">
     <ng-template pTemplate="header">
+      
         <tr>
             <th>Nome</th>
             <th>E-mail</th>
@@ -52,6 +41,66 @@
     [rowsPerPageOptions]="[10, 20, 30]" />
   </p-table>
 
-</div>
+</div> -->
+<div  class="teste">
+  <p-card>
+    <ng-template pTemplate="header">
+      <div class="d-flex align-items-center px-4">
+        <p-avatar [icon]="icone" styleClass="me-2" size="xlarge"></p-avatar>
+      </div>
+    </ng-template>
+  
+    <ng-template pTemplate="body">
+   
+      <p-table
+      
+        #dt1
+        [columns]="columns"
+        [value]="usuarios"
+        dataKey="id"
+        [rows]="5"
+        [paginator]="paginator"
+        [showCurrentPageReport]="true"
+        [rowsPerPageOptions]="[5,10, 15, 20, 25, 50]"
+        currentPageReportTemplate="Mostrando de {first} até {last} do total de {totalRecords} registros"
+        [globalFilterFields]="filters"
+        [scrollable]="true" 
+        scrollHeight="700px"
+        >
+        
+        <ng-template pTemplate="header">
+          <tr>
+            <th [pSortableColumn]="col.field" *ngFor="let col of columns">{{ col.header }}
+              <p-columnFilter [type]="col.filterType" [field]="col.field" [display]="col.filterDisplay" [showOperator]="false" [showAddButton]="false" [showMatchModes]="true">
+              </p-columnFilter>
+            </th>
+            <th></th>
+          </tr>
+        </ng-template>
+  
+        <ng-template pTemplate="body" let-item>
+          <tr [style]="{cursor: 'pointer!important'}" #itemMenu>
 
+    
+            <td *ngFor="let col of columns">
+              <span *ngIf="col.field !== 'foto_instagram'">{{ item[col.field] }}</span>
+              <span *ngIf="col.field === 'foto_instagram'">
+                <a href="javascript:void(0);" (click)="redirecionarParaInstagram(item[col.field])">imagem</a>
+              </span>
+            </td>
+          </tr>
+        </ng-template>
+  <!-- 
+        <ng-template pTemplate="caption">
+          <div class="d-flex justify-content-end ms-auto">
+            <span class="p-input-icon-left">
+              <i class="pi pi-search"></i>
+              <input pInputText type="text" class="form-control" #filter (input)="this.dt1.filterGlobal(filter.value, 'contains')" />
+            </span>
+          </div>
+        </ng-template> -->
+      </p-table>
+    </ng-template>
+  </p-card>
+</div>
 

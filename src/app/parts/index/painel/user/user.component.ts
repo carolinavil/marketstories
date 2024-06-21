@@ -26,12 +26,7 @@ export class UserComponent {
     private library: FaIconLibrary,
   ) {
     library.addIcons(faChevronRight, faArrowRightFromBracket)
-    lastValueFrom(this.vindiService.getClientes()).then(res => {
-      // Acessando diretamente o array payment_methods
-      const customers = res.customers;
-      this.cus = customers
-      console.log('clientess:', this.cus);
-    });
+
     lastValueFrom(this.vindiService.getAssinaturas()).then(res => {
       // Acessando diretamente o array payment_methods
       const customers = res.subscriptions;
