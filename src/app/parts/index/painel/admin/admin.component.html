@@ -42,18 +42,34 @@
   </p-table>
 
 </div> -->
-<div  class="teste">
-  <p-card>
-    <ng-template pTemplate="header">
-      <div class="d-flex align-items-center px-4">
-        <p-avatar [icon]="icone" styleClass="me-2" size="xlarge"></p-avatar>
+
+<p-toolbar [styleClass]="''">
+  <ng-template pTemplate="start">
+    <img src="assets/img/logo.png" alt="" class="logo">
+  </ng-template>
+  <ng-template pTemplate="center">
+  </ng-template>
+  <ng-template pTemplate="end">
+
+  </ng-template>
+</p-toolbar>
+
+<div  >
+  <p-card >
+    <ng-template pTemplate="header"  >
+      <div class="d-flex align-items-center px-4 caixa">
+       <div class="caixa-icone">
+        <i class="pi pi-users"></i>
+       </div>
+        
+        <h3 class="p-card-title my-0">Usuários</h3>
       </div>
     </ng-template>
   
     <ng-template pTemplate="body">
    
       <p-table
-      
+     
         #dt1
         [columns]="columns"
         [value]="usuarios"
@@ -66,12 +82,14 @@
         [globalFilterFields]="filters"
         [scrollable]="true" 
         scrollHeight="700px"
+        [style]="{'width': '100%'}" 
+        scrollWidth="100%"
         >
         
         <ng-template pTemplate="header">
           <tr>
             <th [pSortableColumn]="col.field" *ngFor="let col of columns">{{ col.header }}
-              <p-columnFilter [type]="col.filterType" [field]="col.field" [display]="col.filterDisplay" [showOperator]="false" [showAddButton]="false" [showMatchModes]="true">
+              <p-columnFilter [type]="col.filterType" [field]="col.field" [display]="col.filterDisplay" [showOperator]="false" [showAddButton]="false" [showMatchModes]="true"  [matchModeOptions]="matchModeOptions">
               </p-columnFilter>
             </th>
             <th></th>
@@ -90,15 +108,22 @@
             </td>
           </tr>
         </ng-template>
-  <!-- 
-        <ng-template pTemplate="caption">
+
+        <!-- <ng-template pTemplate="caption">
           <div class="d-flex justify-content-end ms-auto">
             <span class="p-input-icon-left">
               <i class="pi pi-search"></i>
-              <input pInputText type="text" class="form-control" #filter (input)="this.dt1.filterGlobal(filter.value, 'contains')" />
+              <input pInputText
+                     type="text"
+                     class="form-control "
+                     #filter
+                     (input)="this.dt1.filterGlobal(filter.value, 'contains')"
+                     (input)="onInputChange($event)"
+                     placeholder="Pesquisar"
+                     />
             </span>
           </div>
-        </ng-template> -->
+        </ng-template>  -->
       </p-table>
     </ng-template>
   </p-card>

@@ -31,6 +31,8 @@ import { PaginatorModule } from 'primeng/paginator';
 import { CardModule } from 'primeng/card';
 import { AvatarModule } from 'primeng/avatar';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
+import { ImageModule } from 'primeng/image';
+import { ToolbarModule } from 'primeng/toolbar';
 @NgModule({
   declarations: [
     PainelComponent,
@@ -63,7 +65,9 @@ import { ProgressSpinnerModule } from 'primeng/progressspinner';
     TableModule,
     PaginatorModule,
     CardModule,
-    AvatarModule
+    AvatarModule,
+    ImageModule,
+    ToolbarModule
   ],
   providers: [
     provideNgxMask()

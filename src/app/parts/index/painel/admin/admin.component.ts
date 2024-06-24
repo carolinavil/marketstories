@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 import { VindiService } from '../../../../services/vindi-service';
 import { lastValueFrom } from 'rxjs';
 import { Column } from '../../../../helpers/column.interface';
-
+import { SelectItem } from 'primeng/api';
 import { usuariosColumns } from '../../../../models/pagamento.module';
 
 @Component({
@@ -16,7 +16,7 @@ export class AdminComponent {
   objeto:any
   imagem: any
   base64Strings: string[] = []; // Supondo que você tenha uma lista de strings em base64
-  @Input() icone: string = '';
+  @Input() icone: string = 'pi pi-search';
   loading: boolean = true; // Initially set to true to show the spinner
 
   columns: any= usuariosColumns;
@@ -31,6 +31,24 @@ export class AdminComponent {
   thumbnails: string[] = []; // Lista de URLs de miniaturas
 
   images: string[] = []; // Lista de URLs de imagens
+
+
+  matchModeOptions: SelectItem<any>[] = [
+    { label: 'Começa com', value: 'startsWith' },
+    { label: 'Contém', value: 'contains' },
+    { label: 'Igual a', value: 'equals' },
+    { label: 'Diferente de', value: 'notEquals' },
+    { label: 'Termina com', value: 'endsWith' },
+    { label: 'Dentro de', value: 'in' },
+    { label: 'Menor que', value: 'lt' },
+    { label: 'Menor ou igual a', value: 'lte' },
+    { label: 'Maior que', value: 'gt' },
+    { label: 'Maior ou igual a', value: 'gte' },
+    { label: 'É', value: 'is' },
+    { label: 'Não é', value: 'isNot' },
+    { label: 'Antes', value: 'before' },
+    { label: 'Depois', value: 'after' }
+  ];
 constructor(private vindiService: VindiService){
 
 
@@ -48,6 +66,10 @@ ngOnInit() {
   this.loadData();
 }
 
+onInputChange(event: any) {
+  console.log('Valor do input mudou:', event.target.value);
+  // this.cleaned = false
+}
 async loadData() {
   try {
     const res = await lastValueFrom(this.vindiService.getUsuarios()); // Obter usuários do serviço
