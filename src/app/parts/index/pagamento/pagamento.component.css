@@ -8,6 +8,22 @@
 /* @import "~primeng/resources/themes/saga-blue/theme.css"; */
 /*@import "~primeng/resources/primeng.min.css"; */
 
+
+.container-caixa-maior{
+    text-align: center;
+}
+.caixa-maior
+{
+    font-size: 35px;
+    font-weight: 600;
+}
+
+.caixa-menor
+{
+    font-size: 25px;
+    font-weight: 600;
+}
+
 .input-group {
     position: relative;
 }
@@ -162,7 +178,10 @@ section.box {
     height: 2.5rem !important;
 }
 
-
+.caixas-desconto {
+    display: flex;
+    flex-flow: column;
+}
 
 .form-label-explicacao {
     font-weight: 400;

@@ -15,7 +15,12 @@
 /* @import '~@fortawesome/fontawesome-free/scss/fontawesome';
 @import '~@fortawesome/fontawesome-free/scss/solid'; */
 
-
+h4.preco-desktop {
+    font-weight: 700;
+    margin-bottom: 1em;
+    color: #4BB9EC;
+    font-size: 22px;
+}
     ::ng-deep html {
       scroll-behavior: smooth;
     } 

@@ -1,13 +1,14 @@
+import { DatePipe } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { VindiService } from '../../../../services/vindi-service';
 import { lastValueFrom } from 'rxjs';
 import { Column } from '../../../../helpers/column.interface';
 import { SelectItem } from 'primeng/api';
 import { usuariosColumns } from '../../../../models/pagamento.module';
+import { format } from 'date-fns';
 
 @Component({
   selector: 'app-admin',
-
   templateUrl: './admin.component.html',
   styleUrl: './admin.component.css'
 })
@@ -18,21 +19,15 @@ export class AdminComponent {
   base64Strings: string[] = []; // Supondo que você tenha uma lista de strings em base64
   @Input() icone: string = 'pi pi-search';
   loading: boolean = true; // Initially set to true to show the spinner
-
   columns: any= usuariosColumns;
   @Input() list: any[] = [];
   @Input() paginator: boolean = true;
   filters: string[] = [];
-
-
   first: number = 0; // Índice do primeiro item na página atual
   rows: number = 10; // Número de itens por página
   totalRecords: number = 120; // Total de registros (ajustar conforme necessário)
   thumbnails: string[] = []; // Lista de URLs de miniaturas
-
   images: string[] = []; // Lista de URLs de imagens
-
-
   matchModeOptions: SelectItem<any>[] = [
     { label: 'Começa com', value: 'startsWith' },
     { label: 'Contém', value: 'contains' },
@@ -49,7 +44,13 @@ export class AdminComponent {
     { label: 'Antes', value: 'before' },
     { label: 'Depois', value: 'after' }
   ];
-constructor(private vindiService: VindiService){
+
+  
+constructor(
+
+  private vindiService: VindiService,
+
+){
 
 
   lastValueFrom(vindiService.getUsuarios()).then(res=>{
@@ -61,10 +62,19 @@ constructor(private vindiService: VindiService){
   
 }
 
+formatarData(data: string): string {
+  const dataFormatada = format(new Date(data), 'dd/MM/yyyy');
+  console.log(dataFormatada)
+  return '(' + dataFormatada + ')';
+}
+
+
 
 ngOnInit() {
   this.loadData();
 }
+
+
 
 onInputChange(event: any) {
   console.log('Valor do input mudou:', event.target.value);

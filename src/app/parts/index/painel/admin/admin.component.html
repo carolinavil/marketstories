@@ -74,10 +74,10 @@
         [columns]="columns"
         [value]="usuarios"
         dataKey="id"
-        [rows]="5"
+        [rows]="20"
         [paginator]="paginator"
         [showCurrentPageReport]="true"
-        [rowsPerPageOptions]="[5,10, 15, 20, 25, 50]"
+        [rowsPerPageOptions]="[20, 50, 100]"
         currentPageReportTemplate="Mostrando de {first} até {last} do total de {totalRecords} registros"
         [globalFilterFields]="filters"
         [scrollable]="true" 
@@ -98,17 +98,22 @@
   
         <ng-template pTemplate="body" let-item>
           <tr [style]="{cursor: 'pointer!important'}" #itemMenu>
-
-    
             <td *ngFor="let col of columns">
-              <span *ngIf="col.field !== 'foto_instagram'">{{ item[col.field] }}</span>
-              <span *ngIf="col.field === 'foto_instagram'">
+              <ng-container *ngIf="col.field !== 'foto_instagram'">
+                {{ item[col.field] }}
+              </ng-container>
+              <ng-container *ngIf="col.field === 'foto_instagram'">
                 <a href="javascript:void(0);" (click)="redirecionarParaInstagram(item[col.field])">imagem</a>
-              </span>
+              </ng-container>
+              <ng-container *ngIf="col.field === 'data_criacao'">
+                <div class="testew6">
+                  <span class="teste5"> {{ formatarData(item[col.field]) }}</span>
+                </div>
+              </ng-container>
             </td>
           </tr>
         </ng-template>
-
+        
         <!-- <ng-template pTemplate="caption">
           <div class="d-flex justify-content-end ms-auto">
             <span class="p-input-icon-left">

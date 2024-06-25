@@ -238,7 +238,7 @@ export var usuariosColumns: Column[] = [
 
 {
   field: 'data_criacao',
-  header: 'Data',
+  header: 'Data de criação',
   maskType: MaskType.undefined,
   filterType: FilterType.text,
   filterDisplay: FilterDisplay.menu,
