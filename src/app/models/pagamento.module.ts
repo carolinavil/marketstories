@@ -169,6 +169,7 @@ export class UsersMkModel {
   foto_instagram: string = '';
   usuario_instagram: string = '';
   crypto: boolean = false;
+  data_criacao: Date = new Date();
 
 
 }
@@ -227,6 +228,17 @@ export var usuariosColumns: Column[] = [
 {
   field: 'usuario_instagram',
   header: 'Usuário',
+  maskType: MaskType.undefined,
+  filterType: FilterType.text,
+  filterDisplay: FilterDisplay.menu,
+  showAddButton: false,
+  showMatchMode: true,
+  showOperator: false,
+},
+
+{
+  field: 'data_criacao',
+  header: 'Data',
   maskType: MaskType.undefined,
   filterType: FilterType.text,
   filterDisplay: FilterDisplay.menu,
