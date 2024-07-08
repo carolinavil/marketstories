@@ -68,68 +68,44 @@
   
     <ng-template pTemplate="body">
    
-      <p-table
-     
-        #dt1
-        [columns]="columns"
-        [value]="usuarios"
-        dataKey="id"
-        [rows]="20"
-        [paginator]="paginator"
-        [showCurrentPageReport]="true"
-        [rowsPerPageOptions]="[20, 50, 100]"
-        currentPageReportTemplate="Mostrando de {first} até {last} do total de {totalRecords} registros"
-        [globalFilterFields]="filters"
-        [scrollable]="true" 
-        scrollHeight="700px"
-        [style]="{'width': '100%'}" 
-        scrollWidth="100%"
-        >
-        
-        <ng-template pTemplate="header">
-          <tr>
-            <th [pSortableColumn]="col.field" *ngFor="let col of columns">{{ col.header }}
-              <p-columnFilter [type]="col.filterType" [field]="col.field" [display]="col.filterDisplay" [showOperator]="false" [showAddButton]="false" [showMatchModes]="true"  [matchModeOptions]="matchModeOptions">
-              </p-columnFilter>
-            </th>
-            <th></th>
-          </tr>
-        </ng-template>
-  
-        <ng-template pTemplate="body" let-item>
-          <tr [style]="{cursor: 'pointer!important'}" #itemMenu>
-            <td *ngFor="let col of columns">
-              <ng-container *ngIf="col.field !== 'foto_instagram'">
-                {{ item[col.field] }}
-              </ng-container>
-              <ng-container *ngIf="col.field === 'foto_instagram'">
-                <a href="javascript:void(0);" (click)="redirecionarParaInstagram(item[col.field])">imagem</a>
-              </ng-container>
-              <ng-container *ngIf="col.field === 'data_criacao'">
-                <div class="testew6">
-                  <span class="teste5"> {{ formatarData(item[col.field]) }}</span>
-                </div>
-              </ng-container>
-            </td>
-          </tr>
-        </ng-template>
-        
-        <!-- <ng-template pTemplate="caption">
-          <div class="d-flex justify-content-end ms-auto">
-            <span class="p-input-icon-left">
-              <i class="pi pi-search"></i>
-              <input pInputText
-                     type="text"
-                     class="form-control "
-                     #filter
-                     (input)="this.dt1.filterGlobal(filter.value, 'contains')"
-                     (input)="onInputChange($event)"
-                     placeholder="Pesquisar"
-                     />
-            </span>
-          </div>
-        </ng-template>  -->
-      </p-table>
+      <p-table [value]="usuarios" [paginator]="paginator" [rows]="rows" [totalRecords]="totalRecords"
+      [rowsPerPageOptions]="[20,30,50]" (onPage)="onPageChange($event)" [loading]="loading">
+<ng-template pTemplate="header">
+ <tr>
+   <th *ngFor="let col of columns" [pSortableColumn]="col.field">
+     {{ col.header }}
+     <p-columnFilter *ngIf="col.field !== 'data_criacao'" [type]="col.filterType" [field]="col.field" 
+                     [display]="col.filterDisplay" [showOperator]="false" [showAddButton]="false" 
+                     [showMatchModes]="true" [matchModeOptions]="matchModeOptions">
+     </p-columnFilter>
+     <p-columnFilter *ngIf="col.field === 'data_criacao'" [type]="col.filterType" [field]="'data_criacao_formatada'"
+                     [display]="col.filterDisplay" [showOperator]="false" [showAddButton]="false" 
+                     [showMatchModes]="true" [matchModeOptions]="matchModeOptions">
+     </p-columnFilter>
+   </th>
+   <th></th>
+ </tr>
+</ng-template>
+
+<ng-template pTemplate="body" let-item>
+ <tr [style]="{cursor: 'pointer!important'}" #itemMenu>
+   <td *ngFor="let col of columns">
+     <ng-container *ngIf="col.field !== 'foto_instagram' && col.field !== 'data_criacao'">
+       {{ item[col.field] }}
+     </ng-container>
+     <ng-container *ngIf="col.field === 'foto_instagram'">
+       <a href="javascript:void(0);" (click)="redirecionarParaInstagram(item[col.field])">imagem</a>
+     </ng-container>
+     <ng-container *ngIf="col.field === 'data_criacao'">
+       <div class="testew6">
+         <span class="teste5">{{ item.data_criacao_formatada }}</span>
+       </div>
+     </ng-container>
+   </td>
+ </tr>
+</ng-template>
+</p-table>
+ 
     </ng-template>
   </p-card>
 </div>
