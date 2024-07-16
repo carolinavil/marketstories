@@ -8,7 +8,9 @@ h1.titulo-precos {
     font-size: 20px;
     margin-bottom: 2em;
 }
-
+#mes{
+    font-size: 32px!important;
+}
 
 .caixa-imagem-precos {
     display: flex;
