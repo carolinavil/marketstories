@@ -58,16 +58,20 @@ section.variedades {
 .caixa-txts-variedades {
     width: 56%;
 }
+.caixa-titulo-variedades {
+    margin-bottom: 2em;
+}
 
 p.txt-variedades {
     font-weight: 600;
     font-size: 24px;
+    text-align: center;
 }
 
 h1.titulo-variedades {
-    font-weight: 700;
-    font-size: 46px;
-    margin-bottom: 25px;
+    font-weight: 600;
+    text-align: center;
+    font-size: 34px;
 }
 
 @media screen and (max-width: 900px) {
