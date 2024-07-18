@@ -1,0 +1,79 @@
+section.variedades {
+    margin: 7em 15em;
+}
+
+@media screen and (max-width: 1600px) {
+    section.variedades {
+        margin: 5em 7em !important;
+    }
+}
+
+.variedades-caixa {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(33deg, #0a0213, #4b1a7d);
+    border-radius: 50px;
+    height: 500px; /* Ajuste conforme necessário */
+    overflow: hidden;
+}
+
+
+
+
+
+.img-variedades{
+    background-image: url('../../../../assets/img/teste1.png');
+    position: absolute;
+    top: 0;
+    right: left!important;
+    width: 62%;
+    background-position: left;
+    background-repeat: no-repeat;
+    background-position-x: -112px;
+    height: 100%;
+    left: 0;
+    background-size: cover;
+    z-index: 1;
+}
+.textos-variedades {
+    position: relative;
+    width: 100%;
+    /* height: 100%; */
+    display: flex!important;
+    justify-content: flex-end;
+    color: white;
+    /* justify-content: end!important; */
+    /* flex-flow: column; */
+    align-self: right;
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* justify-content: space-evenly; */
+    padding: 3em;
+    text-align: right;
+    z-index: 2;
+}
+
+.caixa-txts-variedades {
+    width: 56%;
+}
+
+p.txt-variedades {
+    font-weight: 600;
+    font-size: 24px;
+}
+
+h1.titulo-variedades {
+    font-weight: 700;
+    font-size: 46px;
+    margin-bottom: 25px;
+}
+
+@media screen and (max-width: 900px) {
+
+    section.variedades {
+      display:none;
+    }
+}
+
