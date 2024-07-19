@@ -6,6 +6,8 @@ section.variedades {
     section.variedades {
         margin: 5em 7em !important;
     }
+
+    
 }
 
 .variedades-caixa {
@@ -17,6 +19,10 @@ section.variedades {
     border-radius: 50px;
     height: 500px; /* Ajuste conforme necessário */
     overflow: hidden;
+}
+
+.caixa-variedades-mobiles{
+    display: none!important;
 }
 
 
@@ -76,8 +82,49 @@ h1.titulo-variedades {
 
 @media screen and (max-width: 900px) {
 
+    .variedades-caixa {
+        border-radius: 0px!important;
+        flex-direction: column;
+        height: auto;
+    } 
+
     section.variedades {
-      display:none;
+        margin: 0 !important;
     }
+
+    .img-variedades {
+        position: relative;
+        width: 100%;
+        height: auto;
+        background-position-x: center;
+        margin-bottom: -50px; /* Ajuste conforme necessário */
+    }
+
+    .textos-variedades {
+        justify-content: center!important;
+        margin-top: 50px; /* Ajuste conforme necessário */
+        text-align: center;
+    }
+
+    .caixa-titulo-variedades {
+        margin-bottom: 2em;
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+    }
+
+    h1.titulo-variedades {
+        font-size: 26px !important;
+    }
+
+    .caixa-txts-variedades {
+        width: 100%;
+    }
+
+    .caixa-variedades-mobiles{
+        display: block!important;
+    }
+    
+
 }
 
