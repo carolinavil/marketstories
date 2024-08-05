@@ -20,6 +20,8 @@ import { NavigationEnd } from '@angular/router';
 import { cpf, cnpj } from 'cpf-cnpj-validator';
 import { StepperComponent } from './stepper/stepper.component';
 
+import emailjs from '@emailjs/browser';
+
 interface Car {
   label: string;
   value: string;
@@ -668,8 +670,22 @@ export class PagamentoComponent {
         this.faturaModel.due_at = this.dataFormatadaTestes;
         console.log('ASSINATURA', assinaturaPostada)
         this.loading = false;
-        console.log('id', id, assinaturaPostada, this.faturaModel, produtoModel, this.cartaoModel, this.clienteModel);
-        this.router.navigate(['final'], { relativeTo: this.activatedRoute });
+        console.log('id', id, assinaturaPostada, this.
+        
+          faturaModel, produtoModel, this.cartaoModel, this.clienteModel);
+          console.log('vai entrar')
+          emailjs.init('szyzwshyKvm3WiUsK')
+          emailjs.send('service_tthpqxr', 'template_p5nb22n').then((res) => {
+            console.log('EMAIL ENVIADO', res.status, res.text)
+          },
+    
+          (err)=>{
+            console.log('EERO', err)
+          }
+        )
+       
+       
+          this.router.navigate(['final'], { relativeTo: this.activatedRoute });
       }).catch((error) => {
         
         console.error('Erro ao postar assinatura:', error);
