@@ -673,10 +673,17 @@ export class PagamentoComponent {
         console.log('id', id, assinaturaPostada, this.
         
           faturaModel, produtoModel, this.cartaoModel, this.clienteModel);
-          console.log('vai entrar')
+          console.log('vai entrar4343',this.usuariosModel.nome)
           emailjs.init('szyzwshyKvm3WiUsK')
-          emailjs.send('service_tthpqxr', 'template_p5nb22n').then((res) => {
-            console.log('EMAIL ENVIADO', res.status, res.text)
+          emailjs.send('service_tthpqxr', 'template_p5nb22n',{
+  
+            name: this.usuariosModel.nome,
+            email: this.usuariosModel.email,
+            usuario: this.usuariosModel.usuario_instagram,
+            telefone: this.usuariosModel.telefone
+          }).then((res) => {
+          
+            console.log('EMAIL ENVIADO nome' , res.status, res.text)
           },
     
           (err)=>{
