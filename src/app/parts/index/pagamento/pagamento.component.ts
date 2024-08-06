@@ -129,7 +129,7 @@ export class PagamentoComponent implements OnInit, OnDestroy {
     console.log('teste',this.clienteModel.name)
     this.isClicked = true;
     this.nomeD = this.clienteModel.name
-    this.nomeD = this.clienteModel.email
+    this.emailD = this.clienteModel.email
   }
   ngAfterViewInit() {
   
