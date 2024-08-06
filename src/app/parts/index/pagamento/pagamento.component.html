@@ -383,7 +383,7 @@
                                 </swiper-slide>
                             </swiper-container>
                             <div class="d-flex justify-content-between flex-row mb-5 mt-4 btns-caixa btn-avancar">
-                                <button class="me-0 ms-auto prox-btn btn-stepper" type="submit" cdkStepperNext  [disabled]="form1.invalid" >
+                                <button class="me-0 ms-auto prox-btn btn-stepper" type="submit" cdkStepperNext  [disabled]="form1.invalid"  (click)="handleClick()">
                                     <fa-icon [icon]="['fas','arrow-right']" class="icone-seta"></fa-icon>
                                 </button>
                             </div>

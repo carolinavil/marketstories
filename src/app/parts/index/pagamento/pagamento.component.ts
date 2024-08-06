@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { VindiService } from '../../../services/vindi-service';
 import { NgForm } from '@angular/forms';
 import { AdressModel, AssinaturaModel, ClienteModel, MetodosModel, PagamentoModel, CartaoModel, PerfilPagamentoModel, ProdutosModel, UsersMkModel } from '../../../models/pagamento.module';
@@ -40,7 +40,7 @@ declare var M: any;
   templateUrl: './pagamento.component.html',
   styleUrl: './pagamento.component.css'
 })
-export class PagamentoComponent {
+export class PagamentoComponent implements OnInit, OnDestroy {
   validacaoRegistro = false
   validacaoPay = false
   spaceBetween: any
@@ -85,6 +85,10 @@ export class PagamentoComponent {
   metodos: MetodosModel[] = []
   pay: any
   subs: any
+  isClicked = false;
+  nomeD:any;
+  emailD:any
+
 
   prods: any
   cus: any
@@ -121,8 +125,14 @@ export class PagamentoComponent {
   isExpanded: boolean = false;
   desativado: boolean = false;
 
-
+  handleClick() {
+    console.log('teste',this.clienteModel.name)
+    this.isClicked = true;
+    this.nomeD = this.clienteModel.name
+    this.nomeD = this.clienteModel.email
+  }
   ngAfterViewInit() {
+  
     const elemsBanner = document.querySelectorAll('.carrossel-banner');
     const optionsBanner = {
       autoplay: true, // Ativa o autoplay      numVisible: 3,
@@ -189,6 +199,9 @@ export class PagamentoComponent {
         }
       }
     });
+
+ 
+  
 
 
 
@@ -271,6 +284,62 @@ export class PagamentoComponent {
       });
     library.addIcons(faChevronRight, faUser, faTrash, faLocationDot, faPhone, faChevronLeft, faPlus, faMoneyCheckDollar, faArrowRight, faArrowLeft, faCheck, faCreditCard, faInstagram, faCircleCheck, faWhatsapp)
   }
+
+  ngOnDestroy(): void {
+    // this.sendEmail();
+    // clearTimeout(this.timer);
+    window.removeEventListener('beforeunload', this.handleBeforeUnload.bind(this));
+  }
+
+  sendEmail(): void {
+
+  
+      emailjs.send('service_tthpqxr', 'template_18rg2ek').then((res) => {
+          
+        console.log('EMAIL ENVIADO nome' , res.status, res.text)
+      },
+
+      (err)=>{
+        console.log('EERO', err)
+      }
+    )
+ 
+  }
+
+
+  
+
+
+
+  handleBeforeUnload(event: BeforeUnloadEvent): void {
+
+    if(this.isClicked==true){
+      emailjs.init('szyzwshyKvm3WiUsK');
+      emailjs.send('service_tthpqxr', 'template_18rg2ek',{
+        emailD:this.emailD,
+        nomeD:this.nomeD
+
+      })
+        .then((response) => {
+          console.log('E-mail enviado com sucesso:', response);
+        })
+        .catch((error) => {
+          console.error('Erro ao enviar e-mail:', error);
+        });
+  
+      // Configurar o retorno para que o navegador mostre uma mensagem
+      event.preventDefault();
+      event.returnValue = ''; // Necessário para alguns navegadores
+    }
+   
+
+  
+   
+  }
+
+
+
+
   scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
@@ -411,6 +480,7 @@ export class PagamentoComponent {
 
   @ViewChild('btn') btn: any;
   ngOnInit(): void {
+    window.addEventListener('beforeunload', this.handleBeforeUnload.bind(this));
     // this.getMetodos();
 
 
