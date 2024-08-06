@@ -85,7 +85,11 @@
                                         está correto!</p>
                                 </div>
                             </div>
-
+                            <div class="form-group col s12 m12 telefone-explicacao">
+                                <label for="" class="form-label-explicacao ">O seu número de WhatsApp será
+                                    utilizado
+                                    para o envio dos stories</label>
+                            </div>
                             <!-- <div class="row form-group">
                                 <h5 class="titulo-formulario">
                                     Dados pessoais
@@ -117,6 +121,30 @@
                                     </div>
                                 </div>
                                 <div class="form-group col s12 m6">
+                                    <div *ngFor="let input of inputs; let i = index">
+                                        
+                                    <label class="form-label">Número de WhatsApp <span
+                                            class="text-danger"  *ngIf="!phone.dirty || numeroInvalido || input.number.length !=11">*</span><fa-icon *ngIf="phone.dirty && !numeroInvalido && input.number.length ===11" [icon]="['fas','circle-check']" class="check-icon"></fa-icon></label>
+                                    
+                                        <input type="text" name="phone{{i}}" id="phone{{i}}"
+                                            class="form-control" placeholder="example@hotmail.com"
+                                            [(ngModel)]="inputs[i].number" #phone="ngModel"
+                                            (blur)="atribuirValor(inputs[i].number)" mask="(00) 00000-0000"
+                                            placeholder="(00) 00000-0000" style="padding-left: 10px;" required>
+                                        <div *ngIf="phone.touched && phone.errors">
+                                            <p class="text-danger" *ngIf="phone.errors['required']">Este campo é
+                                                obrigatório.</p>
+                                        </div>
+                                        <div *ngIf="numeroInvalido">
+                                            <p class="text-danger">Número inválido.</p>
+                                        </div>
+
+                                        <!-- Show invalid image if phone number is invalid -->
+
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group col s12 m12">
                                     
                                     <label class="form-label">E-mail <span class="text-danger" *ngIf="!email.valid" >*</span></label>
                                     <fa-icon *ngIf="email.valid" [icon]="['fas','circle-check']" class="check-icon" ></fa-icon>
@@ -410,38 +438,11 @@
                                 <i class="fa-solid fa-user"></i>
                                 <div class="endereco" style="padding-top:30px">
                                     <div class="row">
-                                        <div class="form-group col s12 m12 telefone-explicacao">
-                                            <label for="" class="form-label-explicacao ">O seu número de WhatsApp será
-                                                utilizado
-                                                para o envio dos stories</label>
-                                        </div>
+                                     
 
-                                        <div class="form-group col s12 m4">
-                                            <div *ngFor="let input of inputs; let i = index">
-                                                
-                                            <label class="form-label">Número de WhatsApp <span
-                                                    class="text-danger"  *ngIf="!phone.dirty || numeroInvalido || input.number.length !=11">*</span><fa-icon *ngIf="phone.dirty && !numeroInvalido && input.number.length ===11" [icon]="['fas','circle-check']" class="check-icon"></fa-icon></label>
-                                            
-                                                <input type="text" name="phone{{i}}" id="phone{{i}}"
-                                                    class="form-control" placeholder="example@hotmail.com"
-                                                    [(ngModel)]="inputs[i].number" #phone="ngModel"
-                                                    (blur)="atribuirValor(inputs[i].number)" mask="(00) 00000-0000"
-                                                    placeholder="(00) 00000-0000" style="padding-left: 10px;" required>
-                                                <div *ngIf="phone.touched && phone.errors">
-                                                    <p class="text-danger" *ngIf="phone.errors['required']">Este campo é
-                                                        obrigatório.</p>
-                                                </div>
-                                                <div *ngIf="numeroInvalido">
-                                                    <p class="text-danger">Número inválido.</p>
-                                                </div>
-
-                                                <!-- Show invalid image if phone number is invalid -->
-
-                                            </div>
-                                        </div>
                                         
                                         
-                                        <div class="form-group col s12 m4">
+                                        <div class="form-group col s12 m6">
                                             
                                             <label class="form-label">CPF/CNPJ <span class="text-danger" *ngIf="!registry_code.valid || validacaoRegistro " >*</span>
                                                 <fa-icon *ngIf="registry_code.valid && !validacaoRegistro" [icon]="['fas','circle-check']" class="check-icon" ></fa-icon>
@@ -460,7 +461,7 @@
                                                     obrigatório.</p>
                                             </div>
                                         </div>
-                                        <div class="form-group col s12 m4">
+                                        <div class="form-group col s12 m6">
                                             <label class="form-label">CEP <span class="text-danger" *ngIf="!documento.valid || documento.touched && documento.errors">*</span> 
                                                 <fa-icon *ngIf="documento.valid" [icon]="['fas','circle-check']" class="check-icon" ></fa-icon>
                                             </label>

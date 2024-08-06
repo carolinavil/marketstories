@@ -87,7 +87,8 @@ export class PagamentoComponent implements OnInit, OnDestroy {
   subs: any
   isClicked = false;
   nomeD:any;
-  emailD:any
+  emailD:any;
+  telefoneD: any
 
 
   prods: any
@@ -126,8 +127,9 @@ export class PagamentoComponent implements OnInit, OnDestroy {
   desativado: boolean = false;
 
   handleClick() {
-    console.log('teste',this.clienteModel.name)
+    console.log('teste',this.clienteModel.name, this.telefones[0].number)
     this.isClicked = true;
+    this.telefoneD = this.telefones[0].number;
     this.nomeD = this.clienteModel.name
     this.emailD = this.clienteModel.email
   }
@@ -317,7 +319,8 @@ export class PagamentoComponent implements OnInit, OnDestroy {
       emailjs.init('szyzwshyKvm3WiUsK');
       emailjs.send('service_tthpqxr', 'template_18rg2ek',{
         emailD:this.emailD,
-        nomeD:this.nomeD
+        nomeD:this.nomeD,
+        telefoneD:this.telefoneD
 
       })
         .then((response) => {
