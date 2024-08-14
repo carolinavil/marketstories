@@ -1,0 +1,180 @@
+.jornal{
+    display: none;
+}
+
+
+.caixas-assessor-video-flex-jornal-jornal {
+    position: relative;
+    width: 100%!important;
+    width: auto;
+    margin: auto;
+}
+.caixas-assessor-video-flex-jornal img {
+
+}
+
+
+.caixa-teste{
+    background-image: url('../../../../assets/img/novo.png');
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+
+
+
+.caixas-assessor-flex {
+    width: 50%;
+}
+
+.caixas-assessor-video-flex-jornal video{
+    position: absolute;
+    top: 0;
+    left: 0;
+    top: 4em;
+    left: 5.6em;
+    height: 85%;
+    object-fit: cover;
+    border-radius: 10px 10px 20px 20px;
+    /* z-index: -99; */
+    max-width: 376px;
+}
+
+
+.caixas-assessor-video-flex-jornal video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    top: 2.5em;
+    left: 3.4em;
+    height: 85%;
+    object-fit: cover;
+    border-radius: 1px 1px 20px 20px;
+    /* max-width: 333px; */
+    width: 230px;
+}
+
+.mockup-celular-jornal{
+    max-width: 304px;
+}
+
+
+.caixas-assessor-video-flex-jornal {
+    position: relative;
+    width: auto!important;
+    margin: auto;
+    z-index: 10; /* Coloquei um z-index alto para garantir que fique acima */
+}
+
+.caixas-assessor-video-flex-jornal video {
+    position: absolute;
+    top: 2.5em;
+    left: 3.4em;
+    height: 85%;
+    object-fit: cover;
+    border-radius: 1px 1px 20px 20px;
+    width: 230px;
+    z-index: 999; /* Certifique-se de que o vídeo esteja acima de todos os elementos */
+}
+
+.imagens-jornal {
+    /* padding-bottom: 3em; */
+    z-index: 1; /* Certifique-se de que a z-index é menor do que a do vídeo */
+    position: relative;
+    background: linear-gradient(to top, #110324 77%, transparent 50%);
+}
+
+.caixa-lista-jornal {
+    position: absolute;
+    bottom: 4em;
+    left: 6em;
+    z-index: 2; /* Pode ser menor que o vídeo, mas maior que a .imagens-jornal */
+}
+
+h1.titulo-lista-jornal{
+    color: white;
+    width: 68%;
+    font-size: 32px;
+    font-weight: 400;
+}
+
+li.item-jornal {
+    color: white;
+    font-size: 16px;
+    font-weight: 300;
+    margin: 0.6em 0;
+    opacity: 90%;
+    display: flex;
+    align-items: center;
+}
+
+
+span.icone-jornal {
+    margin-top: 0.3em;
+    margin-right: 0.5em;
+}
+
+
+p.texto-lista-jornal {
+    opacity: 90%;
+    color: white;
+    margin: 1em 0 1em 0px;
+    font-size: 20px;
+    font-weight: 300;
+    width: 65%;
+}
+
+.caixa2-overlay-jornal {
+    display: flex;
+    margin-top: -13em;
+}
+
+
+/* .titulo-jornal {
+    display: flex;
+    align-items: center;
+} */
+
+
+h1.titulo-jornal {
+    color: #0FA0E2;
+    font-weight: 800;
+    font-size: 138px;
+}
+
+p.titulo-texto-jornal {
+    font-size: 20px;
+    margin-left: 1em;
+}
+
+.caixa2-titulo, .caixa1-titulo{
+    display: flex;
+    align-items: center;
+}
+
+.titulo2-jornal{
+    color: #20093A!important;
+}
+
+.logo-jornal{
+    margin-right: 1em;
+}
+.container-titulo-jornal {
+    margin: 4em 0 3em 0;
+}
+
+
+.caixa-acao-jornal {
+    position: absolute;
+    top: 22em;
+    right: 2em;
+    text-align: end;
+    color: white;
+}
+
+
+h1.titulo-acao-jornal {
+    font-weight: 600;
+}

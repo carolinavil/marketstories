@@ -1,3 +1,6 @@
+
+
+
 /* .slide {
     display: flex;
     margin: 2em;
@@ -165,7 +168,73 @@ img.img-assessor {
     border-radius: 40px;
 }
 
+
+.caixas-assessor-video-flex {
+    position: relative;
+    width: 100%!important;
+    width: auto;
+    margin: auto;
+}
+.caixas-assessor-video-flex img {
+
+}
+
+
+.caixa-teste{
+    background-image: url('../../../../assets/img/novo.png');
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+
+
+
+.caixas-assessor-flex {
+    width: 50%;
+}
+
+
 @media screen and (min-width: 250px) {
+
+    .caixa2-overlay-assesor {
+        margin: 5em 0 3em 0;
+    }
+
+    .caixas-assessor-flex{
+        width: 83%;
+        flex-flow: row;
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+    .caixas-assessor-video-flex video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        top: 2.1em;
+        left: 3.1em;
+        height: 85%;
+        object-fit: cover;
+        border-radius: 4px 4px 20px 20px;
+        max-width: 197px;
+    }
+    img.imagem-video-assessores {
+        width: 261px;
+    }
+
+
+    .caixa-conteudo-assessores {
+        display: flex;
+        /* justify-content: space-evenly; */
+        flex-flow: column;
+        align-items: center;
+        justify-content: center;
+    }
     .swiper-assessores{
         margin: 0 ;
     }
@@ -234,12 +303,34 @@ img.img-assessor {
 
 }
 
-@media screen and (min-width: 1400px) {
-
-
-}
 
 @media screen and (min-width: 1040px) {
+
+    .caixas-assessor-video-flex video{
+        position: absolute;
+        top: 0;
+        left: 0;
+        top: 3em;
+        left: 4.4em;
+        height: 85%;
+        object-fit: cover;
+        border-radius: 4px 4px 20px 20px;
+        max-width: 296px;
+    }
+
+    img.imagem-video-assessores {
+        width: 394px;
+    }
+    .caixa-conteudo-assessores {
+        display: flex;
+        justify-content: space-evenly;
+        flex-flow: row;
+    }
+    .caixa-assessor {
+        margin: 4em !important;
+        box-shadow: 2px 1px 20px #00000026!important;
+        width: 100%!important;
+    }
     .swiper-assessores{
         margin: 0 5em;
     }
