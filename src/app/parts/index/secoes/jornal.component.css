@@ -326,4 +326,48 @@ h1.titulo-jornal {
         max-width: 304px;
         min-width: 304px;
     }
+
+    /* .caixa-acao-jornal {
+        display: block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    } */
+
+    .caixa-acao-jornal {
+        display: block;
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        justify-content: center;
+    }
 }
+
+.custom-video {
+    position: relative;
+    width: 100%;
+    height: auto;
+    background-color: black;
+}
+
+.custom-video::-webkit-media-controls {
+    display: none;
+}
+
+.custom-video::before {
+    content: "\25B6"; /* Unicode character for play icon */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 4rem;
+    color: white;
+    z-index: 10;
+    pointer-events: none;
+    display: none;
+}
+
+.custom-video.paused::before {
+    display: block;
+}
+
