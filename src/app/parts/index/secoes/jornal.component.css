@@ -1,6 +1,6 @@
-.jornal{
+/* .jornal{
     display: none;
-}
+} */
 
 
 .caixas-assessor-video-flex-jornal-jornal {
@@ -68,34 +68,32 @@
     z-index: 10; /* Coloquei um z-index alto para garantir que fique acima */
 }
 
-.caixas-assessor-video-flex-jornal video {
-    position: absolute;
-    top: 2.5em;
-    left: 3.4em;
-    height: 85%;
-    object-fit: cover;
-    border-radius: 1px 1px 20px 20px;
-    width: 230px;
-    z-index: 999; /* Certifique-se de que o vídeo esteja acima de todos os elementos */
-}
+
 
 .imagens-jornal {
     /* padding-bottom: 3em; */
     z-index: 1; /* Certifique-se de que a z-index é menor do que a do vídeo */
     position: relative;
-    background: linear-gradient(to top, #110324 77%, transparent 50%);
+    background: linear-gradient(to top, #110324 77%, #0f9ddf 50%);
 }
 
-.caixa-lista-jornal {
+.container-titulo-jornal {
+    margin: 4em 0 0 0!important;
+}
+
+.caixa1-titulo {
+    padding: 4em 0;
+}
+/* .caixa-lista-jornal {
     position: absolute;
     bottom: 4em;
     left: 6em;
-    z-index: 2; /* Pode ser menor que o vídeo, mas maior que a .imagens-jornal */
-}
+    z-index: 2; 
+} */
 
 h1.titulo-lista-jornal{
     color: white;
-    width: 68%;
+    /* width: 68%; */
     font-size: 32px;
     font-weight: 400;
 }
@@ -123,7 +121,41 @@ p.texto-lista-jornal {
     margin: 1em 0 1em 0px;
     font-size: 20px;
     font-weight: 300;
-    width: 65%;
+    /* width: 65%; */
+}
+
+.caixa-acao-jornal {
+    text-align: end;
+    width: 50%;
+    margin: 0 3em 2em 3em;
+    color: white;
+}
+
+h1.titulo-acao-jornal {
+    margin-bottom: 0.5em;
+}
+
+h1.titulo-jornal {
+    color: #ffffff!important;
+    font-weight: 800;
+ 
+    text-align: center;
+}
+
+.caixa1-titulo{
+    display: flex;
+    align-items: center;
+    flex-flow: column;
+    justify-content: center;
+}
+
+.caixa1-titulo {
+    background: #0f9ddf;
+}
+
+.caixa-lista-jornal {
+    width: 50%;
+    margin: 0 3em 2em 3em;
 }
 
 .caixa2-overlay-jornal {
@@ -165,16 +197,133 @@ p.titulo-texto-jornal {
     margin: 4em 0 3em 0;
 }
 
-
+/* 
 .caixa-acao-jornal {
     position: absolute;
     top: 22em;
     right: 2em;
     text-align: end;
     color: white;
+} */
+
+.container-jornal-cont {
+    display: flex;
+    justify-content: space-;
 }
 
 
 h1.titulo-acao-jornal {
     font-weight: 600;
+}
+
+
+@media screen and (min-width:200px) {
+    img.logo-jornal {
+        width: 18%;
+        margin: 0;
+    }
+    .caixa-acao-jornal {
+        display: none;
+    }
+
+    .container-jornal-cont{
+        display: flex;
+        flex-flow: column-reverse;
+     
+    }
+
+    .mockup-celular-jornal{
+      
+        width: 261px;
+    }
+
+    
+
+.caixas-assessor-video-flex-jornal video {
+    position: absolute;
+    top: 2.3em;
+    left: 3em;
+    height: 84%;
+    object-fit: cover;
+    border-radius: 1px 1px 20px 20px;
+    width: 198px;
+    z-index: 999;
+}
+
+.caixa2-overlay-jornal{
+    display: flex;
+    margin-top: -7em;
+    margin-right: 1em;
+}
+
+.slide-jornal img{
+    width: 75%;
+}
+
+.caixa-lista-jornal {
+    width: 92%;
+    /* margin: 0 0em 2em 3em; */
+    margin-left: 1em;
+    padding-bottom: 3em;
+}
+
+h1.titulo-jornal {
+    font-size: 27px;
+    margin: 0 0.2em!important;
+}
+}  
+
+
+@media screen and (min-width:900px) {
+
+    img.logo-jornal {
+        width: auto;
+       
+    }
+
+    h1.titulo-jornal{
+        color: #ffffff !important;
+        font-weight: 800;
+        font-size: 73px ;
+        text-align: center;
+    }
+    .caixa-lista-jornal{
+        width: 50%;
+        margin: 0 3em 2em 3em;
+    }
+    .slide-jornal img{
+        width: 100%;
+    }
+    .caixa2-overlay-jornal {
+        display: flex;
+        margin-top: -13em;
+        margin-right: 0;
+    }
+
+    .caixas-assessor-video-flex-jornal video {
+        position: absolute;
+        top: 2.5em;
+        left: 3.4em;
+        height: 85%;
+        object-fit: cover;
+        border-radius: 1px 1px 20px 20px;
+        width: 230px;
+        z-index: 999; /* Certifique-se de que o vídeo esteja acima de todos os elementos */
+    }
+
+    .caixa-acao-jornal {
+        display: block;
+    }
+
+    .container-jornal-cont{
+        display: flex;
+        flex-flow: row;
+     
+    }
+
+    
+    .mockup-celular-jornal{
+        max-width: 304px;
+        min-width: 304px;
+    }
 }

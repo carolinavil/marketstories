@@ -442,7 +442,8 @@
         <div class="container-titulo-jornal">
             <div class="titulo-jornal">
                 <div class="caixa1-titulo">
-                    <h1 class="titulo-jornal">Revolucione <span class="titulo2-jornal">a maneira de informar.  <img src="../../../assets/img/logo (1).png" alt="" class="logo-jornal"></span></h1>
+                   <img src="../../../assets/img/logo (1).png" alt="" class="logo-jornal">
+                    <h1 class="titulo-jornal">Revolucione a maneira de informar.</h1>
                    
                     <!-- <p class="titulo-texto-jornal">A equipe MarketStories coleta, em praticamente tempo real, as informações mais relevantes do mercado
                     </p> -->
@@ -458,13 +459,16 @@
         
             <div class="imagens-jornal">
                 <div class="slides-jornal">
-                    <swiper-container  [slidesPerView]="8"
+                    <swiper-container  [slidesPerView]="slidesJornal"
+                    [config]="config1"
                     [spaceBetween]="spaceQuemSomos" class="swiper-quem-somos">
+                  
                     <swiper-slide class="slide-jornal">
-                        <img src="../../../assets/img/3. Brasil.png" alt="" class="item-slide-quem-somos">
+                        <img src="../../../assets/img/1. Capa.png" alt="" class="item-slide-quem-somos">
                     </swiper-slide>
+                   
                     <swiper-slide class="slide-jornal">
-                        <img src="../../../assets/img/3. Brasil.png" alt="" class="item-slide-quem-somos">
+                        <img src="../../../assets/img/2. Índices.png" alt="" class="item-slide-quem-somos">
                     </swiper-slide>
                    
                     <swiper-slide class="slide-jornal">
@@ -472,78 +476,70 @@
                     </swiper-slide>
                    
                     <swiper-slide class="slide-jornal">
-                        <img src="../../../assets/img/3. Brasil.png" alt="" class="item-slide-quem-somos">
+                        <img src="../../../assets/img/4. Mundo.png" alt="" class="item-slide-quem-somos">
                     </swiper-slide>
                    
                     <swiper-slide class="slide-jornal">
-                        <img src="../../../assets/img/3. Brasil.png" alt="" class="item-slide-quem-somos">
+                        <img src="../../../assets/img/5. Crypto.png" alt="" class="item-slide-quem-somos">
                     </swiper-slide>
                    
                     <swiper-slide class="slide-jornal">
-                        <img src="../../../assets/img/3. Brasil.png" alt="" class="item-slide-quem-somos">
+                        <img src="../../../assets/img/6. Relatórios.png" alt="" class="item-slide-quem-somos">
                     </swiper-slide>
                    
                     <swiper-slide class="slide-jornal">
-                        <img src="../../../assets/img/3. Brasil.png" alt="" class="item-slide-quem-somos">
+                        <img src="../../../assets/img/1. Capa.png" alt="" class="item-slide-quem-somos">
                     </swiper-slide>
                    
                     <swiper-slide class="slide-jornal">
-                        <img src="../../../assets/img/3. Brasil.png" alt="" class="item-slide-quem-somos">
+                        <img src="../../../assets/img/2. Índices.png" alt="" class="item-slide-quem-somos">
                     </swiper-slide>
                    
                     <swiper-slide class="slide-jornal">
-                        <img src="../../../assets/img/3. Brasil.png" alt="" class="item-slide-quem-somos">
+                        <img src="../../../assets/img/6. Relatórios.png" alt="" class="item-slide-quem-somos">
                     </swiper-slide>
-                   
-                    <swiper-slide class="slide-jornal">
-                        <img src="../../../assets/img/3. Brasil.png" alt="" class="item-slide-quem-somos">
-                    </swiper-slide>
-                    <swiper-slide class="slide-jornal">
-                        <img src="../../../assets/img/3. Brasil.png" alt="" class="item-slide-quem-somos">
-                    </swiper-slide>
-                    <swiper-slide class="slide-jornal">
-                        <img src="../../../assets/img/3. Brasil.png" alt="" class="item-slide-quem-somos">
-                    </swiper-slide>
+              
                    
             
                 </swiper-container>
                 </div>
+            <div class="container-jornal-cont">
+              
             
+                <div class="caixa-lista-jornal">
+                    <h1 class="titulo-lista-jornal">Um jornal semanal pronto para ser enviado para os seus clientes.</h1>
+        <p class="texto-lista-jornal">Mantenha o seu público informado e construa autoridade.
+        </p>
+                    <ul class="lista-jornal">
+                        <li class="item-jornal"><span class="icone-jornal"><img src="../../../assets/img/check mark.png" alt="" class="icone-j"></span>Notícias que marcaram a semana</li>
+                        <li class="item-jornal"><span class="icone-jornal"><img src="../../../assets/img/check mark.png" alt="" class="icone-j"></span>Brasil, Mundo e Crypto</li>
+                        <li class="item-jornal"><span class="icone-jornal"><img src="../../../assets/img/check mark.png" alt="" class="icone-j"></span>Fechamento dos principais índices globais </li>
+                        <li class="item-jornal"><span class="icone-jornal"><img src="../../../assets/img/check mark.png" alt="" class="icone-j"></span>QR Code de autenticação que vai para o seu WhatsApp</li>
+                    </ul>
+                    
+                </div>
                 <div class="caixa2-overlay-jornal">
                        
                     <div class="caixas-assessor-video-flex-jornal"> 
                         <img src="../../assets/img/novo.png" alt="Mockup de Celular" class="mockup-celular-jornal">
-                    
-                            <video controls>
-                                <source src="../../../assets/img/0813.mp4" type="video/mp4">
-                                Seu navegador não suporta a tag de vídeo.
-                            </video>
-                      
+                        <video #videoPlayer2 controls (play)="pauseOtherVideos(videoPlayer2)">
+                            <source src="../../../assets/img/0813.mp4" type="video/mp4">
+                            Seu navegador não suporta a tag de vídeo.
+                          </video>
                 </div>
                 </div>
-            
-                <div class="caixa-lista-jornal">
-                    <h1 class="titulo-lista-jornal">Acesso direto às opiniões e análises dos especialistas</h1>
-        <p class="texto-lista-jornal">Acesso direto às opiniões e análises dos especialistas às opiniões e análises dos especialistas</p>
-                    <ul class="lista-jornal">
-                        <li class="item-jornal"><span class="icone-jornal"><img src="../../../assets/img/check mark.png" alt="" class="icone-j"></span>Acesso direto às opiniões e análises </li>
-                        <li class="item-jornal"><span class="icone-jornal"><img src="../../../assets/img/check mark.png" alt="" class="icone-j"></span>Acesso direto às opiniões</li>
-                        <li class="item-jornal"><span class="icone-jornal"><img src="../../../assets/img/check mark.png" alt="" class="icone-j"></span>Acesso direto às opiniões e análises </li>
-                        <li class="item-jornal"><span class="icone-jornal"><img src="../../../assets/img/check mark.png" alt="" class="icone-j"></span>Acesso direto às opiniões e </li>
-                    </ul>
-                    
-                </div>
-
 
                 <div class="caixa-acao-jornal">
                     <h1 class="titulo-acao-jornal">
                        Junte-se a nós. 
                     </h1>
                     
-                    <button routerLink="pagamento" class="btn-associar-header"> <a>Quero 10 dias
+                    <button routerLink="pagamento" class="btn-associar"> <a>Quero 10 dias
                         grátis!</a></button>
 
                 </div>
+            </div>
+           
             </div>
         
            
@@ -1217,10 +1213,10 @@
                 <div class="caixas-assessor-video-flex"> 
                     <img src="../../assets/img/novo.png" alt="Mockup de Celular" class="imagem-video-assessores">
                 
-                        <video controls>
-                            <source src="../../../assets/img/0814.mp4" type="video/mp4">
-                            Seu navegador não suporta a tag de vídeo.
-                        </video>
+                    <video #videoPlayer1 controls (play)="pauseOtherVideos(videoPlayer1)">
+                        <source src="../../../assets/img/0814.mp4" type="video/mp4">
+                        Seu navegador não suporta a tag de vídeo.
+                      </video>
                   
             </div>
             </div>

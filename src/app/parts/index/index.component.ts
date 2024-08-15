@@ -10,7 +10,7 @@ import { faFacebook, faInstagram, faLinkedin, faTiktok, faTwitter, faYoutube, fa
 import { IconName } from '@fortawesome/free-solid-svg-icons';
 import { MatDrawer } from '@angular/material/sidenav';
 import AOS from 'aos'
-
+import {  QueryList, ViewChildren } from '@angular/core';
 declare var M: any;
 
 @Component({
@@ -25,7 +25,7 @@ export class IndexComponent implements OnDestroy {
   valorInicial: number = 0;
   valorFinal: number = 1000;
   showMenu = false;
-
+  @ViewChildren('videoPlayer1, videoPlayer2') videoPlayers!: QueryList<ElementRef<HTMLVideoElement>>;
   contadorLayouts: number = 0;
   contadorStories: number = 0;
   contadorAssessores: number = 0;
@@ -62,7 +62,7 @@ export class IndexComponent implements OnDestroy {
   faIcon1 = ['fas', 'icon1'];
   faIcon2 = ['fas', 'icon2'];
   verificado: any
-
+  slidesJornal: any
   private windowWidth: number = window.innerWidth;
 
   Layoutscount:number = 0;
@@ -382,8 +382,14 @@ const options = {
     disableOnInteraction: true, // Permitir ou não interação do usuário para pausar o autoplay
   };
 
-
+  pauseOtherVideos(currentVideo: HTMLVideoElement): void {
+    this.videoPlayers.forEach(video => {
+      if (video.nativeElement !== currentVideo) {
+        video.nativeElement.pause();
+      }
+    });}
   ngAfterViewInit(): void {
+  
     setTimeout(() => {
       this.reinicializarCarrosselBanner();
     }, 0); 
@@ -625,6 +631,19 @@ const options = {
     // this.mySwiper = new Swiper(this.swiperContainer.nativeElement, swiperOptions);
   }
 
+
+  config1 = {
+    slidesPerView: 8,
+    spaceBetween: 10,
+    breakpoints: {
+      900: {
+        slidesPerView: 4
+      },
+      901: {
+        slidesPerView: 8
+      }
+    }
+  };
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {
     this.reinicializarCarrosselBanner();
@@ -639,6 +658,7 @@ const options = {
   adjustSlidesPerView(windowWidth: number) {
     this.mobileCard = false
     if (windowWidth <= 2000) {
+      this.slidesJornal = 8
       this.spaceBetween = '-150'
       this.spaceQuemSomos = '30'
       this.slidesPerViewQuemSomos = '6.5'
@@ -664,6 +684,7 @@ const options = {
           console.log(this.slidesPerView)
         }
         if (windowWidth <= 900) {
+          this.slidesJornal = 1.5
           this.mobileBeneficiosCard = 1.2
           console.log('mobile')
           this.paddingFeed = -300

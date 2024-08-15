@@ -431,3 +431,7 @@ p.assessor {
     width: 45%;
 } */
 
+.caixa2-overlay-assessor {
+    margin-right: 1em;
+    padding: 3em 0 5em 0;
+}
