@@ -293,6 +293,15 @@ h1.titulo-acao-jornal {
 
 @media screen and (min-width:200px) {
 
+    p.texto-jornal {
+        color: white;
+        font-weight: 600;
+        margin-bottom: 3em;
+        padding-top: -3em;
+    }
+
+   
+
     button.play-button {
         position: absolute;
         top: 16em;
@@ -356,6 +365,14 @@ h1.titulo-acao-jornal {
         width: 261px;
     }
 
+    p.texto-jornal {
+        margin-left: 0.5em;
+    }
+
+    h1.titulo-jornal{
+        text-align: start !important;
+        padding: 1em 0 0.5em 0;
+    }
     
 
 .caixas-assessor-video-flex-jornal video {
@@ -407,7 +424,18 @@ img.logo-jornal {
     display: flex;
     /* justify-content: center; */
 }
+
+img.img-jornal-mockup {
+    width: 30%;
+}
 @media screen and (min-width:900px) {
+
+    p.texto-jornal {
+        color: white;
+        font-weight: 500;
+        font-size: 20px;
+        margin-left: 1em;
+    }
 
     button.play-button {
         position: absolute;
@@ -547,7 +575,7 @@ img.logo-jornal {
         align-items: center;
         justify-content: center;
     } */
-
+/* 
     .caixa-acao-jornal {
         display: block;
         display: flex;
@@ -555,6 +583,36 @@ img.logo-jornal {
         align-items: center;
         justify-content: center;
     }
+
+  */
+        .caixa-acao-jornal {
+            display: block;
+            display: flex;
+            flex-flow: row;
+            align-items: center;
+            justify-content: center;
+            text-align: start;
+            font-size: -2px;
+        }
+
+        h1.titulo-acao-jornal {
+            font-size: 35px;
+        }
+
+
+        .btn-associar{
+            background: #4BB9EC;
+            color: white;
+            border: none;
+            border-radius: 40px;
+            padding: 1em!important;
+            font-size: 18px;
+            margin-left: 1em;
+        }
+
+        h1.titulo-acao-jornal {
+            margin-bottom: 0 !important;
+        }
 }
 
 .custom-video {
@@ -585,3 +643,26 @@ img.logo-jornal {
     display: block;
 }
 
+
+h1.titulo-lista-jornal{
+    color: white;
+    font-size: 32px;
+    font-weight: 400;
+    text-align: center;
+}
+
+p.texto-lista-jornal {
+    text-align: center;
+}
+
+li.item-jornal{
+    color: white;
+    font-size: 16px;
+    font-weight: 300;
+    margin: 0.6em 0;
+    opacity: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}

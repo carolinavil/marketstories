@@ -124,6 +124,15 @@ export class IndexComponent implements OnDestroy {
   // }
   
 
+  private pauseAllVideosExcept(currentVideo: HTMLVideoElement) {
+    this.videoPlayers.forEach(player => {
+      const video = player.nativeElement;
+      if (video !== currentVideo && !video.paused) {
+        video.pause();
+      }
+    });
+  }
+
 
 
 
