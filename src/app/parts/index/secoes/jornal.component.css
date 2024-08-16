@@ -21,7 +21,43 @@
     display: block;
 }
 
+/* .active-jornal {
+    border-bottom: 2px solid;
+    border-color: #4bb9ec;
 
+} */
+
+
+.active-jornal {
+    position: relative;
+    overflow: hidden;
+}
+
+.active-jornal::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 0;
+    top: 0;
+    left: 0;
+    background-color: #4bb9ec;
+    animation: slideIn 1s ease forwards;
+    border-radius: 0.5em;
+}
+
+.active-jornal a {
+    position: relative;
+    z-index: 1;
+    color: inherit;
+    text-decoration: none;
+    color: white;
+}
+
+@keyframes slideIn {
+    to {
+        width: 100%;
+    }
+}
 
 
 
@@ -61,12 +97,43 @@
 }
 
 
+
+
+.play-button.hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .play-button:focus {
+    opacity: 0;
+   
+  }
+
+
+
+   
+  .play-button:hover {
+  background-color: #f0f0f0bb;
+  }
+
+
+  svg.svg-inline--fa.fa-play {
+    font-size: 22px;
+}
+
+
 .caixas-assessor-video-flex-jornal {
     position: relative;
-    width: auto!important;
+    width: auto !important;
     margin: auto;
-    z-index: 10; /* Coloquei um z-index alto para garantir que fique acima */
+    display: flex;
+    z-index: 10;
+    justify-content: center;
 }
+
+
+
+
 
 
 
@@ -74,16 +141,16 @@
     /* padding-bottom: 3em; */
     z-index: 1; /* Certifique-se de que a z-index é menor do que a do vídeo */
     position: relative;
-    background: linear-gradient(to top, #110324 77%, #0f9ddf 50%);
+    /* background: linear-gradient(to top, #110324 77%, #0f9ddf 50%); */
 }
 
 .container-titulo-jornal {
     margin: 4em 0 0 0!important;
 }
 
-.caixa1-titulo {
+/* .caixa1-titulo {
     padding: 4em 0;
-}
+} */
 /* .caixa-lista-jornal {
     position: absolute;
     bottom: 4em;
@@ -149,8 +216,15 @@ h1.titulo-jornal {
     justify-content: center;
 }
 
-.caixa1-titulo {
+.caixa-primeiro{
+
+    /* background: linear-gradient(to top, #110324 77%, #0f9ddf 50%); */
     background: #0f9ddf;
+}
+
+
+.caixa-lista-jornal {
+    padding-top: 3em;
 }
 
 .caixa-lista-jornal {
@@ -183,7 +257,7 @@ p.titulo-texto-jornal {
 
 .caixa2-titulo, .caixa1-titulo{
     display: flex;
-    align-items: center;
+    align-items: start;
 }
 
 .titulo2-jornal{
@@ -218,6 +292,51 @@ h1.titulo-acao-jornal {
 
 
 @media screen and (min-width:200px) {
+
+    button.play-button {
+        position: absolute;
+        top: 16em;
+        right: 6.2em;
+        z-index: 1000;
+        border: none;
+        padding: 1.8em 2em;
+        border-radius: 6em;
+    }
+
+    button.play-button.btn-assessos-acao {
+        position: absolute;
+        top: 14em;
+        right: 6.4em;
+        z-index: 1000;
+        border: none;
+        padding: 1.8em 2em;
+        border-radius: 6em;
+    }
+
+    .caixa-btn-jornal {
+        display: block;
+        text-align: center;
+    }
+
+    h1.titulo-jornal {
+        text-align: start !important;
+        padding: 2em 0;
+    }
+
+    .caixa-segundo {
+        flex-flow: column-reverse;
+    }
+    .caixa-acao-jornal{
+        display: none;
+    }
+
+    .slides-jornal{
+        display: block;
+    }
+
+    .caixa-filas-jornais {
+        display: none !important;
+    }
     img.logo-jornal {
         width: 18%;
         margin: 0;
@@ -273,8 +392,102 @@ h1.titulo-jornal {
 }
 }  
 
+.titulo-jornal-flex{
+    display: flex;
+    align-items: center;
+}
 
+img.logo-jornal {
+    width: 7%!important;
+    margin-left: 0.4em !important;
+}
+
+.caixa-segundo {
+    background: #110324;
+    display: flex;
+    /* justify-content: center; */
+}
 @media screen and (min-width:900px) {
+
+    button.play-button {
+        position: absolute;
+        top: 16em;
+        right: 6.8em;
+        z-index: 1000;
+        border: none;
+        padding: 1.8em 2em;
+        border-radius: 6em;
+    }
+
+    
+  button.play-button.btn-assessos-acao {
+    position: absolute;
+    top: 20em;
+    right: 9.5em;
+    z-index: 1000;
+    border: none;
+    padding: 1.8em 2em;
+    border-radius: 6em;
+}
+
+    .caixa-btn-jornal {
+        display: none;
+       
+    }
+    h1.titulo-jornal {
+        text-align: start !important;
+        padding: 0!important;
+    }
+    li.jornais {
+        margin: 0 4px;
+    }
+
+    .caixa-segundo {
+        flex-flow: row;
+    }
+
+    .caixa-acao-jornal{
+        display: block;
+    }
+
+    .slides-jornal{
+        display: none;
+    }
+    
+    .caixa-filas-jornais {
+        display: flex!important;
+    }
+    .jornal{
+        margin-top: 4em;
+    }
+    .caixa1-titulo {
+        padding-top: 4em;
+    }
+
+    .caixa-primeiro{
+        height: 65vh;
+        position: relative;
+    }
+    .caixa-filas-jornais {
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+        position: absolute;
+        bottom: 0;
+    }
+    .jornais img {
+
+     width: 100%;
+    }
+
+    ul.fila {
+        display: flex;
+    }
+
+    .fila-jornais {
+ 
+        width: 69%;
+    }
 
     img.logo-jornal {
         width: auto;
@@ -284,8 +497,9 @@ h1.titulo-jornal {
     h1.titulo-jornal{
         color: #ffffff !important;
         font-weight: 800;
-        font-size: 73px ;
-        text-align: center;
+        font-size: 70px;
+        text-align: start;
+        width: 57%;
     }
     .caixa-lista-jornal{
         width: 50%;

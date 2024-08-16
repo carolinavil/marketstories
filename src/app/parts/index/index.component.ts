@@ -5,7 +5,7 @@ import Swiper from 'swiper';
 import { Router } from '@angular/router';
 import { AfterViewInit, ViewChild, ElementRef } from '@angular/core';
 import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faArrowRight, faBars, faHouse, faMask, faStar, faXmark, } from '@fortawesome/free-solid-svg-icons';
+import { faArrowRight, faBars, faHouse, faMask, faStar, faXmark, faPlay} from '@fortawesome/free-solid-svg-icons';
 import { faFacebook, faInstagram, faLinkedin, faTiktok, faTwitter, faYoutube, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import { IconName } from '@fortawesome/free-solid-svg-icons';
 import { MatDrawer } from '@angular/material/sidenav';
@@ -95,8 +95,35 @@ export class IndexComponent implements OnDestroy {
     
     this.adjustSlidesPerView(window.innerWidth);
 
-    library.addIcons(faBars, faXmark, faHouse, faInstagram, faLinkedin, faTwitter, faYoutube, faFacebook, faTiktok, faWhatsapp, faStar, faArrowRight)
+    library.addIcons(faBars, faXmark, faHouse, faInstagram, faLinkedin, faTwitter, faYoutube, faFacebook, faTiktok, faWhatsapp, faStar, faArrowRight, faPlay)
   }
+
+  isPlayButtonVisible: boolean = true;
+
+  togglePlay(video: HTMLVideoElement) {
+    if (video.paused) {
+      video.play();
+    } else {
+      video.pause();
+    }
+  }
+
+  hidePlayButton() {
+    this.isPlayButtonVisible = false; // Oculta o botão quando o vídeo é reproduzido
+  }
+
+  showPlayButton() {
+    this.isPlayButtonVisible = true; // Mostra o botão quando o vídeo é pausado
+  }
+  // togglePlay(video: HTMLVideoElement) {
+  //   if (video.paused) {
+  //     video.play();
+  //   } else {
+  //     video.pause();
+  //   }
+  // }
+  
+
 
 
 
@@ -468,8 +495,9 @@ const options = {
 
     $(window).on('scroll', function () {
       if ($(this).scrollTop()! > 50) { // Se a rolagem for maior que 50 pixels
-        $('.menu-desktop').addClass('active-menu'); // Altere para a cor desejada
+        $('.menu-desktop').addClass('active-menu'); 
         $('.link-header').addClass('active-link');
+        $('.link-jornal').addClass('active-jornal');
         $('.link-item-header').addClass('link-active');
         $('.logo-header').addClass('logo-header-active');
         $('.logo-header-pb').addClass('logo-header-pb-active');
@@ -478,6 +506,7 @@ const options = {
 
       } else {
         $('.menu-desktop').removeClass('active-menu');
+        $('.link-jornal').removeClass('active-jornal');
         $('.link-header').removeClass('active-link');// Volte para a cor padrão
         $('.link-item-header').removeClass('link-active');
         $('.logo-header').removeClass('logo-header-active');
@@ -505,7 +534,7 @@ const options = {
     M.Carousel.init(elemsTestes, optionsTestes);
 
     // Adicione o script ao corpo do documento
-  
+   
 
 
 
