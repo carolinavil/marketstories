@@ -451,7 +451,7 @@
     </section>
   <section class="jornal">
     <div class="caixa-primeiro">
-        <div class="caixa1-titulo">
+        <div class="caixa-titulo2">
             <!-- <img src="../../../assets/img/logo (1).png" alt="" class="logo-jornal"> -->
             <h1 class="titulo-jornal">Newsletter semanal
                 </h1>
@@ -510,7 +510,7 @@
             </swiper-container>
             </div>
         </div>
-        <div class="caixa-filas-jornais">
+        <div class="caixa-filas-jornais2">
             <div class="fila-jornais">
                 <ul class="fila">
                     <li class="jornais">
@@ -566,10 +566,10 @@
                        
             <div class="caixas-assessor-video-flex-jornal"> 
                 <img src="../../assets/img/novo.png" alt="Mockup de Celular" class="mockup-celular-jornal">
-                <video #videoPlayer2 controls (play)="hidePlayButton()" (pause)="showPlayButton()">
+                <video #videoPlayer2 controls (play)="onPlay(videoPlayer2, videoPlayer1)" (pause)="showPlayButton()">
                     <source src="../../../assets/img/0813.mp4" type="video/mp4">
                     Seu navegador não suporta a tag de vídeo.
-                  </video>
+                </video>
                   <button class="play-button" [class.hidden]="!isPlayButtonVisible" (click)="togglePlay(videoPlayer2)">
                     <fa-icon
                     [icon]="['fas','play']"></fa-icon>
@@ -1255,10 +1255,10 @@
                 <div class="caixas-assessor-video-flex"> 
                     <img src="../../assets/img/novo.png" alt="Mockup de Celular" class="imagem-video-assessores">
                 
-                    <video #videoPlayer1 controls (play)="hidePlayButton()" (pause)="showPlayButton()">
+                    <video #videoPlayer1 controls (play)="onPlay(videoPlayer1, videoPlayer2)" (pause)="showPlayButton()">
                         <source src="../../../assets/img/0814.mp4" type="video/mp4">
                         Seu navegador não suporta a tag de vídeo.
-                      </video>
+                    </video>
                       <button class="play-button btn-assessos-acao" [class.hidden]="!isPlayButtonVisible" (click)="togglePlay(videoPlayer1)">
                         <fa-icon
                         [icon]="['fas','play']"></fa-icon>

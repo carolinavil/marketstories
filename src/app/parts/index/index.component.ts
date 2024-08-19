@@ -22,10 +22,11 @@ declare var M: any;
 
 
 export class IndexComponent implements OnDestroy {
+  @ViewChildren('videoPlayer') videoPlayers!: QueryList<any>;
   valorInicial: number = 0;
   valorFinal: number = 1000;
   showMenu = false;
-  @ViewChildren('videoPlayer1, videoPlayer2') videoPlayers!: QueryList<ElementRef<HTMLVideoElement>>;
+  // @ViewChildren('videoPlayer1, videoPlayer2') videoPlayers!: QueryList<ElementRef<HTMLVideoElement>>;
   contadorLayouts: number = 0;
   contadorStories: number = 0;
   contadorAssessores: number = 0;
@@ -111,6 +112,12 @@ export class IndexComponent implements OnDestroy {
   hidePlayButton() {
     this.isPlayButtonVisible = false; // Oculta o botão quando o vídeo é reproduzido
   }
+  onPlay(videoPlaying: HTMLVideoElement, videoToPause: HTMLVideoElement) {
+    if (!videoToPause.paused) {
+        videoToPause.pause();
+    }
+    this.hidePlayButton();
+}
 
   showPlayButton() {
     this.isPlayButtonVisible = true; // Mostra o botão quando o vídeo é pausado

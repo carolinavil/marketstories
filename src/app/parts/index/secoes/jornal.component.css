@@ -13,6 +13,20 @@
 
 } */
 
+.caixa-filas-jornais2 {
+    display: flex;
+    justify-content: start;
+    /* align-items: center; */
+    /* position: absolute; */
+    bottom: 0;
+}
+
+
+img.img-jornal-mockup {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
 
 .caixa-teste{
     background-image: url('../../../../assets/img/novo.png');
@@ -343,7 +357,7 @@ h1.titulo-acao-jornal {
         display: block;
     }
 
-    .caixa-filas-jornais {
+    .caixa-filas-jornais2 {
         display: none !important;
     }
     img.logo-jornal {
@@ -428,7 +442,15 @@ img.logo-jornal {
 img.img-jornal-mockup {
     width: 30%;
 }
+
+.caixa-titulo2{
+    padding: 1em 0;
+}
 @media screen and (min-width:900px) {
+    p.texto-jornal {
+        width: 57%;
+        padding-top: 1em;
+    }
 
     p.texto-jornal {
         color: white;
@@ -482,7 +504,7 @@ img.img-jornal-mockup {
         display: none;
     }
     
-    .caixa-filas-jornais {
+    .caixa-filas-jornais2 {
         display: flex!important;
     }
     .jornal{
@@ -493,7 +515,7 @@ img.img-jornal-mockup {
     }
 
     .caixa-primeiro{
-        height: 65vh;
+        height: 70vh;
         position: relative;
     }
     .caixa-filas-jornais {
@@ -665,4 +687,8 @@ li.item-jornal{
     align-items: center;
     justify-content: center;
     text-align: center;
+}
+
+.caixa-titulo2 {
+    padding: 2em 0 0em 0.5em;
 }
