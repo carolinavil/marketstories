@@ -113,10 +113,7 @@ img.img-jornal-mockup {
 
 
 
-.play-button.hidden {
-    opacity: 0;
-    pointer-events: none;
-  }
+
 
   .play-button:focus {
     opacity: 0;
@@ -307,6 +304,10 @@ h1.titulo-acao-jornal {
 
 @media screen and (min-width:200px) {
 
+    .play-button{
+        display: none;
+    }
+
     p.texto-jornal {
         color: white;
         font-weight: 600;
@@ -447,6 +448,12 @@ img.img-jornal-mockup {
     padding: 1em 0;
 }
 @media screen and (min-width:900px) {
+
+    
+    .play-button{
+        display: block;
+    }
+  
     p.texto-jornal {
         width: 57%;
         padding-top: 1em;
