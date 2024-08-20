@@ -566,7 +566,7 @@
                        
             <div class="caixas-assessor-video-flex-jornal"> 
                 <img src="../../assets/img/novo.png" alt="Mockup de Celular" class="mockup-celular-jornal">
-                <video #videoPlayer2 controls (play)="onPlay(videoPlayer2, videoPlayer1)" (pause)="showPlayButton()">
+                <video #videoPlayer2 controls  (play)="playBtn(videoPlayer1)"  (pause)="showPlayButton()">
                     <source src="../../../assets/img/0813.mp4" type="video/mp4">
                     Seu navegador não suporta a tag de vídeo.
                 </video>
@@ -1255,7 +1255,7 @@
                 <div class="caixas-assessor-video-flex"> 
                     <img src="../../assets/img/novo.png" alt="Mockup de Celular" class="imagem-video-assessores">
                 
-                    <video #videoPlayer1 controls (play)="onPlay(videoPlayer1, videoPlayer2)" (pause)="showPlayButton()">
+                    <video #videoPlayer1 controls    (play)="playBtn(videoPlayer2)" (pause)="showPlayButton()">
                         <source src="../../../assets/img/0814.mp4" type="video/mp4">
                         Seu navegador não suporta a tag de vídeo.
                     </video>

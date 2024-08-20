@@ -115,8 +115,22 @@ export class IndexComponent implements OnDestroy {
   onPlay(videoPlaying: HTMLVideoElement, videoToPause: HTMLVideoElement) {
     if (!videoToPause.paused) {
         videoToPause.pause();
+
     }
     this.hidePlayButton();
+}
+
+playBtn(videoPlaying: HTMLVideoElement){
+  console.log('teste', videoPlaying) 
+  if(videoPlaying.played){
+    videoPlaying.pause()
+  }
+  else{
+    console.log('ta')
+  }
+
+
+
 }
 
   showPlayButton() {
