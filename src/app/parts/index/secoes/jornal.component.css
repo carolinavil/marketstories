@@ -739,3 +739,7 @@ li.item-jornal{
 .caixa-titulo2 {
     padding: 2em 0 0em 0.5em;
 }
+
+.play-button{
+    z-index: 99999!important
+}
