@@ -1253,12 +1253,13 @@
             <div class="caixa2-overlay-assessor">
            
                 <div class="caixas-assessor-video-flex"> 
-                    <img src="../../assets/img/novo.png" alt="Mockup de Celular" class="imagem-video-assessores">
-                
+                    
                     <video #videoPlayer1 controls    (play)="playBtn(videoPlayer2)" (pause)="showPlayButton()">
                         <source src="../../../assets/img/0814.mp4" type="video/mp4">
                         Seu navegador não suporta a tag de vídeo.
                     </video>
+                    <img src="../../assets/img/novo.png" alt="Mockup de Celular" class="imagem-video-assessores">
+                
                       <button class="play-button btn-assessos-acao" [class.hidden]="!isPlayButtonVisible" (click)="togglePlay(videoPlayer1)">
                         <fa-icon
                         [icon]="['fas','play']"></fa-icon>
