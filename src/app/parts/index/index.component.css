@@ -17,7 +17,9 @@
 /* @import '~@fortawesome/fontawesome-free/scss/fontawesome';
 @import '~@fortawesome/fontawesome-free/scss/solid'; */
 
-
+button.play-button.btn-assessos-acao {
+    z-index: 9 !important;
+}
 body{
 
     overflow: hidden!important;
@@ -265,6 +267,10 @@ img.titulo-logo {
         border-radius: 40px;
         padding: 0.5em 4em;
         font-size: 20px;
+    }
+
+    .origem-footer{
+        cursor: pointer!important;
     }
 
     .titulo-h2 {

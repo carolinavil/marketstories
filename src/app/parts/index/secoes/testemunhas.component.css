@@ -198,6 +198,10 @@ img.img-assessor {
 
 @media screen and (min-width: 250px) {
 
+    .play-button{
+        display: none!important;
+    }
+
     .caixa2-overlay-assesor {
         margin: 5em 0 3em 0;
     }
@@ -306,6 +310,14 @@ img.img-assessor {
 
 
 @media screen and (min-width: 1040px) {
+
+    button.teste444{
+        display: none;
+    }
+
+    .play-button{
+        display: block!important;
+    }
 
     .caixas-assessor-video-flex video{
         position: absolute;
@@ -433,3 +445,13 @@ p.assessor {
     width: 45%;
 } */
 
+button.teste444 {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    right: 0;
+    color: transparent;
+    background: transparent;
+    border: none;
+    z-index: 999999;
+}

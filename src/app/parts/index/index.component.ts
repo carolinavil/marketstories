@@ -122,6 +122,21 @@ export class IndexComponent implements OnDestroy {
     this.hidePlayButton();
 }
 
+
+teste444(video: HTMLVideoElement) {
+  if (video.paused) {
+    this.fundoMockup = false
+    video.play();
+  } else {
+    video.pause();
+  }
+}
+
+
+tyraSite(): void {
+  window.location.href = 'https://www.tyra.pro/';
+}
+
 playBtn(videoPlaying: HTMLVideoElement){
   this.fundoMockup = false
   console.log('teste', videoPlaying) 

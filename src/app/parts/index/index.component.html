@@ -566,8 +566,9 @@
                        
             <div class="caixas-assessor-video-flex-jornal"> 
                 <img src="../../assets/img/novo.png" alt="Mockup de Celular" class="mockup-celular-jornal">
+                <button class="teste444" (click)="teste444(videoPlayer2)">oi</button>
                 <img src="../../../assets/img/WhatsApp Image 2024-08-21 at 15.39.09.jpeg" alt="Mockup de Celular" class="imagem-video-assessores-fundo">
-                <video #videoPlayer2 controls   [class.ativo]="!fundoMockup" (pause)="showPlayButton()">
+                <video #videoPlayer2 controls   [class.ativo]="!fundoMockup" (play)="playBtn(videoPlayer1)" (pause)="showPlayButton()">
                     <source src="../../../assets/img/0813.mp4" type="video/mp4">
                     Seu navegador não suporta a tag de vídeo.
                 </video>
@@ -1255,11 +1256,12 @@
            
                 <div class="caixas-assessor-video-flex"> 
                     <img src="../../assets/img/novo.png" alt="Mockup de Celular" class="imagem-video-assessores">
-                    <img src="../../../assets/img/WhatsApp Image 2024-08-21 at 14.48.36.jpeg" alt="Mockup de Celular" class="imagem-video-assessores-fundo">
-                    <video #videoPlayer1 controls   [class.ativo]="!fundoMockup" (play)="playBtn(videoPlayer2)" (pause)="showPlayButton()">
+                  <button class="teste444" (click)="teste444(videoPlayer1)">oi</button>
+                    <video #videoPlayer1 controls   [class.ativo]="!fundoMockup" (play)="playBtn(videoPlayer2)" (pause)="showPlayButton()" >
                         <source src="../../../assets/img/0814.mp4" type="video/mp4">
                         Seu navegador não suporta a tag de vídeo.
                     </video>
+                    <img src="../../../assets/img/Group 472.png" alt="Mockup de Celular" class="imagem-video-assessores-fundo" >
                       <button class="play-button btn-assessos-acao" [class.hidden]="!isPlayButtonVisible" (click)="togglePlay(videoPlayer1)">
                         <fa-icon
                         [icon]="['fas','play']"></fa-icon>
@@ -1440,7 +1442,7 @@
                         <img class="img-logo-footer" src="../../../assets/img/logo.png" alt="">
                         <a class="txt-footer" routerLink="termos">Termos de uso</a>
                     </div>
-                    <div class="origem-footer">
+                    <div class="origem-footer" (click)="tyraSite()">
                         <img class="img-logo-footer" src="../../../assets/img/Logtipo Tyra 1.png" alt="">
                         <p class="txt-footer txt-origem-footer">Produto original</p>
                     </div>
