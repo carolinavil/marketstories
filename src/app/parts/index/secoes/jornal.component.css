@@ -390,7 +390,7 @@ h1.titulo-acao-jornal {
     }
     
 
-.caixas-assessor-video-flex-jornal video {
+/* .caixas-assessor-video-flex-jornal video {
     position: absolute;
     top: 2.3em;
     left: 3em;
@@ -399,7 +399,7 @@ h1.titulo-acao-jornal {
     border-radius: 1px 1px 20px 20px;
     width: 198px;
     z-index: 999;
-}
+} */
 
 .caixa2-overlay-jornal{
     display: flex;
@@ -570,7 +570,7 @@ img.img-jornal-mockup {
         margin-top: -13em;
         margin-right: 0;
     }
-
+/* 
     .caixas-assessor-video-flex-jornal video {
         position: absolute;
         top: 2.5em;
@@ -579,8 +579,8 @@ img.img-jornal-mockup {
         object-fit: cover;
         border-radius: 1px 1px 20px 20px;
         width: 230px;
-        z-index: 999; /* Certifique-se de que o vídeo esteja acima de todos os elementos */
-    }
+        z-index: 999;
+    } */
 
     .caixa-acao-jornal {
         display: block;
