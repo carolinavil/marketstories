@@ -307,9 +307,7 @@ h1.titulo-acao-jornal {
 
 @media screen and (min-width:200px) {
 
-    .btn-assessos-acao{
-        display: none!important;
-    }
+    
 
     button.play-button.btn-jornal {
         right: 6.5em;
@@ -351,7 +349,7 @@ h1.titulo-acao-jornal {
 
     button.play-button.btn-assessos-acao {
         position: absolute;
-        top: 14em;
+        top: 13.5em;
         right: 6.4em;
         z-index: 1000;
         border: none;
@@ -486,16 +484,11 @@ button.play-button {
     padding: 1.8em 2em;
     border-radius: 6em;
 }
-button.play-button.btn-jornal {
+button.play-button {
     z-index: 9999;
-    background-color: red;
+    
 }
 @media screen and (min-width:900px) {
-
-    .btn-assessos-acao{
-        display: block;
-    }
-
 
     button.play-button.btn-jornal {
         right: 6.8em;
