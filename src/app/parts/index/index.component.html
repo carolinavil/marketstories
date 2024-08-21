@@ -1254,8 +1254,8 @@
            
                 <div class="caixas-assessor-video-flex"> 
                     <img src="../../assets/img/novo.png" alt="Mockup de Celular" class="imagem-video-assessores">
-                
-                    <video #videoPlayer1 controls    (play)="playBtn(videoPlayer2)" (pause)="showPlayButton()">
+                    <img src="../../../assets/img/WhatsApp Image 2024-08-21 at 14.48.36.jpeg" alt="Mockup de Celular" class="imagem-video-assessores-fundo">
+                    <video #videoPlayer1 controls   [class.ativo]="!fundoMockup" (play)="playBtn(videoPlayer2)" (pause)="showPlayButton()">
                         <source src="../../../assets/img/0814.mp4" type="video/mp4">
                         Seu navegador não suporta a tag de vídeo.
                     </video>

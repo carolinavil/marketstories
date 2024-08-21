@@ -36,6 +36,7 @@ export class IndexComponent implements OnDestroy {
   contadorAssessoresInterval: any;
 
  
+  fundoMockup = true
   
   toggleMenu() {
     this.showMenu = !this.showMenu;
@@ -103,6 +104,7 @@ export class IndexComponent implements OnDestroy {
 
   togglePlay(video: HTMLVideoElement) {
     if (video.paused) {
+      this.fundoMockup = false
       video.play();
     } else {
       video.pause();
@@ -121,11 +123,13 @@ export class IndexComponent implements OnDestroy {
 }
 
 playBtn(videoPlaying: HTMLVideoElement){
+  this.fundoMockup = false
   console.log('teste', videoPlaying) 
   if(videoPlaying.played){
     videoPlaying.pause()
   }
   else{
+
     console.log('ta')
   }
 

@@ -300,13 +300,27 @@ p.titulo-texto-jornal {
 h1.titulo-acao-jornal {
     font-weight: 600;
 }
+.ativo{
+    opacity: 100%!important;
+}
 
 
 @media screen and (min-width:200px) {
-
-    .play-button{
-        display: none;
+    .imagem-video-assessores-fundo{
+        position: absolute;
+        top: 32px;
+        left: 43px;
+        height: 85%;
+        object-fit: cover;
+        border-radius: 1px 1px 20px 20px;
+        width: 196px;
+        z-index: -9;
+      
     }
+
+    /* .play-button{
+        display: none;
+    } */
 
     p.texto-jornal {
         color: white;
@@ -390,7 +404,8 @@ h1.titulo-acao-jornal {
     }
     
 
-/* .caixas-assessor-video-flex-jornal video {
+.caixas-assessor-video-flex-jornal video {
+    opacity: 0%;
     position: absolute;
     top: 2.3em;
     left: 3em;
@@ -399,7 +414,9 @@ h1.titulo-acao-jornal {
     border-radius: 1px 1px 20px 20px;
     width: 198px;
     z-index: 999;
-} */
+    opacity: 0%;
+}
+
 
 .caixa2-overlay-jornal{
     display: flex;
@@ -447,12 +464,32 @@ img.img-jornal-mockup {
 .caixa-titulo2{
     padding: 1em 0;
 }
+
+.play-button{
+    display: block;
+}
+
+button.play-button {
+    position: absolute;
+    top: 16em;
+    right: 6.8em;
+    z-index: 1000;
+    border: none;
+    padding: 1.8em 2em;
+    border-radius: 6em;
+}
+
 @media screen and (min-width:900px) {
 
     
-    .play-button{
-        display: block;
+
+    .imagem-video-assessores-fundo{
+       
+        display: none;
     }
+
+    
+    
   
     p.texto-jornal {
         width: 57%;
@@ -466,15 +503,6 @@ img.img-jornal-mockup {
         margin-left: 1em;
     }
 
-    button.play-button {
-        position: absolute;
-        top: 16em;
-        right: 6.8em;
-        z-index: 1000;
-        border: none;
-        padding: 1.8em 2em;
-        border-radius: 6em;
-    }
 
     
   button.play-button.btn-assessos-acao {
@@ -570,8 +598,9 @@ img.img-jornal-mockup {
         margin-top: -13em;
         margin-right: 0;
     }
-/* 
+
     .caixas-assessor-video-flex-jornal video {
+        opacity: 100%;
         position: absolute;
         top: 2.5em;
         left: 3.4em;
@@ -579,8 +608,8 @@ img.img-jornal-mockup {
         object-fit: cover;
         border-radius: 1px 1px 20px 20px;
         width: 230px;
-        z-index: 999;
-    } */
+        z-index: 999; /* Certifique-se de que o vídeo esteja acima de todos os elementos */
+    }
 
     .caixa-acao-jornal {
         display: block;
