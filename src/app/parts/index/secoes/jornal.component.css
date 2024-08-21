@@ -306,6 +306,10 @@ h1.titulo-acao-jornal {
 
 
 @media screen and (min-width:200px) {
+
+    button.play-button.btn-jornal {
+        right: 6.5em;
+    }
     .imagem-video-assessores-fundo{
         position: absolute;
         top: 32px;
@@ -481,7 +485,9 @@ button.play-button {
 
 @media screen and (min-width:900px) {
 
-    
+    button.play-button.btn-jornal {
+        right: 6.8em;
+    }
 
     .imagem-video-assessores-fundo{
        

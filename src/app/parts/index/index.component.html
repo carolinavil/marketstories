@@ -566,11 +566,12 @@
                        
             <div class="caixas-assessor-video-flex-jornal"> 
                 <img src="../../assets/img/novo.png" alt="Mockup de Celular" class="mockup-celular-jornal">
-                <video #videoPlayer2 controls  (pause)="showPlayButton()">
+                <img src="../../../assets/img/WhatsApp Image 2024-08-21 at 15.39.09.jpeg" alt="Mockup de Celular" class="imagem-video-assessores-fundo">
+                <video #videoPlayer2 controls   [class.ativo]="!fundoMockup" (pause)="showPlayButton()">
                     <source src="../../../assets/img/0813.mp4" type="video/mp4">
                     Seu navegador não suporta a tag de vídeo.
                 </video>
-                  <button class="play-button" [class.hidden]="!isPlayButtonVisible" (click)="togglePlay(videoPlayer2)">
+                  <button class="play-button btn-jornal" [class.hidden]="!isPlayButtonVisible" (click)="togglePlay(videoPlayer2)">
                     <fa-icon
                     [icon]="['fas','play']"></fa-icon>
                   </button>
