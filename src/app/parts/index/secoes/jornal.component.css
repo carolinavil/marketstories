@@ -482,7 +482,10 @@ button.play-button {
     padding: 1.8em 2em;
     border-radius: 6em;
 }
-
+button.play-button.btn-jornal {
+    z-index: 9999;
+    background-color: red;
+}
 @media screen and (min-width:900px) {
 
     button.play-button.btn-jornal {
