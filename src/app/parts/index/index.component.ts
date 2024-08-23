@@ -31,6 +31,9 @@ export class IndexComponent implements OnDestroy {
   contadorStories: number = 0;
   contadorAssessores: number = 0;
 
+
+  isPlayButtonVisible1 = true;
+  isPlayButtonVisible2 = true;
   contadorLayoutsInterval: any;
   contadorStoriesInterval: any;
   contadorAssessoresInterval: any;
@@ -102,14 +105,36 @@ export class IndexComponent implements OnDestroy {
 
   isPlayButtonVisible: boolean = true;
 
-  togglePlay(video: HTMLVideoElement) {
+  togglePlay2(video: HTMLVideoElement) {
     if (video.paused) {
+      console.log('ooi32')
       this.fundoMockup = false
+      this.isPlayButtonVisible2 = false
       video.play();
     } else {
+
+      
       video.pause();
+      console.log('ooi3')
+      this.isPlayButtonVisible2 = true
     }
   }
+
+  togglePlay1(video: HTMLVideoElement) {
+    if (video.paused) {
+      console.log('ooi32')
+      this.fundoMockup = false
+      this.isPlayButtonVisible1 = false
+      video.play();
+    } else {
+
+      
+      video.pause();
+      console.log('ooi3')
+      this.isPlayButtonVisible1 = true
+    }
+  }
+
 
   hidePlayButton() {
     this.isPlayButtonVisible = false; // Oculta o botão quando o vídeo é reproduzido
@@ -137,9 +162,18 @@ tyraSite(): void {
   window.location.href = 'https://www.tyra.pro/';
 }
 
+playAssessor(videoPlaying: HTMLVideoElement){
+  this.isPlayButtonVisible1= false
+}
+
+playJornal(videoPlaying: HTMLVideoElement){
+  this.isPlayButtonVisible2= false
+}
+
 playBtn(videoPlaying: HTMLVideoElement){
+  this.isPlayButtonVisible= false
   this.fundoMockup = false
-  console.log('teste', videoPlaying) 
+  console.log('teste', videoPlaying,this.isPlayButtonVisible) 
   if(videoPlaying.played){
     videoPlaying.pause()
   }
@@ -152,8 +186,12 @@ playBtn(videoPlaying: HTMLVideoElement){
 
 }
 
-  showPlayButton() {
-    this.isPlayButtonVisible = true; // Mostra o botão quando o vídeo é pausado
+  showPlayButton2() {
+    this.isPlayButtonVisible2 = true; // Mostra o botão quando o vídeo é pausado
+  }
+
+  showPlayButton1() {
+    this.isPlayButtonVisible1 = true; // Mostra o botão quando o vídeo é pausado
   }
   // togglePlay(video: HTMLVideoElement) {
   //   if (video.paused) {

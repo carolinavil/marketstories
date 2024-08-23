@@ -47,6 +47,14 @@ img.img-jornal-mockup {
     overflow: hidden;
 }
 
+.hidden1{
+    display: none!important
+}
+
+.hidden2{
+    display: none!important
+}
+
 .active-jornal::before {
     content: '';
     position: absolute;
