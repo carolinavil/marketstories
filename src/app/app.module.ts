@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatMenuModule } from '@angular/material/menu';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 
 @NgModule({
@@ -24,6 +25,8 @@ import { MatMenuModule } from '@angular/material/menu';
   providers: [
 
 
+  
+    provideAnimationsAsync()
   ],
   bootstrap: [AppComponent]
 })

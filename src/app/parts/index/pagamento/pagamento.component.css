@@ -1,6 +1,7 @@
 /* @import 'primeng/resources/themes/saga-blue/theme.css'; */
 /* @import 'primeng/resources/primeng.min.css'; */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 /* @import '../../../../../node_modules/bootstrap/dist/css/bootstrap.min.css'; */
 
 /* @import '~bootstrap/dist/css/bootstrap.min.css'; */
@@ -23,7 +24,26 @@
     font-size: 25px;
     font-weight: 600;
 }
+.form-group.col.s6.m6.input-telefone,.form-group.col.s5.m5.input-telefone {
+    margin: 0 !important;
+}
 
+div#drops {
+    width: 83% !important;
+}
+
+input#phone0 {
+    padding: 0.1em 0;
+    /* margin: 1em; */
+    margin-left: -1em !important;
+    width: 119%;
+    /* font-size: 1em; */
+}
+
+
+/* span.p-element.p-dropdown-label.p-inputtext {
+    font-size: 13px;
+} */
 .input-group {
     position: relative;
 }

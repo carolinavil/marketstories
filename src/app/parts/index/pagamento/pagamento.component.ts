@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, OnDestroy, OnInit, ViewChild ,ElementRef, input, } from '@angular/core';
 import { VindiService } from '../../../services/vindi-service';
 import { NgForm } from '@angular/forms';
 import { AdressModel, AssinaturaModel, ClienteModel, MetodosModel, PagamentoModel, CartaoModel, PerfilPagamentoModel, ProdutosModel, UsersMkModel } from '../../../models/pagamento.module';
@@ -19,9 +19,9 @@ import * as lottie from 'lottie-web';
 import { NavigationEnd } from '@angular/router';
 import { cpf, cnpj } from 'cpf-cnpj-validator';
 import { StepperComponent } from './stepper/stepper.component';
-
+import * as intlTelInput from 'intl-tel-input';
 import emailjs from '@emailjs/browser';
-
+import { FormBuilder, FormGroup } from '@angular/forms';
 interface Car {
   label: string;
   value: string;
@@ -41,6 +41,8 @@ declare var M: any;
   styleUrl: './pagamento.component.css'
 })
 export class PagamentoComponent implements OnInit, OnDestroy {
+
+  
   validacaoRegistro = false
   validacaoPay = false
   spaceBetween: any
@@ -84,6 +86,7 @@ export class PagamentoComponent implements OnInit, OnDestroy {
   btnTouched: boolean = false;
   metodos: MetodosModel[] = []
   pay: any
+
   subs: any
   isClicked = false;
   nomeD:any;
@@ -108,6 +111,7 @@ export class PagamentoComponent implements OnInit, OnDestroy {
   dataFormatada = format(this.dataFormatadaDias, 'yyyy-MM-dd');
   dataFormatadaTestes = format(this.data, 'yyyy-MM-dd');
   inputs: Phone[] = [{ number: '' }];
+  paisTelefone: any
   valorNaoClicado: Phone[] = [{ number: '' }];
   visible: boolean = false;
   bandeiras: any = [
@@ -120,7 +124,27 @@ export class PagamentoComponent implements OnInit, OnDestroy {
     { label: 'JCB', value: 'JCB' },
     // Adicione mais opções conforme necessário
   ];
+  
 
+ country: any = [
+  { label: '+55', value: '55' },
+  { label: '+1', value: '1' },
+  { label: '+44', value: '44' },
+  { label: '+33', value: '33' },
+  { label: '+49', value: '49' },
+  { label: '+34', value: '34' },
+  { label: '+91', value: '91' },
+  { label: '+81', value: '81' },
+  { label: '+61', value: '61' },
+  { label: '+86', value: '86' },
+  { label: '+27', value: '27' },
+  { label: '+1', value: '1' },
+  { label: '+52', value: '52' },
+  { label: '+56', value: '56' },
+  { label: '+54', value: '54' },
+  ];
+  // @ViewChild('phoneInput', { static: true }) phoneInput!: ElementRef;
+  // phoneNumber: string = '';
 
 
   isExpanded: boolean = false;
@@ -183,12 +207,15 @@ export class PagamentoComponent implements OnInit, OnDestroy {
     const telefoneRegex = /^\(\d{2}\) \d{5}-\d{4}$/;
     return telefoneRegex.test(numero);
   }
-  constructor(private vindiService: VindiService,
+  constructor(
+    private fb: FormBuilder,
+    private vindiService: VindiService,
     private cepService: CepService,
     private library: FaIconLibrary,
     private router: Router,
     private activatedRoute: ActivatedRoute
   ) {
+ 
 
 
 
@@ -292,7 +319,9 @@ export class PagamentoComponent implements OnInit, OnDestroy {
     // clearTimeout(this.timer);
     window.removeEventListener('beforeunload', this.handleBeforeUnload.bind(this));
   }
+  onSubmit2() {
 
+  }
   sendEmail(): void {
 
   
@@ -483,12 +512,31 @@ export class PagamentoComponent implements OnInit, OnDestroy {
 
   @ViewChild('btn') btn: any;
   ngOnInit(): void {
+
+
+
+
+    // const phoneInputField = this.phoneInput.nativeElement;
+    
+    // intlTelInput(phoneInputField, {
+    //   initialCountry: 'auto',
+    //   utilsScript: 'assets/js/utils.js', // Certifique-se de incluir o script de utilitários
+    //   preferredCountries: ['br', 'us'],  // Customize os países preferidos
+    // });
+  
     window.addEventListener('beforeunload', this.handleBeforeUnload.bind(this));
     // this.getMetodos();
 
 
   }
 
+
+  countries = [
+    { name: 'Brasil', code: 'BR', dialCode: '+55' },
+    { name: 'Estados Unidos', code: 'US', dialCode: '+1' },
+    { name: 'Canadá', code: 'CA', dialCode: '+1' },
+    // Adicione mais países conforme necessário
+  ];
 
   clientes: any;
   assinaturas: any
@@ -527,7 +575,7 @@ export class PagamentoComponent implements OnInit, OnDestroy {
     const telefones: TelefoneModel[] = this.inputs.map(input => {
       return {
         phone_type: '',  // You may need to set the phoneType here
-        number: input.number
+        number: this.paisTelefone+ input.number
       };
     });
 
@@ -552,7 +600,7 @@ export class PagamentoComponent implements OnInit, OnDestroy {
       this.numeroInvalido = false
     }
     const telefones: TelefoneModel[] = this.inputs.map(input => {
-      const numeroCompleto = `55${input.number}`;
+      const numeroCompleto = `${this.paisTelefone}${input.number}`;
       return {
         phone_type: 'mobile',  // You may need to set the phoneType here
 

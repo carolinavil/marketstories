@@ -41,6 +41,9 @@
             </div>
             <img src="../../../../assets/img/astronauta2 (2).png" alt="" class="imagem-astronauta">
         </div>
+
+    
+          
         <form #form="ngForm" class="needs-validation formulario "  >
 
             <!-- <form #form="ngForm" class="needs-validation formulario " > -->
@@ -100,7 +103,7 @@
 
                             <div class="row d-flex align-item-center">
                                 <div class="form-group col s12 m6" [ngClass]="{'has-success': name.valid}">
-                                    
+                               
                                     <label class="form-label">Nome <span class="text-danger" *ngIf="!name.valid" >*</span> </label>
                                     <fa-icon *ngIf="name.valid" [icon]="['fas','circle-check']" class="check-icon" class="check-icon"></fa-icon>
                                     <!-- <div *ngIf="name.valid"><fa-icon [icon]="['fas','arrow-right']" ></fa-icon></div> -->
@@ -121,16 +124,28 @@
                                     </div>
                                 </div>
                                 <div class="form-group col s12 m6">
+                                  
                                     <div *ngFor="let input of inputs; let i = index">
                                         
                                     <label class="form-label">Número de WhatsApp <span
                                             class="text-danger"  *ngIf="!phone.dirty || numeroInvalido || input.number.length !=11">*</span><fa-icon *ngIf="phone.dirty && !numeroInvalido && input.number.length ===11" [icon]="['fas','circle-check']" class="check-icon"></fa-icon></label>
-                                    
-                                        <input type="text" name="phone{{i}}" id="phone{{i}}"
-                                            class="form-control" placeholder="example@hotmail.com"
-                                            [(ngModel)]="inputs[i].number" #phone="ngModel"
-                                            (blur)="atribuirValor(inputs[i].number)" mask="(00) 00000-0000"
-                                            placeholder="(00) 00000-0000" style="padding-left: 10px;" required>
+                                         <div class="d-flex">
+                                            <div class="form-group col s5 m5 input-telefone">
+                                                <p-dropdown [options]="country" optionLabel="label" optionValue="value"
+                                                    [(ngModel)]="paisTelefone"
+                                                    type="paymemnt_method_code" class="form-control drop"
+                                                    paymemnt_method_code="paymemnt_method_code" id="paymemnt_method_code"
+                                                    name="paymemnt_method_code"  [filter]="true" #paymemnt_method_code="ngModel"
+                                                   id="drops" required></p-dropdown>
+                                                </div>
+                                                <div class="form-group col s6 m6 input-telefone">
+                                            <input type="text" name="phone{{i}}" id="phone{{i}}"
+                                                class="form-control" placeholder="example@hotmail.com"
+                                                [(ngModel)]="inputs[i].number" #phone="ngModel"
+                                                (blur)="atribuirValor(inputs[i].number)" mask="(00) 00000-0000"
+                                                placeholder="(00) 00000-0000" style="padding-left: 10px;" required>
+                                         </div>
+                                        </div>
                                         <div *ngIf="phone.touched && phone.errors">
                                             <p class="text-danger" *ngIf="phone.errors['required']">Este campo é
                                                 obrigatório.</p>

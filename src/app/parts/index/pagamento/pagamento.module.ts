@@ -28,7 +28,9 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { NgxFileDropModule } from 'ngx-file-drop';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { TableModule } from 'primeng/table';
-import { AdminComponent } from '../painel/admin/admin.component';
+import { ReactiveFormsModule } from '@angular/forms';
+
+import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
 
 PagamentoRoutingModule
 @NgModule({
@@ -68,9 +70,8 @@ PagamentoRoutingModule
     NgxMaskDirective, 
     NgxMaskPipe,
     FileUploadModule,
+  ReactiveFormsModule
   
-
-   
 
   ],
   providers: [
