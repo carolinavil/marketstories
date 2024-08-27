@@ -412,8 +412,37 @@ p.img-selecionada {
     font-size: 15px;
     padding-top: 1em;
 }
+img.country-flag {
+    width: 50%;
+    margin-right: 0.3em;
+}
+
+.custom-item {
+    display: flex;
+}
+
+p-dropdownitem.p-element.ng-star-inserted li span {
+    font-size: 23px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+span.telefone-pais{
+    display: flex;
+    align-items: center;
+}
 
 @media screen and (min-width: 1040px) {
+
+ 
+
+    p-dropdownitem.p-element.ng-star-inserted li span {
+        font-size: 23px;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+    }
 
 .titulo-banner{
 font-size: 40px;
@@ -444,7 +473,9 @@ font-size: 40px;
         
 
 }
-
+p-dropdown.dropTelefone {
+    border: none !important;
+}
 
 
 
@@ -502,7 +533,19 @@ font-size: 40px;
 
 
 
+@media screen and (min-width: 100px) {
+    .carrossel-desktop{
+        display: none;
+    }
+}
 
+    @media screen and (min-width: 900px) {
+        .carrossel-desktop{
+            display: block;
+        }
+    }
+
+   
 
 
 

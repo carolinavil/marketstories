@@ -4,7 +4,7 @@ import { NgForm } from '@angular/forms';
 import { AdressModel, AssinaturaModel, ClienteModel, MetodosModel, PagamentoModel, CartaoModel, PerfilPagamentoModel, ProdutosModel, UsersMkModel } from '../../../models/pagamento.module';
 import { MatStepper } from '@angular/material/stepper';
 import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
-import { faArrowLeft, faArrowRight, faCheck, faChevronLeft, faChevronRight, faCircleCheck, faCreditCard, faLocationDot, faMoneyCheckDollar, faPhone, faPlus, faTrash, faUser } from '@fortawesome/free-solid-svg-icons';
+import { faArrowLeft, faArrowRight, faCheck, faChevronLeft, faChevronRight, faCircleCheck, faCreditCard, faLocationDot, faMagic, faMoneyCheckDollar, faPhone, faPlus, faTrash, faUser } from '@fortawesome/free-solid-svg-icons';
 import { CepService } from '../../../services/cep.service';
 import { last, lastValueFrom } from 'rxjs';
 import { TelefoneModel } from '../../../models/pagamento.module';
@@ -22,6 +22,7 @@ import { StepperComponent } from './stepper/stepper.component';
 import * as intlTelInput from 'intl-tel-input';
 import emailjs from '@emailjs/browser';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { icon } from '@fortawesome/fontawesome-svg-core';
 interface Car {
   label: string;
   value: string;
@@ -115,7 +116,7 @@ export class PagamentoComponent implements OnInit, OnDestroy {
   valorNaoClicado: Phone[] = [{ number: '' }];
   visible: boolean = false;
   bandeiras: any = [
-    { label: 'MasterCard', value: 'MasterCard' },
+    { label: 'MasterCard', value: 'MasterCard'},
     { label: 'Visa', value: 'Visa' },
     { label: 'American Express', value: 'American Express' },
     { label: 'Diners Club', value: 'Diners Club' },
@@ -126,23 +127,23 @@ export class PagamentoComponent implements OnInit, OnDestroy {
   ];
   
 
- country: any = [
-  { label: '+55', value: '55' },
-  { label: '+1', value: '1' },
-  { label: '+44', value: '44' },
-  { label: '+33', value: '33' },
-  { label: '+49', value: '49' },
-  { label: '+34', value: '34' },
-  { label: '+91', value: '91' },
-  { label: '+81', value: '81' },
-  { label: '+61', value: '61' },
-  { label: '+86', value: '86' },
-  { label: '+27', value: '27' },
-  { label: '+1', value: '1' },
-  { label: '+52', value: '52' },
-  { label: '+56', value: '56' },
-  { label: '+54', value: '54' },
+  country: any = [
+    { label: '+55', value: '55', image: '../../../assets/img/brazil.png' },
+    { label: '+1', value: '1', image: '../../../assets/img/united-states.png' },
+    { label: '+44', value: '44', image: '../../../assets/img/united-kingdom.png' },
+    { label: '+33', value: '33', image: '../../../assets/img/france.png' },
+    { label: '+49', value: '49', image: '../../../assets/img/germany.png' },
+    { label: '+34', value: '34', image: '../../../assets/img/spain.png' },
+    { label: '+91', value: '91', image: '../../../assets/img/india.png' },
+    { label: '+81', value: '81', image: '../../../assets/img/japan.png' },
+    { label: '+61', value: '61', image: '../../../assets/img/australia.png' },
+    { label: '+86', value: '86', image: '../../../assets/img/china.png' },
+    // { label: '+27', value: '27', image: '../../../assets/img/south-africa.png' }, // Corrigido
+    // { label: '+52', value: '52', image: '../../../assets/img/mexico.png' }, // Corrigido
+    // { label: '+56 Chile', value: '56', image: '../../../assets/img/chile.png' }, // Corrigido
+    // { label: '+54 Argentina', value: '54', image: '../../../assets/img/argentina.png' }, // Corrigido
   ];
+  
   // @ViewChild('phoneInput', { static: true }) phoneInput!: ElementRef;
   // phoneNumber: string = '';
 
@@ -512,9 +513,7 @@ export class PagamentoComponent implements OnInit, OnDestroy {
 
   @ViewChild('btn') btn: any;
   ngOnInit(): void {
-
-
-
+ this.paisTelefone = '55'
 
     // const phoneInputField = this.phoneInput.nativeElement;
     

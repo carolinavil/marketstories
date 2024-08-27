@@ -9,9 +9,9 @@
 <!-- <div class="caixa-logo">
     <div class="texto-caixa-logo">
         <h1 class="titulo-banner">Para manter-se no topo, é preciso rapidez </h1>
-        <img src="../../../../assets/img/Logo P&B MarketStories 2.png" alt="" class="logo-caixa">
+        <img src="../../../assets/img/Logo P&B MarketStories 2.png" alt="" class="logo-caixa">
     </div>
-    <img src="../../../../assets/img/astronauta2 (2).png" alt="" class="imagem-astronauta">
+    <img src="../../../assets/img/astronauta2 (2).png" alt="" class="imagem-astronauta">
 
 <div>
    
@@ -35,11 +35,11 @@
                 <a routerLink="../" class="link-voltar">Voltar</a>
             </div>
             <div class="texto-caixa-logo">
-                <img src="../../../../assets/img/Logo P&B MarketStories.png" alt="" class="logo-caixa">
+                <img src="../../../assets/img/Logo P&B MarketStories.png" alt="" class="logo-caixa">
                 <h1 class="titulo-banner">Para manter-se no topo, é preciso rapidez </h1>
-                <!-- <img src="../../../../assets/img/Logo P&B MarketStories 2.png" alt="" class="logo-caixa"> -->
+                <!-- <img src="../../../assets/img/Logo P&B MarketStories 2.png" alt="" class="logo-caixa"> -->
             </div>
-            <img src="../../../../assets/img/astronauta2 (2).png" alt="" class="imagem-astronauta">
+            <img src="../../../assets/img/astronauta2 (2).png" alt="" class="imagem-astronauta">
         </div>
 
     
@@ -55,14 +55,14 @@
             <div class="caixa-formulario">
                 <!-- <h1 >Be</h1> -->
                 <!-- <div class="img-formulario">
-                        <img src="../../../../assets/img/Logo Colorido MarketStories (1).png" alt="" class="logo-formulario">
+                        <img src="../../../assets/img/Logo Colorido MarketStories (1).png" alt="" class="logo-formulario">
                     </div>
                      -->
                 <div class="caixa-logo-formulario">
                     <div class="caixa-balao ">
                         <p class="texto-caixa-balao">10 dias grátis sem fidelidade!</p>
                     </div>
-                    <img src="../../../../assets/img/Logo Colorido MarketStories (1).png" alt=""
+                    <img src="../../../assets/img/Logo Colorido MarketStories (1).png" alt=""
                         class="logo-formulario">
 
                 </div>
@@ -133,10 +133,26 @@
                                             <div class="form-group col s5 m5 input-telefone">
                                                 <p-dropdown [options]="country" optionLabel="label" optionValue="value"
                                                     [(ngModel)]="paisTelefone"
-                                                    type="paymemnt_method_code" class="form-control drop"
+                                                    type="paymemnt_method_code" class="form-control drop dropTelefone"
                                                     paymemnt_method_code="paymemnt_method_code" id="paymemnt_method_code"
                                                     name="paymemnt_method_code"  [filter]="true" #paymemnt_method_code="ngModel"
-                                                   id="drops" required></p-dropdown>
+                                                   id="drops" required>
+                                                      <ng-template pTemplate="item" let-option>
+                                                        <div class="custom-item">
+                                                            <img [src]="option.image" class="country-flag" />
+                                                            <span class="telefone-pais">{{ option.label }}</span>
+                                                        </div>
+                                                    </ng-template>
+
+                                                    <ng-template pTemplate="selectedItem" let-option>
+                                                        <div class="custom-item">
+                                                            <img [src]="option.image" class="country-flag" />
+                                                            <span class="telefone-pais">{{ option.label }}</span>
+                                                        </div>
+                                                    </ng-template>
+                                                
+                                                </p-dropdown>
+                                                
                                                 </div>
                                                 <div class="form-group col s6 m6 input-telefone">
                                             <input type="text" name="phone{{i}}" id="phone{{i}}"
@@ -245,7 +261,7 @@
                                                             <a class="carousel-item no-opacity carousel-banner " href="#one!"> <img
                                                                 src="../../../assets/img/minerioFerroP.png" alt="" class="img-banner"></a>
                                                                 <a class="carousel-item no-opacity carousel-banner " href="#one!"> <img
-                                                                    src="../../../../assets/img/fechamentoMercadoP.png" alt="" class="img-banner"></a>
+                                                                    src="../../../assets/img/fechamentoMercadoP.png" alt="" class="img-banner"></a>
                                                                     <a class="carousel-item no-opacity carousel-banner " href="#one!"> <img
                                                                         src="../../../assets/img/ethereumP.png" alt="" class="img-banner"></a>
                                                                         <a class="carousel-item no-opacity carousel-banner " href="#one!"> <img
@@ -256,11 +272,11 @@
                                                                                     src="../../../assets/img/superQuartaP.png" alt="" class="img-banner"></a>
 
                                                                                     <a class="carousel-item no-opacity carousel-banner " href="#one!"> <img
-                                                                                        src="../../../../assets/img/petroleoP6.png" alt="" class="img-banner"></a>
+                                                                                        src="../../../assets/img/petroleoP6.png" alt="" class="img-banner"></a>
                                                                                         <a class="carousel-item no-opacity carousel-banner " href="#one!"> <img
-                                                                                            src="../../../../assets/img/fundoImobiliarioP.png" alt="" class="img-banner"></a>
+                                                                                            src="../../../assets/img/fundoImobiliarioP.png" alt="" class="img-banner"></a>
                                                                                             <a class="carousel-item no-opacity carousel-banner " href="#one!"> <img
-                                                                                                src="../../../../assets/img/cyptoP.png" alt="" class="img-banner"></a>
+                                                                                                src="../../../assets/img/cyptoP.png" alt="" class="img-banner"></a>
                                                                                                 <a class="carousel-item no-opacity carousel-banner " href="#one!"> <img
                                                                                                     src="../../../assets/img/urgenteP.png" alt="" class="img-banner"></a>
                                                                                                     <a class="carousel-item no-opacity carousel-banner " href="#one!"> <img
@@ -297,7 +313,7 @@
                                 <img src="../../../assets/img/minerioFerroP.png" alt="" class="item-slide-cadastro">
                             </swiper-slide>
                             <swiper-slide>
-                                <img src="../../../../assets/img/fechamentoMercadoP.png" alt=""
+                                <img src="../../../assets/img/fechamentoMercadoP.png" alt=""
                                     class="item-slide-cadastro ">
                             </swiper-slide>
                             <swiper-slide>
@@ -314,15 +330,15 @@
                                 <img src="../../../assets/img/superQuartaP.png" alt="" class="item-slide-cadastro ">
                             </swiper-slide>
                             <swiper-slide>
-                                <img src="../../../../assets/img/petroleoP6.png" alt=""
+                                <img src="../../../assets/img/petroleoP6.png" alt=""
                                     class="item-slide-cadastro">
                             </swiper-slide>
                             <swiper-slide>
-                                <img src="../../../../assets/img/fundoImobiliarioP.png" alt=""
+                                <img src="../../../assets/img/fundoImobiliarioP.png" alt=""
                                     class="item-slide-cadastro ">
                             </swiper-slide>
                             <swiper-slide>
-                                <img src="../../../../assets/img/cyptoP.png" alt=""
+                                <img src="../../../assets/img/cyptoP.png" alt=""
                                     class="item-slide-cadastro ">
                             </swiper-slide>
                             <swiper-slide>
@@ -344,27 +360,13 @@
                                 [autoplay]="{ delay: 3000, disableOnInteraction: false, reverse: true }"
                                 [spaceBetween]="spaceBetween" class="carrossel-desktop">
                                 <swiper-slide>
-                                    <img src="../../../../assets/img/fechamentoMercadoP2.png" alt=""
+                                    <img src="../../../assets/img/fechamentoMercadoP2.png" alt=""
                                         class="item-slide-cadastro ">
                                 </swiper-slide>
                                 <swiper-slide>
-                                    <img src="../../../../assets/img/mercadoCryptoP2.png" alt="" class="item-slide-cadastro ">
+                                    <img src="../../../assets/img/mercadoCryptoP2.png" alt="" class="item-slide-cadastro ">
                                 </swiper-slide>
-                                <swiper-slide>
-                                    <img src="../../../assets/img/tesouroDiretoP3.png" alt="" class="item-slide-cadastro">
-                                </swiper-slide>
-                                <swiper-slide>
-                                    <img src="../../../assets/img/mundoAgoraP2.png" alt="" class="item-slide-cadastro ">
-                                </swiper-slide>
-                                <swiper-slide>
-                                    <img src="../../../../assets/img/indicesAmericanosP6.png" alt="" class="item-slide-cadastro  ">
-                                </swiper-slide>
-                                <swiper-slide>
-                                    <img src="../../../assets/img/fluxoInvestimentoP6.png" alt="" class="item-slide-cadastro  ">
-                                </swiper-slide>
-                                <swiper-slide>
-                                    <img src="../../../assets/img/selicP4.png" alt="" class="item-slide-cadastro">
-                                </swiper-slide>
+                         
                        
                                 <swiper-slide>
                                     <img src="../../../assets/img/brasilAgoraP2.png" alt="" class="item-slide-cadastro ">
@@ -373,7 +375,7 @@
                                     <img src="../../../assets/img/jurosFuturosP2.png" alt="" class="item-slide-cadastro ">
                                 </swiper-slide>
                                 <swiper-slide>
-                                    <img src="../../../../assets/img/minerioFerroP6.png" alt="" class="item-slide-cadastro">
+                                    <img src="../../../assets/img/minerioFerroP6.png" alt="" class="item-slide-cadastro">
                                 </swiper-slide>
                                 <swiper-slide>
                                     <img src="../../../assets/img/bitcoinP6.png" alt="" class="item-slide-cadastro">
@@ -394,7 +396,7 @@
                                     <img src="../../../assets/img/superQuartaP.png" alt="" class="item-slide-cadastro ">
                                 </swiper-slide>
                                 <swiper-slide>
-                                    <img src="../../../../assets/img/petroleoP6.png" alt=""
+                                    <img src="../../../assets/img/petroleoP6.png" alt=""
                                         class="item-slide-cadastro">
                                 </swiper-slide>
                                 <swiper-slide>
@@ -402,19 +404,19 @@
                                         class="item-slide-cadastro">
                                 </swiper-slide>
                                 <swiper-slide>
-                                    <img src="../../../../assets/img/fundosImobiliariosP5.png" alt=""
+                                    <img src="../../../assets/img/fundosImobiliariosP5.png" alt=""
                                         class="item-slide-cadastro ">
                                 </swiper-slide>
                                 <swiper-slide>
-                                    <img src="../../../../assets/img/noticiasCryptoP.png" alt=""
+                                    <img src="../../../assets/img/noticiasCryptoP.png" alt=""
                                         class="item-slide-cadastro ">
                                 </swiper-slide>
                               
                                 <swiper-slide>
-                                    <img src="../../../../assets/img/taxaJurosEUAP3.png" alt="" class="item-slide-cadastro ">
+                                    <img src="../../../assets/img/taxaJurosEUAP3.png" alt="" class="item-slide-cadastro ">
                                 </swiper-slide>
                                 <swiper-slide>
-                                    <img src="../../../../assets/img/noticiaUrgenteP8.png" alt="" class="item-slide-cadastro">
+                                    <img src="../../../assets/img/noticiaUrgenteP8.png" alt="" class="item-slide-cadastro">
                                 </swiper-slide>
                                
                                 <swiper-slide>
@@ -576,7 +578,7 @@
                                             </div>
                                         </div>
                                         <div class="caixa-imagem-exp">
-                                            <img src="../../../../assets/img/teste-exp (1).png" alt=""
+                                            <img src="../../../assets/img/teste-exp (1).png" alt=""
                                                 class="imagem-exp">
                                         </div>
                                     </div>
@@ -600,7 +602,7 @@
                                             </div>
                                         </div>
                                         <div class="caixa-imagem-exp">
-                                            <img src="../../../../assets/img/TESTE-EXP-ROXO.png" alt=""
+                                            <img src="../../../assets/img/TESTE-EXP-ROXO.png" alt=""
                                                 class="imagem-exp">
                                         </div>
                                     </div>
@@ -626,7 +628,7 @@
                                         </div>
                                         
                                         <div class="caixa-imagem-exp" [ngClass]="{'hidden': selectedImage}">
-                                            <img src="../../../../assets/img/teste-exp (4).png" alt=""
+                                            <img src="../../../assets/img/teste-exp (4).png" alt=""
                                                 class="imagem-exp">
                                         </div>
                                     </div>
@@ -646,7 +648,7 @@
                                         </div>
                                         </div>
                                         <div class="caixa-imagem-exp ">
-                                            <img src="../../../../assets/img/teste-exp (2).png" alt=""
+                                            <img src="../../../assets/img/teste-exp (2).png" alt=""
                                                 class="imagem-exp ">
                                         </div>
                                     </div> -->
@@ -668,7 +670,7 @@
                                 </div> -->
                                     <!-- <div class="form-group col s12 m12" [ngClass]="{'has-success': name.valid}">
                                         <div class="imagem-ex-instagram">
-                                            <img src="../../../../assets/img/exemplo-instagram.png" alt="">
+                                            <img src="../../../assets/img/exemplo-instagram.png" alt="">
                                         </div>
                                     </div> -->
                                 </div>
@@ -719,7 +721,7 @@
                                             class="imagem-escolhida-instagram">
                                     </div>
                                     <div class="caixa-imagem-exp caixa-imagem-exp-esq">
-                                        <img src="../../../../assets/img/teste-exp (3).png" alt=""
+                                        <img src="../../../assets/img/teste-exp (3).png" alt=""
                                             class="imagem-exp ">
                                     </div>
                                   </div> -->
@@ -936,26 +938,26 @@
                                                 <div class="cartao">
                                                     <div class="cartao-bandeira"
                                                         [ngSwitch]="perfilModel.payment_company_code">
-                                                        <img *ngSwitchCase="''" src="../../../../assets/img/simbolo.svg"
+                                                        <img *ngSwitchCase="''" src="../../../assets/img/simbolo.svg"
                                                             alt="" class="img-bandeira " id="bandeira-exemplo">
                                                         <img *ngSwitchCase="'MasterCard'"
-                                                            src="../../../../assets/img/mastercard.svg" alt=""
+                                                            src="../../../assets/img/mastercard.svg" alt=""
                                                             class="img-bandeira">
                                                         <img *ngSwitchCase="'Visa'"
-                                                            src="../../../../assets/img/visa.svg" alt=""
+                                                            src="../../../assets/img/visa.svg" alt=""
                                                             class="img-bandeira">
                                                         <img *ngSwitchCase="'American Express'"
-                                                            src="../../../../assets/img/american.svg" alt=""
+                                                            src="../../../assets/img/american.svg" alt=""
                                                             class="img-bandeira">
                                                         <img *ngSwitchCase="'Hipercard'"
-                                                            src="../../../../assets/img/hipercard.svg" alt=""
+                                                            src="../../../assets/img/hipercard.svg" alt=""
                                                             class="img-bandeira">
-                                                        <img *ngSwitchCase="'JCB'" src="../../../../assets/img/jcb.svg"
+                                                        <img *ngSwitchCase="'JCB'" src="../../../assets/img/jcb.svg"
                                                             alt="" class="img-bandeira">
-                                                        <img *ngSwitchCase="'Elo'" src="../../../../assets/img/elo.svg"
+                                                        <img *ngSwitchCase="'Elo'" src="../../../assets/img/elo.svg"
                                                             alt="" class="img-bandeira">
                                                         <img *ngSwitchCase="'Diners Club'"
-                                                            src="../../../../assets/img/dinerscard (2).svg" alt=""
+                                                            src="../../../assets/img/dinerscard (2).svg" alt=""
                                                             class="img-bandeira">
                                                         <!-- Adicione mais casos conforme necessário -->
                                                     </div>
