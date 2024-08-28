@@ -20,10 +20,7 @@
 button.play-button.btn-assessos-acao {
     z-index: 9 !important;
 }
-body{
 
-    overflow-x: hidden!important;
-}
 h4.preco-desktop {
     font-weight: 700;
     margin-bottom: 1em;
@@ -197,7 +194,18 @@ height: 40vh;
 .origem-footer-mobile {
     text-align: end;
 }
+
+@media screen and (max-width: 900px) {
+
+    body{
+
+    overflow-x: hidden
+}
+
+
+}
 @media screen and (min-width: 250px) {
+
 
     .conteiner-footer {
         display: flex;
@@ -238,6 +246,11 @@ img.titulo-logo {
 }
 }
 @media screen and (min-width: 900px) {
+
+    /* body{
+
+        overflow-x:none
+    } */
     .conteiner-footer {
         display: flex;
         flex-flow: column;
