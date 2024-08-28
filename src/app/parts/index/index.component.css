@@ -20,10 +20,10 @@
 button.play-button.btn-assessos-acao {
     z-index: 9 !important;
 }
-body{
+/* body{
 
     overflow: hidden!important;
-}
+} */
 h4.preco-desktop {
     font-weight: 700;
     margin-bottom: 1em;
