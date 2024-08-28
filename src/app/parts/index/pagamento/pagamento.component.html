@@ -130,7 +130,7 @@
                                     <label class="form-label">Número de WhatsApp <span
                                             class="text-danger"  *ngIf="!phone.dirty || numeroInvalido || input.number.length !=11">*</span><fa-icon *ngIf="phone.dirty && !numeroInvalido && input.number.length ===11" [icon]="['fas','circle-check']" class="check-icon"></fa-icon></label>
                                          <div class="d-flex">
-                                            <div class="form-group col s5 m5 input-telefone">
+                                            <div class="form-group col s6 m6 input-telefone">
                                                 <p-dropdown [options]="country" optionLabel="label" optionValue="value"
                                                     [(ngModel)]="paisTelefone"
                                                     type="paymemnt_method_code" class="form-control drop dropTelefone"
@@ -243,9 +243,8 @@
                             <h1 class="titulo-cadastro">Receba +400 stories personalizados por mês</h1>
 
 
-                            <!-- 
                             <div class="carrossel carrossel-mobile ">
-                                <div class="carousel carrossel-banner" data-num-visible="4">
+                                <div class="carousel carrossel-banner" data-num-visible="1">
                                     <a class="carousel-item no-opacity carousel-banner " href="#one!"> <img
                                         src="../../../assets/img/indicesP.png" alt="" class="img-banner"></a>
                                             <a class="carousel-item no-opacity carousel-banner " href="#one!"> <img
@@ -289,7 +288,7 @@
 
                              
                                 </div>
-                            </div> -->
+                            </div> 
 
                             <!-- <swiper-container [slidesPerView]="5"
                             [autoplay]="{ delay: 3000, disableOnInteraction: false, reverse: true }"

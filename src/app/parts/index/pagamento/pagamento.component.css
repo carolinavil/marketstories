@@ -1231,7 +1231,10 @@ img.imagem-exp {
 }
 
 @media screen and (min-width: 9px) {
-
+    /* .carrossel-mobile {
+     
+        display: none;
+    } */
     p.porDesconto {
         margin-left: 1em;
     }
