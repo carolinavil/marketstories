@@ -158,7 +158,8 @@
                                             <input type="text" name="phone{{i}}" id="phone{{i}}"
                                                 class="form-control" placeholder="example@hotmail.com"
                                                 [(ngModel)]="inputs[i].number" #phone="ngModel"
-                                                (blur)="atribuirValor(inputs[i].number)" mask="(00) 00000-0000"
+                                                (blur)="atribuirValor(inputs[i].number)" 
+                                                (input)="formatPhone(i)"
                                                 placeholder="(00) 00000-0000" style="padding-left: 10px;" required>
                                          </div>
                                         </div>
