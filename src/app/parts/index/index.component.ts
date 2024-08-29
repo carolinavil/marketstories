@@ -801,7 +801,7 @@ const options = {
           console.log(this.slidesPerView)
         }
         if (windowWidth <= 900) {
-          this.slidesJornal = 1.5
+          this.slidesJornal = 2.5
           this.mobileBeneficiosCard = 1.2
           console.log('mobile')
           this.paddingFeed = -300

@@ -81,7 +81,24 @@ h1.titulo-variedades {
 }
 
 @media screen and (max-width: 900px) {
+    .textos-variedades {
+        position: relative;
+        width: 100%;
+        display: flex !important;
+        justify-content: flex-end;
+        color: white;
+        align-self: right;
+        padding: 2em;
+        text-align: right;
+        z-index: 2;
+    }
 
+    p.txt-variedades {
+        font-weight: 600;
+        font-size: 18px;
+        text-align: start;
+        width: 100%;
+    }
     .variedades-caixa {
         border-radius: 0px!important;
         flex-direction: column;

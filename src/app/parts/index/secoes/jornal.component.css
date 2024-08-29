@@ -177,21 +177,15 @@ img.img-jornal-mockup {
     z-index: 2; 
 } */
 
-h1.titulo-lista-jornal{
+/* h1.titulo-lista-jornal{
     color: white;
-    /* width: 68%; */
+  
     font-size: 32px;
     font-weight: 400;
-}
+} */
 
 li.item-jornal {
-    color: white;
-    font-size: 16px;
-    font-weight: 300;
-    margin: 0.6em 0;
-    opacity: 90%;
-    display: flex;
-    align-items: center;
+
 }
 
 
@@ -315,6 +309,24 @@ h1.titulo-acao-jornal {
 
 @media screen and (min-width:200px) {
 
+    li.item-jornal {
+        text-align: start ;
+        justify-content: start ;
+        color: white;
+        font-size: 16px;
+        font-weight: 300;
+        margin: 0.6em 0;
+        opacity: 90%;
+        display: flex;
+        align-items: center;
+
+    }
+    h1.titulo-lista-jornal {
+        font-size: 20px ;
+        font-weight: 600 ;
+        color: white;
+        text-align: center;
+    }
     
 
     button.play-button.btn-jornal {
@@ -497,7 +509,24 @@ button.play-button {
     
 }
 @media screen and (min-width:900px) {
-
+    li.item-jornal{
+        color: white;
+        font-size: 16px;
+        font-weight: 300;
+        margin: 0.6em 0;
+        opacity: 90%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    h1.titulo-lista-jornal{
+        color: white;
+        font-size: 32px;
+        font-weight: 400;
+        text-align: center;
+    }
+    
     button.play-button.btn-jornal {
         right: 6.8em;
     }
@@ -721,28 +750,12 @@ button.play-button {
 }
 
 
-h1.titulo-lista-jornal{
-    color: white;
-    font-size: 32px;
-    font-weight: 400;
-    text-align: center;
-}
 
 p.texto-lista-jornal {
     text-align: center;
 }
 
-li.item-jornal{
-    color: white;
-    font-size: 16px;
-    font-weight: 300;
-    margin: 0.6em 0;
-    opacity: 90%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
+
 
 .caixa-titulo2 {
     padding: 2em 0 0em 0.5em;
