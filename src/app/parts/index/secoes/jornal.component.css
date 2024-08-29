@@ -601,7 +601,7 @@ button.play-button {
     h1.titulo-jornal{
         color: #ffffff !important;
         font-weight: 800;
-        font-size: 70px;
+        font-size: 55px;
         text-align: start;
         width: 57%;
     }
@@ -752,3 +752,16 @@ li.item-jornal{
     z-index: 99999!important
 }
 
+button.btn-associar-back.btn-associar-back-jornal {
+    background: transparent;
+    border: 2px solid white;
+    padding: 1em;
+    border-radius: 0.7em;
+    margin-left: 1em;
+}
+
+
+button.btn-associar-back.btn-associar-back-jornal a {
+    color: white !important;
+    text-transform: uppercase;
+}

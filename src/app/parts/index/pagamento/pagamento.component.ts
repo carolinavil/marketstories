@@ -93,8 +93,8 @@ export class PagamentoComponent implements OnInit, OnDestroy {
   nomeD:any;
   emailD:any;
   telefoneD: any
-
-
+teste884= '00 0000-00000'
+teste222 = '(00) 0000'
   prods: any
   cus: any
   plans: any
@@ -146,8 +146,24 @@ export class PagamentoComponent implements OnInit, OnDestroy {
   
   // @ViewChild('phoneInput', { static: true }) phoneInput!: ElementRef;
   // phoneNumber: string = '';
+  formatPhone(index: number) {
+    let number = this.inputs[index].number.replace(/\D/g, ''); // Remove non-numeric characters
+    
+    // Verifica se o número é nacional (10 dígitos) ou internacional (12 dígitos com código de país)
+    if (number.length === 11) {
+        // Formato nacional: (000) 0000 0000
+        this.inputs[index].number = `(${number.substring(0, 2)}) ${number.substring(2, 7)}-${number.substring(7, 11)}`;
+    } else if (number.length === 10) {
+        // Formato internacional: 000-000-0000
+        this.inputs[index].number = `${number.substring(0, 3)}-${number.substring(3, 6)}-${number.substring(6, 12)}`;
+    } else {
+        // Se o número não tiver o comprimento esperado, mantém o valor original
+        this.inputs[index].number = number;
+    }
+}
 
-
+  
+  
   isExpanded: boolean = false;
   desativado: boolean = false;
 
