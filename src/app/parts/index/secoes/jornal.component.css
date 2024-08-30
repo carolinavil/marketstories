@@ -713,7 +713,7 @@ button.play-button {
             border-radius: 40px;
             padding: 1em!important;
             font-size: 18px;
-            margin-left: 1em;
+            /* margin-left: 1em; */
         }
 
         h1.titulo-acao-jornal {

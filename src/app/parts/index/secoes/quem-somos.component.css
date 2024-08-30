@@ -442,10 +442,9 @@ h1.caixa-titulo-numeros {
         /* padding-top: 1em; */
     }
 
-    .img-topicos-quem-somos {
-        max-width: 171px;
+    img.img-topicos-quem-somos {
+        width: 274px;
     }
-
     ul.lista-topicos-quem-somos {
         flex-flow: row;
     }
@@ -459,7 +458,21 @@ h1.caixa-titulo-numeros {
         align-items: center;
     }
 
+    #mockup-insta {
+        width: 100%!important;
+        margin-bottom: 1em!important;
+    }
 
+
+    #mockup-juros {
+        width: 208px!important;
+    }
+
+    p.texto-topico {
+        margin: 3em !important;
+        font-size: 19px !important;
+        max-width: 42em !important;
+    }
 }
 
 
