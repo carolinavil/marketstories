@@ -4,13 +4,6 @@ import {
   ScrollingModule,
   ViewportRuler
 } from "./chunk-245UHEX6.js";
-import {
-  animate,
-  state,
-  style,
-  transition,
-  trigger
-} from "./chunk-VHLAKNA3.js";
 import "./chunk-2MASG345.js";
 import {
   MatCommonModule,
@@ -40,6 +33,13 @@ import {
   normalizePassiveListenerOptions,
   supportsScrollBehavior
 } from "./chunk-KVZUWBLH.js";
+import {
+  animate,
+  state,
+  style,
+  transition,
+  trigger
+} from "./chunk-VHLAKNA3.js";
 import {
   CommonModule,
   DOCUMENT,
