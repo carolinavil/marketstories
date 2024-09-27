@@ -129,7 +129,7 @@ span#preco {
 
     .conteudo-precos {
         flex-flow: row;
-        margin: 2em 4em;
+        width: 69%;
     }
 
     .escrito-precos {
@@ -184,7 +184,7 @@ span#preco {
     .escrito-subtitulo-precos,
     p.escrito-texto-precos,
     h1.escrito-titulo-precos {
-        width: 80%;
+        width: 100%;
         text-align: start;
     }
 
@@ -203,7 +203,7 @@ span#preco {
 @media screen and (max-width: 600px) {
 
     .imagem-precos {
-        width: 100%;
+        width:100%;
         margin-left: 3em;
     }
 }
@@ -211,7 +211,7 @@ span#preco {
 @media screen and (min-width: 650px) {
 
     .imagem-precos {
-        width: 100%;
+        width:100%;
         margin-left: 0;
     }
 }

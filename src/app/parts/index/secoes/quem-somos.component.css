@@ -143,6 +143,8 @@ ul.lista-topicos-quem-somos {
 }
 
 
+
+
 .odd-apelativo {
     box-shadow: -1px 2px 4px #2e86c6;
     background: linear-gradient(231deg, #0f68a9, #3890d0);
@@ -157,6 +159,41 @@ ul.lista-topicos-quem-somos {
 
 
 @media screen and (min-width: 250px) {
+
+
+    .item-apelativo {
+        width: 100% ;
+        margin: 1em 0;
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.26);
+        padding: 1em;
+        color: white;
+        border-radius: 18px;
+        background: #1a84d1;
+    }
+    .caixa-apelativo {
+        flex-flow: column;
+    }
+    .flex-apelativo {
+        flex-flow: column;
+    }
+    .paragrafos-quem-somos {
+        margin: 2em 1em;
+    }
+
+    h1.caixa-titulo-numeros {
+        font-size: 30px ;
+        font-weight: 600;
+    }
+
+    button.btn-associar.btn-associar-back {
+        background: transparent;
+        border: 2px solid white!important;
+        text-transform: uppercase;
+        font-weight: 400;
+        font-size: 16px !important;
+        padding: 0.3em;
+        margin: 0 2em !important;
+    }
 
     .quem-somos-desktop {
         display: none;
@@ -191,6 +228,10 @@ ul.lista-topicos-quem-somos {
         justify-content: center;
         flex-flow: column;
         /* background: rebeccapurple; */
+    }
+
+    h1.caixa-subtitulo-numeros {
+        font-size: 23px 
     }
 
     ul.lista-topicos-quem-somos {
@@ -251,7 +292,79 @@ ul.lista-topicos-quem-somos {
     }
 }
 
+.container-aside-apelativo {
+    margin-bottom: 2em;
+}
+
+.container-aside-apelativo {
+    margin-top: 1em;
+    color: #484848;
+}
+
 @media screen and (min-width: 1040px) {
+
+    .container-aside-apelativo {
+        width: 70%;
+        margin-right: 2em;
+    }
+
+    .item-apelativo {
+        width: 50%;
+        margin: 1em;
+        border-radius: 18px;
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.26);
+        padding: 1em;
+        background: #1a84d1;
+        color: white;
+    }
+    .caixa-apelativo {
+        flex-flow: row;
+    }
+    .flex-apelativo{
+        flex-flow: row;
+    }
+    .paragrafos-quem-somos {
+        margin: 0;
+    }
+
+    h1.caixa-subtitulo-numeros {
+        font-size: 45px;
+    }
+
+    
+h1.caixa-titulo-numeros {
+    font-size: 50px;
+   
+}
+
+    .textos-quem-somos {
+        display: flex;
+        flex-flow: column;
+        align-items: start;
+        justify-content: center;
+    }
+
+    .paragrafos-quem-somos {
+        margin-bottom: 1em;
+    }
+    p.texto-quem-somos {
+        font-size: 17px;
+        margin: 1em 0;
+    }
+    .caixa-flex-quem-somos {
+        display: flex;
+    }
+
+    .slide-quem-somos {
+        width: 40%;
+        margin-top: 3em;
+    }
+
+    .caixa-flex-quem-somos {
+        width: 85%;
+        margin: 0 auto;
+        margin-bottom: 7em;
+    }
     .mobile-quem-somos {
         display: none;
     }
@@ -284,13 +397,13 @@ ul.lista-topicos-quem-somos {
     }
 
     .item-slide-quem-somos:hover {
-        width: 104%;
+
         -webkit-filter: drop-shadow(1px 10px 5px rgba(0, 0, 0, 0.411));
 
     }
 
     img.item-slide-quem-somos {
-        width: 100%;
+        width: 95%!important;
         transition: 0.5s ease, background-color 0.3s ease;
         /* Adiciona a transição */
         /* filter: drop-shadow(0px 0px 100px rgb(224, 0, 0)); */
@@ -329,10 +442,9 @@ ul.lista-topicos-quem-somos {
         /* padding-top: 1em; */
     }
 
-    .img-topicos-quem-somos {
-        max-width: 171px;
+    img.img-topicos-quem-somos {
+        width: 274px;
     }
-
     ul.lista-topicos-quem-somos {
         flex-flow: row;
     }
@@ -346,7 +458,21 @@ ul.lista-topicos-quem-somos {
         align-items: center;
     }
 
+    #mockup-insta {
+        width: 100%!important;
+        margin-bottom: 1em!important;
+    }
 
+
+    #mockup-juros {
+        width: 208px!important;
+    }
+
+    p.texto-topico {
+        margin: 3em !important;
+        font-size: 19px !important;
+        max-width: 42em !important;
+    }
 }
 
 
@@ -507,7 +633,7 @@ li.numeros-item {
 
 h1.titulo-numeros {
     font-size: 58px;
-    color: #683d91;
+    color: #0D4C71;
     font-weight: 600;
 }
 
@@ -539,7 +665,7 @@ li.numeros-item {
 
 
 .titulo-caixa.titulo-caixa-quem-somos {
-    justify-content: center;
+    justify-content: start;
 }
 
 @media screen and (min-width: 1600px) {
@@ -586,4 +712,88 @@ li.numeros-item {
     -webkit-text-fill-color: transparent;
     background-clip: text;
     font-weight: 600;
+}
+
+
+.back-numeros {
+    margin-bottom: 4em;
+    background: #0f9ddf;
+}
+
+h1.subtitulo-numeros {
+    color: white;
+    font-size: 25px !important;
+}
+
+.titulo-numeros-quem-somos {
+    text-align: center;
+    color: white;
+}
+
+
+
+
+.titulo-numeros-quem-somos {
+    padding: 3em 0 2em 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.caixa-apelativo {
+    display: flex;
+}
+
+h5.titulo-beneficio-apelativo {
+    text-align: start !important;
+    font-size: 25px !important;
+    margin-bottom: 1em;
+    padding: 0!important;
+}
+
+p.txt-beneficio-apelativo {
+    font-size: 16px !important;
+    text-align: start !important;
+    font-weight: 500 !important;
+}
+
+
+.flex-apelativo {
+    display: flex;
+    width: 85%;
+    margin: 0 auto;
+    justify-content: space-around !important;
+}
+
+
+h1.titulo-aside-apelativo {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 1em;
+}
+
+.flex-apelativo {
+    margin-top: 3em !important;
+}
+
+button.btn-associar.btn-associar-back {
+    background: transparent;
+    border: 2px solid;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 16px !important;
+}
+
+    .item-apelativo.item-apelativo-completo
+{
+    width: 100%!important;
 }

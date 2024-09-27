@@ -13,6 +13,7 @@ import AOS from 'aos'
 import {  QueryList, ViewChildren } from '@angular/core';
 declare var M: any;
 
+
 @Component({
   selector: 'app-index',
   templateUrl: './index.component.html',
@@ -318,7 +319,7 @@ playBtn(videoPlaying: HTMLVideoElement){
 
   ngOnInit() {
        // Ajusta a posição do scroll após a inicialização do componente
-  
+       AOS.init()
     this.reinicializarCarrosselBanner();
     this.reinicializarCarrosselConteudo();
 
@@ -343,7 +344,7 @@ const options = {
 
     this.initIntersectionObserver();
 
-    AOS.init()
+    
 
 
     setTimeout(() => {
@@ -777,7 +778,7 @@ const options = {
       this.slidesJornal = 8
       this.spaceBetween = '-150'
       this.spaceQuemSomos = '30'
-      this.slidesPerViewQuemSomos = '6.5'
+      this.slidesPerViewQuemSomos = '2.4'
       console.log('oooooo')
       if (windowWidth <= 1500) {
         console.log('1400', this.slidesPerView)
@@ -800,7 +801,7 @@ const options = {
           console.log(this.slidesPerView)
         }
         if (windowWidth <= 900) {
-          this.slidesJornal = 1.5
+          this.slidesJornal = 2.5
           this.mobileBeneficiosCard = 1.2
           console.log('mobile')
           this.paddingFeed = -300
