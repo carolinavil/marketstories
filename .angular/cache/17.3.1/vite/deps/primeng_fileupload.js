@@ -39,18 +39,18 @@ import {
   UniqueComponentId
 } from "./chunk-DVBARJO3.js";
 import {
+  animate,
+  style,
+  transition,
+  trigger
+} from "./chunk-VHLAKNA3.js";
+import {
   DomSanitizer
 } from "./chunk-FKTVN6Z2.js";
 import {
   HttpClient,
   HttpEventType
 } from "./chunk-I5WKDQN4.js";
-import {
-  animate,
-  style,
-  transition,
-  trigger
-} from "./chunk-VHLAKNA3.js";
 import {
   CommonModule,
   DOCUMENT,
