@@ -156,8 +156,21 @@ ul.lista-topicos-quem-somos {
     background-color: red!important;
     color: white!important;
 } */
+.caixa-mkt-logo {
+    display: flex;
+    align-items: center;
+}
 
+.caixa-mkt-logo h1{
+    margin-bottom: 0!important;
+}
 
+.titulo{
+    margin: 0em 0 0.5em 0;
+    font-size: 40px;
+    font-weight: 600;
+    text-align: start;
+}
 @media screen and (min-width: 250px) {
 
 
@@ -353,6 +366,7 @@ h1.caixa-titulo-numeros {
     }
     .caixa-flex-quem-somos {
         display: flex;
+       
     }
 
     .slide-quem-somos {
@@ -371,6 +385,8 @@ h1.caixa-titulo-numeros {
 
     .quem-somos-desktop {
         display: block;
+        text-align: start!important;
+        margin-top: 0!important;
     }
 
     h1.titulo-quem-somos {

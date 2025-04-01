@@ -11,14 +11,15 @@ section.variedades {
 }
 
 .variedades-caixa {
+    background-image: url('../../../../assets/img/Market---Banner-Site---Layout.png');
+    background-size: contain;
+    background-repeat: no-repeat;
     position: relative;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    background: linear-gradient(33deg, #0a0213, #4b1a7d);
-    border-radius: 50px;
-    height: 500px; /* Ajuste conforme necessário */
+    height: 500px;
     overflow: hidden;
+
 }
 
 .caixa-variedades-mobiles{
@@ -45,19 +46,19 @@ section.variedades {
 }
 .textos-variedades {
     position: relative;
-    width: 100%;
+    width:85%;
     /* height: 100%; */
     display: flex!important;
-    justify-content: flex-end;
+ 
     color: white;
     /* justify-content: end!important; */
     /* flex-flow: column; */
-    align-self: right;
+ 
     /* display: flex; */
     /* flex-direction: column; */
     /* justify-content: space-evenly; */
     padding: 3em;
-    text-align: right;
+    text-align: left;
     z-index: 2;
 }
 
@@ -71,12 +72,10 @@ section.variedades {
 p.txt-variedades {
     font-weight: 600;
     font-size: 24px;
-    text-align: center;
 }
 
 h1.titulo-variedades {
     font-weight: 600;
-    text-align: center;
     font-size: 34px;
 }
 
@@ -96,7 +95,6 @@ h1.titulo-variedades {
     p.txt-variedades {
         font-weight: 600;
         font-size: 18px;
-        text-align: start;
         width: 100%;
     }
     .variedades-caixa {
