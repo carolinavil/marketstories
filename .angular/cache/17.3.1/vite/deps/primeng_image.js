@@ -2,11 +2,11 @@ import {
   TimesIcon
 } from "./chunk-MA44LYNY.js";
 import {
-  BaseIcon
-} from "./chunk-ITYUMR4C.js";
-import {
   DomHandler
 } from "./chunk-7XMMQCJJ.js";
+import {
+  BaseIcon
+} from "./chunk-ITYUMR4C.js";
 import {
   PrimeNGConfig,
   PrimeTemplate,

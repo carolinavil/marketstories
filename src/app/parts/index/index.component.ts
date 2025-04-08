@@ -223,9 +223,9 @@ playBtn(videoPlaying: HTMLVideoElement){
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           // Se a parte estiver visível, comece os contadores
-          this.startCounterLayouts();
-          this.startCounterStories();
-          this.startCounterAssessores();
+          // this.startCounterLayouts();
+          // this.startCounterStories();
+          // this.startCounterAssessores();
      
           
           // Desconectar o observador para que ele não seja chamado novamente
@@ -245,64 +245,64 @@ playBtn(videoPlaying: HTMLVideoElement){
     this.drawerAberto = false;
   }
 
-  ContaLayouts() {
-    this.Layoutscountstop = setInterval(() => {
-      this.Layoutscount++;
-      // Precisamos parar quando o contador atingir um valor específico
-      if (this.Layoutscount === 36) {
-        // clearInterval irá parar a execução da função setInterval
-        clearInterval(this.Layoutscountstop);
-      }
-    }, 10); // 10 milissegundos - você pode ajustar conforme necessário
+  // ContaLayouts() {
+  //   this.Layoutscountstop = setInterval(() => {
+  //     this.Layoutscount++;
+  //     // Precisamos parar quando o contador atingir um valor específico
+  //     if (this.Layoutscount === 36) {
+  //       // clearInterval irá parar a execução da função setInterval
+  //       clearInterval(this.Layoutscountstop);
+  //     }
+  //   }, 10); // 10 milissegundos - você pode ajustar conforme necessário
 
 
-    this.Storiescountstop = setInterval(() => {
-      this.Storiescount++;
-      // Precisamos parar quando o contador atingir um valor específico
-      if (this.Storiescount === 1055) {
-        // clearInterval irá parar a execução da função setInterval
-        clearInterval(this.Storiescountstop);
-      }
-    }, 10); // 10 milissegundos - você pode ajustar conforme necessário
+  //   this.Storiescountstop = setInterval(() => {
+  //     this.Storiescount++;
+  //     // Precisamos parar quando o contador atingir um valor específico
+  //     if (this.Storiescount === 1055) {
+  //       // clearInterval irá parar a execução da função setInterval
+  //       clearInterval(this.Storiescountstop);
+  //     }
+  //   }, 10); // 10 milissegundos - você pode ajustar conforme necessário
 
-    this.Assessorescountstop = setInterval(() => {
-      this.Assessorescount++;
-      // Precisamos parar quando o contador atingir um valor específico
-      if (this.Assessorescount === 124) {
-        // clearInterval irá parar a execução da função setInterval
-        clearInterval(this.Assessorescountstop);
-      }
-    }, 10); // 10 milissegundos - você pode ajustar conforme necessário
+  //   this.Assessorescountstop = setInterval(() => {
+  //     this.Assessorescount++;
+  //     // Precisamos parar quando o contador atingir um valor específico
+  //     if (this.Assessorescount === 124) {
+  //       // clearInterval irá parar a execução da função setInterval
+  //       clearInterval(this.Assessorescountstop);
+  //     }
+  //   }, 10); // 10 milissegundos - você pode ajustar conforme necessário
 
-  }
+  // }
   
 
-  startCounterLayouts() {
-    this.contadorLayoutsInterval = setInterval(() => {
-      this.contadorLayouts++;
-      if (this.contadorLayouts == 124) {
-        clearInterval(this.contadorLayoutsInterval);
-      }
-    }, 10);
-  }
+  // startCounterLayouts() {
+  //   this.contadorLayoutsInterval = setInterval(() => {
+  //     this.contadorLayouts++;
+  //     if (this.contadorLayouts == 124) {
+  //       clearInterval(this.contadorLayoutsInterval);
+  //     }
+  //   }, 10);
+  // }
 
-  startCounterStories() {
-    this.contadorStoriesInterval = setInterval(() => {
-      this.contadorStories++;
-      if (this.contadorStories == 1.055) {
-        clearInterval(this.contadorStoriesInterval);
-      }
-    }, 1);
-  }
+  // startCounterStories() {
+  //   this.contadorStoriesInterval = setInterval(() => {
+  //     this.contadorStories++;
+  //     if (this.contadorStories == 1.055) {
+  //       clearInterval(this.contadorStoriesInterval);
+  //     }
+  //   }, 1);
+  // }
 
-  startCounterAssessores() {
-    this.contadorAssessoresInterval = setInterval(() => {
-      this.contadorAssessores++;
-      if (this.contadorAssessores == 124) {
-        clearInterval(this.contadorAssessoresInterval);
-      }
-    }, 10);
-  }
+  // startCounterAssessores() {
+  //   this.contadorAssessoresInterval = setInterval(() => {
+  //     this.contadorAssessores++;
+  //     if (this.contadorAssessores == 124) {
+  //       clearInterval(this.contadorAssessoresInterval);
+  //     }
+  //   }, 10);
+  // }
 
 
   ngOnDestroy(): void {
@@ -332,7 +332,7 @@ const options = {
     const observer = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          this.ContaLayouts()
+          // this.ContaLayouts()
           console.log('Parte da página está visível agora!');
           observer.unobserve(entry.target); // Desliga a observação após o primeiro acionamento
         }
@@ -775,7 +775,7 @@ const options = {
   adjustSlidesPerView(windowWidth: number) {
     this.mobileCard = false
     if (windowWidth <= 2000) {
-      this.slidesJornal = 8
+      this.slidesJornal = 10
       this.spaceBetween = '-150'
       this.spaceQuemSomos = '30'
       this.slidesPerViewQuemSomos = '2.4'
